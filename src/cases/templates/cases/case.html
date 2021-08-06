@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+ <section class="cases">
+    <div class="site-width">
+      <div class="title-wrapper">
+        <h2 class="title title-center">Кейсы</h2>
+      </div>
+
+        <div class="tab-row tabs">
+          <span class="tab-toggle show-all activeClass">ALL</span>
+          {% for category in categories %}
+            <span class="tab-toggle {{category.name}}">{{category.name}}</span>
+          {% endfor %}
+        </div>
+        <div class="cases-row tabs-content">
+          {% for case in cases %}
+            <div class="cases-item filtered-div" id="{{case.category}}" data-web="web">
+              <picture class="cases-item-phone">
+                <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
+                <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
+                <img src="{{case.mob_image.url}}" width="156px" height="338px" alt="Phone.">
+
+              </picture>
+              <picture class="cases-item-img">
+                <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
+                <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
+                <img src="{{case.full_image.url}}" width="446px" height="445px" alt="Photo.">
+              </picture>
+            </div>
+          {% endfor %}
+        </div>
+
+
+      <div class="cases-all">
+        <button class="btn cases-btn more_cases">See more</button>
+      </div>
+    </div>
+  </section>
+  <section class="reviews">
+    <div class="site-width">
+      <div class="title-wrapper">
+        <h2 class="title title-center">Отзывы</h2>
+      </div>
+      <div class="slider-wrapper">
+          <div class="slider">
+            <div class="slide">
+              <div class="slide-item slide-video">
+
+              </div>
+              <div class="slide-item slide-text">
+                <h3 class="slide-title">Name Surname</h3>
+                <h4 class="slide-subtitle">Position</h4>
+                <div class="slide-description">
+                  <p class="slide-paragraph">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                  </p>
+                </div>
+              </div>
+          </div>
+          <div class="slide">
+            <div class="slide-item slide-video">
+
+            </div>
+            <div class="slide-item slide-text">
+              <h3 class="slide-title">Name Surname</h3>
+              <h4 class="slide-subtitle">Position</h4>
+              <div class="slide-description">
+                <p class="slide-paragraph">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="slide-item slide-video">
+
+            </div>
+            <div class="slide-item slide-text">
+              <h3 class="slide-title">Name Surname</h3>
+              <h4 class="slide-subtitle">Position</h4>
+              <div class="slide-description">
+                <p class="slide-paragraph">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="slide-item slide-video">
+
+            </div>
+            <div class="slide-item slide-text">
+              <h3 class="slide-title">Name Surname</h3>
+              <h4 class="slide-subtitle">Position</h4>
+              <div class="slide-description">
+                <p class="slide-paragraph">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

@@ -1,0 +1,166 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section class="block-100vh">
+    <div class="block-100vh-media" style="background: url({{article.image.url}}) center center/cover no-repeat">
+    </div>
+    <div class="site-width">
+      <div class="top-block-wrapper">
+
+        <div class="request">
+          <h1 class="title request-title">{{article.title}}</h1>
+          <div class="request-description">
+            <p class="request-paragraph">
+              {{article.text}}
+            </p>
+          </div>
+          <button class="btn btn-top btn-orange popup_btn">Оставить заявку</button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+ <section class="we-will-do">
+     <div class="site-width">
+        <div class="title-wrapper">
+            <h2 class="title title-center">Что мы сделаем?</h2>
+        </div>
+        <div class="we-will-do-row">
+            <div class="we-will-do-item">
+                <h3 class="title-standart">Заголовок</h3>
+                <ul class="we-will-do-list">
+                    <li class="we-will-do-list-item">lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor;</li>
+                    <li class="we-will-do-list-item">lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor;</li>
+                    <li class="we-will-do-list-item">lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor;</li>
+                    <li class="we-will-do-list-item">lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor;</li>
+                  </ul>
+            </div>
+            <div class="we-will-do-item">
+                <h3 class="title-standart">Заголовок</h3>
+                <ul class="we-will-do-list">
+                    <li class="we-will-do-list-item">lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor;</li>
+                    <li class="we-will-do-list-item">lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor;</li>
+                    <li class="we-will-do-list-item">lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor;</li>
+                    <li class="we-will-do-list-item">lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor;</li>
+                  </ul>
+            </div>
+            <div class="we-will-do-item">
+                <h3 class="title-standart">Заголовок</h3>
+                <ul class="we-will-do-list">
+                    <li class="we-will-do-list-item">lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor;</li>
+                    <li class="we-will-do-list-item">lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor;</li>
+                    <li class="we-will-do-list-item">lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor;</li>
+                    <li class="we-will-do-list-item">lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor;</li>
+                  </ul>
+            </div>
+            <div class="we-will-do-item">
+                <h3 class="title-standart">Заголовок</h3>
+                <ul class="we-will-do-list">
+                    <li class="we-will-do-list-item">lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor;</li>
+                    <li class="we-will-do-list-item">lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor;</li>
+                    <li class="we-will-do-list-item">lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor;</li>
+                    <li class="we-will-do-list-item">lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor;</li>
+                  </ul>
+            </div>
+            <div class="we-will-do-item">
+                <h3 class="title-standart">Заголовок</h3>
+                <ul class="we-will-do-list">
+                    <li class="we-will-do-list-item">lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor;</li>
+                    <li class="we-will-do-list-item">lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor;</li>
+                    <li class="we-will-do-list-item">lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor;</li>
+                    <li class="we-will-do-list-item">lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor;</li>
+                  </ul>
+            </div>
+            <div class="we-will-do-item">
+                <h3 class="title-standart">Заголовок</h3>
+                <ul class="we-will-do-list">
+                    <li class="we-will-do-list-item">lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor;</li>
+                    <li class="we-will-do-list-item">lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor;</li>
+                    <li class="we-will-do-list-item">lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor;</li>
+                    <li class="we-will-do-list-item">lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor;</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row-center">
+            <button class="btn btn-top btn-orange popup_btn">Оставить заявку</button>
+        </div>
+     </div>
+ </section>
+  <section class="cases">
+    <div class="site-width">
+      <div class="title-wrapper">
+        <h2 class="title title-center">Наши кейсы</h2>
+      </div>
+      <div class="cases-row">
+        <div class="cases-item">
+          <picture class="cases-item-phone">
+            <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
+            <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
+            <img src="{% static 'assets/images/phone.png' %}" width="156px" height="338px" alt="Phone.">
+
+          </picture>
+          <picture class="cases-item-img">
+            <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
+            <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
+            <img src="{% static 'assets/images/default-picture.png' %}" width="446px" height="445px" alt="Photo.">
+          </picture>
+        </div>
+        <div class="cases-item">
+          <picture class="cases-item-phone">
+            <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
+            <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
+            <img src="{% static 'assets/images/phone.png' %}" width="156px" height="338px" alt="Phone.">
+          </picture>
+          <picture class="cases-item-img">
+            <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
+            <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
+            <img src="{% static 'assets/images/default-picture.png' %}" width="446px" height="445px" alt="Photo.">
+          </picture>
+        </div>
+        <div class="cases-item">
+          <picture class="cases-item-phone">
+            <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
+            <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
+            <img src="{% static 'assets/images/phone.png' %}" width="156px" height="338px" alt="Phone.">
+          </picture>
+          <picture class="cases-item-img">
+            <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
+            <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
+            <img src="{% static 'assets/images/default-picture.png' %}" width="446px" height="445px" alt="Photo.">
+          </picture>
+        </div>
+        <div class="cases-item">
+          <picture class="cases-item-phone">
+            <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
+            <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
+            <img src="{% static 'assets/images/phone.png' %}" width="156px" height="338px" alt="Phone.">
+          </picture>
+          <picture class="cases-item-img">
+            <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
+            <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
+            <img src="{% static 'assets/images/default-picture.png' %}" width="446px" height="445px" alt="Photo.">
+          </picture>
+        </div>
+        <div class="cases-item">
+          <picture class="cases-item-phone">
+            <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
+            <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
+            <img src="{% static 'assets/images/phone.png' %}" width="156px" height="338px" alt="Phone.">
+          </picture>
+          <picture class="cases-item-img">
+            <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
+            <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
+            <img src="{% static 'assets/images/default-picture.png' %}" width="446px" height="445px" alt="Photo.">
+          </picture>
+        </div>
+      </div>
+      <div class="cases-all">
+        <button class="btn cases-btn more_cases">See more</button>
+      </div>
+    </div>
+  </section>
+    {% include "includes/services.html" with services_categories=services_categories only %}
+{% endblock %}

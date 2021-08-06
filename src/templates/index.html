@@ -1,0 +1,358 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <section class="top-block">
+    <div class="site-width">
+      <div class="top-block-wrapper">
+        <div class="request">
+          <h1 class="title request-title">Title</h1>
+          <div class="request-description">
+            <p class="request-paragraph">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+              Delectus totam cupiditate rerum ex, natus et ut, reiciendis 
+              voluptatibus aliquam odio quas inventore consequatur id vel 
+              ab non ratione neque dignissimos.
+            </p>
+          </div>
+          <button class="btn btn-top btn-orange popup_btn">Оставить заявку</button>
+        </div>
+        <div class="honeycomb-wrap mob-none">
+          <ul class="honeycomb">
+            <span class="honey honey-1 mob-none">
+              <p class="honey-text"></p>
+            </span>
+            <li class="honey honey-2">
+              <a href="/smm.html" class="honey-link"><p class="honey-text">SMM</p></a>
+            </li>
+            <li class="honey honey-3">
+              <a href="/web-dev.html" class="honey-link"><p class="honey-text honey-default">Web <br>разработка 
+                </p></a>
+            </li>
+            <li class="honey honey-4">
+              <a href="web-design.html" class="honey-link"><p class="honey-text">Web<br>
+                дизайн</p></a>
+            </li>
+            <span class="honey honey-5 mob-none">
+              <p class="honey-text"></p>
+            </span>
+            <li class="honey honey-6 honey-services">
+              <!-- <div class="button__circle" ></div> -->
+              <p class="honey-text">Услуги</p>
+            </li>
+            <li class="honey honey-7">
+              <!-- <div class="back-color"></div> -->
+              <a href="/seo.html" class="honey-link"><p class="honey-text">SEO</p></a>
+            </li>
+            <li class="honey honey-8">
+              <a href="/copywriting.html" class="honey-link"><p class="honey-text">Copywriting</p></a>
+            </li>
+            <li class="honey honey-9">
+              <a href="/ppc.html" class="honey-link"><p class="honey-text">PPC</p></a>
+            </li>
+        </ul>
+        </div>
+      </div>
+      <div class="top-block-bottom">
+        <div class="container">
+          <div class="top-block-advantages">
+            <div class="top-block-advantages-item">
+              <p class="number-block">100<span class="number-block-sub"> %</span></p>
+              <p class="top-block-advantages-descr">
+                довольных клиентов
+              </p>
+            </div>
+            <div class="top-block-advantages-item">
+              <p class="number-block">10<span class="number-block-sub"> лет</span></p>
+              <p class="top-block-advantages-descr">
+                на рынке маркетинговых услуг
+              </p>
+            </div>
+            <div class="top-block-advantages-item">
+              <p class="number-block">100<span class="number-block-sub"> +</span></p>
+              <p class="top-block-advantages-descr">
+                успешных проектов
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+  </section>
+  <section class="cases">
+    <div class="site-width">
+      <div class="honeycomb-wrap desktop-none">
+        <ul class="honeycomb">
+          <span class="honey honey-1 mob-none">
+            <p class="honey-text"></p>
+          </span>
+          <li class="honey honey-2">
+            <a href="/smm.html" class="honey-link"><p class="honey-text">SMM</p></a>
+          </li>
+          <li class="honey honey-3">
+            <a href="/web-dev.html" class="honey-link"><p class="honey-text honey-default">Web <br>разработка 
+              </p></a>
+          </li>
+          <li class="honey honey-4">
+            <a href="web-design.html" class="honey-link"><p class="honey-text">Web<br>
+              дизайн</p></a>
+          </li>
+          <span class="honey honey-5 mob-none">
+            <p class="honey-text"></p>
+          </span>
+          <li class="honey honey-6 honey-services">
+            <!-- <div class="button__circle" ></div> -->
+            <p class="honey-text">Услуги</p>
+          </li>
+          <li class="honey honey-7">
+            <!-- <div class="back-color"></div> -->
+            <a href="/seo.html" class="honey-link"><p class="honey-text">SEO</p></a>
+          </li>
+          <li class="honey honey-8">
+            <a href="/copywriting.html" class="honey-link"><p class="honey-text">Copywriting</p></a>
+          </li>
+          <li class="honey honey-9">
+            <a href="/ppc.html" class="honey-link"><p class="honey-text">PPC</p></a>
+          </li>
+      </ul>
+      </div>
+      <div class="title-wrapper">
+        <h2 class="title title-center">Наши кейсы</h2>
+      </div>
+      <div class="cases-row">
+        <div class="cases-item">
+          <picture class="cases-item-phone">
+            <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
+            <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
+            <img src="{% static 'assets/images/phone.png' %}" width="156px" height="338px" alt="Phone.">
+            
+          </picture>
+          <picture class="cases-item-img">
+            <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
+            <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
+            <img src="{% static 'assets/images/default-picture.png' %}" width="446px" height="445px" alt="Photo.">
+          </picture>
+        </div>
+        <div class="cases-item">
+          <picture class="cases-item-phone">
+            <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
+            <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
+            <img src="{% static 'assets/images/phone.png' %}" width="156px" height="338px" alt="Phone.">
+          </picture>
+          <picture class="cases-item-img">
+            <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
+            <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
+            <img src="{% static 'assets/images/default-picture.png' %}" width="446px" height="445px" alt="Photo.">
+          </picture>
+        </div>
+        <div class="cases-item">
+          <picture class="cases-item-phone">
+            <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
+            <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
+            <img src="{% static 'assets/images/phone.png' %}" width="156px" height="338px" alt="Phone.">
+          </picture>
+          <picture class="cases-item-img">
+            <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
+            <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
+            <img src="{% static 'assets/images/default-picture.png' %}" width="446px" height="445px" alt="Photo.">
+          </picture>
+        </div>
+        <div class="cases-item">
+          <picture class="cases-item-phone">
+            <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
+            <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
+            <img src="{% static 'assets/images/phone.png' %}" width="156px" height="338px" alt="Phone.">
+          </picture>
+          <picture class="cases-item-img">
+            <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
+            <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
+            <img src="{% static 'assets/images/default-picture.png' %}" width="446px" height="445px" alt="Photo.">
+          </picture>
+        </div>
+        <div class="cases-item">
+          <picture class="cases-item-phone">
+            <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
+            <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
+            <img src="{% static 'assets/images/phone.png' %}" width="156px" height="338px" alt="Phone.">
+          </picture>
+          <picture class="cases-item-img">
+            <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
+            <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
+            <img src="{% static 'assets/images/default-picture.png' %}" width="446px" height="445px" alt="Photo.">
+          </picture>
+        </div>
+      </div>
+      <div class="cases-all">
+        <button class="btn cases-btn more_cases">See more</button>
+      </div>
+    </div>
+  </section>
+  <section class="partners">
+    <div class="site-width">
+      <div class="title-wrapper">
+        <h2 class="title title-center">Наши партнеры</h2>
+      </div>
+    
+      <div class="partners-wrapper">
+        <span class="partners-honey partners-honey-1 mob-none"></span>
+        <span class="partners-honey partners-honey-2 mob-none"></span>
+        <span class="partners-honey partners-honey-orange partners-honey-3"><img src="{% static 'assets/images/siemens_logo.svg' %}" alt="Siemens logo."></span>
+        <span class="partners-honey partners-honey-orange partners-honey-4"><img src="{% static 'assets/images/samsung_logo.svg' %}" alt="Samsung logo."></span>
+        <span class="partners-honey partners-honey-orange partners-honey-5"><img src="{% static 'assets/images/texas_logo.svg' %}" alt="Texas logo."></span>
+        <span class="partners-honey partners-honey-orange partners-honey-6"><img src="{% static 'assets/images/philips_logo.svg' %}" alt="Philips logo."></span>
+        <span class="partners-honey partners-honey-orange partners-honey-7"><img src="{% static 'assets/images/alfa_logo.svg' %}" alt="Alfa logo."></span>
+        <span class="partners-honey partners-honey-orange partners-honey-8"><img src="{% static 'assets/images/lg_logo.svg' %}" alt="Lg logo."></span>
+        <span class="partners-honey partners-honey-orange partners-honey-9"><img src="{% static 'assets/images/panasonic_logo.svg' %}" alt="Panasonic logo."></span>
+        <span class="partners-honey partners-honey-10 mob-none"></span>
+        
+      </div>
+    </div>
+  </section>
+  <section class="articles">
+    <div class="site-width">
+      <div class="title-wrapper">
+        <h2 class="title title-center">Статьи</h2>
+      </div>
+      <div class="articles-row article-slider">
+        <div class="article"> 
+          <div class="article-picture">
+            <a href="/article.html" class="article-category">WEB</a>
+            <a class="article-picture-link" href="/article.html">
+              <img class="article-picture-img" src="{% static 'assets/images/article1.png' %}" alt="Article."></a>
+          </div>
+          <div class="article-footer">
+            <div class="article-date">
+              <div class="article-date-calendar">
+                12/06/2021
+              </div>
+              <div class="article-date-author">
+                by Name Surname
+              </div>
+            </div>
+            <div class="article-decsription">
+              <p class="article-paragraph article-paragraph--short">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia quo blanditiis voluptatibus non repudiandae, animi exercitationem esse temporibus ipsam et reiciendis aliquam harum ullam hic minima omnis autem, obcaecati ratione?
+              </p>
+            </div>
+            <a class="article-link" href="/article.html">
+              <div class="article-link-text">
+                Read more
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="article"> 
+          <div class="article-picture">
+            <a href="/" class="article-category">WEB</a>
+            <a class="article-picture-link" href="/">
+              <img class="article-picture-img" src="{% static 'assets/images/article2.png' %}" alt="Article."></a>
+          </div>
+          <div class="article-footer">
+            <div class="article-date">
+              <div class="article-date-calendar">
+                12/06/2021
+              </div>
+              <div class="article-date-author">
+                by Name Surname
+              </div>
+            </div>
+            <div class="article-decsription">
+              <p class="article-paragraph article-paragraph--short">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia quo blanditiis voluptatibus non repudiandae, animi exercitationem esse temporibus ipsam et reiciendis aliquam harum ullam hic minima omnis autem, obcaecati ratione?
+              </p>
+            </div>
+            <a class="article-link" href="/">
+              <div class="article-link-text">
+                Read more
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="article"> 
+          <div class="article-picture">
+            <a href="/" class="article-category">WEB</a>
+            <a class="article-picture-link" href="/">
+              <img class="article-picture-img" src="{% static 'assets/images/article3.png' %}" alt="Article."></a>
+          </div>
+          <div class="article-footer">
+            <div class="article-date">
+              <div class="article-date-calendar">
+                12/06/2021
+              </div>
+              <div class="article-date-author">
+                by Name Surname
+              </div>
+            </div>
+            <div class="article-decsription">
+              <p class="article-paragraph article-paragraph--short">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia quo blanditiis voluptatibus non repudiandae, animi exercitationem esse temporibus ipsam et reiciendis aliquam harum ullam hic minima omnis autem, obcaecati ratione?
+              </p>
+            </div>
+            <a class="article-link" href="/">
+              <div class="article-link-text">
+                Read more
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="article"> 
+          <div class="article-picture">
+            <a href="/" class="article-category">WEB</a>
+            <a class="article-picture-link" href="/">
+              <img class="article-picture-img" src="{% static 'assets/images/article1.png' %}" alt="Article."></a>
+          </div>
+          <div class="article-footer">
+            <div class="article-date">
+              <div class="article-date-calendar">
+                12/06/2021
+              </div>
+              <div class="article-date-author">
+                by Name Surname
+              </div>
+            </div>
+            <div class="article-decsription">
+              <p class="article-paragraph article-paragraph--short">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia quo blanditiis voluptatibus non repudiandae, animi exercitationem esse temporibus ipsam et reiciendis aliquam harum ullam hic minima omnis autem, obcaecati ratione?
+              </p>
+            </div>
+            <a class="article-link" href="/">
+              <div class="article-link-text">
+                Read more
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="article"> 
+          <div class="article-picture">
+            <a href="/" class="article-category">WEB</a>
+            <a class="article-picture-link" href="/">
+              <img class="article-picture-img" src="{% static 'assets/images/article1.png' %}" alt="Article."></a>
+          </div>
+          <div class="article-footer">
+            <div class="article-date">
+              <div class="article-date-calendar">
+                12/06/2021
+              </div>
+              <div class="article-date-author">
+                by Name Surname
+              </div>
+            </div>
+            <div class="article-decsription">
+              <p class="article-paragraph article-paragraph--short">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia quo blanditiis voluptatibus non repudiandae, animi exercitationem esse temporibus ipsam et reiciendis aliquam harum ullam hic minima omnis autem, obcaecati ratione?
+              </p>
+            </div>
+            <a class="article-link" href="/">
+              <div class="article-link-text">
+                Read more
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="cases-all mob-none">
+        <button id="read_more" class="btn cases-btn">Read more</button>
+      </div>
+    </div>
+  </section>
+{% endblock %}

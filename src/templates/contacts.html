@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section class="block-100vh">
+    <div class="site-width">
+      <div class="contacts-wrapper">
+        <div class="title-wrapper">
+            <h2 class="title title-center">Контакты</h2>
+        </div>
+        <div class="contacts-top">
+            <div class="request form-wrapper">
+                <p class="any-questions">
+                    Остались вопросы? Оставьте заявку и наши менеджеры с Вами свяжутся!
+                </p>
+                <form action="" class="form-contact">
+                    <label for="name">Имя</label>
+                    <input name="name" type="text" placeholder="Введите имя" required>
+                    <label for="email">E-mail</label>
+                    <input name="email" type="email" placeholder="Введите e-mail" required>
+                    <label for="">Сообщение</label>
+                    <textarea name="" id="" cols="30" rows="6" placeholder="Введите сообщение"></textarea>
+                    <button class="btn btn-top btn-orange">Оставить заявку</button>
+
+                </form>
+            </div>
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2749.61980811009!2d30.763224015791018!3d46.436414776065064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c63369bb543077%3A0x5358d23ab9b5909d!2sArt.Ads%20Digital%20Agency!5e0!3m2!1sru!2sua!4v1625825793972!5m2!1sru!2sua" width="710" height="475" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+        <div class="contacts-footer">
+            <div class="contacts-footer-item">
+                <div class="contacts-footer-title">Телефон</div>
+                <div class="contacts-footer-info">
+                    <a href="tel:+380682782200"><span class="number">+38 068 278 22 00</span></a>
+                </div>
+            </div>
+            <div class="contacts-footer-item">
+                <p class="contacts-footer-title">E-mail</p>
+                <p class="contacts-footer-info">
+                    <a href="mailto:inbox@artads.agency">inbox@artads.agency</a>
+                </p>
+            </div>
+            <div class="contacts-footer-item">
+                <p class="contacts-footer-title">Адрес </p>
+                <p class="contacts-footer-info">
+                    Одесса, Украина<br>
+                    Французский бульвар, 60Д
+                </p>
+            </div>
+            <div class="contacts-footer-item">
+                <p class="contacts-footer-title">Рабочие часы</p>
+                <p class="contacts-footer-info">
+                    ПН - ПТ <br>
+                    <span class="number">10:00 - 18:00</span>
+                    
+                </p>
+            </div>
+        </div>
+      
+        
+      </div>
+      
+    </div>
+ 
+  </section>
+{% endblock %}
