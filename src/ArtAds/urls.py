@@ -26,6 +26,7 @@ urlpatterns = [
     path('cases/', include('cases.urls'), name='cases'),
     path('services/', include('services.urls'), name='services'),
     path('contacts/', ContactsPageView.as_view(), name='contacts'),
+    path('i18n/', include('django.conf.urls.i18n')),
 ]
 
 urlpatterns += \

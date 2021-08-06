@@ -10,6 +10,7 @@ class ServiceArticle(models.Model):
     slug = models.SlugField(
         default='',
         max_length=100,
+        editable=False,
         verbose_name='Service slug',
         unique=True
     )
@@ -45,3 +46,17 @@ class ServiceCategory(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class WorkPoint(models.Model):
+    title = models.CharField(max_length=100)
+    subparagraphs = models.TextField()
+
+
+class Subparagraph(models.Model):
+    text = models.CharField(max_length=200)
+    workpoints = models.ForeignKey(
+        to='services.WorkPoint',
+        on_delete=models.CASCADE,
+        verbose_name='Subparagraphs'
+    )

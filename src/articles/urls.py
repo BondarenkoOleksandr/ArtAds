@@ -1,5 +1,7 @@
 from django.urls import path
 
+from articles.views import ArticleDetailView
+
 app_name = 'articles'
 
 urlpatterns = [

@@ -9,8 +9,11 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+
 import os
 from pathlib import Path
+
+from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -42,6 +45,7 @@ INSTALLED_APPS = [
 
     'debug_toolbar',
     'django_extensions',
+    'translation_manager',
 
     'cases',
     'services',
@@ -50,8 +54,9 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.locale.LocaleMiddleware",
+    "django.middleware.common.CommonMiddleware",
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -149,3 +154,21 @@ STATICFILES_DIRS = (
 MEDIA_ROOT = 'media/'
 MEDIA_URL = 'media/'
 
+USE_I18N = True
+
+
+# Provide a lists of languages which your site supports.
+LANGUAGES = (
+    ('ru', _('Russian')),
+    ('en', _('English')),
+    ('ua', _('Ukrainian')),
+)
+
+# If you set this to False, Django will not format dates, numbers and
+# Use calendars according to the current locale.
+USE_L10N = True
+
+# Contains the path list where Django should look into for django.po files for all supported languages
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)

@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
+{% load i18n%}
 {% load static %}
 {% block content %}
   <section class="top-block">
     <div class="site-width">
       <div class="top-block-wrapper">
         <div class="request">
-          <h1 class="title request-title">Title</h1>
+          <h1 class="title request-title">{% trans "Title" %}</h1>
           <div class="request-description">
             <p class="request-paragraph">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
@@ -120,67 +121,21 @@
         <h2 class="title title-center">Наши кейсы</h2>
       </div>
       <div class="cases-row">
-        <div class="cases-item">
-          <picture class="cases-item-phone">
-            <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
-            <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
-            <img src="{% static 'assets/images/phone.png' %}" width="156px" height="338px" alt="Phone.">
-            
-          </picture>
-          <picture class="cases-item-img">
-            <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
-            <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
-            <img src="{% static 'assets/images/default-picture.png' %}" width="446px" height="445px" alt="Photo.">
-          </picture>
-        </div>
-        <div class="cases-item">
-          <picture class="cases-item-phone">
-            <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
-            <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
-            <img src="{% static 'assets/images/phone.png' %}" width="156px" height="338px" alt="Phone.">
-          </picture>
-          <picture class="cases-item-img">
-            <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
-            <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
-            <img src="{% static 'assets/images/default-picture.png' %}" width="446px" height="445px" alt="Photo.">
-          </picture>
-        </div>
-        <div class="cases-item">
-          <picture class="cases-item-phone">
-            <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
-            <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
-            <img src="{% static 'assets/images/phone.png' %}" width="156px" height="338px" alt="Phone.">
-          </picture>
-          <picture class="cases-item-img">
-            <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
-            <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
-            <img src="{% static 'assets/images/default-picture.png' %}" width="446px" height="445px" alt="Photo.">
-          </picture>
-        </div>
-        <div class="cases-item">
-          <picture class="cases-item-phone">
-            <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
-            <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
-            <img src="{% static 'assets/images/phone.png' %}" width="156px" height="338px" alt="Phone.">
-          </picture>
-          <picture class="cases-item-img">
-            <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
-            <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
-            <img src="{% static 'assets/images/default-picture.png' %}" width="446px" height="445px" alt="Photo.">
-          </picture>
-        </div>
-        <div class="cases-item">
-          <picture class="cases-item-phone">
-            <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
-            <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
-            <img src="{% static 'assets/images/phone.png' %}" width="156px" height="338px" alt="Phone.">
-          </picture>
-          <picture class="cases-item-img">
-            <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
-            <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
-            <img src="{% static 'assets/images/default-picture.png' %}" width="446px" height="445px" alt="Photo.">
-          </picture>
-        </div>
+        {% for case in cases %}
+          <div class="cases-item">
+            <picture class="cases-item-phone">
+              <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
+              <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
+              <img src="{{case.mob_image.url}}" width="156px" height="338px" alt="Phone.">
+
+            </picture>
+            <picture class="cases-item-img">
+              <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
+              <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
+              <img src="{{case.full_image.url}}" width="446px" height="445px" alt="Photo.">
+            </picture>
+          </div>
+          {% endfor %}
       </div>
       <div class="cases-all">
         <button class="btn cases-btn more_cases">See more</button>
