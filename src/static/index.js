@@ -78,7 +78,7 @@ let burger = document.querySelector('.burger');
         }
     });
 
-    if (tabs_row) {
+if (tabs_row) {
     btn_article_web.addEventListener('click', ()=>{
       elBlock.style.height = "auto";
        })
@@ -135,12 +135,12 @@ btn_case_seo.addEventListener('click', ()=>{
   })
 btn_case_smm.addEventListener('click', ()=>{
       caseBlock.style.height = "auto";
-  })
-  btn_case_show_all.addEventListener('click', ()=>{
-    if (caseBlock.style.height === "auto"){
-      caseBlock.style.height = "469px";
-     }
-    })
+})
+btn_case_show_all.addEventListener('click', ()=>{
+if (caseBlock.style.height === "auto"){
+  caseBlock.style.height = "469px";
+ }
+})
 }
 
 }

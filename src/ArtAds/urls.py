@@ -13,8 +13,10 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+import debug_toolbar
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.contrib.auth.views import LogoutView
 from django.urls import path, include
 
 from ArtAds import settings
@@ -26,6 +28,9 @@ urlpatterns = [
     path('cases/', include('cases.urls'), name='cases'),
     path('services/', include('services.urls'), name='services'),
     path('contacts/', ContactsPageView.as_view(), name='contacts'),
+    path('__debug__/', include(debug_toolbar.urls)),
+    path('accounts/', include('allauth.urls')),
+    path('logout', LogoutView.as_view()),
 ]
 
 urlpatterns += \

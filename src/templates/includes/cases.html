@@ -1,0 +1,28 @@
+{% load static %}
+<section class="cases">
+    <div class="site-width">
+      <div class="title-wrapper">
+        <h2 class="title title-center">Наши кейсы</h2>
+      </div>
+      <div class="cases-row">
+          {% for case in cases %}
+            <div class="cases-item">
+              <picture class="cases-item-phone">
+                <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
+                <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
+                <img src="{{case.mob_image.url}}" width="156px" height="338px" alt="Phone.">
+
+              </picture>
+              <picture class="cases-item-img">
+                <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
+                <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
+                <img src="{{case.full_image.url}}" width="446px" height="445px" alt="Photo.">
+              </picture>
+            </div>
+          {% endfor %}
+      </div>
+      <div class="cases-all">
+        <button class="btn cases-btn more_cases">See more</button>
+      </div>
+    </div>
+  </section>

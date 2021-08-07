@@ -6,7 +6,7 @@
         </div>
         <div class="we-will-do-row">
             {% for service in services_categories %}
-            <a href="{{service.article.slug}}" class="we-will-do-item other-services-item">
+            <a href="{% url 'services:article' slug=service.article.slug %}" class="we-will-do-item other-services-item">
                 <h3 class="title-standart">{{service.name}}</h3>
             </a>
             {% endfor %}
