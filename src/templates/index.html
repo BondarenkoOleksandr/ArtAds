@@ -6,13 +6,11 @@
     <div class="site-width">
       <div class="top-block-wrapper">
         <div class="request">
-          <h1 class="title request-title">{% trans "Title" %}</h1>
+          <h1 class="title request-title">Маркетинговое digital-агентство полного цикла</h1>
           <div class="request-description">
             <p class="request-paragraph">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-              Delectus totam cupiditate rerum ex, natus et ut, reiciendis 
-              voluptatibus aliquam odio quas inventore consequatur id vel 
-              ab non ratione neque dignissimos.
+              Доверьтесь команде профессионалов в области цифровой рекламы, и получите результат, отвечающий поставленным бизнес-целям и вашему бюджету.
+              Откройте новые возможности для развития вашего бизнеса прямо сейчас.
             </p>
           </div>
           <button class="btn btn-top btn-orange popup_btn">Оставить заявку</button>
@@ -22,33 +20,16 @@
             <span class="honey honey-1 mob-none">
               <p class="honey-text"></p>
             </span>
-            <li class="honey honey-2">
-              <a href="/smm.html" class="honey-link"><p class="honey-text">SMM</p></a>
+          {% for service in services_categories %}
+            {% if forloop.counter|add:1 != 6 %}
+            <li class="honey honey-{{ forloop.counter|add:1 }}">
+              <a href="{% url 'services:article' slug=service.article.slug %}" class="honey-link"><p class="honey-text">{{service.name}}</p></a>
             </li>
-            <li class="honey honey-3">
-              <a href="/web-dev.html" class="honey-link"><p class="honey-text honey-default">Web <br>разработка 
-                </p></a>
-            </li>
-            <li class="honey honey-4">
-              <a href="web-design.html" class="honey-link"><p class="honey-text">Web<br>
-                дизайн</p></a>
-            </li>
-            <span class="honey honey-5 mob-none">
-              <p class="honey-text"></p>
-            </span>
+            {% endif %}
+          {% endfor %}
             <li class="honey honey-6 honey-services">
               <!-- <div class="button__circle" ></div> -->
               <p class="honey-text">Услуги</p>
-            </li>
-            <li class="honey honey-7">
-              <!-- <div class="back-color"></div> -->
-              <a href="/seo.html" class="honey-link"><p class="honey-text">SEO</p></a>
-            </li>
-            <li class="honey honey-8">
-              <a href="/copywriting.html" class="honey-link"><p class="honey-text">Copywriting</p></a>
-            </li>
-            <li class="honey honey-9">
-              <a href="/ppc.html" class="honey-link"><p class="honey-text">PPC</p></a>
             </li>
         </ul>
         </div>
@@ -87,34 +68,11 @@
           <span class="honey honey-1 mob-none">
             <p class="honey-text"></p>
           </span>
+          {% for service in services_categories %}
           <li class="honey honey-2">
-            <a href="/smm.html" class="honey-link"><p class="honey-text">SMM</p></a>
+            <a href="{% url 'services:article' slug=service.article.slug %}" class="honey-link"><p class="honey-text">{{service.name}}</p></a>
           </li>
-          <li class="honey honey-3">
-            <a href="/web-dev.html" class="honey-link"><p class="honey-text honey-default">Web <br>разработка 
-              </p></a>
-          </li>
-          <li class="honey honey-4">
-            <a href="web-design.html" class="honey-link"><p class="honey-text">Web<br>
-              дизайн</p></a>
-          </li>
-          <span class="honey honey-5 mob-none">
-            <p class="honey-text"></p>
-          </span>
-          <li class="honey honey-6 honey-services">
-            <!-- <div class="button__circle" ></div> -->
-            <p class="honey-text">Услуги</p>
-          </li>
-          <li class="honey honey-7">
-            <!-- <div class="back-color"></div> -->
-            <a href="/seo.html" class="honey-link"><p class="honey-text">SEO</p></a>
-          </li>
-          <li class="honey honey-8">
-            <a href="/copywriting.html" class="honey-link"><p class="honey-text">Copywriting</p></a>
-          </li>
-          <li class="honey honey-9">
-            <a href="/ppc.html" class="honey-link"><p class="honey-text">PPC</p></a>
-          </li>
+          {% endfor %}
       </ul>
       </div>
       <div class="title-wrapper">

@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block pagename%}page-cases{% endblock %}
 {% block content %}
  <section class="cases">
     <div class="site-width">
@@ -10,12 +11,12 @@
         <div class="tab-row tabs">
           <span class="tab-toggle show-all activeClass">ALL</span>
           {% for category in categories %}
-            <span class="tab-toggle {{category.name}}">{{category.name}}</span>
+            <span class="tab-toggle {{category.name|lower}}">{{category.name}}</span>
           {% endfor %}
         </div>
         <div class="cases-row tabs-content">
           {% for case in cases %}
-            <div class="cases-item filtered-div" id="{{case.category}}" data-web="web">
+            <div class="cases-item filtered-div" id="{{case.category|lower}}" data-{{case.category|lower}}="{{case.category|lower}}">
               <picture class="cases-item-phone">
                 <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
                 <source srcset="medium.jpg" media="(max-width: 500px)" /> -->

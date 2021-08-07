@@ -1,4 +1,5 @@
 {% load static %}
+{% load socialaccount %}
 <html lang="en">
 
 <head>
@@ -13,9 +14,15 @@
   <style></style>
 </head>
 
-<body class="page main-page">
+<body class="page {% block pagename%}main-page{% endblock %}">
 
   <!-- HEADER -->
+  {% if user.is_authenticated %}
+    <p>Welcome, You are logged in as {{ user.username }}</p>
+  {% else %}
+    <a href="{% provider_login_url 'google' %}">Login With Google</a>
+    <a href="{% provider_login_url 'facebook' method='oauth2' %}">Facebook OAuth2</a>
+  {% endif %}
   <header class="header">
     <div class="site-width">
       <div class="header-wrapper">
@@ -76,52 +83,17 @@
             <span class="honey honey-01 burger-menu-honey-1 mob-none">
               <p class="honey-text"></p>
             </span>
-            <li class="honey honey-02 burger-menu-honey-2 honey-orange">
-              <a href="/all-articles.html" class="honey-link"><p class="honey-text">Статьи</p></a>
+          {% for service in services_categories %}
+            {% if forloop.counter|add:1 != 6 %}
+            <li class="honey honey-{{ forloop.counter|add:1 }} burger-menu-honey-{{ forloop.counter|add:1 }}">
+              <a href="{% url 'services:article' slug=service.article.slug %}" class="honey-link"><p class="honey-text">{{service.name}}</p></a>
             </li>
-            <li class="honey honey-03 burger-menu-honey-3">
-              <a href="" class="honey-link"><p class="honey-text honey-default">Web <br>разработка
-                </p></a>
-            </li>
-            <li class="honey honey-04 burger-menu-honey-4">
-              <a href="/web-dev.html" class="honey-link"><p class="honey-text">Web<br>
-                дизайн</p></a>
-            </li>
-            <li class="honey honey-05 burger-menu-honey-5 honey-orange">
-              <a href="/cases.html" class="honey-link"><p class="honey-text">Кейсы</p></a>
-            </li>
+            {% endif %}
+          {% endfor %}
             <li class="honey honey-06 burger-menu-honey-6">
               <a href="/" class="honey-link">
                 <img src="{% static 'assets/images/logo-scroll.svg' %}" alt="Logo.">
               </a>
-            </li>
-            <li class="honey honey-07 burger-menu-honey-7 honey-orange">
-              <!-- <div class="back-color"></div> -->
-              <a href="/about.html" class="honey-link"><p class="honey-text">О нас</p></a>
-            </li>
-            <li class="honey honey-08 burger-menu-honey-8">
-              <a href="/smm.html" class="honey-link"><p class="honey-text">SMM</p></a>
-            </li>
-            <li class="honey honey-09 burger-menu-honey-9 honey-orange">
-              <a href="/contacts.html" class="honey-link"><p class="honey-text">Контакты</p></a>
-            </li>
-            <span class="honey honey-010 burger-menu-honey-10 mob-none">
-              <p class="honey-text"></p>
-            </span>
-            <span class="honey honey-011 burger-menu-honey-11 mob-none">
-             <p class="honey-text"></p>
-            </span>
-            <span class="honey honey-012 burger-menu-honey-12 mob-none">
-              <p class="honey-text"></p>
-            </span>
-            <li class="honey honey-013 burger-menu-honey-13">
-              <a href="/ppc.html" class="honey-link"><p class="honey-text">PPC</p></a>
-            </li>
-            <li class="honey honey-014 burger-menu-honey-14">
-              <a href="/seo.html" class="honey-link"><p class="honey-text">SEO</p></a>
-            </li>
-            <li class="honey honey-015 burger-menu-honey-15">
-              <a href="/copywriting.html" class="honey-link"><p class="honey-text">Copywriting</p></a>
             </li>
         </ul>
         </div>
@@ -161,11 +133,9 @@
         </div>
         <div class="footer-services">
           <h3 class="footer-title">Услуги</h3>
-          <a href="/seo.html" class="services-link">SEO</a>
-          <a href="/smm.html" class="services-link">SMM</a>
-          <a href="/ppc.html" class="services-link">PPC</a>
-          <a href="/web-design.html" class="services-link">Web дизайн</a>
-          <a href="/web-dev.html" class="services-link">Web разработка</a>
+          {% for service in services_categories %}
+            <a href="{% url 'services:article' slug=service.article.slug %}" class="services-link">{{service.name}}</a>
+          {% endfor %}
         </div>
         <div class="footer-request">
           <h3 class="footer-title">ЗАДАЙТЕ ВАШ ВОПРОС</h3>
@@ -269,8 +239,9 @@
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   <script type="text/javascript" src="{% static 'libs/slick-carousel/slick/slick.min.js' %}"></script>
-
-<script src="{% static 'vendors~main.js' %}"></script><script src="{% static 'main.js' %}"></script></body>
+  <script src="{% static 'vendors~main.js' %}"></script>
+  <script src="{% static 'main.js' %}"></script>
+</body>
 
 </html>
 

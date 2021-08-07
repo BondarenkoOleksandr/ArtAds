@@ -50,13 +50,11 @@ class ServiceCategory(models.Model):
 
 class WorkPoint(models.Model):
     title = models.CharField(max_length=100)
-    subparagraphs = models.TextField()
-
-
-class Subparagraph(models.Model):
-    text = models.CharField(max_length=200)
-    workpoints = models.ForeignKey(
-        to='services.WorkPoint',
+    text = models.TextField()
+    service = models.ForeignKey(
+        to=ServiceArticle,
+        null=False,
         on_delete=models.CASCADE,
-        verbose_name='Subparagraphs'
+        verbose_name='What will we do:',
+        related_name='workpoints',
     )
