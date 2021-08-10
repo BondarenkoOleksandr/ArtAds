@@ -557,22 +557,19 @@ var modals = function modals() {
         document.body.style.overflow = ""; // document.body.classList.remove('modal-open');
       }
     });
-  } // function showModalByTime(selector, time) { //вызвать попап через время
-  //     setTimeout(function () {
-  //         document.querySelector(selector).style.display = 'block';
-  //         document.body.style.overflow = "hidden";
-  //     }, time)
-  // }
-
+  }
 
   bindModal('.popup_btn', '.popup_func', '.popup_func .popup_close'); // обращаемся к popup_close который именно внутри popup_func
 
   bindModal('.popup_btn_login', '.popup_login', '.popup_login .popup_close');
   var sendPopups = document.querySelectorAll('.popup_send_moderation');
   sendPopups.forEach(function (sendModal) {
-    sendModal.querySelector('.popup_close').addEventListener('click', function () {
-      sendModal.style.top = "-1500px";
-      document.body.style.overflow = "";
+    var sendModalsClose = sendModal.querySelectorAll('.popup_close');
+    sendModalsClose.forEach(function (sendModalsClose) {
+      sendModalsClose.addEventListener('click', function () {
+        sendModal.style.top = "-1500px";
+        document.body.style.overflow = "";
+      });
     });
     sendModal.addEventListener('click', function (e) {
       // закрыть окно по клику вне его
