@@ -131,43 +131,43 @@ a {
 
 @font-face {
   font-family: "Raleway";
-  src: url("assets/fonts/Raleway-Regular.ttf") format("truetype");
+  src: url("/src/assets/fonts/Raleway-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: "Raleway-Medium";
-  src: url("assets/fonts/Raleway-Medium.ttf") format("truetype");
+  src: url("/src/assets/fonts/Raleway-Medium.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: "Raleway-Bold";
-  src: url("assets/fonts/Raleway-Bold.ttf") format("truetype");
+  src: url("/src/assets/fonts/Raleway-Bold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: "Raleway-SemiBold";
-  src: url("assets/fonts/Raleway-SemiBold.ttf") format("truetype");
+  src: url("/src/assets/fonts/Raleway-SemiBold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: "OpenSans";
-  src: url("assets/fonts/OpenSans-Regular.ttf") format("truetype");
+  src: url("/src/assets/fonts/OpenSans-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: "OpenSans-Bold";
-  src: url("assets/fonts/OpenSans-Bold.ttf") format("truetype");
+  src: url("/src/assets/fonts/OpenSans-Bold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: "OpenSans-SemiBold";
-  src: url("assets/fonts/OpenSans-SemiBold.ttf") format("truetype");
+  src: url("/src/assets/fonts/OpenSans-SemiBold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
@@ -228,7 +228,7 @@ html {
 .page {
   font-size: 1.6rem;
   background-color: #160503;
-  background-image: url("assets/images/dots.png");
+  background-image: url("/src/assets/images/dots.png");
   background-size: 1130px 597px;
   background-repeat: no-repeat;
   background-position: center 150px;
@@ -303,11 +303,11 @@ h1.title {
   .author-link-employee {
     padding-left: 26px; }
   .author-link-insta {
-    background: no-repeat left url("assets/images/insta-icon.svg"); }
+    background: no-repeat left url("/src/assets/images/insta-icon.svg"); }
   .author-link-behance {
-    background: no-repeat left url("assets/images/behance-icon.svg"); }
+    background: no-repeat left url("/src/assets/images/behance-icon.svg"); }
   .author-link-linkedin {
-    background: no-repeat left url("assets/images/linkedin-icon.svg"); }
+    background: no-repeat left url("/src/assets/images/linkedin-icon.svg"); }
 
 .employee-description {
   margin-bottom: 30px; }
@@ -606,7 +606,7 @@ html {
 .page {
   font-size: 1.6rem;
   background-color: #160503;
-  background-image: url("assets/images/dots.png");
+  background-image: url("/src/assets/images/dots.png");
   background-size: 1130px 597px;
   background-repeat: no-repeat;
   background-position: center 150px;
@@ -681,11 +681,11 @@ h1.title {
   .author-link-employee {
     padding-left: 26px; }
   .author-link-insta {
-    background: no-repeat left url("assets/images/insta-icon.svg"); }
+    background: no-repeat left url("/src/assets/images/insta-icon.svg"); }
   .author-link-behance {
-    background: no-repeat left url("assets/images/behance-icon.svg"); }
+    background: no-repeat left url("/src/assets/images/behance-icon.svg"); }
   .author-link-linkedin {
-    background: no-repeat left url("assets/images/linkedin-icon.svg"); }
+    background: no-repeat left url("/src/assets/images/linkedin-icon.svg"); }
 
 .employee-description {
   margin-bottom: 30px; }
@@ -857,7 +857,7 @@ h1.title {
         width: 100%;
         height: 100vh;
         background-color: #160503;
-        background-image: url("assets/images/dots.png");
+        background-image: url("/src/assets/images/dots.png");
         background-size: 1130px 597px;
         background-repeat: no-repeat;
         background-position: center 150px;
@@ -951,45 +951,45 @@ h1.title {
       .header.scrolled .burger-menu-honey-3 {
         grid-column: 9 / span 3;
         grid-row: 2 / span 2;
-        background: url("assets/images/border-orange.svg") no-repeat 50%/92%; }
+        background: url("/src/assets/images/border-orange.svg") no-repeat 50%/92%; }
         @media (max-width: 900px) {
           .header.scrolled .burger-menu-honey-3 {
             grid-column: 5 / span 3;
             grid-row: 3 / span 2; } }
         .header.scrolled .burger-menu-honey-3.green {
-          background-image: url("assets/images/green.svg"); }
+          background-image: url("/src/assets/images/green.svg"); }
         .header.scrolled .burger-menu-honey-3.purple {
-          background-image: url("assets/images/purple.svg"); }
+          background-image: url("/src/assets/images/purple.svg"); }
         .header.scrolled .burger-menu-honey-3.blue {
-          background-image: url("assets/images/blue.svg"); }
+          background-image: url("/src/assets/images/blue.svg"); }
         .header.scrolled .burger-menu-honey-3.brown {
-          background-image: url("assets/images/brown.svg"); }
+          background-image: url("/src/assets/images/brown.svg"); }
         .header.scrolled .burger-menu-honey-3.emerald {
-          background-image: url("assets/images/emerald.svg"); }
+          background-image: url("/src/assets/images/emerald.svg"); }
         .header.scrolled .burger-menu-honey-3.yellow {
-          background-image: url("assets/images/yellow.svg"); }
+          background-image: url("/src/assets/images/yellow.svg"); }
         .header.scrolled .burger-menu-honey-3:before {
           background: radial-gradient(113.33% 113.33% at 50% 50%, #eab569 1.31%, #6e3f20 30.81%, #160503 54.77%); }
       .header.scrolled .burger-menu-honey-4 {
         grid-column: 11 / span 3;
         grid-row: 1 / span 2;
-        background: url("assets/images/border-orange.svg") no-repeat 50%/92%; }
+        background: url("/src/assets/images/border-orange.svg") no-repeat 50%/92%; }
         @media (max-width: 900px) {
           .header.scrolled .burger-menu-honey-4 {
             grid-column: 5 / span 3;
             grid-row: 1 / span 2; } }
         .header.scrolled .burger-menu-honey-4.green {
-          background-image: url("assets/images/green.svg"); }
+          background-image: url("/src/assets/images/green.svg"); }
         .header.scrolled .burger-menu-honey-4.purple {
-          background-image: url("assets/images/purple.svg"); }
+          background-image: url("/src/assets/images/purple.svg"); }
         .header.scrolled .burger-menu-honey-4.blue {
-          background-image: url("assets/images/blue.svg"); }
+          background-image: url("/src/assets/images/blue.svg"); }
         .header.scrolled .burger-menu-honey-4.brown {
-          background-image: url("assets/images/brown.svg"); }
+          background-image: url("/src/assets/images/brown.svg"); }
         .header.scrolled .burger-menu-honey-4.emerald {
-          background-image: url("assets/images/emerald.svg"); }
+          background-image: url("/src/assets/images/emerald.svg"); }
         .header.scrolled .burger-menu-honey-4.yellow {
-          background-image: url("assets/images/yellow.svg"); }
+          background-image: url("/src/assets/images/yellow.svg"); }
         .header.scrolled .burger-menu-honey-4:before {
           background: radial-gradient(100.5% 100.5% at 50% 50%, #83f1c5 4.34%, #160503 52.17%); }
       .header.scrolled .burger-menu-honey-5 {
@@ -1037,35 +1037,35 @@ h1.title {
       .header.scrolled .burger-menu-honey-10 {
         grid-row: 5 / span 2;
         grid-column: 3 / span 3;
-        background: url("assets/images/border-orange.svg") no-repeat 50%/92%; }
+        background: url("/src/assets/images/border-orange.svg") no-repeat 50%/92%; }
         .header.scrolled .burger-menu-honey-10.green {
-          background-image: url("assets/images/green.svg"); }
+          background-image: url("/src/assets/images/green.svg"); }
         .header.scrolled .burger-menu-honey-10.purple {
-          background-image: url("assets/images/purple.svg"); }
+          background-image: url("/src/assets/images/purple.svg"); }
         .header.scrolled .burger-menu-honey-10.blue {
-          background-image: url("assets/images/blue.svg"); }
+          background-image: url("/src/assets/images/blue.svg"); }
         .header.scrolled .burger-menu-honey-10.brown {
-          background-image: url("assets/images/brown.svg"); }
+          background-image: url("/src/assets/images/brown.svg"); }
         .header.scrolled .burger-menu-honey-10.emerald {
-          background-image: url("assets/images/emerald.svg"); }
+          background-image: url("/src/assets/images/emerald.svg"); }
         .header.scrolled .burger-menu-honey-10.yellow {
-          background-image: url("assets/images/yellow.svg"); }
+          background-image: url("/src/assets/images/yellow.svg"); }
       .header.scrolled .burger-menu-honey-11 {
         grid-row: 2 / span 2;
         grid-column: 1 / span 3;
-        background: url("assets/images/border-orange.svg") no-repeat 50%/92%; }
+        background: url("/src/assets/images/border-orange.svg") no-repeat 50%/92%; }
         .header.scrolled .burger-menu-honey-11.green {
-          background-image: url("assets/images/green.svg"); }
+          background-image: url("/src/assets/images/green.svg"); }
         .header.scrolled .burger-menu-honey-11.purple {
-          background-image: url("assets/images/purple.svg"); }
+          background-image: url("/src/assets/images/purple.svg"); }
         .header.scrolled .burger-menu-honey-11.blue {
-          background-image: url("assets/images/blue.svg"); }
+          background-image: url("/src/assets/images/blue.svg"); }
         .header.scrolled .burger-menu-honey-11.brown {
-          background-image: url("assets/images/brown.svg"); }
+          background-image: url("/src/assets/images/brown.svg"); }
         .header.scrolled .burger-menu-honey-11.emerald {
-          background-image: url("assets/images/emerald.svg"); }
+          background-image: url("/src/assets/images/emerald.svg"); }
         .header.scrolled .burger-menu-honey-11.yellow {
-          background-image: url("assets/images/yellow.svg"); }
+          background-image: url("/src/assets/images/yellow.svg"); }
       .header.scrolled .burger-menu-honey-12 {
         grid-row: 1 / span 2;
         grid-column: 3 / span 3; }
@@ -1307,19 +1307,19 @@ h1.title {
     .honeycomb .honey-1 {
       grid-row: 1 / span 2;
       grid-column: 5 / span 3;
-      background: url("assets/images/border-orange.svg") no-repeat 50%/92%; }
+      background: url("/src/assets/images/border-orange.svg") no-repeat 50%/92%; }
       .honeycomb .honey-1.green {
-        background-image: url("assets/images/green.svg"); }
+        background-image: url("/src/assets/images/green.svg"); }
       .honeycomb .honey-1.purple {
-        background-image: url("assets/images/purple.svg"); }
+        background-image: url("/src/assets/images/purple.svg"); }
       .honeycomb .honey-1.blue {
-        background-image: url("assets/images/blue.svg"); }
+        background-image: url("/src/assets/images/blue.svg"); }
       .honeycomb .honey-1.brown {
-        background-image: url("assets/images/brown.svg"); }
+        background-image: url("/src/assets/images/brown.svg"); }
       .honeycomb .honey-1.emerald {
-        background-image: url("assets/images/emerald.svg"); }
+        background-image: url("/src/assets/images/emerald.svg"); }
       .honeycomb .honey-1.yellow {
-        background-image: url("assets/images/yellow.svg"); }
+        background-image: url("/src/assets/images/yellow.svg"); }
     .honeycomb .honey-2 {
       grid-row: 2 / span 2;
       grid-column: 3 / span 3; }
@@ -1338,19 +1338,19 @@ h1.title {
     .honeycomb .honey-5 {
       grid-row: 3 / span 2;
       grid-column: 1 / span 3;
-      background: url("assets/images/border-orange.svg") no-repeat 50%/92%; }
+      background: url("/src/assets/images/border-orange.svg") no-repeat 50%/92%; }
       .honeycomb .honey-5.green {
-        background-image: url("assets/images/green.svg"); }
+        background-image: url("/src/assets/images/green.svg"); }
       .honeycomb .honey-5.purple {
-        background-image: url("assets/images/purple.svg"); }
+        background-image: url("/src/assets/images/purple.svg"); }
       .honeycomb .honey-5.blue {
-        background-image: url("assets/images/blue.svg"); }
+        background-image: url("/src/assets/images/blue.svg"); }
       .honeycomb .honey-5.brown {
-        background-image: url("assets/images/brown.svg"); }
+        background-image: url("/src/assets/images/brown.svg"); }
       .honeycomb .honey-5.emerald {
-        background-image: url("assets/images/emerald.svg"); }
+        background-image: url("/src/assets/images/emerald.svg"); }
       .honeycomb .honey-5.yellow {
-        background-image: url("assets/images/yellow.svg"); }
+        background-image: url("/src/assets/images/yellow.svg"); }
     .honeycomb .honey-6 {
       grid-row: 3 / span 2;
       grid-column: 5 / span 3; }
@@ -1476,7 +1476,7 @@ h1.title {
 
 .page-cases .cases {
   margin-top: 190px; }
-.page-cases .cases .activeClass {
+  .page-cases .cases .activeClass {
     background-color: #fff;
     color: #160503; }
 
@@ -1522,7 +1522,7 @@ h1.title {
   font-family: "Raleway-SemiBold";
   font-weight: 600;
   cursor: pointer; }
-.tab-toggle:last-child {
+  .tab-toggle:last-child {
     margin-right: 0; }
 
 .cases-row {
@@ -2039,7 +2039,7 @@ h1.title {
     height: 30px;
     overflow: hidden;
     display: block;
-    background-image: url("assets/images/arrow-right.svg");
+    background-image: url("/src/assets/images/arrow-right.svg");
     background-repeat: no-repeat;
     background-position: 12px;
     transition: width 0.3s linear, border-radius 0.3s linear; }
@@ -2184,7 +2184,7 @@ h1.title {
   min-height: 120px;
   padding: 43px 30px; }
   .other-services-item .title-standart {
-    background: url("assets/images/arrow-right.svg");
+    background: url("/src/assets/images/arrow-right.svg");
     background-position: right center;
     background-repeat: no-repeat; }
 
@@ -2203,10 +2203,10 @@ h1.title {
 .article-page .article-back {
   margin-top: 100px;
   height: 233px;
-  background: no-repeat center/cover url("assets/images/article-back.png"); }
+  background: no-repeat center/cover url("/src/assets/images/article-back.png"); }
   .article-page .article-back-rating {
     padding-left: 22px;
-    background: no-repeat left url("assets/images/star.svg");
+    background: no-repeat left url("/src/assets/images/star.svg");
     position: absolute;
     top: 25px;
     right: 0; }
@@ -2219,11 +2219,11 @@ h1.title {
       margin-right: 15px;
       padding-left: 22px; }
     .article-page .article-back-info-like {
-      background: no-repeat left url("assets/images/like.svg"); }
+      background: no-repeat left url("/src/assets/images/like.svg"); }
     .article-page .article-back-info-view {
-      background: no-repeat left url("assets/images/eye.svg"); }
+      background: no-repeat left url("/src/assets/images/eye.svg"); }
     .article-page .article-back-info-comment {
-      background: no-repeat left url("assets/images/comment.svg"); }
+      background: no-repeat left url("/src/assets/images/comment.svg"); }
   .article-page .article-back-inner {
     height: 100%;
     position: relative; }
@@ -2298,25 +2298,25 @@ h1.title {
     .article-page .article-extended-social .social-item-like {
       background: linear-gradient(90deg, #f83600 0%, #f83b00 28.65%, #fe8c00 100%); }
       .article-page .article-extended-social .social-item-like-inner {
-        background: no-repeat left center url("assets/images/like.svg"); }
+        background: no-repeat left center url("/src/assets/images/like.svg"); }
     .article-page .article-extended-social .social-item-twitter {
       background: #00acee; }
       .article-page .article-extended-social .social-item-twitter-inner {
-        background: no-repeat left center url("assets/images/twitter-icon.svg"); }
+        background: no-repeat left center url("/src/assets/images/twitter-icon.svg"); }
     .article-page .article-extended-social .social-item-facebook {
       background: #3b5998; }
       .article-page .article-extended-social .social-item-facebook-inner {
-        background: no-repeat left center url("assets/images/facebook-icon.svg"); }
+        background: no-repeat left center url("/src/assets/images/facebook-icon.svg"); }
     .article-page .article-extended-social .social-item-telegram {
       background: #0088cc; }
       .article-page .article-extended-social .social-item-telegram-inner {
-        background: no-repeat left center url("assets/images/telegram-icon.svg"); }
+        background: no-repeat left center url("/src/assets/images/telegram-icon.svg"); }
     .article-page .article-extended-social .social-item-inner {
       padding-left: 22px; }
 
 .article-page .article-extended-error {
   padding-left: 23px;
-  background: no-repeat left center url("assets/images/error-icon.svg"); }
+  background: no-repeat left center url("/src/assets/images/error-icon.svg"); }
 
 .article-page .comment .number {
   color: #fff; }
@@ -2333,13 +2333,13 @@ h1.title {
   .article-date-calendar {
     margin-right: 1.66rem;
     padding-left: 21px;
-    background: url("assets/images/calendar.svg") no-repeat 0 center; }
+    background: url("/src/assets/images/calendar.svg") no-repeat 0 center; }
   .article-date-author {
     padding-left: 21px;
-    background: url("assets/images/user.svg") no-repeat 0 center; }
+    background: url("/src/assets/images/user.svg") no-repeat 0 center; }
   .article-date-time {
     padding-left: 20px;
-    background: no-repeat left url("assets/images/clock.svg"); }
+    background: no-repeat left url("/src/assets/images/clock.svg"); }
 
 .comments-row {
   overflow: hidden;
@@ -2549,11 +2549,11 @@ h1.title {
     transform: scale(1.1); }
   .popup_login .login_btn_google {
     background-color: #fff;
-    background-image: url("assets/images/google.svg");
+    background-image: url("/src/assets/images/google.svg");
     color: #000; }
   .popup_login .login_btn_facebook {
     background-color: #3b5998;
-    background-image: url("assets/images/facebook-login.svg");
+    background-image: url("/src/assets/images/facebook-login.svg");
     margin-bottom: 0; }
 
 .popup_login .title {
@@ -2584,7 +2584,7 @@ h1.title {
   padding: 28px 30px 28px 75px;
   height: auto;
   min-height: 100px;
-  background-image: url("assets/images/send.svg");
+  background-image: url("/src/assets/images/send.svg");
   background-repeat: no-repeat;
   background-position: 30px center; }
 
@@ -2597,15 +2597,28 @@ h1.title {
 .popup_send_moderation .popup_login_descr {
   font-size: 12px; }
 
+.popup_send_moderation.popup_try_again .popup_dialog {
+  padding: 28px 30px 28px 75px;
+  height: auto;
+  min-height: 100px;
+  background-image: url("/src/assets/images/send2.svg");
+  background-repeat: no-repeat;
+  background-position: 30px center; }
+
 .popup_cookies .popup_dialog {
-  background-image: url("assets/images/cookie.svg"); }
+  background-image: url("/src/assets/images/cookie.svg"); }
 
 .popup_cookies .cookies_link {
   font-weight: 600; }
 
-.page-contacts .contacts-wrapper{
-  padding-top: 90px;
-}
+.popup.popup_send_moderation .btn-orange {
+  width: 190px; }
+  @media screen and (max-width: 640px) {
+    .popup.popup_send_moderation .btn-orange {
+      font-size: 1.2rem; } }
+
+.page-contacts .contacts-wrapper {
+  padding-top: 90px; }
   .page-contacts .contacts-wrapper .title {
     margin-top: 0; }
 
@@ -2642,7 +2655,6 @@ h1.title {
   width: 100%;
   font-size: 1.6rem;
   font-family: "Raleway"; }
-
 
 .page-contacts .form-contact input::placeholder,
 .page-contacts .form-contact textarea::placeholder {
