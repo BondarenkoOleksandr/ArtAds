@@ -847,8 +847,8 @@ $(document).ready(function () {
       customPaging: function customPaging(slider, i) {
         return '<div class="dots-block"><div class="dotscustom"></div></div>';
       },
-      prevArrow: '<div class="arrow arrow-left"><img class="arrow-img arrow-img--left" src="/static/assets/images/arrow-left.svg"></div>',
-      nextArrow: '<div class="arrow arrow-right"><img class="arrow-img arrow-img--right" src="/static/assets/images/arrow-right.svg"></div>',
+      prevArrow: '<div class="arrow arrow-left"><img class="arrow-img arrow-img--left" src="/src/assets/images/arrow-left.svg"></div>',
+      nextArrow: '<div class="arrow arrow-right"><img class="arrow-img arrow-img--right" src="/src/assets/images/arrow-right.svg"></div>',
       responsive: [{
         breakpoint: 640,
         settings: {
@@ -869,8 +869,8 @@ $(document).ready(function () {
       dots: false,
       autoplay: true,
       autoplaySpeed: 1500,
-      prevArrow: '<div class="arrow arrow-left"><img class="arrow-img arrow-img--left" src="/static/assets/images/arrow-left.svg"></div>',
-      nextArrow: '<div class="arrow arrow-right"><img class="arrow-img arrow-img--right" src="/static/assets/images/arrow-right.svg"></div>'
+      prevArrow: '<div class="arrow arrow-left"><img class="arrow-img arrow-img--left" src="/src/assets/images/arrow-left.svg"></div>',
+      nextArrow: '<div class="arrow arrow-right"><img class="arrow-img arrow-img--right" src="/src/assets/images/arrow-right.svg"></div>'
     });
   }
 
@@ -886,8 +886,8 @@ $(document).ready(function () {
       dots: false,
       autoplay: true,
       autoplaySpeed: 1500,
-      prevArrow: '<div class="arrow arrow-left"><img class="arrow-img arrow-img--left" src="/static/assets/images/arrow-left.svg"></div>',
-      nextArrow: '<div class="arrow arrow-right"><img class="arrow-img arrow-img--right" src="/static/assets/images/arrow-right.svg"></div>'
+      prevArrow: '<div class="arrow arrow-left"><img class="arrow-img arrow-img--left" src="/src/assets/images/arrow-left.svg"></div>',
+      nextArrow: '<div class="arrow arrow-right"><img class="arrow-img arrow-img--right" src="/src/assets/images/arrow-right.svg"></div>'
     });
     $('.slider-nav').slick({
       slidesToShow: 2,
@@ -964,51 +964,56 @@ var tabs = function tabs() {
         div.classList.remove('remove');
         div.classList.add('show');
       });
-    };
+    }; // webTab.addEventListener('click', showWeb)
+    // function showWeb() {
+    //   allFilteredDivsArray.forEach(div => {
+    //     div.classList.remove('remove')
+    //     if (!div.dataset.web) { // скрываем все блоки без dataset WEB
+    //       div.classList.add('remove')
+    //     }
+    //   })
+    // }
+    // seoTab.addEventListener('click', showSeo)
+    // function showSeo() {
+    //   allFilteredDivsArray.forEach(div => {
+    //     div.classList.remove('remove')
+    //     if (!div.dataset.seo) {
+    //       div.classList.add('remove')
+    //     }
+    //   })
+    // }
+    // smmTab.addEventListener('click', showSmm)
+    // function showSmm() {
+    //   allFilteredDivsArray.forEach(div => {
+    //     div.classList.remove('remove')
+    //     if (!div.dataset.smm) {
+    //       div.classList.add('remove')
+    //     }
+    //   })
+    // }
 
-    var showWeb = function showWeb() {
-      allFilteredDivsArray.forEach(function (div) {
-        div.classList.remove('remove');
-
-        if (!div.dataset.web) {
-          // скрываем все блоки без dataset WEB
-          div.classList.add('remove');
-        }
-      });
-    };
-
-    var showSeo = function showSeo() {
-      allFilteredDivsArray.forEach(function (div) {
-        div.classList.remove('remove');
-
-        if (!div.dataset.seo) {
-          div.classList.add('remove');
-        }
-      });
-    };
-
-    var showSmm = function showSmm() {
-      allFilteredDivsArray.forEach(function (div) {
-        div.classList.remove('remove');
-
-        if (!div.dataset.smm) {
-          div.classList.add('remove');
-        }
-      });
-    };
 
     tabToggle.forEach(function (item) {
       item.addEventListener('click', function () {
+        console.log('step1');
         tabToggle.forEach(function (child) {
           child.classList.remove('activeClass');
+          console.log('step2');
         });
-        item.classList.add('activeClass');
+        item.classList.add('activeClass'); // function tabFunction() {
+
+        allFilteredDivsArray.forEach(function (div) {
+          div.classList.remove('remove');
+          console.log('step3');
+
+          if (div.getAttribute('data-tab') !== item.getAttribute('data-tab')) {
+            // скрываем все блоки без dataset WEB
+            div.classList.add('remove');
+          }
+        }); // }
       });
     });
     showAllTab.addEventListener('click', showAll);
-    webTab.addEventListener('click', showWeb);
-    seoTab.addEventListener('click', showSeo);
-    smmTab.addEventListener('click', showSmm);
   } //TABS END
 
 };
