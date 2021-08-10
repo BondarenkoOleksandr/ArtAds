@@ -14,6 +14,14 @@ $(document).ready(function () {
             }
             },
             dataType: 'json',
-        });
+        })
+        .then(() => {
+            document.querySelector('.popup_send_moderation').style.top= "0px"; // выводим сообщение о успешной отправке
+            document.body.style.overflow = "hidden";
+        })
+        .fail(() => document.querySelector('.popup_send_moderation.popup_try_again').style.top= "0px")// сообщение об ошибке при ошибке
+        .done(() => { //после отправки формы
+            $(".send_comment textarea").value = '';
+            }) ;
     });
 });
