@@ -193,6 +193,14 @@ window.addEventListener('DOMContentLoaded', function () {
       like.classList.toggle('add');
     });
   });
+  jquery__WEBPACK_IMPORTED_MODULE_1___default()(".rating input:radio").attr("checked", false);
+  jquery__WEBPACK_IMPORTED_MODULE_1___default()('.rating input').click(function () {
+    jquery__WEBPACK_IMPORTED_MODULE_1___default()(".rating span").removeClass('checked');
+    jquery__WEBPACK_IMPORTED_MODULE_1___default()(this).parent().addClass('checked');
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_1___default()('input:radio').change(function () {
+    var userRating = this.value;
+  });
 }); //header start
 
 jquery__WEBPACK_IMPORTED_MODULE_1___default()(window).on("load", function () {
