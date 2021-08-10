@@ -1,11 +1,11 @@
 from datetime import date
 
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.http import HttpResponse, JsonResponse
-from django.shortcuts import render
+from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
+from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.views.generic import DetailView, ListView, CreateView
 
 from articles.forms import CommentCreateForm
@@ -24,7 +24,7 @@ class ArticleDetailView(DetailView):
 
     def get(self, request, slug):
         article = Article.objects.get(slug=slug)
-        comments = article.comments.filter(status=1)
+        comments = article.comments.filter(status=1, parent=None)
 
         time_after_publish = date.today() - article.publish_date
 
@@ -60,6 +60,19 @@ class CommentCreateView(LoginRequiredMixin, CreateView):
             return HttpResponse(form.errors.as_json(), status=400)
             # return JsonResponse(data=form.errors.as_json(), status=500)
 
-        data = {'comment': form.instance.text, 'user': form.instance.user.first_name, 'pub_date': form.instance.pub_date}
+        data = {'comment': form.instance.text, 'user': form.instance.user.first_name,
+                'pub_date': form.instance.pub_date}
 
         return JsonResponse(data)
+
+
+def article_like(request, slug):
+    article = get_object_or_404(Article, slug=slug)
+    if article.likes.filter(id=request.user.id).exists():
+        article.likes.remove(request.user)
+    else:
+        article.likes.add(request.user)
+
+    data = {'number_of_likes': article.number_of_likes}
+
+    return JsonResponse(data)

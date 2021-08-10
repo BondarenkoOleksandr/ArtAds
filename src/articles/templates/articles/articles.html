@@ -32,7 +32,7 @@
               </div>
               <div class="article-decsription">
                 <p class="article-paragraph article-paragraph--short">
-                  {{article.text}}
+                  {{article.text_before_quote|cut:'</p>'|cut:'<p>'}}
                 </p>
               </div>
               <a class="article-link" href="{% url 'articles:article' slug=article.get_slug %}">
