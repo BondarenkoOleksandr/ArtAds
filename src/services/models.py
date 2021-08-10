@@ -39,7 +39,8 @@ class ServiceCategory(models.Model):
         to='services.ServiceArticle',
         null=True,
         verbose_name='Article',
-        on_delete=models.SET_NULL
+        related_name='category',
+        on_delete=models.SET_NULL,
     )
     slug = models.SlugField(
         default='',

@@ -21,7 +21,7 @@ $(document).ready(function () {
         })
         .fail(() => document.querySelector('.popup_send_moderation.popup_try_again').style.top= "0px")// сообщение об ошибке при ошибке
         .done(() => { //после отправки формы
-            $(".send_comment textarea").value = '';
+                $(".textarea").val('');
             }) ;
     });
 });
