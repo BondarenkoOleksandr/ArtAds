@@ -1,0 +1,307 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load socialaccount %}
+{% block pagename %}article-page{% endblock %}
+{% block content %}
+  <section class="article-back">
+      <div class="site-width article-back-inner">
+        <a href="/" class="article-category">WEB</a>
+        <div class="article-back-rating">
+            <span class="article-back-rating-number number">4</span>
+        </div>
+        <div class="article-back-info">
+            <div class="article-back-info-item article-back-info-like">
+               <span class="article-back-info-like-number number">43</span>
+            </div>
+            <div class="article-back-info-item article-back-info-view">
+                <span class="article-back-info-view-number number">{{article.views_count}}</span>
+             </div>
+             <div class="article-back-info-item article-back-info-comment">
+                <span class="article-back-info-comment-number number">{{comments.count}}</span>
+             </div>
+        </div>
+      </div>
+  </section>
+  <section class="articles-wrapper">
+    <div class="site-width">
+      <div class="article-extended">
+        <div class="article-date">
+            <div class="article-date-calendar">
+                {{article.publish_date}}
+            </div>
+            <div class="article-date-time">
+              {{ time_after_publish }}
+            </div>
+        </div>
+        <h1 class="title title-article">{{article.title}}</h1>
+        <div class="article-extended-content">
+            <div class="article-extended-author">
+                <div class="article-extended-author-photo" style="background: url({{article.author.employee.image.url}}) center center/cover no-repeat"></div>
+                <h3 class="article-extended-author-title">{{article.author.first_name}} {{article.author.last_name}}</h3>
+                <h4 class="article-extended-author-subtitle">{{article.author.position}}</h4>
+                <a href="/" class="author-link author-link-insta">@example</a>
+                <a href="/" class="author-link author-link-behance">@example</a>
+            </div>
+            <div class="article-extended-text">
+                {{article.text_before_quote|safe}}
+                <p><quote class="quote">{{article.quote}}</quote></p>
+                {{article.text_after_quote|safe}}
+            </div>
+            <div class="article-extended-footer">
+                <div class="article-extended-rating">
+                    <div class="stars-active">
+                        <svg width="17" height="17" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.57446 1.26234C6.91339 0.433866 8.08661 0.433864 8.42554 1.26234L9.66112 4.28251C9.80763 4.64064 10.1476 4.8821 10.534 4.90247L13.8423 5.07688C14.7686 5.12572 15.135 6.30001 14.4009 6.86697L11.9181 8.78424C11.5959 9.03309 11.4567 9.45246 11.5662 9.84461L12.401 12.8348C12.6451 13.7094 11.6914 14.4304 10.9165 13.9571L8.02131 12.1885C7.70127 11.9929 7.29873 11.993 6.97869 12.1885L4.08349 13.9571C3.30863 14.4304 2.35485 13.7094 2.59901 12.8348L3.43383 9.8446C3.54331 9.45246 3.40411 9.03309 3.08187 8.78424L0.599151 6.86697C-0.135014 6.30001 0.231401 5.12572 1.15771 5.07688L4.46599 4.90247C4.85239 4.8821 5.19237 4.64064 5.33888 4.28251L6.57446 1.26234Z" fill="#FDC800"/>
+                        </svg>
+                        <svg width="17" height="17" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.57446 1.26234C6.91339 0.433866 8.08661 0.433864 8.42554 1.26234L9.66112 4.28251C9.80763 4.64064 10.1476 4.8821 10.534 4.90247L13.8423 5.07688C14.7686 5.12572 15.135 6.30001 14.4009 6.86697L11.9181 8.78424C11.5959 9.03309 11.4567 9.45246 11.5662 9.84461L12.401 12.8348C12.6451 13.7094 11.6914 14.4304 10.9165 13.9571L8.02131 12.1885C7.70127 11.9929 7.29873 11.993 6.97869 12.1885L4.08349 13.9571C3.30863 14.4304 2.35485 13.7094 2.59901 12.8348L3.43383 9.8446C3.54331 9.45246 3.40411 9.03309 3.08187 8.78424L0.599151 6.86697C-0.135014 6.30001 0.231401 5.12572 1.15771 5.07688L4.46599 4.90247C4.85239 4.8821 5.19237 4.64064 5.33888 4.28251L6.57446 1.26234Z" fill="#FDC800"/>
+                        </svg>
+                        <svg width="17" height="17" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.57446 1.26234C6.91339 0.433866 8.08661 0.433864 8.42554 1.26234L9.66112 4.28251C9.80763 4.64064 10.1476 4.8821 10.534 4.90247L13.8423 5.07688C14.7686 5.12572 15.135 6.30001 14.4009 6.86697L11.9181 8.78424C11.5959 9.03309 11.4567 9.45246 11.5662 9.84461L12.401 12.8348C12.6451 13.7094 11.6914 14.4304 10.9165 13.9571L8.02131 12.1885C7.70127 11.9929 7.29873 11.993 6.97869 12.1885L4.08349 13.9571C3.30863 14.4304 2.35485 13.7094 2.59901 12.8348L3.43383 9.8446C3.54331 9.45246 3.40411 9.03309 3.08187 8.78424L0.599151 6.86697C-0.135014 6.30001 0.231401 5.12572 1.15771 5.07688L4.46599 4.90247C4.85239 4.8821 5.19237 4.64064 5.33888 4.28251L6.57446 1.26234Z" fill="#FDC800"/>
+                        </svg>
+                        <svg width="17" height="17" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.57446 1.26234C6.91339 0.433866 8.08661 0.433864 8.42554 1.26234L9.66112 4.28251C9.80763 4.64064 10.1476 4.8821 10.534 4.90247L13.8423 5.07688C14.7686 5.12572 15.135 6.30001 14.4009 6.86697L11.9181 8.78424C11.5959 9.03309 11.4567 9.45246 11.5662 9.84461L12.401 12.8348C12.6451 13.7094 11.6914 14.4304 10.9165 13.9571L8.02131 12.1885C7.70127 11.9929 7.29873 11.993 6.97869 12.1885L4.08349 13.9571C3.30863 14.4304 2.35485 13.7094 2.59901 12.8348L3.43383 9.8446C3.54331 9.45246 3.40411 9.03309 3.08187 8.78424L0.599151 6.86697C-0.135014 6.30001 0.231401 5.12572 1.15771 5.07688L4.46599 4.90247C4.85239 4.8821 5.19237 4.64064 5.33888 4.28251L6.57446 1.26234Z" fill="#FDC800"/>
+                        </svg>
+                        <svg width="17" height="17" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.57446 1.26234C6.91339 0.433866 8.08661 0.433864 8.42554 1.26234L9.66112 4.28251C9.80763 4.64064 10.1476 4.8821 10.534 4.90247L13.8423 5.07688C14.7686 5.12572 15.135 6.30001 14.4009 6.86697L11.9181 8.78424C11.5959 9.03309 11.4567 9.45246 11.5662 9.84461L12.401 12.8348C12.6451 13.7094 11.6914 14.4304 10.9165 13.9571L8.02131 12.1885C7.70127 11.9929 7.29873 11.993 6.97869 12.1885L4.08349 13.9571C3.30863 14.4304 2.35485 13.7094 2.59901 12.8348L3.43383 9.8446C3.54331 9.45246 3.40411 9.03309 3.08187 8.78424L0.599151 6.86697C-0.135014 6.30001 0.231401 5.12572 1.15771 5.07688L4.46599 4.90247C4.85239 4.8821 5.19237 4.64064 5.33888 4.28251L6.57446 1.26234Z" fill="#FDC800"/>
+                            </svg>
+                    </div>
+                    <div class="stars">
+                        <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.04467 15.7784C2.9618 16.2501 3.42717 16.6188 3.8373 16.4084L8.50167 14.0114L13.165 16.4084C13.5751 16.6188 14.0405 16.2501 13.9576 15.7794L13.0757 10.7538L16.8179 7.18805C17.1685 6.85443 16.9879 6.24455 16.5182 6.17868L11.3141 5.43918L8.99361 0.841739C8.9494 0.748546 8.87966 0.669808 8.79249 0.614674C8.70531 0.55954 8.60429 0.530273 8.50114 0.530273C8.39799 0.530273 8.29697 0.55954 8.20979 0.614674C8.12262 0.669808 8.05288 0.748546 8.00867 0.841739L5.68817 5.44024L0.484046 6.17974C0.0154833 6.24561 -0.166204 6.85549 0.183358 7.18911L3.92655 10.7549L3.04467 15.7805V15.7784ZM8.25623 12.8384L4.33986 14.8508L5.07723 10.6465C5.09451 10.5497 5.08775 10.4502 5.05755 10.3566C5.02735 10.2631 4.97464 10.1783 4.90405 10.1099L1.81642 7.1668L6.12167 6.5548C6.21082 6.54134 6.29538 6.50647 6.3681 6.45317C6.44082 6.39988 6.49954 6.32975 6.53923 6.2488L8.49955 2.36218L10.462 6.2488C10.5017 6.32975 10.5604 6.39988 10.6331 6.45317C10.7058 6.50647 10.7904 6.54134 10.8795 6.5548L15.1848 7.16574L12.0972 10.1089C12.0264 10.1774 11.9736 10.2623 11.9434 10.356C11.9132 10.4498 11.9065 10.5495 11.924 10.6465L12.6614 14.8508L8.74498 12.8384C8.66925 12.7994 8.58528 12.779 8.50008 12.779C8.41487 12.779 8.3309 12.7994 8.25517 12.8384H8.25623Z" fill="#E5E5E5"/>
+                        </svg>
+                        <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.04467 15.7784C2.9618 16.2501 3.42717 16.6188 3.8373 16.4084L8.50167 14.0114L13.165 16.4084C13.5751 16.6188 14.0405 16.2501 13.9576 15.7794L13.0757 10.7538L16.8179 7.18805C17.1685 6.85443 16.9879 6.24455 16.5182 6.17868L11.3141 5.43918L8.99361 0.841739C8.9494 0.748546 8.87966 0.669808 8.79249 0.614674C8.70531 0.55954 8.60429 0.530273 8.50114 0.530273C8.39799 0.530273 8.29697 0.55954 8.20979 0.614674C8.12262 0.669808 8.05288 0.748546 8.00867 0.841739L5.68817 5.44024L0.484046 6.17974C0.0154833 6.24561 -0.166204 6.85549 0.183358 7.18911L3.92655 10.7549L3.04467 15.7805V15.7784ZM8.25623 12.8384L4.33986 14.8508L5.07723 10.6465C5.09451 10.5497 5.08775 10.4502 5.05755 10.3566C5.02735 10.2631 4.97464 10.1783 4.90405 10.1099L1.81642 7.1668L6.12167 6.5548C6.21082 6.54134 6.29538 6.50647 6.3681 6.45317C6.44082 6.39988 6.49954 6.32975 6.53923 6.2488L8.49955 2.36218L10.462 6.2488C10.5017 6.32975 10.5604 6.39988 10.6331 6.45317C10.7058 6.50647 10.7904 6.54134 10.8795 6.5548L15.1848 7.16574L12.0972 10.1089C12.0264 10.1774 11.9736 10.2623 11.9434 10.356C11.9132 10.4498 11.9065 10.5495 11.924 10.6465L12.6614 14.8508L8.74498 12.8384C8.66925 12.7994 8.58528 12.779 8.50008 12.779C8.41487 12.779 8.3309 12.7994 8.25517 12.8384H8.25623Z" fill="#E5E5E5"/>
+                        </svg>
+                        <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.04467 15.7784C2.9618 16.2501 3.42717 16.6188 3.8373 16.4084L8.50167 14.0114L13.165 16.4084C13.5751 16.6188 14.0405 16.2501 13.9576 15.7794L13.0757 10.7538L16.8179 7.18805C17.1685 6.85443 16.9879 6.24455 16.5182 6.17868L11.3141 5.43918L8.99361 0.841739C8.9494 0.748546 8.87966 0.669808 8.79249 0.614674C8.70531 0.55954 8.60429 0.530273 8.50114 0.530273C8.39799 0.530273 8.29697 0.55954 8.20979 0.614674C8.12262 0.669808 8.05288 0.748546 8.00867 0.841739L5.68817 5.44024L0.484046 6.17974C0.0154833 6.24561 -0.166204 6.85549 0.183358 7.18911L3.92655 10.7549L3.04467 15.7805V15.7784ZM8.25623 12.8384L4.33986 14.8508L5.07723 10.6465C5.09451 10.5497 5.08775 10.4502 5.05755 10.3566C5.02735 10.2631 4.97464 10.1783 4.90405 10.1099L1.81642 7.1668L6.12167 6.5548C6.21082 6.54134 6.29538 6.50647 6.3681 6.45317C6.44082 6.39988 6.49954 6.32975 6.53923 6.2488L8.49955 2.36218L10.462 6.2488C10.5017 6.32975 10.5604 6.39988 10.6331 6.45317C10.7058 6.50647 10.7904 6.54134 10.8795 6.5548L15.1848 7.16574L12.0972 10.1089C12.0264 10.1774 11.9736 10.2623 11.9434 10.356C11.9132 10.4498 11.9065 10.5495 11.924 10.6465L12.6614 14.8508L8.74498 12.8384C8.66925 12.7994 8.58528 12.779 8.50008 12.779C8.41487 12.779 8.3309 12.7994 8.25517 12.8384H8.25623Z" fill="#E5E5E5"/>
+                        </svg>
+                        <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.04467 15.7784C2.9618 16.2501 3.42717 16.6188 3.8373 16.4084L8.50167 14.0114L13.165 16.4084C13.5751 16.6188 14.0405 16.2501 13.9576 15.7794L13.0757 10.7538L16.8179 7.18805C17.1685 6.85443 16.9879 6.24455 16.5182 6.17868L11.3141 5.43918L8.99361 0.841739C8.9494 0.748546 8.87966 0.669808 8.79249 0.614674C8.70531 0.55954 8.60429 0.530273 8.50114 0.530273C8.39799 0.530273 8.29697 0.55954 8.20979 0.614674C8.12262 0.669808 8.05288 0.748546 8.00867 0.841739L5.68817 5.44024L0.484046 6.17974C0.0154833 6.24561 -0.166204 6.85549 0.183358 7.18911L3.92655 10.7549L3.04467 15.7805V15.7784ZM8.25623 12.8384L4.33986 14.8508L5.07723 10.6465C5.09451 10.5497 5.08775 10.4502 5.05755 10.3566C5.02735 10.2631 4.97464 10.1783 4.90405 10.1099L1.81642 7.1668L6.12167 6.5548C6.21082 6.54134 6.29538 6.50647 6.3681 6.45317C6.44082 6.39988 6.49954 6.32975 6.53923 6.2488L8.49955 2.36218L10.462 6.2488C10.5017 6.32975 10.5604 6.39988 10.6331 6.45317C10.7058 6.50647 10.7904 6.54134 10.8795 6.5548L15.1848 7.16574L12.0972 10.1089C12.0264 10.1774 11.9736 10.2623 11.9434 10.356C11.9132 10.4498 11.9065 10.5495 11.924 10.6465L12.6614 14.8508L8.74498 12.8384C8.66925 12.7994 8.58528 12.779 8.50008 12.779C8.41487 12.779 8.3309 12.7994 8.25517 12.8384H8.25623Z" fill="#E5E5E5"/>
+                        </svg>
+                        <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.04467 15.7784C2.9618 16.2501 3.42717 16.6188 3.8373 16.4084L8.50167 14.0114L13.165 16.4084C13.5751 16.6188 14.0405 16.2501 13.9576 15.7794L13.0757 10.7538L16.8179 7.18805C17.1685 6.85443 16.9879 6.24455 16.5182 6.17868L11.3141 5.43918L8.99361 0.841739C8.9494 0.748546 8.87966 0.669808 8.79249 0.614674C8.70531 0.55954 8.60429 0.530273 8.50114 0.530273C8.39799 0.530273 8.29697 0.55954 8.20979 0.614674C8.12262 0.669808 8.05288 0.748546 8.00867 0.841739L5.68817 5.44024L0.484046 6.17974C0.0154833 6.24561 -0.166204 6.85549 0.183358 7.18911L3.92655 10.7549L3.04467 15.7805V15.7784ZM8.25623 12.8384L4.33986 14.8508L5.07723 10.6465C5.09451 10.5497 5.08775 10.4502 5.05755 10.3566C5.02735 10.2631 4.97464 10.1783 4.90405 10.1099L1.81642 7.1668L6.12167 6.5548C6.21082 6.54134 6.29538 6.50647 6.3681 6.45317C6.44082 6.39988 6.49954 6.32975 6.53923 6.2488L8.49955 2.36218L10.462 6.2488C10.5017 6.32975 10.5604 6.39988 10.6331 6.45317C10.7058 6.50647 10.7904 6.54134 10.8795 6.5548L15.1848 7.16574L12.0972 10.1089C12.0264 10.1774 11.9736 10.2623 11.9434 10.356C11.9132 10.4498 11.9065 10.5495 11.924 10.6465L12.6614 14.8508L8.74498 12.8384C8.66925 12.7994 8.58528 12.779 8.50008 12.779C8.41487 12.779 8.3309 12.7994 8.25517 12.8384H8.25623Z" fill="#E5E5E5"/>
+                        </svg>
+
+                    </div> 
+                    <p class="stars-text"><span class="stars-text-current number">4</span> из <span class="number">5</span> на основе <span class="stars-text-mark number">33</span> оценок</p>
+                </div>
+                <div class="article-extended-social">
+                    <div class="social-item social-item-like">
+                        <div class="social-item-inner social-item-like-inner number">43</div>
+                    </div>
+                    <div class="social-item social-item-twitter">
+                        <div class="social-item-inner social-item-twitter-inner number">43</div>
+                    </div>
+                    <div class="social-item social-item-facebook">
+                        <div class="social-item-inner social-item-facebook-inner number"><a href="https://www.facebook.com/sharer/sharer.php?{{ request.build_absolute_uri }}">LIKE</a></div>
+                    </div>
+                    <div class="social-item social-item-telegram">
+                        <div class="social-item-inner social-item-telegram-inner number">43</div>
+                    </div>
+                </div>
+                <div class="article-extended-error">
+                    <p>Обнаружили ошибку? Выделите ее и нажмите Ctrl + Enter.</p>
+                </div>
+            </div>
+        </div>  
+      </div>
+    </div>  
+  </section>
+  
+  <section class="articles">
+    <div class="site-width">
+      <div class="title-wrapper">
+        <h2 class="title title-center">Похожие статьи</h2>
+      </div>
+      <div class="articles-row">
+          {% for article in similar_articles %}
+            <div class="article">
+          <div class="article-picture">
+            <a href="/" class="article-category">{{article.category}}</a>
+            <a class="article-picture-link" href="/">
+              <img class="article-picture-img" src="{{article.image.url}}" alt="Article."></a>
+          </div>
+          <div class="article-footer">
+            <div class="article-date">
+              <div class="article-date-calendar">
+                  {{article.publish_date}}
+              </div>
+              <div class="article-date-author">
+                by {{article.author.first_name}} {{article.author.last_name}}
+              </div>
+            </div>
+            <div class="article-decsription">W
+              <p class="article-paragraph article-paragraph--short">
+                  {{article.text}}
+              </p>
+            </div>
+            <a class="article-link" href="{% url 'articles:article' slug=article.get_slug %}">
+              <div class="article-link-text">
+                Read more
+              </div>
+            </a>
+          </div>
+        </div>
+          {% endfor %}
+      </div>
+      <div class="cases-all">
+        <button id="read_more" class="btn cases-btn">Read more</button>
+      </div>
+    </div>
+</section>
+<section class="comments">
+    <div class="site-width">
+        <div class="title-wrapper">
+          <h2 class="title title-center">Комментарии</h2>
+        </div>
+        <div class="comments-row">
+            {% for comment in comments %}
+            <div class="comment">
+              <div class="comment-header">
+                  <div class="comment-photo"><img class="comment-photo-pic" src="{% static 'assets/images/author1.png' %}" alt="Author."></div>
+                  <div class="comment-info">
+                      <div class="comment-name">{{comment.user.first_name}}</div>
+                      <div class="comment-date number">{{comment.pub_date}}</div>
+                      <div class="comment-text">
+                          {{comment.text}}
+                      </div>
+                  </div>
+              </div>
+              <div class="button-row">
+                  <span class="response-btn">Ответить</span>
+              </div>
+                {% for subcomment in comment.subcomments.all %}
+                {% if subcomment.status == 1 %}
+                <div class="comment-header comment-subcomment">
+                  <div class="comment-photo"><img class="comment-photo-pic" src="/src/assets/images/author1.png" alt="Author."></div>
+                  <div class="comment-info">
+                      <div class="comment-name">{{subcomment.user.first_name}}</div>
+                      <div class="comment-date number">{{subcomment.pub_date}}</div>
+                      <div class="comment-text">
+                          {{subcomment.text}}
+                      </div>
+                  </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+                <form action="{% url 'articles:create_comment' slug=article.slug %}" method="post" class="response-block send_comment">
+                    {% csrf_token %}
+                    <input type="hidden" name="parent_id" value="{{comment.id}}">
+                    <input type="hidden" name="article" value="{{article.id}}">
+                    <input type="hidden" name="user" value="{{user.id}}">
+                  <textarea name="text" class="textarea" cols="30" rows="3" placeholder="Написать комментарий... "></textarea>
+                  <button class="btn btn-orange {% if not user.is_authenticated %}popup_btn_login{% endif %}" type="submit">Отправить</button>
+                </form>
+          </div>
+            {% endfor %}
+        </div>
+        <div class="comments-all">
+          <button class="btn cases-btn btn-all-comments">See more</button>
+        </div>
+        <div class="new-comment">
+          <div class="new-comment-header">
+            <div class="border-div"></div>
+            <div class="border-div border-div-long"></div>
+            <div class="border-div"></div>
+            <div class="border-div"></div>
+          </div>
+          <div class="new-comment-inner">
+            <form action="{% url 'articles:create_comment' slug=article.slug %}" method="post" class="new-comment-form send_comment">
+                {% csrf_token %}
+                <input type="hidden" name="article" value="{{article.id}}">
+                <input type="hidden" name="user" value="{{user.id}}">
+              <textarea name="text" class="textarea" cols="30" rows="8" placeholder="Написать комментарий..."></textarea>
+              <button class="btn btn-orange popup_btn_login" type="submit">Отправить</button>
+            </form>
+          </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block footer %}
+<div class="popup popup_func">
+  <div class="popup_dialog">
+    <div class="popup_content text-center">
+      <button type="button" class="popup_close"><img src="{% static 'assets/images/close.svg' %}" alt="Close button."></button>
+      <h2 class="title">Заголовок (УТП)</h2>
+      <div class="popup_form">
+        <form class="form" action="#">
+          <p class="popup_descr">Оставляйте заявку прямо сейчас и получайте эксклюзивное предложение!</p>
+          <div class="input_row">
+            <div class="input-item">
+              <label for="user_name">Имя</label>
+              <input class="form-control form_input" name="user_name" required type="text" placeholder="Введите имя">
+            </div>
+            <div class="input-item">
+              <label for="user_phone">Телефон</label>
+              <input class="form-control form_input mask-phone" name="user_phone" required type="tel" placeholder="Введите телефон">
+            </div>
+            <div class="input-item">
+              <label for="user_email">E-mail</label>
+              <input class="form-control form_input" name="user_email" required type="email" placeholder="Введите e-mail">
+            </div>
+
+          </div>
+          <div class="row-center"><button class="btn btn-top btn-orange" name="submit" type="submit">Оставить заявку</button></div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="popup popup_login">
+  <div class="popup_dialog">
+    <div class="popup_content text-center">
+      <button type="button" class="popup_close"><img src="{% static 'assets/images/close.svg' %}" alt="Close button."></button>
+      <h2 class="title">Вход</h2>
+      <div class="popup_form">
+        <form class="form" action="#">
+            {% if user.is_authenticated %}
+                <p>Welcome, You are logged in as {{ user.username }}</p>
+            {% else %}
+                <a class="login_btn login_btn_google" href="{% provider_login_url 'google' %}">Google</a>
+                <a class="login_btn login_btn_facebook" href="{% provider_login_url 'facebook' method='oauth2' %}">Продолжить с Facebook</a>
+            {% endif %}
+        </form>
+      </div>
+      <p class="popup_login_descr">Авторизуясь, Вы даете согласие на обработку персональных данных.</p>
+    </div>
+  </div>
+</div>
+
+<div class="popup popup_send_moderation">
+  <div class="popup_dialog">
+    <div class="popup_content">
+      <p class="popup_login_descr">Спасибо! Ваш комментарий отправлен на модерацию.</p>
+      <button type="button" class="popup_close btn btn-orange">Продолжить</button>
+
+    </div>
+  </div>
+</div>
+
+<div class="popup popup_send_moderation popup_try_again">
+  <div class="popup_dialog">
+    <div class="popup_content">
+      <p class="popup_login_descr">Что-то пошло не так. Попробуйте снова!</p>
+      <button type="button" class="popup_close btn btn-orange">Попробовать снова</button>
+
+    </div>
+  </div>
+</div>
+
+<div class="popup popup_send_moderation popup_cookies">
+  <div class="popup_dialog">
+    <div class="popup_content">
+      <p class="popup_login_descr">Мы используем cookies. Цели - маркетинг и анализ трафика. Узнать подробнее можно <a href="" class="cookies_link">тут</a>.</p>
+      <button type="button" class="popup_close btn btn-orange">Согласен</button>
+
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}
+    <script type="text/javascript" src="{% static 'create-comment.js' %}"></script>
+{% endblock %}

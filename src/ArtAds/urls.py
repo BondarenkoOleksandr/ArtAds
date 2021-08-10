@@ -18,9 +18,10 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.auth.views import LogoutView
 from django.urls import path, include
+from django.conf.urls import handler404, handler500, handler403, handler400
 
 from ArtAds import settings
-from ArtAds.views import FirstPageView, ContactsPageView
+from ArtAds.views import FirstPageView, ContactsPageView, AboutPageView, PrivacyPageView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,8 +32,13 @@ urlpatterns = [
     path('__debug__/', include(debug_toolbar.urls)),
     path('accounts/', include('allauth.urls')),
     path('logout', LogoutView.as_view()),
+    path('about/', AboutPageView.as_view(), name='about'),
+    path('tinymce/', include('tinymce.urls')),
+    path('privacy/', PrivacyPageView.as_view(), name='privacy'),
+    path('articles/', include('articles.urls'), name='articles')
 ]
 
-urlpatterns += \
-    static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = 'ArtAds.views.error_404'
 

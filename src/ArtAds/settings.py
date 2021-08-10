@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-buj415kjck&jn2j#8wr=1qjj2-d)si1%k64bpry0%r1(sl%xs8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -46,11 +46,13 @@ INSTALLED_APPS = [
 
     'debug_toolbar',
     'django_extensions',
-    'django_quill',
-
+    'tinymce',
+    "translation_manager",
 
     'cases',
     'services',
+    'articles',
+    'employees',
 
     'allauth',
     'allauth.account',
@@ -161,6 +163,9 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
+
+# Provide a lists of languages which your site supports.
+
 SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/'
@@ -177,6 +182,12 @@ INTERNAL_IPS = [
 
 LANGUAGE_CODE = 'en-us'
 
+LANGUAGES = (
+    ('ru', _('Russian')),
+    ('en', _('English')),
+    ('uk', _('Ukrainian')),
+)
+
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
@@ -184,6 +195,10 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)
 
 SESSION_COOKIE_AGE = 60 * 60 * 24 * 30
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
@@ -206,5 +221,6 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-MEDIA_ROOT = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = 'media/'
+

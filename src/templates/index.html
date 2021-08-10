@@ -127,141 +127,35 @@
         <h2 class="title title-center">Статьи</h2>
       </div>
       <div class="articles-row article-slider">
-        <div class="article"> 
-          <div class="article-picture">
-            <a href="/article.html" class="article-category">WEB</a>
-            <a class="article-picture-link" href="/article.html">
-              <img class="article-picture-img" src="{% static 'assets/images/article1.png' %}" alt="Article."></a>
-          </div>
-          <div class="article-footer">
-            <div class="article-date">
-              <div class="article-date-calendar">
-                12/06/2021
-              </div>
-              <div class="article-date-author">
-                by Name Surname
-              </div>
+        {% for article in articles %}
+          <div class="article filtered-div" id="{{article.category|lower}}" data-web="{{article.category|lower}}">
+            <div class="article-picture">
+              <a href="/" class="article-category">{{article.category|upper}}</a>
+              <a class="article-picture-link" href="/">
+                <img class="article-picture-img" src="{{article.image.url}}" alt="Article."></a>
             </div>
-            <div class="article-decsription">
-              <p class="article-paragraph article-paragraph--short">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia quo blanditiis voluptatibus non repudiandae, animi exercitationem esse temporibus ipsam et reiciendis aliquam harum ullam hic minima omnis autem, obcaecati ratione?
-              </p>
+            <div class="article-footer">
+              <div class="article-date">
+                <div class="article-date-calendar">
+                  {{article.publish_date}}
+                </div>
+                <div class="article-date-author">
+                  by {{article.author.first_name}}{{article.author.last_name}}
+                </div>
+              </div>
+              <div class="article-decsription">
+                <p class="article-paragraph article-paragraph--short">
+                  {{article.text}}
+                </p>
+              </div>
+              <a class="article-link" href="{% url 'articles:article' slug=article.get_slug %}">
+                <div class="article-link-text">
+                  Read more
+                </div>
+              </a>
             </div>
-            <a class="article-link" href="/article.html">
-              <div class="article-link-text">
-                Read more
-              </div>
-            </a>
           </div>
-        </div>
-        <div class="article"> 
-          <div class="article-picture">
-            <a href="/" class="article-category">WEB</a>
-            <a class="article-picture-link" href="/">
-              <img class="article-picture-img" src="{% static 'assets/images/article2.png' %}" alt="Article."></a>
-          </div>
-          <div class="article-footer">
-            <div class="article-date">
-              <div class="article-date-calendar">
-                12/06/2021
-              </div>
-              <div class="article-date-author">
-                by Name Surname
-              </div>
-            </div>
-            <div class="article-decsription">
-              <p class="article-paragraph article-paragraph--short">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia quo blanditiis voluptatibus non repudiandae, animi exercitationem esse temporibus ipsam et reiciendis aliquam harum ullam hic minima omnis autem, obcaecati ratione?
-              </p>
-            </div>
-            <a class="article-link" href="/">
-              <div class="article-link-text">
-                Read more
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="article"> 
-          <div class="article-picture">
-            <a href="/" class="article-category">WEB</a>
-            <a class="article-picture-link" href="/">
-              <img class="article-picture-img" src="{% static 'assets/images/article3.png' %}" alt="Article."></a>
-          </div>
-          <div class="article-footer">
-            <div class="article-date">
-              <div class="article-date-calendar">
-                12/06/2021
-              </div>
-              <div class="article-date-author">
-                by Name Surname
-              </div>
-            </div>
-            <div class="article-decsription">
-              <p class="article-paragraph article-paragraph--short">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia quo blanditiis voluptatibus non repudiandae, animi exercitationem esse temporibus ipsam et reiciendis aliquam harum ullam hic minima omnis autem, obcaecati ratione?
-              </p>
-            </div>
-            <a class="article-link" href="/">
-              <div class="article-link-text">
-                Read more
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="article"> 
-          <div class="article-picture">
-            <a href="/" class="article-category">WEB</a>
-            <a class="article-picture-link" href="/">
-              <img class="article-picture-img" src="{% static 'assets/images/article1.png' %}" alt="Article."></a>
-          </div>
-          <div class="article-footer">
-            <div class="article-date">
-              <div class="article-date-calendar">
-                12/06/2021
-              </div>
-              <div class="article-date-author">
-                by Name Surname
-              </div>
-            </div>
-            <div class="article-decsription">
-              <p class="article-paragraph article-paragraph--short">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia quo blanditiis voluptatibus non repudiandae, animi exercitationem esse temporibus ipsam et reiciendis aliquam harum ullam hic minima omnis autem, obcaecati ratione?
-              </p>
-            </div>
-            <a class="article-link" href="/">
-              <div class="article-link-text">
-                Read more
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="article"> 
-          <div class="article-picture">
-            <a href="/" class="article-category">WEB</a>
-            <a class="article-picture-link" href="/">
-              <img class="article-picture-img" src="{% static 'assets/images/article1.png' %}" alt="Article."></a>
-          </div>
-          <div class="article-footer">
-            <div class="article-date">
-              <div class="article-date-calendar">
-                12/06/2021
-              </div>
-              <div class="article-date-author">
-                by Name Surname
-              </div>
-            </div>
-            <div class="article-decsription">
-              <p class="article-paragraph article-paragraph--short">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia quo blanditiis voluptatibus non repudiandae, animi exercitationem esse temporibus ipsam et reiciendis aliquam harum ullam hic minima omnis autem, obcaecati ratione?
-              </p>
-            </div>
-            <a class="article-link" href="/">
-              <div class="article-link-text">
-                Read more
-              </div>
-            </a>
-          </div>
-        </div>
+        {% endfor %}
       </div>
       <div class="cases-all mob-none">
         <button id="read_more" class="btn cases-btn">Read more</button>

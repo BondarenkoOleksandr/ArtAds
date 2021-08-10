@@ -14,6 +14,8 @@ window.addEventListener('DOMContentLoaded', () => { //вызываем скри�
 })
 
 
+$( document ).ready(function() {
+
 //header start
 $(window).on("load", function ()
 {
@@ -186,8 +188,7 @@ respBtn.forEach((item, i)=>{
 
 }
 
-
-
+});
 //Блок комментарии END
 
 

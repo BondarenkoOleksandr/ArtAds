@@ -1,0 +1,15 @@
+#: .\ArtAds\settings.py:186
+msgid "Russian"
+msgstr ""
+
+#: .\ArtAds\settings.py:187
+msgid "English"
+msgstr ""
+
+#: .\ArtAds\settings.py:188
+msgid "Ukrainian"
+msgstr ""
+
+#: .\templates\base.html:22
+msgid "Welcome, You are logged in as"
+msgstr ""
