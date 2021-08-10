@@ -331,7 +331,7 @@ if (btnAllComments) {
   });
 }
 
-
+if (respBtn) {
   respBtn.forEach(function (item, i) {
     item.addEventListener('click', function () {
       var commentRowHeight = firstCommentHeight + 170;
@@ -341,7 +341,7 @@ if (btnAllComments) {
       item.style.display = "none";
     });
   });
- //Блок комментарии END
+} //Блок комментарии END
 
 /***/ }),
 
@@ -567,8 +567,28 @@ var modals = function modals() {
 
   bindModal('.popup_btn', '.popup_func', '.popup_func .popup_close'); // обращаемся к popup_close который именно внутри popup_func
 
-  bindModal('.popup_btn_login', '.popup_login', '.popup_login .popup_close'); // bindModal('.phone_link', '.popup', '.popup_close');
-  // showModalByTime('.popup', 60000); // вызываем попап через 60 секунд
+  bindModal('.popup_btn_login', '.popup_login', '.popup_login .popup_close');
+  var review_send_form = document.querySelectorAll('.send_comment'); // let popup_moder = document.querySelector('.popup_send_moderation');
+
+  review_send_form.forEach(function (item) {
+    //применяем к каждому элементу по котормоу кликаем
+    item.addEventListener('submit', function (e) {
+      item.then(function (res) {
+        document.querySelector('.popup_send_moderation').style.top = "0px"; // выводим сообщение о успешной отправке
+
+        document.body.style.overflow = "hidden";
+      });
+      item.catch(function () {
+        return document.querySelector('.popup_send_moderation.popup_try_again').style.top = "0px";
+      }); // сообщение об ошибке при ошибке
+
+      item.finally(function () {
+        //после отправки формы
+        // clearInputs(); //очищаем инпуты
+        item.querySelector('textarea').value = '';
+      });
+    });
+  });
 }; // phone MASK START
 
 
@@ -836,8 +856,8 @@ $(document).ready(function () {
       customPaging: function customPaging(slider, i) {
         return '<div class="dots-block"><div class="dotscustom"></div></div>';
       },
-      prevArrow: '<div class="arrow arrow-left"><img class="arrow-img arrow-img--left" src="/static/assets/images/arrow-left.svg"></div>',
-      nextArrow: '<div class="arrow arrow-right"><img class="arrow-img arrow-img--right" src="/static/assets/images/arrow-right.svg"></div>',
+      prevArrow: '<div class="arrow arrow-left"><img class="arrow-img arrow-img--left" src="/src/assets/images/arrow-left.svg"></div>',
+      nextArrow: '<div class="arrow arrow-right"><img class="arrow-img arrow-img--right" src="/src/assets/images/arrow-right.svg"></div>',
       responsive: [{
         breakpoint: 640,
         settings: {
@@ -858,8 +878,8 @@ $(document).ready(function () {
       dots: false,
       autoplay: true,
       autoplaySpeed: 1500,
-      prevArrow: '<div class="arrow arrow-left"><img class="arrow-img arrow-img--left" src="/static/assets/images/arrow-left.svg"></div>',
-      nextArrow: '<div class="arrow arrow-right"><img class="arrow-img arrow-img--right" src="/static/assets/images/arrow-right.svg"></div>'
+      prevArrow: '<div class="arrow arrow-left"><img class="arrow-img arrow-img--left" src="/src/assets/images/arrow-left.svg"></div>',
+      nextArrow: '<div class="arrow arrow-right"><img class="arrow-img arrow-img--right" src="/src/assets/images/arrow-right.svg"></div>'
     });
   }
 
@@ -875,8 +895,8 @@ $(document).ready(function () {
       dots: false,
       autoplay: true,
       autoplaySpeed: 1500,
-      prevArrow: '<div class="arrow arrow-left"><img class="arrow-img arrow-img--left" src="/static/assets/images/arrow-left.svg"></div>',
-      nextArrow: '<div class="arrow arrow-right"><img class="arrow-img arrow-img--right" src="/static/assets/images/arrow-right.svg"></div>'
+      prevArrow: '<div class="arrow arrow-left"><img class="arrow-img arrow-img--left" src="/src/assets/images/arrow-left.svg"></div>',
+      nextArrow: '<div class="arrow arrow-right"><img class="arrow-img arrow-img--right" src="/src/assets/images/arrow-right.svg"></div>'
     });
     $('.slider-nav').slick({
       slidesToShow: 2,
