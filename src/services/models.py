@@ -14,6 +14,7 @@ class ServiceArticle(models.Model):
         verbose_name='Service slug',
         unique=True
     )
+
     image = models.ImageField(default='default-picture.png', upload_to='services/')
     text = models.TextField()
 
@@ -40,12 +41,26 @@ class ServiceCategory(models.Model):
         verbose_name='Article',
         on_delete=models.SET_NULL
     )
+    slug = models.SlugField(
+        default='',
+        max_length=100,
+        editable=False,
+        verbose_name='Category slug'
+    )
 
     class Meta:
         verbose_name_plural = 'Service'
 
     def __str__(self):
         return self.name
+
+    def save(self, *args, **kwargs):
+        value = self.name
+        self.slug = slugify(value, allow_unicode=True)
+        super().save(*args, **kwargs)
+
+    def get_slug(self):
+        return self.slug
 
 
 class WorkPoint(models.Model):

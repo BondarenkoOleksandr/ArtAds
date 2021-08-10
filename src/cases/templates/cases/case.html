@@ -16,7 +16,7 @@
         </div>
         <div class="cases-row tabs-content">
           {% for case in cases %}
-            <div class="cases-item filtered-div" id="{{case.category|lower}}" data-{{case.category|lower}}="{{case.category|lower}}">
+            <div class="cases-item filtered-div" id="{{case.category|lower|cut:' '}}" data-{{case.category|lower|cut:' '}}="{{case.category|lower}}">
               <picture class="cases-item-phone">
                 <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
                 <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
@@ -45,63 +45,22 @@
       </div>
       <div class="slider-wrapper">
           <div class="slider">
+            {% for review in reviews %}
             <div class="slide">
-              <div class="slide-item slide-video">
+              <div class="slide-item slide-video" style="background: url({{review.image.url}}) center center/cover no-repeat">
 
               </div>
               <div class="slide-item slide-text">
-                <h3 class="slide-title">Name Surname</h3>
-                <h4 class="slide-subtitle">Position</h4>
+                <h3 class="slide-title">{{review.name}}</h3>
+                <h4 class="slide-subtitle">{{review.position}}</h4>
                 <div class="slide-description">
                   <p class="slide-paragraph">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                    {{review.text}}
                   </p>
                 </div>
               </div>
           </div>
-          <div class="slide">
-            <div class="slide-item slide-video">
-
-            </div>
-            <div class="slide-item slide-text">
-              <h3 class="slide-title">Name Surname</h3>
-              <h4 class="slide-subtitle">Position</h4>
-              <div class="slide-description">
-                <p class="slide-paragraph">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="slide">
-            <div class="slide-item slide-video">
-
-            </div>
-            <div class="slide-item slide-text">
-              <h3 class="slide-title">Name Surname</h3>
-              <h4 class="slide-subtitle">Position</h4>
-              <div class="slide-description">
-                <p class="slide-paragraph">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="slide">
-            <div class="slide-item slide-video">
-
-            </div>
-            <div class="slide-item slide-text">
-              <h3 class="slide-title">Name Surname</h3>
-              <h4 class="slide-subtitle">Position</h4>
-              <div class="slide-description">
-                <p class="slide-paragraph">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
-                </p>
-              </div>
-            </div>
-          </div>
-
+          {% endfor %}
         </div>
       </div>
     </div>

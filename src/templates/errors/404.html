@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block pagename %}error-page{% endblock %}
+{% block content %}
+<section class="top-block">
+    <div class="site-width">
+        <img src="{% static 'assets/images/planet1.svg' %}" alt="Planet." class="planet1">
+        <img src="{% static 'assets/images/planet2.svg' %}" alt="Planet." class="planet2">
+        <img src="{% static 'assets/images/planet3.svg' %}" alt="Planet." class="planet3">
+        <img src="{% static 'assets/images/moon1.svg' %}" alt="Planet." class="moon1">
+        <img src="{% static 'assets/images/moon2.svg' %}" alt="Planet." class="moon2">
+
+        <div class="top-block-error">
+            <div class="img404-wrapper">
+                <img src="{% static 'assets/images/404.svg' %}" alt="404 image.">
+                <img class="astronaut" src="{% static 'assets/images/astr.svg' %}" alt="Astronaut.">
+            </div>
+            <h2 class="title">Oops, you`ve lost in space.</h2>
+            <p class="error-descr">We can`t find the page you`re looking for...</p>
+            <div class="row-center">
+                <a href="/" class="btn btn-top btn-orange">Go home</a>
+            </div>
+        </div>
+        <div class="bottom-block-error">
+            <div class="bottom-block-left">&#169 ART ADS <span class="number">2011-2021</span></div>
+            <div class="social">
+                <a href="/" class="social-link"><img src="{% static 'assets/images/telegram.svg' %}" alt="Instagram."></a>
+                <a href="/" class="social-link"><img src="{% static 'assets/images/instagram.svg' %}" alt="Instagram."></a>
+                <a href="/" class="social-link"><img src="{% static 'assets/images/facebook.svg' %}" alt="Instagram."></a>
+            </div>
+            
+        </div>
+      
+    </div>
+ 
+  </section>
+{% endblock %}

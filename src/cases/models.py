@@ -34,3 +34,14 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Review(models.Model):
+    case = models.ForeignKey('Case', on_delete=models.SET_NULL, related_name='reviews', null=True)
+    name = models.CharField(max_length=100)
+    image = models.ImageField(default='default-picture.png', upload_to='reviews/')
+    position = models.CharField(max_length=100)
+    text = models.TextField(max_length=300)
+
+    def __str__(self):
+        return self.name + ' - ' + self.position

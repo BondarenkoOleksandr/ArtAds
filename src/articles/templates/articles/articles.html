@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block pagename %}page-artices{% endblock %}
+{% block content %}
+<section class="articles">
+    <div class="site-width">
+      <div class="title-wrapper">
+        <h2 class="title title-center">Статьи</h2>
+      </div>
+      <div class="tab-row tabs">
+        <span class="tab-toggle show-all activeClass">ALL</span>
+        {% for service in services_categories %}
+          <span class="tab-toggle {{service.slug}}">{{service.name}}</span>
+        {% endfor %}
+    </div>
+      <div class="articles-row tabs-content">
+        {% for article in articles %}
+          <div class="article filtered-div" id="{{article.category.slug}}" data-{{article.category.slug}}="{{article.category.slug}}">
+            <div class="article-picture">
+              <a href="/" class="article-category">{{article.category|upper}}</a>
+              <a class="article-picture-link" href="/">
+                <img class="article-picture-img" src="{{article.image.url}}" alt="Article."></a>
+            </div>
+            <div class="article-footer">
+              <div class="article-date">
+                <div class="article-date-calendar">
+                  {{article.publish_date}}
+                </div>
+                <div class="article-date-author">
+                  by {{article.author.first_name}}{{article.author.last_name}}
+                </div>
+              </div>
+              <div class="article-decsription">
+                <p class="article-paragraph article-paragraph--short">
+                  {{article.text}}
+                </p>
+              </div>
+              <a class="article-link" href="{% url 'articles:article' slug=article.get_slug %}">
+                <div class="article-link-text">
+                  Read more
+                </div>
+              </a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="cases-all">
+        <button id="read_more" class="btn cases-btn">Read more</button>
+      </div>
+    </div>
+  </section>
+{% endblock %}
