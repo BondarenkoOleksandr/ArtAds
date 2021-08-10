@@ -13,13 +13,23 @@
   <title>ArtAdsAgency || Home</title>
 <link href="{% static 'main.css' %}" rel="stylesheet">
   <style></style>
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KG3GRMH');</script>
+<!-- End Google Tag Manager -->
 </head>
 
 <body class="page {% block pagename %}main-page{% endblock %}">
-
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KG3GRMH"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
   <!-- HEADER -->
   {% if user.is_authenticated %}
-    <p>{% trans "Welcome, You are logged in as" %} {{ user.username }}</p>
+
   {% else %}
     <a href="{% provider_login_url 'google' %}">Login With Google</a>
     <a href="{% provider_login_url 'facebook' method='oauth2' %}">Facebook OAuth2</a>
@@ -85,11 +95,9 @@
               <p class="honey-text"></p>
             </span>
           {% for service in services_categories %}
-            {% if forloop.counter|add:1 != 6 %}
-            <li class="honey honey-{{ forloop.counter|add:1 }} burger-menu-honey-{{ forloop.counter|add:1 }}">
+            <li class="honey honey-{% if forloop.counter|add:1 == 5 or forloop.counter|add:1 > 5 %}{{ forloop.counter|add:3 }} burger-menu-honey-{{ forloop.counter|add:3 }}{% else %}{{ forloop.counter|add:1 }} burger-menu-honey-{{ forloop.counter|add:1 }}{% endif %}">
               <a href="{% url 'services:article' slug=service.article.slug %}" class="honey-link"><p class="honey-text">{{service.name}}</p></a>
             </li>
-            {% endif %}
           {% endfor %}
             <li class="honey honey-06 burger-menu-honey-6">
               <a href="/" class="honey-link">
