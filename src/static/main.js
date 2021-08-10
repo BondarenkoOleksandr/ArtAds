@@ -173,7 +173,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_honeycomb__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/honeycomb */ "./modules/honeycomb.js");
 /* harmony import */ var _modules_tabs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/tabs */ "./modules/tabs.js");
 /* harmony import */ var _modules_modals__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/modals */ "./modules/modals.js");
-/* harmony import */ var _modules_modals__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_modules_modals__WEBPACK_IMPORTED_MODULE_5__);
 
 
 
@@ -187,7 +186,7 @@ window.addEventListener('DOMContentLoaded', function () {
   Object(_modules_honeycomb__WEBPACK_IMPORTED_MODULE_3__["default"])(); // запускаем весь файл и его содержимое
 
   Object(_modules_tabs__WEBPACK_IMPORTED_MODULE_4__["default"])();
-  _modules_modals__WEBPACK_IMPORTED_MODULE_5___default()();
+  Object(_modules_modals__WEBPACK_IMPORTED_MODULE_5__["default"])();
 }); //header start
 
 jquery__WEBPACK_IMPORTED_MODULE_1___default()(window).on("load", function () {
@@ -520,10 +519,311 @@ var honeycomb = function honeycomb() {
 /*!***************************!*\
   !*** ./modules/modals.js ***!
   \***************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ../node_modules/babel-loader/lib/index.js):\nSyntaxError: D:\\IT\\Projects\\artads.agency файлы до редактирования под лендинг\\src\\modules\\modals.js: Missing semicolon. (61:25)\n\n\u001b[0m \u001b[90m 59 |\u001b[39m    \u001b[0m\n\u001b[0m \u001b[90m 60 |\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 61 |\u001b[39m     popup_send_moderation popup_close\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 62 |\u001b[39m     document\u001b[33m.\u001b[39mquerySelector(\u001b[32m'.popup_send_moderation'\u001b[39m)\u001b[33m.\u001b[39mstyle\u001b[33m.\u001b[39mtop\u001b[33m=\u001b[39m \u001b[32m\"-1500px\"\u001b[39m\u001b[33m;\u001b[39m \u001b[90m// выводим сообщение о успешной отправке\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 63 |\u001b[39m     document\u001b[33m.\u001b[39mbody\u001b[33m.\u001b[39mstyle\u001b[33m.\u001b[39moverflow \u001b[33m=\u001b[39m \u001b[32m\"\"\u001b[39m\u001b[33m;\u001b[39m           \u001b[0m\n\u001b[0m \u001b[90m 64 |\u001b[39m             \u001b[0m\n    at Parser._raise (D:\\IT\\Projects\\artads.agency файлы до редактирования под лендинг\\node_modules\\@babel\\parser\\lib\\index.js:816:17)\n    at Parser.raiseWithData (D:\\IT\\Projects\\artads.agency файлы до редактирования под лендинг\\node_modules\\@babel\\parser\\lib\\index.js:809:17)\n    at Parser.raise (D:\\IT\\Projects\\artads.agency файлы до редактирования под лендинг\\node_modules\\@babel\\parser\\lib\\index.js:770:17)\n    at Parser.semicolon (D:\\IT\\Projects\\artads.agency файлы до редактирования под лендинг\\node_modules\\@babel\\parser\\lib\\index.js:9863:10)\n    at Parser.parseExpressionStatement (D:\\IT\\Projects\\artads.agency файлы до редактирования под лендинг\\node_modules\\@babel\\parser\\lib\\index.js:13081:10)\n    at Parser.parseStatementContent (D:\\IT\\Projects\\artads.agency файлы до редактирования под лендинг\\node_modules\\@babel\\parser\\lib\\index.js:12670:19)\n    at Parser.parseStatement (D:\\IT\\Projects\\artads.agency файлы до редактирования под лендинг\\node_modules\\@babel\\parser\\lib\\index.js:12534:17)\n    at Parser.parseBlockOrModuleBlockBody (D:\\IT\\Projects\\artads.agency файлы до редактирования под лендинг\\node_modules\\@babel\\parser\\lib\\index.js:13123:25)\n    at Parser.parseBlockBody (D:\\IT\\Projects\\artads.agency файлы до редактирования под лендинг\\node_modules\\@babel\\parser\\lib\\index.js:13114:10)\n    at Parser.parseBlock (D:\\IT\\Projects\\artads.agency файлы до редактирования под лендинг\\node_modules\\@babel\\parser\\lib\\index.js:13098:10)\n    at Parser.parseFunctionBody (D:\\IT\\Projects\\artads.agency файлы до редактирования под лендинг\\node_modules\\@babel\\parser\\lib\\index.js:11989:24)\n    at Parser.parseArrowExpression (D:\\IT\\Projects\\artads.agency файлы до редактирования под лендинг\\node_modules\\@babel\\parser\\lib\\index.js:11961:10)\n    at Parser.parseParenAndDistinguishExpression (D:\\IT\\Projects\\artads.agency файлы до редактирования под лендинг\\node_modules\\@babel\\parser\\lib\\index.js:11541:12)\n    at Parser.parseExprAtom (D:\\IT\\Projects\\artads.agency файлы до редактирования под лендинг\\node_modules\\@babel\\parser\\lib\\index.js:11201:23)\n    at Parser.parseExprSubscripts (D:\\IT\\Projects\\artads.agency файлы до редактирования под лендинг\\node_modules\\@babel\\parser\\lib\\index.js:10881:23)\n    at Parser.parseUpdate (D:\\IT\\Projects\\artads.agency файлы до редактирования под лендинг\\node_modules\\@babel\\parser\\lib\\index.js:10861:21)\n    at Parser.parseMaybeUnary (D:\\IT\\Projects\\artads.agency файлы до редактирования под лендинг\\node_modules\\@babel\\parser\\lib\\index.js:10839:23)\n    at Parser.parseExprOps (D:\\IT\\Projects\\artads.agency файлы до редактирования под лендинг\\node_modules\\@babel\\parser\\lib\\index.js:10696:23)\n    at Parser.parseMaybeConditional (D:\\IT\\Projects\\artads.agency файлы до редактирования под лендинг\\node_modules\\@babel\\parser\\lib\\index.js:10670:23)\n    at Parser.parseMaybeAssign (D:\\IT\\Projects\\artads.agency файлы до редактирования под лендинг\\node_modules\\@babel\\parser\\lib\\index.js:10633:21)\n    at D:\\IT\\Projects\\artads.agency файлы до редактирования под лендинг\\node_modules\\@babel\\parser\\lib\\index.js:10595:39\n    at Parser.allowInAnd (D:\\IT\\Projects\\artads.agency файлы до редактирования под лендинг\\node_modules\\@babel\\parser\\lib\\index.js:12328:16)\n    at Parser.parseMaybeAssignAllowIn (D:\\IT\\Projects\\artads.agency файлы до редактирования под лендинг\\node_modules\\@babel\\parser\\lib\\index.js:10595:17)\n    at Parser.parseVar (D:\\IT\\Projects\\artads.agency файлы до редактирования под лендинг\\node_modules\\@babel\\parser\\lib\\index.js:13204:70)\n    at Parser.parseVarStatement (D:\\IT\\Projects\\artads.agency файлы до редактирования под лендинг\\node_modules\\@babel\\parser\\lib\\index.js:13018:10)\n    at Parser.parseStatementContent (D:\\IT\\Projects\\artads.agency файлы до редактирования под лендинг\\node_modules\\@babel\\parser\\lib\\index.js:12601:21)\n    at Parser.parseStatement (D:\\IT\\Projects\\artads.agency файлы до редактирования под лендинг\\node_modules\\@babel\\parser\\lib\\index.js:12534:17)\n    at Parser.parseBlockOrModuleBlockBody (D:\\IT\\Projects\\artads.agency файлы до редактирования под лендинг\\node_modules\\@babel\\parser\\lib\\index.js:13123:25)\n    at Parser.parseBlockBody (D:\\IT\\Projects\\artads.agency файлы до редактирования под лендинг\\node_modules\\@babel\\parser\\lib\\index.js:13114:10)\n    at Parser.parseProgram (D:\\IT\\Projects\\artads.agency файлы до редактирования под лендинг\\node_modules\\@babel\\parser\\lib\\index.js:12457:10)\n    at Parser.parseTopLevel (D:\\IT\\Projects\\artads.agency файлы до редактирования под лендинг\\node_modules\\@babel\\parser\\lib\\index.js:12448:25)\n    at Parser.parse (D:\\IT\\Projects\\artads.agency файлы до редактирования под лендинг\\node_modules\\@babel\\parser\\lib\\index.js:14175:10)\n    at parse (D:\\IT\\Projects\\artads.agency файлы до редактирования под лендинг\\node_modules\\@babel\\parser\\lib\\index.js:14227:38)\n    at parser (D:\\IT\\Projects\\artads.agency файлы до редактирования под лендинг\\node_modules\\@babel\\core\\lib\\parser\\index.js:52:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (D:\\IT\\Projects\\artads.agency файлы до редактирования под лендинг\\node_modules\\@babel\\core\\lib\\transformation\\normalize-file.js:82:38)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+//код для модальных окон
+var modals = function modals() {
+  function bindModal(triggerSelector, modalSelector, closeSelector) {
+    // один алгоритм для всех модальных окон // кнопка вызова; сам попап; кнопка закрытия
+    var trigger = document.querySelectorAll(triggerSelector),
+        modal = document.querySelector(modalSelector),
+        close = document.querySelector(closeSelector);
+    trigger.forEach(function (item) {
+      //применяем к каждому элементу по котормоу кликаем
+      item.addEventListener('click', function (e) {
+        if (e.target) {
+          //если клик по ссылке то prevent default
+          e.preventDefault();
+        }
+
+        modal.style.top = "0px";
+        document.body.style.overflow = "hidden"; // document.body.classList.add('modal-open');
+      });
+    });
+    close.addEventListener('click', function () {
+      modal.style.top = "-1500px";
+      document.body.style.overflow = ""; // document.body.classList.remove('modal-open');
+    });
+    modal.addEventListener('click', function (e) {
+      // закрыть окно по клику вне его
+      if (e.target === modal) {
+        //если кликнул строго на подложку а не на любую другую часть
+        modal.style.top = "-1500px";
+        document.body.style.overflow = ""; // document.body.classList.remove('modal-open');
+      }
+    });
+  } // function showModalByTime(selector, time) { //вызвать попап через время
+  //     setTimeout(function () {
+  //         document.querySelector(selector).style.display = 'block';
+  //         document.body.style.overflow = "hidden";
+  //     }, time)
+  // }
+
+
+  bindModal('.popup_btn', '.popup_func', '.popup_func .popup_close'); // обращаемся к popup_close который именно внутри popup_func
+
+  bindModal('.popup_btn_login', '.popup_login', '.popup_login .popup_close');
+  var sendPopups = document.querySelectorAll('.popup_send_moderation');
+  sendPopups.forEach(function (sendModal) {
+    sendModal.querySelector('.popup_close').addEventListener('click', function () {
+      sendModal.style.top = "-1500px";
+      document.body.style.overflow = "";
+    });
+    sendModal.addEventListener('click', function (e) {
+      // закрыть окно по клику вне его
+      if (e.target === sendModal) {
+        //если кликнул строго на подложку а не на любую другую часть
+        sendModal.style.top = "-1500px";
+        document.body.style.overflow = "";
+      }
+    });
+  });
+}; // phone MASK START
+
+
+!function (factory) {
+  "function" == typeof define && __webpack_require__(/*! !webpack amd options */ "../node_modules/webpack/buildin/amd-options.js") ? define(["jquery"], factory) : factory("object" == (typeof exports === "undefined" ? "undefined" : _typeof(exports)) ? __webpack_require__(/*! jquery */ "../node_modules/jquery/dist/jquery.js") : jQuery);
+}(function ($) {
+  var caretTimeoutId,
+      ua = navigator.userAgent,
+      iPhone = /iphone/i.test(ua),
+      chrome = /chrome/i.test(ua),
+      android = /android/i.test(ua);
+  $.mask = {
+    definitions: {
+      "9": "[0-9]",
+      a: "[A-Za-z]",
+      "*": "[A-Za-z0-9]"
+    },
+    autoclear: !0,
+    dataName: "rawMaskFn",
+    placeholder: "_"
+  }, $.fn.extend({
+    caret: function caret(begin, end) {
+      var range;
+      if (0 !== this.length && !this.is(":hidden")) return "number" == typeof begin ? (end = "number" == typeof end ? end : begin, this.each(function () {
+        this.setSelectionRange ? this.setSelectionRange(begin, end) : this.createTextRange && (range = this.createTextRange(), range.collapse(!0), range.moveEnd("character", end), range.moveStart("character", begin), range.select());
+      })) : (this[0].setSelectionRange ? (begin = this[0].selectionStart, end = this[0].selectionEnd) : document.selection && document.selection.createRange && (range = document.selection.createRange(), begin = 0 - range.duplicate().moveStart("character", -1e5), end = begin + range.text.length), {
+        begin: begin,
+        end: end
+      });
+    },
+    unmask: function unmask() {
+      return this.trigger("unmask");
+    },
+    mask: function mask(_mask, settings) {
+      var input, defs, tests, partialPosition, firstNonMaskPos, lastRequiredNonMaskPos, len, oldVal;
+
+      if (!_mask && this.length > 0) {
+        input = $(this[0]);
+        var fn = input.data($.mask.dataName);
+        return fn ? fn() : void 0;
+      }
+
+      return settings = $.extend({
+        autoclear: $.mask.autoclear,
+        placeholder: $.mask.placeholder,
+        completed: null
+      }, settings), defs = $.mask.definitions, tests = [], partialPosition = len = _mask.length, firstNonMaskPos = null, $.each(_mask.split(""), function (i, c) {
+        "?" == c ? (len--, partialPosition = i) : defs[c] ? (tests.push(new RegExp(defs[c])), null === firstNonMaskPos && (firstNonMaskPos = tests.length - 1), partialPosition > i && (lastRequiredNonMaskPos = tests.length - 1)) : tests.push(null);
+      }), this.trigger("unmask").each(function () {
+        function tryFireCompleted() {
+          if (settings.completed) {
+            for (var i = firstNonMaskPos; lastRequiredNonMaskPos >= i; i++) {
+              if (tests[i] && buffer[i] === getPlaceholder(i)) return;
+            }
+
+            settings.completed.call(input);
+          }
+        }
+
+        function getPlaceholder(i) {
+          return settings.placeholder.charAt(i < settings.placeholder.length ? i : 0);
+        }
+
+        function seekNext(pos) {
+          for (; ++pos < len && !tests[pos];) {
+            ;
+          }
+
+          return pos;
+        }
+
+        function seekPrev(pos) {
+          for (; --pos >= 0 && !tests[pos];) {
+            ;
+          }
+
+          return pos;
+        }
+
+        function shiftL(begin, end) {
+          var i, j;
+
+          if (!(0 > begin)) {
+            for (i = begin, j = seekNext(end); len > i; i++) {
+              if (tests[i]) {
+                if (!(len > j && tests[i].test(buffer[j]))) break;
+                buffer[i] = buffer[j], buffer[j] = getPlaceholder(j), j = seekNext(j);
+              }
+            }
+
+            writeBuffer(), input.caret(Math.max(firstNonMaskPos, begin));
+          }
+        }
+
+        function shiftR(pos) {
+          var i, c, j, t;
+
+          for (i = pos, c = getPlaceholder(pos); len > i; i++) {
+            if (tests[i]) {
+              if (j = seekNext(i), t = buffer[i], buffer[i] = c, !(len > j && tests[j].test(t))) break;
+              c = t;
+            }
+          }
+        }
+
+        function androidInputEvent() {
+          var curVal = input.val(),
+              pos = input.caret();
+
+          if (oldVal && oldVal.length && oldVal.length > curVal.length) {
+            for (checkVal(!0); pos.begin > 0 && !tests[pos.begin - 1];) {
+              pos.begin--;
+            }
+
+            if (0 === pos.begin) for (; pos.begin < firstNonMaskPos && !tests[pos.begin];) {
+              pos.begin++;
+            }
+            input.caret(pos.begin, pos.begin);
+          } else {
+            for (checkVal(!0); pos.begin < len && !tests[pos.begin];) {
+              pos.begin++;
+            }
+
+            input.caret(pos.begin, pos.begin);
+          }
+
+          tryFireCompleted();
+        }
+
+        function blurEvent() {
+          checkVal(), input.val() != focusText && input.change();
+        }
+
+        function keydownEvent(e) {
+          if (!input.prop("readonly")) {
+            var pos,
+                begin,
+                end,
+                k = e.which || e.keyCode;
+            oldVal = input.val(), 8 === k || 46 === k || iPhone && 127 === k ? (pos = input.caret(), begin = pos.begin, end = pos.end, end - begin === 0 && (begin = 46 !== k ? seekPrev(begin) : end = seekNext(begin - 1), end = 46 === k ? seekNext(end) : end), clearBuffer(begin, end), shiftL(begin, end - 1), e.preventDefault()) : 13 === k ? blurEvent.call(this, e) : 27 === k && (input.val(focusText), input.caret(0, checkVal()), e.preventDefault());
+          }
+        }
+
+        function keypressEvent(e) {
+          if (!input.prop("readonly")) {
+            var p,
+                c,
+                next,
+                k = e.which || e.keyCode,
+                pos = input.caret();
+
+            if (!(e.ctrlKey || e.altKey || e.metaKey || 32 > k) && k && 13 !== k) {
+              if (pos.end - pos.begin !== 0 && (clearBuffer(pos.begin, pos.end), shiftL(pos.begin, pos.end - 1)), p = seekNext(pos.begin - 1), len > p && (c = String.fromCharCode(k), tests[p].test(c))) {
+                if (shiftR(p), buffer[p] = c, writeBuffer(), next = seekNext(p), android) {
+                  var proxy = function proxy() {
+                    $.proxy($.fn.caret, input, next)();
+                  };
+
+                  setTimeout(proxy, 0);
+                } else input.caret(next);
+
+                pos.begin <= lastRequiredNonMaskPos && tryFireCompleted();
+              }
+
+              e.preventDefault();
+            }
+          }
+        }
+
+        function clearBuffer(start, end) {
+          var i;
+
+          for (i = start; end > i && len > i; i++) {
+            tests[i] && (buffer[i] = getPlaceholder(i));
+          }
+        }
+
+        function writeBuffer() {
+          input.val(buffer.join(""));
+        }
+
+        function checkVal(allow) {
+          var i,
+              c,
+              pos,
+              test = input.val(),
+              lastMatch = -1;
+
+          for (i = 0, pos = 0; len > i; i++) {
+            if (tests[i]) {
+              for (buffer[i] = getPlaceholder(i); pos++ < test.length;) {
+                if (c = test.charAt(pos - 1), tests[i].test(c)) {
+                  buffer[i] = c, lastMatch = i;
+                  break;
+                }
+              }
+
+              if (pos > test.length) {
+                clearBuffer(i + 1, len);
+                break;
+              }
+            } else buffer[i] === test.charAt(pos) && pos++, partialPosition > i && (lastMatch = i);
+          }
+
+          return allow ? writeBuffer() : partialPosition > lastMatch + 1 ? settings.autoclear || buffer.join("") === defaultBuffer ? (input.val() && input.val(""), clearBuffer(0, len)) : writeBuffer() : (writeBuffer(), input.val(input.val().substring(0, lastMatch + 1))), partialPosition ? i : firstNonMaskPos;
+        }
+
+        var input = $(this),
+            buffer = $.map(_mask.split(""), function (c, i) {
+          return "?" != c ? defs[c] ? getPlaceholder(i) : c : void 0;
+        }),
+            defaultBuffer = buffer.join(""),
+            focusText = input.val();
+        input.data($.mask.dataName, function () {
+          return $.map(buffer, function (c, i) {
+            return tests[i] && c != getPlaceholder(i) ? c : null;
+          }).join("");
+        }), input.one("unmask", function () {
+          input.off(".mask").removeData($.mask.dataName);
+        }).on("focus.mask", function () {
+          if (!input.prop("readonly")) {
+            clearTimeout(caretTimeoutId);
+            var pos;
+            focusText = input.val(), pos = checkVal(), caretTimeoutId = setTimeout(function () {
+              input.get(0) === document.activeElement && (writeBuffer(), pos == _mask.replace("?", "").length ? input.caret(0, pos) : input.caret(pos));
+            }, 10);
+          }
+        }).on("blur.mask", blurEvent).on("keydown.mask", keydownEvent).on("keypress.mask", keypressEvent).on("input.mask paste.mask", function () {
+          input.prop("readonly") || setTimeout(function () {
+            var pos = checkVal(!0);
+            input.caret(pos), tryFireCompleted();
+          }, 0);
+        }), chrome && android && input.off("input.mask").on("input.mask", androidInputEvent), checkVal();
+      });
+    }
+  });
+});
+$.mask.definitions['h'] = "[0|1|3|4|5|6|7|9]";
+$(".mask-phone").mask("+9 (h99) 999-99-99"); // phone MASK END
+
+/* harmony default export */ __webpack_exports__["default"] = (modals); //экспортирую всё содержимое файла
 
 /***/ }),
 
