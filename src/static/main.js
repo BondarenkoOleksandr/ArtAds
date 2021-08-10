@@ -187,6 +187,12 @@ window.addEventListener('DOMContentLoaded', function () {
 
   Object(_modules_tabs__WEBPACK_IMPORTED_MODULE_4__["default"])();
   Object(_modules_modals__WEBPACK_IMPORTED_MODULE_5__["default"])();
+  var likeCounter = document.querySelectorAll('.social-item-like');
+  likeCounter.forEach(function (like) {
+    like.addEventListener('click', function () {
+      like.classList.toggle('add');
+    });
+  });
 }); //header start
 
 jquery__WEBPACK_IMPORTED_MODULE_1___default()(window).on("load", function () {
