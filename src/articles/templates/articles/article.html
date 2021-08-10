@@ -131,9 +131,9 @@
                 by {{article.author.first_name}} {{article.author.last_name}}
               </div>
             </div>
-            <div class="article-decsription">W
+            <div class="article-decsription">
               <p class="article-paragraph article-paragraph--short">
-                  {{article.text}}
+                  {{article.text_before_quote|cut:'</p>'|cut:'<p>'}}
               </p>
             </div>
             <a class="article-link" href="{% url 'articles:article' slug=article.get_slug %}">
@@ -196,9 +196,11 @@
           </div>
             {% endfor %}
         </div>
+        {% if comments %}
         <div class="comments-all">
           <button class="btn cases-btn btn-all-comments">See more</button>
         </div>
+        {% endif %}
         <div class="new-comment">
           <div class="new-comment-header">
             <div class="border-div"></div>
@@ -251,7 +253,7 @@
     </div>
   </div>
 </div>
-
+{% if not user.is_authenticated %}
 <div class="popup popup_login">
   <div class="popup_dialog">
     <div class="popup_content text-center">
@@ -271,6 +273,7 @@
     </div>
   </div>
 </div>
+{% endif %}
 
 <div class="popup popup_send_moderation">
   <div class="popup_dialog">

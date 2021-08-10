@@ -28,6 +28,7 @@ class Article(models.Model):
     )
     publish_date = models.DateField(auto_now_add=True)
     rating = models.IntegerField(default=0, editable=False)
+    likes = models.ManyToManyField(User, related_name='article_like')
 
     def __str__(self):
         return self.title + ' - ' + self.author.username
@@ -36,6 +37,9 @@ class Article(models.Model):
         value = self.title
         self.slug = slugify(value, allow_unicode=True)
         super().save(*args, **kwargs)
+
+    def number_of_likes(self):
+        return self.likes.count()
 
     @property
     def views_count(self):
@@ -70,3 +74,4 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.article.title + ' - ' + self.user.username
+
