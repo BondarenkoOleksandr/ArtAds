@@ -10,7 +10,7 @@ from cases.models import Case
 class FirstPageView(TemplateView):
     def get(self, request):
         cases = Case.objects.all()
-        articles = Article.objects.all()
+        articles = Article.objects.all().select_related('category')
         return render(
             request=request,
             template_name='index.html',

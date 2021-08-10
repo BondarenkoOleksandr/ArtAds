@@ -3,5 +3,5 @@ from services.models import ServiceCategory
 
 def add_categories_to_context(request):
     return {
-        'services_categories': ServiceCategory.objects.all(),
+        'services_categories': ServiceCategory.objects.all().prefetch_related('article'),
     }
