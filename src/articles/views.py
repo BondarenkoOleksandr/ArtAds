@@ -60,8 +60,7 @@ class CommentCreateView(LoginRequiredMixin, CreateView):
             return HttpResponse(form.errors.as_json(), status=400)
             # return JsonResponse(data=form.errors.as_json(), status=500)
 
-        data = {'comment': form.instance.text, 'user': form.instance.user.first_name,
-                'pub_date': form.instance.pub_date}
+        data = {'success': True}
 
         return JsonResponse(data)
 

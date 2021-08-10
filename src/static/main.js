@@ -856,8 +856,8 @@ $(document).ready(function () {
       customPaging: function customPaging(slider, i) {
         return '<div class="dots-block"><div class="dotscustom"></div></div>';
       },
-      prevArrow: '<div class="arrow arrow-left"><img class="arrow-img arrow-img--left" src="/src/assets/images/arrow-left.svg"></div>',
-      nextArrow: '<div class="arrow arrow-right"><img class="arrow-img arrow-img--right" src="/src/assets/images/arrow-right.svg"></div>',
+      prevArrow: '<div class="arrow arrow-left"><img class="arrow-img arrow-img--left" src="/static/assets/images/arrow-left.svg"></div>',
+      nextArrow: '<div class="arrow arrow-right"><img class="arrow-img arrow-img--right" src="/static/assets/images/arrow-right.svg"></div>',
       responsive: [{
         breakpoint: 640,
         settings: {
@@ -878,8 +878,8 @@ $(document).ready(function () {
       dots: false,
       autoplay: true,
       autoplaySpeed: 1500,
-      prevArrow: '<div class="arrow arrow-left"><img class="arrow-img arrow-img--left" src="/src/assets/images/arrow-left.svg"></div>',
-      nextArrow: '<div class="arrow arrow-right"><img class="arrow-img arrow-img--right" src="/src/assets/images/arrow-right.svg"></div>'
+      prevArrow: '<div class="arrow arrow-left"><img class="arrow-img arrow-img--left" src="/static/assets/images/arrow-left.svg"></div>',
+      nextArrow: '<div class="arrow arrow-right"><img class="arrow-img arrow-img--right" src="/static/assets/images/arrow-right.svg"></div>'
     });
   }
 
@@ -895,8 +895,8 @@ $(document).ready(function () {
       dots: false,
       autoplay: true,
       autoplaySpeed: 1500,
-      prevArrow: '<div class="arrow arrow-left"><img class="arrow-img arrow-img--left" src="/src/assets/images/arrow-left.svg"></div>',
-      nextArrow: '<div class="arrow arrow-right"><img class="arrow-img arrow-img--right" src="/src/assets/images/arrow-right.svg"></div>'
+      prevArrow: '<div class="arrow arrow-left"><img class="arrow-img arrow-img--left" src="/static/assets/images/arrow-left.svg"></div>',
+      nextArrow: '<div class="arrow arrow-right"><img class="arrow-img arrow-img--right" src="/static/assets/images/arrow-right.svg"></div>'
     });
     $('.slider-nav').slick({
       slidesToShow: 2,

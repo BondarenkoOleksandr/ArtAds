@@ -5,6 +5,7 @@ from django.views.generic import TemplateView
 
 from articles.models import Article
 from cases.models import Case
+from employees.models import Employee
 
 
 class FirstPageView(TemplateView):
@@ -31,9 +32,13 @@ class ContactsPageView(TemplateView):
 
 class AboutPageView(TemplateView):
     def get(self, request):
+        employees = Employee.objects.all()
         return render(
             request=request,
             template_name='about.html',
+            context={
+                'employees': employees,
+            }
         )
 
 
@@ -44,6 +49,7 @@ class PrivacyPageView(TemplateView):
             template_name='privacy.html',
         )
 
+
 def error_404(request, exception):
-   context = {}
-   return render(request,'errors/404.html', context)
+    context = {}
+    return render(request, 'errors/404.html', context)
