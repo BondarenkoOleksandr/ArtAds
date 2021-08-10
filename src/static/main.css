@@ -1642,7 +1642,7 @@ h1.title {
 
 .slick-slide {
   float: left;
-  height: 100%;
+  height: fit-content;
   min-height: 1px;
   display: none; }
   [dir="rtl"] .slick-slide {
@@ -1746,7 +1746,7 @@ h1.title {
           bottom: 0;
           padding: 0;
           width: 100%;
-          margin-top: 25px; } }
+          margin-top: 40px; } }
     .reviews .slick-initialized .slide-title {
       font-size: 2.4rem;
       font-family: "Raleway-Bold";
