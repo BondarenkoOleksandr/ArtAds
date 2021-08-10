@@ -21,11 +21,9 @@
               <p class="honey-text"></p>
             </span>
           {% for service in services_categories %}
-            {% if forloop.counter|add:1 != 6 %}
-            <li class="honey honey-{{ forloop.counter|add:1 }}">
+            <li class="honey honey-{% if forloop.counter|add:1 == 5 or forloop.counter|add:1 > 5 %}{{ forloop.counter|add:3 }}{% else %}{{ forloop.counter|add:1 }}{% endif %}">
               <a href="{% url 'services:article' slug=service.article.slug %}" class="honey-link"><p class="honey-text">{{service.name}}</p></a>
             </li>
-            {% endif %}
           {% endfor %}
             <li class="honey honey-6 honey-services">
               <!-- <div class="button__circle" ></div> -->
