@@ -5,13 +5,13 @@
 {% block content %}
   <section class="article-back">
       <div class="site-width article-back-inner">
-        <a href="/" class="article-category">WEB</a>
+        <a href="/" class="article-category">{{article.category.name}}</a>
         <div class="article-back-rating">
             <span class="article-back-rating-number number">4</span>
         </div>
         <div class="article-back-info">
             <div class="article-back-info-item article-back-info-like">
-               <span class="article-back-info-like-number number">43</span>
+               <span class="article-back-info-like-number number">{{article.number_of_likes}}</span>
             </div>
             <div class="article-back-info-item article-back-info-view">
                 <span class="article-back-info-view-number number">{{article.views_count}}</span>
@@ -87,8 +87,8 @@
                     <p class="stars-text"><span class="stars-text-current number">4</span> из <span class="number">5</span> на основе <span class="stars-text-mark number">33</span> оценок</p>
                 </div>
                 <div class="article-extended-social">
-                    <div class="social-item social-item-like">
-                        <div class="social-item-inner social-item-like-inner number">43</div>
+                    <div class="social-item social-item-like" data-url="{% url 'articles:like' slug=article.slug %}" data-number="{{article.number_of_likes}}">
+                        <div class="social-item-inner social-item-like-inner number">{{article.number_of_likes}}</div>
                     </div>
                     <div class="social-item social-item-twitter">
                         <div class="social-item-inner social-item-twitter-inner number">43</div>
@@ -118,9 +118,9 @@
           {% for article in similar_articles %}
             <div class="article">
           <div class="article-picture">
-            <a href="/" class="article-category">{{article.category}}</a>
+            <a href="/" class="article-category">{{article.category__name}}</a>
             <a class="article-picture-link" href="/">
-              <img class="article-picture-img" src="{{article.image.url}}" alt="Article."></a>
+              <img class="article-picture-img" src="{{article.image}}" alt="Article."></a>
           </div>
           <div class="article-footer">
             <div class="article-date">
@@ -128,7 +128,7 @@
                   {{article.publish_date}}
               </div>
               <div class="article-date-author">
-                by {{article.author.first_name}} {{article.author.last_name}}
+                by {{article.author__first_name}} {{article.author__last_name}}
               </div>
             </div>
             <div class="article-decsription">
@@ -136,7 +136,7 @@
                   {{article.text_before_quote|cut:'</p>'|cut:'<p>'}}
               </p>
             </div>
-            <a class="article-link" href="{% url 'articles:article' slug=article.get_slug %}">
+            <a class="article-link" href="{% url 'articles:article' slug=article.slug %}">
               <div class="article-link-text">
                 Read more
               </div>
@@ -172,18 +172,18 @@
                   <span class="response-btn">Ответить</span>
               </div>
                 {% for subcomment in comment.subcomments.all %}
-                {% if subcomment.status == 1 %}
-                <div class="comment-header comment-subcomment">
-                  <div class="comment-photo"><img class="comment-photo-pic" src="/src/assets/images/author1.png" alt="Author."></div>
-                  <div class="comment-info">
-                      <div class="comment-name">{{subcomment.user.first_name}}</div>
-                      <div class="comment-date number">{{subcomment.pub_date}}</div>
-                      <div class="comment-text">
-                          {{subcomment.text}}
+                    {% if subcomment.status == 1 %}
+                    <div class="comment-header comment-subcomment">
+                      <div class="comment-photo"><img class="comment-photo-pic" src="{% static 'assets/images/author1.png' %}" alt="Author."></div>
+                      <div class="comment-info">
+                          <div class="comment-name">{{subcomment.user.first_name}}</div>
+                          <div class="comment-date number">{{subcomment.pub_date}}</div>
+                          <div class="comment-text">
+                              {{subcomment.text}}
+                          </div>
                       </div>
-                  </div>
-                </div>
-                {% endif %}
+                    </div>
+                    {% endif %}
                 {% endfor %}
                 <form action="{% url 'articles:create_comment' slug=article.slug %}" method="post" class="response-block send_comment">
                     {% csrf_token %}

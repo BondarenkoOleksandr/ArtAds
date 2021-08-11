@@ -173,8 +173,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_honeycomb__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/honeycomb */ "./modules/honeycomb.js");
 /* harmony import */ var _modules_tabs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/tabs */ "./modules/tabs.js");
 /* harmony import */ var _modules_modals__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/modals */ "./modules/modals.js");
-/* harmony import */ var _modules_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/forms */ "./modules/forms.js");
-
 
 
 
@@ -189,7 +187,6 @@ window.addEventListener('DOMContentLoaded', function () {
 
   Object(_modules_tabs__WEBPACK_IMPORTED_MODULE_4__["default"])();
   Object(_modules_modals__WEBPACK_IMPORTED_MODULE_5__["default"])();
-  Object(_modules_forms__WEBPACK_IMPORTED_MODULE_6__["default"])();
 }); //header start
 
 jquery__WEBPACK_IMPORTED_MODULE_1___default()(window).on("load", function () {
@@ -314,135 +311,37 @@ if (btn_case_read) {
 
 
 var respBlock = document.querySelectorAll('.response-block');
-var respBtn = document.querySelectorAll('.response-btn'); // let commentsRow = document.querySelector('.comments-row');
-
+var respBtn = document.querySelectorAll('.response-btn');
+var commentsRow = document.querySelector('.comments-row');
 var commentsAll = document.querySelectorAll('.comment');
-var firstComment = commentsAll[0]; // let firstCommentHeight = firstComment.offsetHeight;
-// commentsRow.style.height = `${firstCommentHeight}px`;
+var firstComment = commentsAll[0];
+var firstCommentHeight = firstComment.offsetHeight;
+commentsRow.style.height = "".concat(firstCommentHeight, "px");
+var btnAllComments = document.querySelector('.btn-all-comments');
 
-var btnAllComments = document.querySelector('.btn-all-comments'); // if(btnAllComments) {
-//     btnAllComments.addEventListener('click', ()=>{
-//         commentsRow.classList.add('comments-row-all')
-//         // if (commentsRow.style.height === `${firstCommentHeight}px`) {
-//         //     commentsRow.style.height = `${ commentsRow.scrollHeight }px`
-//         // } else {
-//         //     commentsRow.style.height = `${ commentsRow.scrollHeight }px`;
-//         //     window.getComputedStyle(commentsRow, null).getPropertyValue("height"); // помагает сделать все плавно
-//         //     commentsRow.style.height = "469";
-//         // }
-//     })
-// }
-// if (respBtn) {
-// respBtn.forEach((item, i)=>{
-//     item.addEventListener('click', ()=>{
-//         let commentRowHeight = firstCommentHeight + 170;
-//         commentsRow.style.height = `${commentRowHeight}px`;
-//         respBlock[i].classList.add('response-block-show'); //открываю окно конкретно в этом блоке
-//         item.style.display ="none";
-//     });
-// })
-// }
-//Блок комментарии END
+if (btnAllComments) {
+  btnAllComments.addEventListener('click', function () {
+    commentsRow.classList.add('comments-row-all'); // if (commentsRow.style.height === `${firstCommentHeight}px`) {
+    //     commentsRow.style.height = `${ commentsRow.scrollHeight }px`
+    // } else {
+    //     commentsRow.style.height = `${ commentsRow.scrollHeight }px`;
+    //     window.getComputedStyle(commentsRow, null).getPropertyValue("height"); // помагает сделать все плавно
+    //     commentsRow.style.height = "469";
+    // }
+  });
+}
 
-/***/ }),
+if (respBtn) {
+  respBtn.forEach(function (item, i) {
+    item.addEventListener('click', function () {
+      var commentRowHeight = firstCommentHeight + 170;
+      commentsRow.style.height = "".concat(commentRowHeight, "px");
+      respBlock[i].classList.add('response-block-show'); //открываю окно конкретно в этом блоке
 
-/***/ "./modules/forms.js":
-/*!**************************!*\
-  !*** ./modules/forms.js ***!
-  \**************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
-var forms = function forms(state) {
-  //указываю state чтобы была возможность передавать в форму данные из state при вызове этой функции
-  var contactForm = document.querySelectorAll('.send-form');
-  var popupFunc = document.querySelector('.popup_func');
-  var message = {
-    loading: 'Download...',
-    success: 'Thank you! We will contact you soon',
-    failure: 'Something went wrong...'
-  }; //функция отправки на сервер start
-
-  var postData = /*#__PURE__*/function () {
-    var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(url, data) {
-      var res;
-      return regeneratorRuntime.wrap(function _callee$(_context) {
-        while (1) {
-          switch (_context.prev = _context.next) {
-            case 0:
-              // функция отправки формы на сервер
-              document.querySelector('.status').textContent = message.loading; // выводим текст в поле статуса
-
-              _context.next = 3;
-              return fetch(url, {
-                // Отправка формы, записал результат ПОСЛЕ отправки
-                method: "POST",
-                body: data
-              });
-
-            case 3:
-              res = _context.sent;
-              _context.next = 6;
-              return res.text();
-
-            case 6:
-              return _context.abrupt("return", _context.sent);
-
-            case 7:
-            case "end":
-              return _context.stop();
-          }
-        }
-      }, _callee);
-    }));
-
-    return function postData(_x, _x2) {
-      return _ref.apply(this, arguments);
-    };
-  }(); //функция отправки на сервер end
-
-
-  contactForm.forEach(function (item) {
-    // проходимся по всем формам
-    item.addEventListener('submit', function (e) {
-      e.preventDefault(); // чтобы страница не перезагружалась при отправке
-
-      var statusMessage = document.querySelectorAll('.status'); //статус отправки формы
-
-      statusMessage.forEach(function (statusMess) {
-        statusMess.classList.add('visible'); // item.appendChild(statusMessage); // выводим наш statusMessage внутри формы
-
-        var formData = new FormData(item); // объект FormData сохраняет в себе даные ВСЕХ инпутов формы, даже картинки и файлы
-        //отправляю форму на сервер
-
-        postData('/mail.php', formData) // отправляю на сервер(assets/server.php) все данные(formData) формы
-        .then(function (res) {
-          console.log(res);
-          statusMess.textContent = message.success; // выводим сообщение о успешной отправке
-        }).catch(function () {
-          return statusMess.textContent = message.failure;
-        }) // сообщение об ошибке при ошибке
-        .finally(function () {
-          //после отправки формы
-          // clearInputs(); //очищаем инпуты
-          setTimeout(function () {
-            statusMess.classList.remove('visible');
-            popupFunc.style.top = "-3000px";
-            document.body.style.overflow = "";
-          }, 3000); //удалить поле статуса отправки через 3 сек
-        });
-      });
+      item.style.display = "none";
     });
   });
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (forms);
+} //Блок комментарии END
 
 /***/ }),
 
@@ -658,18 +557,29 @@ var modals = function modals() {
         document.body.style.overflow = ""; // document.body.classList.remove('modal-open');
       }
     });
-  } // function showModalByTime(selector, time) { //вызвать попап через время
-  //     setTimeout(function () {
-  //         document.querySelector(selector).style.display = 'block';
-  //         document.body.style.overflow = "hidden";
-  //     }, time)
-  // }
-
+  }
 
   bindModal('.popup_btn', '.popup_func', '.popup_func .popup_close'); // обращаемся к popup_close который именно внутри popup_func
-  // bindModal('.popup_btn_login', '.popup_login', '.popup_login .popup_close');
-  // bindModal('.phone_link', '.popup', '.popup_close');
-  // showModalByTime('.popup', 60000); // вызываем попап через 60 секунд
+
+  bindModal('.popup_btn_login', '.popup_login', '.popup_login .popup_close');
+  var sendPopups = document.querySelectorAll('.popup_send_moderation');
+  sendPopups.forEach(function (sendModal) {
+    var sendModalsClose = sendModal.querySelectorAll('.popup_close');
+    sendModalsClose.forEach(function (sendModalsClose) {
+      sendModalsClose.addEventListener('click', function () {
+        sendModal.style.top = "-1500px";
+        document.body.style.overflow = "";
+      });
+    });
+    sendModal.addEventListener('click', function (e) {
+      // закрыть окно по клику вне его
+      if (e.target === sendModal) {
+        //если кликнул строго на подложку а не на любую другую часть
+        sendModal.style.top = "-1500px";
+        document.body.style.overflow = "";
+      }
+    });
+  });
 }; // phone MASK START
 
 
@@ -932,7 +842,7 @@ $(document).ready(function () {
       slidesToScroll: 1,
       arrows: true,
       dots: true,
-      autoplay: false,
+      autoplay: true,
       autoplaySpeed: 1500,
       customPaging: function customPaging(slider, i) {
         return '<div class="dots-block"><div class="dotscustom"></div></div>';

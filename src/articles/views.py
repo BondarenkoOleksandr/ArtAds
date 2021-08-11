@@ -23,14 +23,16 @@ class ArticleDetailView(DetailView):
     model = Article
 
     def get(self, request, slug):
-        article = Article.objects.get(slug=slug)
-        comments = article.comments.filter(status=1, parent=None)
+        article = Article.objects.filter(slug=slug).prefetch_related('likes')
+        article = article.first()
+        comments = article.comments.filter(status=1, parent=None).select_related('user', 'article', 'parent')
 
         time_after_publish = date.today() - article.publish_date
 
         ArticleViews.objects.get_or_create(IPAddres=get_client_ip(request), article=article)
 
-        similar_articles = Article.objects.exclude(slug=slug).order_by('publish_date')[:3]
+        similar_articles = Article.objects.exclude(slug=slug).order_by('publish_date').select_related(
+            'category').values('category__name', 'image', 'publish_date', 'author__first_name', 'author__last_name','text_before_quote', 'slug')[:3]
 
         return render(
             request=request,
@@ -72,6 +74,6 @@ def article_like(request, slug):
     else:
         article.likes.add(request.user)
 
-    data = {'number_of_likes': article.number_of_likes}
+    data = {'number_of_likes': article.number_of_likes()}
 
     return JsonResponse(data)
