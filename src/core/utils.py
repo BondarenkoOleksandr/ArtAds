@@ -1,5 +1,7 @@
 import uuid
 
+from django.db.models import Func
+
 from employees.models import Employee
 
 
@@ -28,3 +30,4 @@ def get_client_ip(request):
     else:
         ip = request.META.get('REMOTE_ADDR')
     return ip
+

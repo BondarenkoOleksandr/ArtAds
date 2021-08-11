@@ -1,10 +1,12 @@
 from django.contrib.auth.models import User
 from django.db import models
+from django.db.models import Avg
 from tinymce.models import HTMLField
 from django.utils.text import slugify
 
 
 # Create your models here.
+
 
 class Article(models.Model):
     RATING_COUNT = [(i, i) for i in range(1, 6)]
@@ -27,7 +29,6 @@ class Article(models.Model):
         unique=True
     )
     publish_date = models.DateField(auto_now_add=True)
-    rating = models.IntegerField(default=0, editable=False)
     likes = models.ManyToManyField(User, related_name='article_like')
 
     def __str__(self):
@@ -57,6 +58,28 @@ class ArticleViews(models.Model):
         return '{0} in {1} post'.format(self.IPAddres, self.post.title)
 
 
+class ArticleRating(models.Model):
+    STARS = (
+        (1, 'Very bad'),
+        (2, 'Bad'),
+        (3, 'Normal'),
+        (4, 'Good'),
+        (5, 'Excellent'),
+    )
+    article = models.ForeignKey(Article, on_delete=models.CASCADE, related_name='article_rating')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    rating = models.SmallIntegerField(choices=STARS)
+
+    @property
+    def get_rating(self):
+        avg_rating = ArticleRating.objects.aggregate(Avg('rating'))
+        return int(avg_rating['rating__avg'])
+
+    @property
+    def get_count(self):
+        return ArticleRating.objects.filter(article=self.article).count()
+
+
 class Comment(models.Model):
     STATUS_LEVEL = [
         (0, 'Moderation'),
@@ -74,4 +97,3 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.article.title + ' - ' + self.user.username
-

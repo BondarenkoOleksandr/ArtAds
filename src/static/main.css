@@ -2365,7 +2365,7 @@ h1.title {
   height: 17px;
   text-align: center;
   color: #fff;
-  background: no-repeat center center url("/../../src/assets/images/star.svg");
+  background: no-repeat center center url("/static/assets/images/star.svg");
   font-size: 30px;
   margin-right: 2px;
   line-height: 30px;
@@ -2376,7 +2376,7 @@ h1.title {
 .rating span:hover label,
 .rating span.checked label,
 .rating span.checked ~ span label {
-  background: no-repeat center center url("/../../src/assets/images/star-active.svg");
+  background: no-repeat center center url("/static/assets/images/star-active.svg");
   color: #fff; }
 
 .comments-row {

@@ -1,7 +1,7 @@
 from django.core.exceptions import ValidationError
 from django.forms import ModelForm
 
-from articles.models import Comment
+from articles.models import Comment, ArticleRating, Article
 
 
 class CommentBaseForm(ModelForm):
@@ -24,3 +24,13 @@ class CommentCreateForm(CommentBaseForm):
         if commit:
             instance.save()
         return instance
+
+
+class ArticleRatingBaseForm(ModelForm):
+    class Meta:
+        model = ArticleRating
+        fields = '__all__'
+
+
+class ArticleRatingCreateForm(ArticleRatingBaseForm):
+    pass

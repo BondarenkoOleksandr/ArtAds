@@ -49,13 +49,13 @@
             </div>
             <div class="article-extended-footer">
                 <div class="article-extended-rating">
-                    <div class="rating">
+                    <div class="rating" data-url="{% url 'articles:voice' %}" data-id="{{article.id}}">
                       <span><input type="radio" name="rating" id="str5" value="5"><label for="str5"></label></span>
                       <span><input type="radio" name="rating" id="str4" value="4"><label for="str4"></label></span>
                       <span><input type="radio" name="rating" id="str3" value="3"><label for="str3"></label></span>
                       <span><input type="radio" name="rating" id="str2" value="2"><label for="str2"></label></span>
                       <span><input type="radio" name="rating" id="str1" value="1"><label for="str1"></label></span>
-                  </div>
+                    </div>
                     <p class="stars-text"><span class="stars-text-current number">4</span> из <span class="number">5</span> на основе <span class="stars-text-mark number">33</span> оценок</p>
                 </div>
                 <div class="article-extended-social">
@@ -158,7 +158,6 @@
                     {% endif %}
                 {% endfor %}
                 <form action="{% url 'articles:create_comment' slug=article.slug %}" method="post" class="response-block send_comment">
-                    {% csrf_token %}
                     <input type="hidden" name="parent_id" value="{{comment.id}}">
                     <input type="hidden" name="article" value="{{article.id}}">
                     <input type="hidden" name="user" value="{{user.id}}">
@@ -182,11 +181,10 @@
           </div>
           <div class="new-comment-inner">
             <form action="{% url 'articles:create_comment' slug=article.slug %}" method="post" class="new-comment-form send_comment">
-                {% csrf_token %}
                 <input type="hidden" name="article" value="{{article.id}}">
                 <input type="hidden" name="user" value="{{user.id}}">
               <textarea name="text" class="textarea" cols="30" rows="8" placeholder="Написать комментарий..."></textarea>
-              <button class="btn btn-orange popup_btn_login" type="submit">Отправить</button>
+              <button class="btn btn-orange {% if not user.is_authenticated %}popup_btn_login{% endif %}" type="submit">Отправить</button>
             </form>
           </div>
         </div>

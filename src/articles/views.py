@@ -8,8 +8,8 @@ from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy, reverse
 from django.views.generic import DetailView, ListView, CreateView
 
-from articles.forms import CommentCreateForm
-from articles.models import Article, ArticleViews, Comment
+from articles.forms import CommentCreateForm, ArticleRatingCreateForm
+from articles.models import Article, ArticleViews, Comment, ArticleRating
 from core.utils import get_client_ip
 
 
@@ -91,3 +91,28 @@ def article_like(request, slug):
     data = {'number_of_likes': article.number_of_likes()}
 
     return JsonResponse(data)
+
+
+class ArticleRatingCreateView(LoginRequiredMixin, CreateView):
+    model = ArticleRating
+    form_class = ArticleRatingCreateForm
+
+    def post(self, request):
+        article = Article.objects.get(id=request.POST.get('article_id', None))
+        rating = request.POST.get('rating', None)
+        current_rating = ArticleRating.objects.filter(user=request.user, article=article).first()
+        if current_rating:
+            current_rating.rating = rating
+            current_rating.save()
+            data = {'success': True, 'avarage_rating': current_rating.get_rating, 'count': current_rating.get_count}
+        else:
+            form = ArticleRatingCreateForm({'article': article, 'rating': rating, 'user': request.user})
+
+            if form.is_valid():
+                form.save()
+                data = {'success': True, 'avarage_rating': form.instance.get_rating, 'count': form.instance.get_count}
+            else:
+                return HttpResponse(form.errors.as_json(), status=400)
+                # return JsonResponse(data=form.errors.as_json(), status=500)
+
+        return JsonResponse(data)
