@@ -2344,6 +2344,41 @@ h1.title {
     padding-left: 20px;
     background: no-repeat left url("/static/assets/images/clock.svg"); }
 
+.rating {
+  float: left;
+  margin-right: 10px;
+  cursor: pointer; }
+
+.rating span {
+  float: right;
+  position: relative; }
+
+.rating span input {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 0; }
+
+.rating span label {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  text-align: center;
+  color: #fff;
+  background: no-repeat center center url("/../../src/assets/images/star.svg");
+  font-size: 30px;
+  margin-right: 2px;
+  line-height: 30px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%; }
+
+.rating span:hover ~ span label,
+.rating span:hover label,
+.rating span.checked label,
+.rating span.checked ~ span label {
+  background: no-repeat center center url("/../../src/assets/images/star-active.svg");
+  color: #fff; }
+
 .comments-row {
   overflow: hidden;
   transition: height 900ms ease; }
