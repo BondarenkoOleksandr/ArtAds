@@ -18,6 +18,17 @@ class ArticleListView(ListView):
     context_object_name = 'articles'
     template_name = 'articles/articles.html'
 
+    def get(self, request):
+        articles = Article.objects.all().select_related('author', 'category').prefetch_related('likes')
+
+        return render(
+            request=request,
+            template_name='articles/articles.html',
+            context={
+                'articles': articles,
+            }
+        )
+
 
 class ArticleDetailView(DetailView):
     model = Article
@@ -25,14 +36,17 @@ class ArticleDetailView(DetailView):
     def get(self, request, slug):
         article = Article.objects.filter(slug=slug).prefetch_related('likes')
         article = article.first()
-        comments = article.comments.filter(status=1, parent=None).select_related('user', 'article', 'parent')
+        comments = Comment.objects.filter(status=1, parent=None, article__slug=article.slug).select_related('user',
+                                                                                                            'article',
+                                                                                                            'parent')
 
         time_after_publish = date.today() - article.publish_date
 
         ArticleViews.objects.get_or_create(IPAddres=get_client_ip(request), article=article)
 
         similar_articles = Article.objects.exclude(slug=slug).order_by('publish_date').select_related(
-            'category').values('category__name', 'image', 'publish_date', 'author__first_name', 'author__last_name','text_before_quote', 'slug')[:3]
+            'category').values('category__name', 'image', 'publish_date', 'author__first_name', 'author__last_name',
+                               'text_before_quote', 'slug')[:3]
 
         return render(
             request=request,

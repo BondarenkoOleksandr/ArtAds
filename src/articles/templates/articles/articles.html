@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% block pagetitle %}Articles{% endblock %}
 {% load static %}
 {% block pagename %}page-artices{% endblock %}
 {% block content %}
@@ -17,9 +18,9 @@
         {% for article in articles %}
           <div class="article filtered-div" id="{{article.category.slug}}" data-tab="{{article.category.slug}}">
             <div class="article-picture">
-              <a href="/" class="article-category">{{article.category|upper}}</a>
-              <a class="article-picture-link" href="/">
-                <img class="article-picture-img" src="{% static 'article.image.url' %}" alt="Article."></a>
+              <a href="{% url 'articles:article' slug=article.get_slug %}" class="article-category">{{article.category|upper}}</a>
+              <a class="article-picture-link" href="{% url 'articles:article' slug=article.get_slug %}">
+                <img class="article-picture-img" src="{{article.image.url}}" alt="Article."></a>
             </div>
             <div class="article-footer">
               <div class="article-date">

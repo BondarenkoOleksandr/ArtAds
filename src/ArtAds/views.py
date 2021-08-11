@@ -10,7 +10,7 @@ from employees.models import Employee
 
 class FirstPageView(TemplateView):
     def get(self, request):
-        cases = Case.objects.all()
+        cases = Case.objects.all().select_related('category')
         articles = Article.objects.all().select_related('category')
         return render(
             request=request,
@@ -32,7 +32,7 @@ class ContactsPageView(TemplateView):
 
 class AboutPageView(TemplateView):
     def get(self, request):
-        employees = Employee.objects.all()
+        employees = Employee.objects.all().select_related('user')
         return render(
             request=request,
             template_name='about.html',

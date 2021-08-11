@@ -11,12 +11,12 @@
         <div class="tab-row tabs">
           <span class="tab-toggle show-all activeClass">ALL</span>
           {% for category in categories %}
-            <span class="tab-toggle {{category.name|lower}}">{{category.name}}</span>
+            <span class="tab-toggle {{category.name|lower}}" data-tab="{{category.name|lower}}">{{category.name}}</span>
           {% endfor %}
         </div>
         <div class="cases-row tabs-content">
           {% for case in cases %}
-            <div class="cases-item filtered-div" id="{{case.category|lower|cut:' '}}" data-{{case.category|lower|cut:' '}}="{{case.category|lower}}">
+            <div class="cases-item filtered-div" id="{{case.category|lower|cut:' '}}" data-tab="{{case.category|lower}}">
               <picture class="cases-item-phone">
                 <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
                 <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
