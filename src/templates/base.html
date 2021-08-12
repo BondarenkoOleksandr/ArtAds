@@ -37,7 +37,7 @@
 
         <nav class="nav nav-start mob-none">
           <ul class="nav-list">
-                  <li class="nav-link sub-link"><a href="">Услуги</a>
+                  <li class="nav-link sub-link"><a href="">{% trans 'Услуги' %}</a>
                     <div class="padding-block">
                       <div class="drop-down">
                         <div class="inner-drop-block">
@@ -50,23 +50,25 @@
                       </div>
                     </div>
                   </li>
-                  <li class="nav-link"><a href="{% url 'cases:list' %}">Кейсы</a></li>
-                  <li class="nav-link"><a href="{% url 'articles:list' %}">Статьи</a></li>
-                  <li class="nav-link"><a href="{% url 'about' %}">О нас</a></li>
-                  <li class="nav-link"><a href="{% url 'contacts' %}">Контакты</a></li>
+                  <li class="nav-link"><a href="{% url 'cases:list' %}">{% trans 'Кейсы' %}</a></li>
+                  <li class="nav-link"><a href="{% url 'articles:list' %}">{% trans 'Статьи' %}</a></li>
+                  <li class="nav-link"><a href="{% url 'about' %}">{% trans 'О нас' %}</a></li>
+                  <li class="nav-link"><a href="{% url 'contacts' %}">{% trans 'Контакты' %}</a></li>
           </ul>
         </nav>
 
         </div>
         <div class="language">
-                  <ul class="language-list">
-                    <li class="language-item"><a href="/">UA</a></li>
-                    <li class="language-item"><a href="/">RU</a></li>
-                    <li class="language-item"><a href="/">ENG</a></li>
-                  </ul>
+            {% get_available_languages as LANGUAGES %}
+            {% get_language_info_list for LANGUAGES as languages %}
+            <ul class="language-list">
+              {% for language in languages %}
+                <li class="language-item"><a href="/{{ language.code}}{{ request.get_full_path|slice:'3:' }}">{{ language.code|upper }}</a></li>
+              {% endfor %}
+            </ul>
         </div>
         <div class="scroll-wrapper">
-          <button class="btn cases-btn popup_btn mob-none">Оставить заявку</button>
+          <button class="btn cases-btn popup_btn mob-none">{% trans 'Оставить заявку' %}</button>
           <div class="burger">
             <span class="burger-item burger-top"></span>
             <span class="burger-item burger-middle"></span>
@@ -117,9 +119,9 @@
           </div>
         </div>
         <div class="footer-contacts">
-          <h3 class="footer-title">Контакты</h3>
-          <p class="footer-adress">Одесса, Украина <br>
-            Французский бульвар, <span class="number">60</span>Д</p>
+          <h3 class="footer-title">{% trans 'Контакты' %}</h3>
+          <p class="footer-adress">{% trans 'Одесса, Украина' %}<br>
+            {% trans 'Французский бульвар' %}, <span class="number">60</span>Д</p>
           <a href="tel:+38 068 278 22 00" class="footer-phone number">+38 068 278 22 00</a>
           <a href="mailto:inbox@artads.agency" class="footer-mail">inbox@artads.agency</a>
           <div class="social">
@@ -129,13 +131,13 @@
           </div>
         </div>
         <div class="footer-services">
-          <h3 class="footer-title">Услуги</h3>
+          <h3 class="footer-title">{% trans 'Услуги' %}</h3>
           {% for service in services_categories %}
             <a href="{% url 'services:article' slug=service.article.slug %}" class="services-link">{{service.name}}</a>
           {% endfor %}
         </div>
         <div class="footer-request">
-          <h3 class="footer-title">ЗАДАЙТЕ ВАШ ВОПРОС</h3>
+          <h3 class="footer-title">{% trans 'ЗАДАЙТЕ ВАШ ВОПРОС' %}</h3>
           <form action="" class="footer_form">
             <div class="form-wrapper">
               <div class="footer-form-left">
@@ -147,7 +149,7 @@
               </div>
             </div>
             <div class="form-footer">
-              <button class="btn btn-orange" type="submit">Оставить заявку</button>
+              <button class="btn btn-orange" type="submit">{% trans 'Оставить заявку' %}</button>
             </div>
 
           </form>
@@ -172,15 +174,15 @@
                       </div>
                     </div>
                   </li>
-                  <li class="nav-link"><a href="{% url 'cases:list' %}">Кейсы</a></li>
-                  <li class="nav-link"><a href="{% url 'articles:list' %}">Статьи</a></li>
-                  <li class="nav-link"><a href="{% url 'about' %}">О нас</a></li>
-                  <li class="nav-link"><a href="{% url 'contacts' %}">Контакты</a></li>
+                  <li class="nav-link"><a href="{% url 'cases:list' %}">{% trans 'Кейсы' %}</a></li>
+                  <li class="nav-link"><a href="{% url 'articles:list' %}">{% trans 'Статьи' %}</a></li>
+                  <li class="nav-link"><a href="{% url 'about' %}">{% trans 'О нас' %}</a></li>
+                  <li class="nav-link"><a href="{% url 'contacts' %}">{% trans 'Контакты' %}</a></li>
           </ul>
         </nav>
         <div class="footer-privacy-block">
           <!-- <a href="/" class="privacy-item">Условия пользования</a> -->
-          <a href="{% url 'privacy' %}" class="privacy-item">Политика конфиденциальности</a>
+          <a href="{% url 'privacy' %}" class="privacy-item">{% trans 'Политика конфиденциальности' %}</a>
         </div>
         <div class="footer-logo desktop-none">
           <a href="/" class="footer-logo-link">

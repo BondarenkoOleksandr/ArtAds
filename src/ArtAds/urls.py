@@ -1,44 +1,21 @@
-"""ArtAds URL Configuration
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 import debug_toolbar
+from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.contrib.auth.views import LogoutView
 from django.urls import path, include
 from django.conf.urls import handler404, handler500, handler403, handler400
 
 from ArtAds import settings
-from ArtAds.views import FirstPageView, ContactsPageView, AboutPageView, PrivacyPageView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', FirstPageView.as_view(), name='index'),
-    path('cases/', include('cases.urls'), name='cases'),
-    path('services/', include('services.urls'), name='services'),
-    path('contacts/', ContactsPageView.as_view(), name='contacts'),
     path('__debug__/', include(debug_toolbar.urls)),
-    path('accounts/', include('allauth.urls')),
-    path('logout', LogoutView.as_view()),
-    path('about/', AboutPageView.as_view(), name='about'),
     path('tinymce/', include('tinymce.urls')),
-    path('privacy/', PrivacyPageView.as_view(), name='privacy'),
-    path('articles/', include('articles.urls'), name='articles')
 ]
-
+urlpatterns += i18n_patterns(
+    path('', include('app.urls'))
+)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-handler404 = 'ArtAds.views.error_404'
+handler404 = 'app.views.error_404'
 

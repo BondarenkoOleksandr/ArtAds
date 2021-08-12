@@ -332,7 +332,7 @@ tinymce.addI18n('es_MX',{
 "Flags": "Banderas",
 "Characters": "Caracteres",
 "Characters (no spaces)": "Caracteres (sin espacios)",
-"Error: Form submit field collision.": "Error: colisi\u00f3n de campo env\u00edo de formulario.",
+"Error: Form submit field collision.": "Error: colisi\u00f3n de campo .env\u00edo de formulario.",
 "Error: No form element found.": "Error: no se encontr\u00f3 ning\u00fan elemento de formulario.",
 "Update": "Actualizar",
 "Color swatch": "Muestrario de colores",

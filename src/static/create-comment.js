@@ -20,7 +20,7 @@ $(document).ready(function () {
         $.ajax({
             type: 'POST',
             async: true,
-            url: $(this).data('url'),
+            url: $(this).attr('action'),
             data: "csrfmiddlewaretoken="+csrftoken+'&'+$(this).serialize(),
             success: function(data) {
             const isEmpty = x => !Object.keys(x).length;

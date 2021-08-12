@@ -1,0 +1,92 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-12 04:30+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\articles\templates\articles\article.html:172
+msgid "See more"
+msgstr ""
+
+#: .\articles\templates\articles\article.html:186
+msgid "Написать комментарий..."
+msgstr ""
+
+#: .\articles\templates\articles\article.html:187
+msgid "Отправить"
+msgstr ""
+
+#: .\articles\templates\articles\article.html:206
+msgid "Имя"
+msgstr ""
+
+#: .\articles\templates\articles\article.html:210
+msgid "Телефон"
+msgstr ""
+
+#: .\articles\templates\articles\article.html:219 .\templates\base.html:71
+#: .\templates\base.html:152
+msgid "Оставить заявку"
+msgstr ""
+
+#: .\articles\templates\articles\article.html:238
+msgid "Продолжить с Facebook"
+msgstr ""
+
+#: .\articles\templates\articles\article.html:242
+msgid "Авторизуясь, Вы даете согласие на обработку персональных данных."
+msgstr ""
+
+#: .\articles\templates\articles\articles.html:10 .\templates\base.html:54
+#: .\templates\base.html:178
+msgid "Статьи"
+msgstr "Публікації"
+
+#: .\templates\base.html:40 .\templates\base.html:134
+msgid "Услуги"
+msgstr ""
+
+#: .\templates\base.html:53 .\templates\base.html:177
+msgid "Кейсы"
+msgstr ""
+
+#: .\templates\base.html:55 .\templates\base.html:179
+msgid "О нас"
+msgstr ""
+
+#: .\templates\base.html:56 .\templates\base.html:122 .\templates\base.html:180
+msgid "Контакты"
+msgstr ""
+
+#: .\templates\base.html:123
+msgid "Одесса, Украина"
+msgstr ""
+
+#: .\templates\base.html:124
+msgid "Французский бульвар"
+msgstr ""
+
+#: .\templates\base.html:140
+msgid "ЗАДАЙТЕ ВАШ ВОПРОС"
+msgstr ""
+
+#: .\templates\base.html:185
+msgid "Политика конфиденциальности"
+msgstr ""
+
+#: .\templates\index.html:9
+msgid "Маркетинговое digital-агентство полного цикла"
+msgstr "Маркетингове digital-агенство повного циклу"

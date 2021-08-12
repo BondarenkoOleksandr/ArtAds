@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-10 03:37+0300\n"
+"POT-Creation-Date: 2021-08-12 04:30+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,18 +21,76 @@ msgstr ""
 "100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
 "(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: .\ArtAds\settings.py:186
-msgid "Russian"
+#: .\articles\templates\articles\article.html:172
+msgid "See more"
 msgstr ""
 
-#: .\ArtAds\settings.py:187
-msgid "English"
+#: .\articles\templates\articles\article.html:186
+msgid "Написать комментарий..."
 msgstr ""
 
-#: .\ArtAds\settings.py:188
-msgid "Ukrainian"
+#: .\articles\templates\articles\article.html:187
+msgid "Отправить"
 msgstr ""
 
-#: .\templates\base.html:22
-msgid "Welcome, You are logged in as"
+#: .\articles\templates\articles\article.html:206
+msgid "Имя"
 msgstr ""
+
+#: .\articles\templates\articles\article.html:210
+msgid "Телефон"
+msgstr ""
+
+#: .\articles\templates\articles\article.html:219 .\templates\base.html:71
+#: .\templates\base.html:152
+msgid "Оставить заявку"
+msgstr "Залишити заявку"
+
+#: .\articles\templates\articles\article.html:238
+msgid "Продолжить с Facebook"
+msgstr ""
+
+#: .\articles\templates\articles\article.html:242
+msgid "Авторизуясь, Вы даете согласие на обработку персональных данных."
+msgstr ""
+
+#: .\articles\templates\articles\articles.html:10 .\templates\base.html:54
+#: .\templates\base.html:178
+msgid "Статьи"
+msgstr "Публікації"
+
+#: .\templates\base.html:40 .\templates\base.html:134
+msgid "Услуги"
+msgstr "Послуги"
+
+#: .\templates\base.html:53 .\templates\base.html:177
+msgid "Кейсы"
+msgstr "Кейси"
+
+#: .\templates\base.html:55 .\templates\base.html:179
+msgid "О нас"
+msgstr "Про нас"
+
+#: .\templates\base.html:56 .\templates\base.html:122 .\templates\base.html:180
+msgid "Контакты"
+msgstr "Контакти"
+
+#: .\templates\base.html:123
+msgid "Одесса, Украина"
+msgstr "Одеса, Україна"
+
+#: .\templates\base.html:124
+msgid "Французский бульвар"
+msgstr "Французський бульвар"
+
+#: .\templates\base.html:140
+msgid "ЗАДАЙТЕ ВАШ ВОПРОС"
+msgstr "ЗАДАЙТЕ ВАШЕ ПИТАННЯ"
+
+#: .\templates\base.html:185
+msgid "Политика конфиденциальности"
+msgstr "Політика конфіденційності"
+
+#: .\templates\index.html:9
+msgid "Маркетинговое digital-агентство полного цикла"
+msgstr "Маркетингове digital-агенство повного циклу"

@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 {% load socialaccount %}
 {% block pagename %}article-page{% endblock %}
 {% block content %}
@@ -59,7 +60,7 @@
                     <p class="stars-text"><span class="stars-text-current number">4</span> из <span class="number">5</span> на основе <span class="stars-text-mark number">33</span> оценок</p>
                 </div>
                 <div class="article-extended-social">
-                    <div class="social-item social-item-like" data-url="{% url 'articles:like' slug=article.slug %}" data-number="{{article.number_of_likes}}">
+                    <div class="social-item social-item-like {% if request.user in article.likes.all %}add{% endif %}" data-url="{% url 'articles:like' slug=article.slug %}" data-number="{{article.number_of_likes}}">
                         <div class="social-item-inner social-item-like-inner number">{{article.number_of_likes}}</div>
                     </div>
                     <div class="social-item social-item-twitter">
@@ -71,9 +72,6 @@
                     <div class="social-item social-item-telegram">
                         <div class="social-item-inner social-item-telegram-inner number">43</div>
                     </div>
-                </div>
-                <div class="article-extended-error">
-                    <p>Обнаружили ошибку? Выделите ее и нажмите Ctrl + Enter.</p>
                 </div>
             </div>
         </div>  
@@ -116,9 +114,6 @@
           </div>
         </div>
           {% endfor %}
-      </div>
-      <div class="cases-all">
-        <button id="read_more" class="btn cases-btn">Read more</button>
       </div>
     </div>
 </section>
@@ -169,7 +164,7 @@
         </div>
         {% if comments %}
         <div class="comments-all">
-          <button class="btn cases-btn btn-all-comments">See more</button>
+          <button class="btn cases-btn btn-all-comments">{% trans 'See more' %}</button>
         </div>
         {% endif %}
         <div class="new-comment">
@@ -183,8 +178,8 @@
             <form action="{% url 'articles:create_comment' slug=article.slug %}" method="post" class="new-comment-form send_comment">
                 <input type="hidden" name="article" value="{{article.id}}">
                 <input type="hidden" name="user" value="{{user.id}}">
-              <textarea name="text" class="textarea" cols="30" rows="8" placeholder="Написать комментарий..."></textarea>
-              <button class="btn btn-orange {% if not user.is_authenticated %}popup_btn_login{% endif %}" type="submit">Отправить</button>
+              <textarea name="text" class="textarea" cols="30" rows="8" placeholder="{% trans 'Написать комментарий...' %}"></textarea>
+              <button class="btn btn-orange {% if not user.is_authenticated %}popup_btn_login{% endif %}" type="submit">{% trans 'Отправить' %}</button>
             </form>
           </div>
         </div>
@@ -203,11 +198,11 @@
           <p class="popup_descr">Оставляйте заявку прямо сейчас и получайте эксклюзивное предложение!</p>
           <div class="input_row">
             <div class="input-item">
-              <label for="user_name">Имя</label>
+              <label for="user_name">{% trans 'Имя' %}</label>
               <input class="form-control form_input" name="user_name" required type="text" placeholder="Введите имя">
             </div>
             <div class="input-item">
-              <label for="user_phone">Телефон</label>
+              <label for="user_phone">{% trans 'Телефон' %}</label>
               <input class="form-control form_input mask-phone" name="user_phone" required type="tel" placeholder="Введите телефон">
             </div>
             <div class="input-item">
@@ -216,7 +211,7 @@
             </div>
 
           </div>
-          <div class="row-center"><button class="btn btn-top btn-orange" name="submit" type="submit">Оставить заявку</button></div>
+          <div class="row-center"><button class="btn btn-top btn-orange" name="submit" type="submit">{% trans 'Оставить заявку' %}</button></div>
 
         </form>
       </div>
@@ -235,11 +230,11 @@
                 <p>Welcome, You are logged in as {{ user.username }}</p>
             {% else %}
                 <a class="login_btn login_btn_google" href="{% provider_login_url 'google' %}">Google</a>
-                <a class="login_btn login_btn_facebook" href="{% provider_login_url 'facebook' method='oauth2' %}">Продолжить с Facebook</a>
+                <a class="login_btn login_btn_facebook" href="{% provider_login_url 'facebook' method='oauth2' %}">{% trans 'Продолжить с Facebook' %}</a>
             {% endif %}
         </form>
       </div>
-      <p class="popup_login_descr">Авторизуясь, Вы даете согласие на обработку персональных данных.</p>
+      <p class="popup_login_descr">{% trans 'Авторизуясь, Вы даете согласие на обработку персональных данных.' %}</p>
     </div>
   </div>
 </div>

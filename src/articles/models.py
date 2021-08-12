@@ -29,15 +29,10 @@ class Article(models.Model):
         unique=True
     )
     publish_date = models.DateField(auto_now_add=True)
-    likes = models.ManyToManyField(User, related_name='article_like')
+    likes = models.ManyToManyField(User, related_name='article_like', editable=False)
 
     def __str__(self):
         return self.title + ' - ' + self.author.username
-
-    def save(self, *args, **kwargs):
-        value = self.title
-        self.slug = slugify(value, allow_unicode=True)
-        super().save(*args, **kwargs)
 
     def number_of_likes(self):
         return self.likes.count()

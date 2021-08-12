@@ -187,6 +187,20 @@ window.addEventListener('DOMContentLoaded', function () {
 
   Object(_modules_tabs__WEBPACK_IMPORTED_MODULE_4__["default"])();
   Object(_modules_modals__WEBPACK_IMPORTED_MODULE_5__["default"])();
+  var likeCounter = document.querySelectorAll('.social-item-like');
+  likeCounter.forEach(function (like) {
+    like.addEventListener('click', function () {
+      like.classList.toggle('add');
+    });
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_1___default()(".rating input:radio").attr("checked", false);
+  jquery__WEBPACK_IMPORTED_MODULE_1___default()('.rating input').click(function () {
+    jquery__WEBPACK_IMPORTED_MODULE_1___default()(".rating span").removeClass('checked');
+    jquery__WEBPACK_IMPORTED_MODULE_1___default()(this).parent().addClass('checked');
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_1___default()('input:radio').change(function () {
+    var userRating = this.value;
+  });
 }); //header start
 
 jquery__WEBPACK_IMPORTED_MODULE_1___default()(window).on("load", function () {
@@ -964,51 +978,56 @@ var tabs = function tabs() {
         div.classList.remove('remove');
         div.classList.add('show');
       });
-    };
+    }; // webTab.addEventListener('click', showWeb)
+    // function showWeb() {
+    //   allFilteredDivsArray.forEach(div => {
+    //     div.classList.remove('remove')
+    //     if (!div.dataset.web) { // скрываем все блоки без dataset WEB
+    //       div.classList.add('remove')
+    //     }
+    //   })
+    // }
+    // seoTab.addEventListener('click', showSeo)
+    // function showSeo() {
+    //   allFilteredDivsArray.forEach(div => {
+    //     div.classList.remove('remove')
+    //     if (!div.dataset.seo) {
+    //       div.classList.add('remove')
+    //     }
+    //   })
+    // }
+    // smmTab.addEventListener('click', showSmm)
+    // function showSmm() {
+    //   allFilteredDivsArray.forEach(div => {
+    //     div.classList.remove('remove')
+    //     if (!div.dataset.smm) {
+    //       div.classList.add('remove')
+    //     }
+    //   })
+    // }
 
-    var showWeb = function showWeb() {
-      allFilteredDivsArray.forEach(function (div) {
-        div.classList.remove('remove');
-
-        if (!div.dataset.web) {
-          // скрываем все блоки без dataset WEB
-          div.classList.add('remove');
-        }
-      });
-    };
-
-    var showSeo = function showSeo() {
-      allFilteredDivsArray.forEach(function (div) {
-        div.classList.remove('remove');
-
-        if (!div.dataset.seo) {
-          div.classList.add('remove');
-        }
-      });
-    };
-
-    var showSmm = function showSmm() {
-      allFilteredDivsArray.forEach(function (div) {
-        div.classList.remove('remove');
-
-        if (!div.dataset.smm) {
-          div.classList.add('remove');
-        }
-      });
-    };
 
     tabToggle.forEach(function (item) {
       item.addEventListener('click', function () {
+        console.log('step1');
         tabToggle.forEach(function (child) {
           child.classList.remove('activeClass');
+          console.log('step2');
         });
-        item.classList.add('activeClass');
+        item.classList.add('activeClass'); // function tabFunction() {
+
+        allFilteredDivsArray.forEach(function (div) {
+          div.classList.remove('remove');
+          console.log('step3');
+
+          if (div.getAttribute('data-tab') !== item.getAttribute('data-tab')) {
+            // скрываем все блоки без dataset WEB
+            div.classList.add('remove');
+          }
+        }); // }
       });
     });
     showAllTab.addEventListener('click', showAll);
-    webTab.addEventListener('click', showWeb);
-    seoTab.addEventListener('click', showSeo);
-    smmTab.addEventListener('click', showSmm);
   } //TABS END
 
 };

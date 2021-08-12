@@ -1642,7 +1642,7 @@ h1.title {
 
 .slick-slide {
   float: left;
-  height: 100%;
+  height: fit-content;
   min-height: 1px;
   display: none; }
   [dir="rtl"] .slick-slide {
@@ -1746,7 +1746,7 @@ h1.title {
           bottom: 0;
           padding: 0;
           width: 100%;
-          margin-top: 25px; } }
+          margin-top: 40px; } }
     .reviews .slick-initialized .slide-title {
       font-size: 2.4rem;
       font-family: "Raleway-Bold";
@@ -2294,7 +2294,8 @@ h1.title {
     border-radius: 5px;
     margin-right: 30px;
     min-width: 70px;
-    min-height: 44px; }
+    min-height: 44px;
+    cursor: pointer; }
     .article-page .article-extended-social .social-item-like {
       background: linear-gradient(90deg, #f83600 0%, #f83b00 28.65%, #fe8c00 100%); }
       .article-page .article-extended-social .social-item-like-inner {
@@ -2313,6 +2314,8 @@ h1.title {
         background: no-repeat left center url("/static/assets/images/telegram-icon.svg"); }
     .article-page .article-extended-social .social-item-inner {
       padding-left: 22px; }
+    .article-page .article-extended-social .social-item.add {
+      box-shadow: 0px 0px 13px 7px rgba(255, 124, 0, 0.61); }
 
 .article-page .article-extended-error {
   padding-left: 23px;
@@ -2340,6 +2343,41 @@ h1.title {
   .article-date-time {
     padding-left: 20px;
     background: no-repeat left url("/static/assets/images/clock.svg"); }
+
+.rating {
+  float: left;
+  margin-right: 10px;
+  cursor: pointer; }
+
+.rating span {
+  float: right;
+  position: relative; }
+
+.rating span input {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 0; }
+
+.rating span label {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  text-align: center;
+  color: #fff;
+  background: no-repeat center center url("/static/assets/images/star.svg");
+  font-size: 30px;
+  margin-right: 2px;
+  line-height: 30px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%; }
+
+.rating span:hover ~ span label,
+.rating span:hover label,
+.rating span.checked label,
+.rating span.checked ~ span label {
+  background: no-repeat center center url("/static/assets/images/star-active.svg");
+  color: #fff; }
 
 .comments-row {
   overflow: hidden;

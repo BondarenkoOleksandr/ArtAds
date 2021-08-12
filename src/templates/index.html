@@ -6,7 +6,7 @@
     <div class="site-width">
       <div class="top-block-wrapper">
         <div class="request">
-          <h1 class="title request-title">Маркетинговое digital-агентство полного цикла</h1>
+          <h1 class="title request-title">{% trans 'Маркетинговое digital-агентство полного цикла' %}</h1>
           <div class="request-description">
             <p class="request-paragraph">
               Доверьтесь команде профессионалов в области цифровой рекламы, и получите результат, отвечающий поставленным бизнес-целям и вашему бюджету.
@@ -143,7 +143,7 @@
               </div>
               <div class="article-decsription">
                 <p class="article-paragraph article-paragraph--short">
-                  {{article.text}}
+                  {{article.text_before_quote}}
                 </p>
               </div>
               <a class="article-link" href="{% url 'articles:article' slug=article.get_slug %}">
