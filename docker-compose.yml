@@ -3,7 +3,7 @@ version: '3'
 services:
 
   backend:
-    build: ./
+    build: src
     container_name: diploma_container
     restart: always
     command: ./commands/start_server_${MODE}.sh
@@ -15,7 +15,7 @@ services:
       - .\src\media:/srv/project/media
       - static_content:/var/www/ArtAds
     env_file:
-      - .env
+      - src/.env
     environment:
       - DJANGO_SETTINGS_MODULE=ArtAds.settings.${MODE}
 
@@ -39,7 +39,7 @@ services:
       - 80:80
       - 443:443
     env_file:
-      - .env
+      - src/.env
     depends_on:
       - backend
 

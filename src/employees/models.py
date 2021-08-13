@@ -23,3 +23,8 @@ class Employee(models.Model):
 
     def __str__(self):
         return self.user.username
+
+
+class Skill(models.Model):
+    text = models.CharField(max_length=150)
+    employee = models.ForeignKey(Employee, on_delete=models.CASCADE, related_name='skills')

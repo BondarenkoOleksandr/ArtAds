@@ -1,6 +1,15 @@
 from django.contrib import admin
 
 # Register your models here.
-from employees.models import Employee
+from employees.models import Employee, Skill
 
-admin.site.register(Employee)
+
+class SkillsInline(admin.TabularInline):
+    model = Skill
+
+
+class EmployeeAdmin(admin.ModelAdmin):
+    inlines = (SkillsInline,)
+
+
+admin.site.register(Employee, EmployeeAdmin)

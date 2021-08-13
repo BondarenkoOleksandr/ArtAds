@@ -1,5 +1,5 @@
 from django.contrib import admin
-from modeltranslation.admin import TranslationAdmin
+from modeltranslation.admin import TabbedTranslationAdmin
 
 import ArtAds.translation
 
@@ -11,9 +11,14 @@ class WorkPointInline(admin.TabularInline):
     model = WorkPoint
 
 
-class ServiceAricleAdmin(TranslationAdmin):
+class ServiceArticleAdmin(TabbedTranslationAdmin):
     inlines = (WorkPointInline,)
 
 
-admin.site.register(ServiceArticle, ServiceAricleAdmin)
+# class WorkPointAdmin(TabbedTranslationAdmin):
+#     pass
+
+
+admin.site.register(ServiceArticle, ServiceArticleAdmin)
+# admin.site.register(WorkPoint, ServiceArticleAdmin)
 admin.site.register(ServiceCategory)

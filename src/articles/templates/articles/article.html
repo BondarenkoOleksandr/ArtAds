@@ -3,6 +3,7 @@
 {% load i18n %}
 {% load socialaccount %}
 {% block pagename %}article-page{% endblock %}
+{% block pagetitle %}{{article.title}}{% endblock %}
 {% block content %}
   <section class="article-back">
       <div class="site-width article-back-inner">
@@ -57,20 +58,20 @@
                       <span><input type="radio" name="rating" id="str2" value="2"><label for="str2"></label></span>
                       <span><input type="radio" name="rating" id="str1" value="1"><label for="str1"></label></span>
                     </div>
-                    <p class="stars-text"><span class="stars-text-current number">4</span> из <span class="number">5</span> на основе <span class="stars-text-mark number">33</span> оценок</p>
+                    <p class="stars-text"><span class="stars-text-current number">{{current_rating}}</span> из <span class="number">5</span> на основе <span class="stars-text-mark number">{{count_of_voices}}</span> оценок</p>
                 </div>
                 <div class="article-extended-social">
                     <div class="social-item social-item-like {% if request.user in article.likes.all %}add{% endif %}" data-url="{% url 'articles:like' slug=article.slug %}" data-number="{{article.number_of_likes}}">
                         <div class="social-item-inner social-item-like-inner number">{{article.number_of_likes}}</div>
                     </div>
                     <div class="social-item social-item-twitter">
-                        <div class="social-item-inner social-item-twitter-inner number">43</div>
+                        <div class="social-item-inner social-item-twitter-inner number"><a href="https://twitter.com/intent/tweet?text=Hello%20world&url={{ request.build_absolute_uri }}" target="_blank">43</a></div>
                     </div>
                     <div class="social-item social-item-facebook">
-                        <div class="social-item-inner social-item-facebook-inner number"><a href="https://www.facebook.com/sharer/sharer.php?{{ request.build_absolute_uri }}">LIKE</a></div>
+                        <div class="social-item-inner social-item-facebook-inner number"><a href="https://www.facebook.com/sharer/sharer.php?{{ request.build_absolute_uri }}" target="_blank">LIKE</a></div>
                     </div>
                     <div class="social-item social-item-telegram">
-                        <div class="social-item-inner social-item-telegram-inner number">43</div>
+                        <div class="social-item-inner social-item-telegram-inner number"><a href="https://t.me/share/url?url={{ request.build_absolute_uri }}&text=ArtAds%20Agency" target="_blank">43</a></div>
                     </div>
                 </div>
             </div>

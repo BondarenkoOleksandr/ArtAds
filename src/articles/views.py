@@ -41,13 +41,22 @@ class ArticleDetailView(DetailView):
                                                                                                             'article',
                                                                                                             'parent')
 
+        art_rating = ArticleRating.objects.filter(user=request.user, article=article).first()
+
         time_after_publish = date.today() - article.publish_date
 
         ArticleViews.objects.get_or_create(IPAddres=get_client_ip(request), article=article)
+        if art_rating:
+            current_rating = art_rating.get_rating
+            count_of_voices = art_rating.get_count
+        else:
+            current_rating = 0
+            count_of_voices = 0
 
         similar_articles = Article.objects.exclude(slug=slug).order_by('publish_date').select_related(
             'category').values('category__name', 'image', 'publish_date', 'author__first_name', 'author__last_name',
                                'text_before_quote', 'slug')[:3]
+
 
         return render(
             request=request,
@@ -57,6 +66,8 @@ class ArticleDetailView(DetailView):
                 'similar_articles': similar_articles,
                 'comments': comments,
                 'time_after_publish': time_after_publish,
+                'current_rating': current_rating,
+                'count_of_voices': count_of_voices,
             }
         )
 

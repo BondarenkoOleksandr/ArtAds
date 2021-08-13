@@ -59,6 +59,11 @@ $(document).ready(function () {
         .fail(() => document.querySelector('.popup_send_moderation.popup_try_again').style.top= "0px")// сообщение об ошибке при ошибке
     });
     $(".social-item-like").on('click', function (e) {
+        if($(this).hasClass('add')){
+            $('.social-item-like-inner').text(Number($('.social-item-like-inner').text())-1);
+        }else{
+            $('.social-item-like-inner').text(Number($('.social-item-like-inner').text())+1);
+        }
         var csrftoken = getCookie('csrftoken');
         $.ajax({
             type: 'POST',
@@ -67,10 +72,7 @@ $(document).ready(function () {
             data: "csrfmiddlewaretoken="+csrftoken,
             success: function(data) {
             const isEmpty = x => !Object.keys(x).length;
-            var len = Object.keys(data).length
-                if( !isEmpty(data) ){
-                    $('.social-item-like-inner').text(data.number_of_likes);
-                }
+            var len = Object.keys(data).length;
             },
             dataType: 'json',
         })

@@ -2,17 +2,14 @@ FROM python:3.8
 
 RUN apt update
 
-COPY ../commands ./commands
-RUN chmod u+x ./commands/start_nginx.sh
-
 RUN mkdir /srv/project
 WORKDIR /srv/project
 
 COPY ./src ./src
-COPY requirements.txt ./requirements.txt
+COPY src/requirements.txt ./requirements.txt
 
 RUN pip install -r requirements.txt
 
 ENV TZ Europe/Kiev
 
-CMD ["bash"]
+CMD ["python", "src/manage.py","runserver", "127.0.0.1:8008"]

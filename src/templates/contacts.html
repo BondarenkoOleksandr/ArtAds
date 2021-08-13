@@ -1,12 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block pagename %}page-contacts{% endblock %}
+{% block pagetitle %}Contacts{% endblock %}
+{% load i18n %}
 {% block content %}
 <section class="block-100vh">
     <div class="site-width">
       <div class="contacts-wrapper">
         <div class="title-wrapper">
-            <h2 class="title title-center">Контакты</h2>
+            <h2 class="title title-center">{% trans 'Контакты' %}</h2>
         </div>
         <div class="contacts-top">
             <div class="request form-wrapper">
@@ -20,7 +22,7 @@
                     <input name="email" type="email" placeholder="Введите e-mail" required>
                     <label for="">Сообщение</label>
                     <textarea name="" id="" cols="30" rows="6" placeholder="Введите сообщение"></textarea>
-                    <button class="btn btn-top btn-orange">Оставить заявку</button>
+                    <button class="btn btn-top btn-orange">{% trans 'Оставить заявку' %}</button>
 
                 </form>
             </div>
@@ -30,7 +32,7 @@
         </div>
         <div class="contacts-footer">
             <div class="contacts-footer-item">
-                <div class="contacts-footer-title">Телефон</div>
+                <div class="contacts-footer-title">{% trans 'Телефон' %}</div>
                 <div class="contacts-footer-info">
                     <a href="tel:+380682782200"><span class="number">+38 068 278 22 00</span></a>
                 </div>

@@ -13,7 +13,7 @@
               Откройте новые возможности для развития вашего бизнеса прямо сейчас.
             </p>
           </div>
-          <button class="btn btn-top btn-orange popup_btn">Оставить заявку</button>
+          <button class="btn btn-top btn-orange popup_btn">{% trans 'Оставить заявку' %}</button>
         </div>
         <div class="honeycomb-wrap mob-none">
           <ul class="honeycomb">
@@ -27,7 +27,7 @@
           {% endfor %}
             <li class="honey honey-6 honey-services">
               <!-- <div class="button__circle" ></div> -->
-              <p class="honey-text">Услуги</p>
+              <p class="honey-text">{% trans 'Услуги' %}</p>
             </li>
         </ul>
         </div>
@@ -38,19 +38,19 @@
             <div class="top-block-advantages-item">
               <p class="number-block">100<span class="number-block-sub"> %</span></p>
               <p class="top-block-advantages-descr">
-                довольных клиентов
+                {% trans 'довольных клиентов' %}
               </p>
             </div>
             <div class="top-block-advantages-item">
               <p class="number-block">10<span class="number-block-sub"> лет</span></p>
               <p class="top-block-advantages-descr">
-                на рынке маркетинговых услуг
+                {% trans 'на рынке маркетинговых услуг' %}
               </p>
             </div>
             <div class="top-block-advantages-item">
               <p class="number-block">100<span class="number-block-sub"> +</span></p>
               <p class="top-block-advantages-descr">
-                успешных проектов
+                {% trans 'успешных проектов' %}
               </p>
             </div>
           </div>
@@ -74,7 +74,7 @@
       </ul>
       </div>
       <div class="title-wrapper">
-        <h2 class="title title-center">Наши кейсы</h2>
+        <h2 class="title title-center">{% trans 'Наши кейсы' %}</h2>
       </div>
       <div class="cases-row">
         {% for case in cases %}
@@ -93,15 +93,17 @@
           </div>
           {% endfor %}
       </div>
+      {% if cases.count > 2 %}
       <div class="cases-all">
-        <button class="btn cases-btn more_cases">See more</button>
+        <button class="btn cases-btn more_cases">{% trans 'See more' %}</button>
       </div>
+      {% endif %}
     </div>
   </section>
   <section class="partners">
     <div class="site-width">
       <div class="title-wrapper">
-        <h2 class="title title-center">Наши партнеры</h2>
+        <h2 class="title title-center">{% trans 'Наши партнеры' %}</h2>
       </div>
     
       <div class="partners-wrapper">
@@ -122,7 +124,7 @@
   <section class="articles">
     <div class="site-width">
       <div class="title-wrapper">
-        <h2 class="title title-center">Статьи</h2>
+        <h2 class="title title-center">{% trans 'Статьи' %}</h2>
       </div>
       <div class="articles-row article-slider">
         {% for article in articles %}
@@ -143,20 +145,22 @@
               </div>
               <div class="article-decsription">
                 <p class="article-paragraph article-paragraph--short">
-                  {{article.text_before_quote}}
+                  {{article.text_before_quote|cut:'</p>'|cut:'<p>'}}
                 </p>
               </div>
+              {% if articles.count > 2 %}
               <a class="article-link" href="{% url 'articles:article' slug=article.get_slug %}">
                 <div class="article-link-text">
                   Read more
                 </div>
               </a>
+              {% endif %}
             </div>
           </div>
         {% endfor %}
       </div>
       <div class="cases-all mob-none">
-        <button id="read_more" class="btn cases-btn">Read more</button>
+        <button id="read_more" class="btn cases-btn">{% trans 'Read more' %}</button>
       </div>
     </div>
   </section>

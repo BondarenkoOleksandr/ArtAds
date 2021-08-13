@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-12 04:30+0300\n"
+"POT-Creation-Date: 2021-08-13 01:17+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,45 +20,52 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\articles\templates\articles\article.html:172
+#: .\articles\templates\articles\article.html:168 .\templates\index.html:98
 msgid "See more"
 msgstr "Загрузить ещё"
 
-#: .\articles\templates\articles\article.html:186
+#: .\articles\templates\articles\article.html:182
 msgid "Написать комментарий..."
 msgstr ""
 
-#: .\articles\templates\articles\article.html:187
+#: .\articles\templates\articles\article.html:183
 msgid "Отправить"
 msgstr ""
 
-#: .\articles\templates\articles\article.html:206
+#: .\articles\templates\articles\article.html:202
 msgid "Имя"
 msgstr ""
 
-#: .\articles\templates\articles\article.html:210
+#: .\articles\templates\articles\article.html:206 .\templates\contacts.html:35
 msgid "Телефон"
 msgstr ""
 
-#: .\articles\templates\articles\article.html:219 .\templates\base.html:71
-#: .\templates\base.html:152
+#: .\articles\templates\articles\article.html:215 .\templates\base.html:71
+#: .\templates\base.html:152 .\templates\contacts.html:25
+#: .\templates\index.html:16
 msgid "Оставить заявку"
 msgstr "Оставить заявку"
 
-#: .\articles\templates\articles\article.html:238
+#: .\articles\templates\articles\article.html:234
 msgid "Продолжить с Facebook"
 msgstr ""
 
-#: .\articles\templates\articles\article.html:242
+#: .\articles\templates\articles\article.html:238
 msgid "Авторизуясь, Вы даете согласие на обработку персональных данных."
 msgstr ""
 
 #: .\articles\templates\articles\articles.html:10 .\templates\base.html:54
-#: .\templates\base.html:178
+#: .\templates\base.html:178 .\templates\index.html:127
 msgid "Статьи"
 msgstr "Статьи"
 
-#: .\templates\base.html:40 .\templates\base.html:134
+#: .\templates\about.html:82 .\templates\index.html:106
+#, fuzzy
+#| msgid "Кейсы"
+msgid "Наши партнеры"
+msgstr "Кейсы"
+
+#: .\templates\base.html:40 .\templates\base.html:134 .\templates\index.html:30
 msgid "Услуги"
 msgstr "Услуги"
 
@@ -71,6 +78,7 @@ msgid "О нас"
 msgstr "О нас"
 
 #: .\templates\base.html:56 .\templates\base.html:122 .\templates\base.html:180
+#: .\templates\contacts.html:11
 msgid "Контакты"
 msgstr "Контакты"
 
@@ -93,3 +101,27 @@ msgstr "Политика конфиденциальности"
 #: .\templates\index.html:9
 msgid "Маркетинговое digital-агентство полного цикла"
 msgstr "Маркетинговое digital-агентство полного цикла"
+
+#: .\templates\index.html:41
+msgid "довольных клиентов"
+msgstr ""
+
+#: .\templates\index.html:47
+msgid "на рынке маркетинговых услуг"
+msgstr ""
+
+#: .\templates\index.html:53
+msgid "успешных проектов"
+msgstr ""
+
+#: .\templates\index.html:77
+#, fuzzy
+#| msgid "Кейсы"
+msgid "Наши кейсы"
+msgstr "Кейсы"
+
+#: .\templates\index.html:163
+#, fuzzy
+#| msgid "See more"
+msgid "Read more"
+msgstr "Загрузить ещё"

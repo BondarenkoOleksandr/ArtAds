@@ -1,6 +1,6 @@
 import ArtAds.translation
 from django.contrib import admin
-from modeltranslation.admin import TranslationAdmin
+from modeltranslation.admin import TabbedTranslationAdmin
 
 # Register your models here.
 from articles.models import Article, Comment
@@ -20,7 +20,7 @@ class ArticleAdmin(admin.ModelAdmin):
     list_display = ('article', 'status', 'text')
 
 
-class ArticleAdmin(TranslationAdmin):
+class ArticleAdmin(TabbedTranslationAdmin):
     pass
 
 
