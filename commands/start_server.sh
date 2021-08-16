@@ -1,3 +1,3 @@
 #!/bin/bash
 
-python src/manage.py runserver 0:8008
+python src/manage.py runserver --settings=ArtAds.settings.${MODE} 0:${WSGI_PORT}

@@ -1,3 +1,4 @@
+from django.core.exceptions import ValidationError
 from django.db import models
 
 # Create your models here.
@@ -20,13 +21,13 @@ class ServiceArticle(models.Model):
     def __str__(self):
         return self.title
 
+    def clean(self):
+        if ServiceArticle.objects.filter(title=self.title):
+            raise ValidationError('Service Article with this title already exists')
+
+
     class Meta:
         verbose_name_plural = 'Service Articles'
-
-    def save(self, *args, **kwargs):
-        value = self.title
-        self.slug = slugify(value, allow_unicode=True)
-        super().save(*args, **kwargs)
 
     def get_slug(self):
         return self.slug

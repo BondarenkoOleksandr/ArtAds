@@ -1,7 +1,9 @@
 from django.contrib.auth.models import User
+from django.core.exceptions import ValidationError
 from django.db import models
 from django.db.models import Avg
 from tinymce.models import HTMLField
+import uuid
 from django.utils.text import slugify
 
 
@@ -23,13 +25,17 @@ class Article(models.Model):
     quote = models.TextField()
     text_after_quote = HTMLField(null=True)
     slug = models.SlugField(
-        default='',
         max_length=100,
         editable=False,
-        unique=True
+        unique=True,
+        default=uuid.uuid1
     )
     publish_date = models.DateField(auto_now_add=True)
     likes = models.ManyToManyField(User, related_name='article_like', editable=False)
+
+    def clean(self):
+        if Article.objects.filter(title=self.title):
+            raise ValidationError('Article with this title already exists')
 
     def __str__(self):
         return self.title + ' - ' + self.author.username
@@ -50,7 +56,7 @@ class ArticleViews(models.Model):
     article = models.ForeignKey('Article', on_delete=models.CASCADE)
 
     def __str__(self):
-        return '{0} in {1} post'.format(self.IPAddres, self.post.title)
+        return '{0} in {1} post'.format(self.IPAddres, self.article.title)
 
 
 class ArticleRating(models.Model):

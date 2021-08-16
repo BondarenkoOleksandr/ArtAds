@@ -12,4 +12,4 @@ RUN pip install -r requirements.txt
 
 ENV TZ Europe/Kiev
 
-CMD ["python", "src/manage.py","runserver", "127.0.0.1:8008"]
+CMD ["bash"]

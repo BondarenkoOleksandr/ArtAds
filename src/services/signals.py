@@ -1,12 +1,11 @@
 from autoslug.utils import slugify
-from django.core.exceptions import ValidationError
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
-from articles.models import Article
+from services.models import ServiceArticle
 
 
-@receiver(post_save, sender=Article)
+@receiver(post_save, sender=ServiceArticle)
 def save_lesson(sender, instance, created, **kwargs):
     if created:
         value = instance.title

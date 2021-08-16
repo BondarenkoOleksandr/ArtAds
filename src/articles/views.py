@@ -41,11 +41,15 @@ class ArticleDetailView(DetailView):
                                                                                                             'article',
                                                                                                             'parent')
 
-        art_rating = ArticleRating.objects.filter(user=request.user, article=article).first()
 
         time_after_publish = date.today() - article.publish_date
 
         ArticleViews.objects.get_or_create(IPAddres=get_client_ip(request), article=article)
+        if request.user.is_authenticated:
+            art_rating = ArticleRating.objects.filter(user=request.user, article=article).first()
+        else:
+            art_rating = ArticleRating.objects.filter(article=article).first()
+
         if art_rating:
             current_rating = art_rating.get_rating
             count_of_voices = art_rating.get_count
@@ -56,7 +60,6 @@ class ArticleDetailView(DetailView):
         similar_articles = Article.objects.exclude(slug=slug).order_by('publish_date').select_related(
             'category').values('category__name', 'image', 'publish_date', 'author__first_name', 'author__last_name',
                                'text_before_quote', 'slug')[:3]
-
 
         return render(
             request=request,
@@ -112,8 +115,10 @@ class ArticleRatingCreateView(LoginRequiredMixin, CreateView):
     def post(self, request):
         article = Article.objects.get(id=request.POST.get('article_id', None))
         rating = request.POST.get('rating', None)
-        current_rating = ArticleRating.objects.filter(user=request.user, article=article).first()
-        if current_rating:
+
+        current_rating = ArticleRating.objects.filter(article=article).first()
+        if request.user.is_authenticated:
+            current_rating = current_rating.filter(user=request.user)
             current_rating.rating = rating
             current_rating.save()
             data = {'success': True, 'avarage_rating': current_rating.get_rating, 'count': current_rating.get_count}

@@ -51,7 +51,7 @@
             </div>
             <div class="article-extended-footer">
                 <div class="article-extended-rating">
-                    <div class="rating" data-url="{% url 'articles:voice' %}" data-id="{{article.id}}">
+                    <div class="rating {% if not user.is_authenticated %}popup_btn_login{% endif %}" data-url="{% url 'articles:voice' %}" data-id="{{article.id}}">
                       <span><input type="radio" name="rating" id="str5" value="5"><label for="str5"></label></span>
                       <span><input type="radio" name="rating" id="str4" value="4"><label for="str4"></label></span>
                       <span><input type="radio" name="rating" id="str3" value="3"><label for="str3"></label></span>
@@ -61,7 +61,7 @@
                     <p class="stars-text"><span class="stars-text-current number">{{current_rating}}</span> из <span class="number">5</span> на основе <span class="stars-text-mark number">{{count_of_voices}}</span> оценок</p>
                 </div>
                 <div class="article-extended-social">
-                    <div class="social-item social-item-like {% if request.user in article.likes.all %}add{% endif %}" data-url="{% url 'articles:like' slug=article.slug %}" data-number="{{article.number_of_likes}}">
+                    <div class="social-item social-item-like {% if request.user in article.likes.all %}add{% endif %} {% if not user.is_authenticated %}popup_btn_login{% endif %}" data-url="{% url 'articles:like' slug=article.slug %}" data-number="{{article.number_of_likes}}">
                         <div class="social-item-inner social-item-like-inner number">{{article.number_of_likes}}</div>
                     </div>
                     <div class="social-item social-item-twitter">
@@ -271,5 +271,7 @@
 </div>
 {% endblock %}
 {% block scripts %}
+{% if user.is_authenticated %}
     <script type="text/javascript" src="{% static 'create-comment.js' %}"></script>
+{% endif %}
 {% endblock %}

@@ -1,5 +1,5 @@
 from django.core.exceptions import ValidationError
-from django.forms import ModelForm
+from django.forms import ModelForm, BaseInlineFormSet
 
 from articles.models import Comment, ArticleRating, Article
 
