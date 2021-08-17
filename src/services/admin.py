@@ -1,5 +1,5 @@
 from django.contrib import admin
-from modeltranslation.admin import TabbedTranslationAdmin
+from modeltranslation.admin import TabbedTranslationAdmin, TranslationTabularInline
 
 import ArtAds.translation
 
@@ -7,7 +7,7 @@ import ArtAds.translation
 from services.models import ServiceArticle, ServiceCategory, WorkPoint
 
 
-class WorkPointInline(admin.TabularInline):
+class WorkPointInline(TranslationTabularInline):
     model = WorkPoint
 
 

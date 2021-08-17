@@ -15,7 +15,8 @@
                 <p class="any-questions">
                     Остались вопросы? Оставьте заявку и наши менеджеры с Вами свяжутся!
                 </p>
-                <form action="" class="form-contact">
+                <form action="{% url 'send_email' %}" class="form-contact" method="post">
+                    {% csrf_token %}
                     <label for="name">Имя</label>
                     <input name="name" type="text" placeholder="Введите имя" required>
                     <label for="email">E-mail</label>
@@ -23,7 +24,7 @@
                     <label for="">Сообщение</label>
                     <textarea name="" id="" cols="30" rows="6" placeholder="Введите сообщение"></textarea>
                     <button class="btn btn-top btn-orange">{% trans 'Оставить заявку' %}</button>
-
+                    <div class="status"></div>
                 </form>
             </div>
             <div class="map">

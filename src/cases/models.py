@@ -13,7 +13,8 @@ class Case(models.Model):
         to='cases.Category',
         null=True,
         verbose_name='Case Category',
-        on_delete=models.SET_NULL
+        on_delete=models.SET_NULL,
+        related_name='cases',
     )
     mob_image = models.ImageField(default='phone.png', upload_to='cases')
     full_image = models.ImageField(default='default-picture.png', upload_to='cases')

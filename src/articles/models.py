@@ -97,4 +97,4 @@ class Comment(models.Model):
     pub_date = models.DateTimeField('date published', auto_now_add=True)
 
     def __str__(self):
-        return self.article.title + ' - ' + self.user.username
+        return self.text[0:15] + ' - ' + self.article.title + ' - ' + self.user.username

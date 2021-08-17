@@ -52,6 +52,7 @@ $(document).ready(function () {
                 if( !isEmpty(data) ){
                     $('.stars-text-current.number').text(data.avarage_rating);
                     $('.stars-text-mark.number').text(data.count);
+                    $('.article-back-rating-number').text(data.avarage_rating);
                 }
             },
             dataType: 'json',
@@ -61,8 +62,10 @@ $(document).ready(function () {
     $(".social-item-like").on('click', function (e) {
         if($(this).hasClass('add')){
             $('.social-item-like-inner').text(Number($('.social-item-like-inner').text())-1);
+            $('.article-back-info-like-number').text(Number($('.article-back-info-like-number').text())-1);
         }else{
             $('.social-item-like-inner').text(Number($('.social-item-like-inner').text())+1);
+            $('.article-back-info-like-number').text(Number($('.article-back-info-like-number').text())+1);
         }
         var csrftoken = getCookie('csrftoken');
         $.ajax({

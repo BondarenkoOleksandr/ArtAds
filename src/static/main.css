@@ -2954,5 +2954,14 @@ h1.title {
     .footer-logo.mob-none {
       display: none; } }
 
+.status {
+  display: none;
+  color: green;
+  margin: 0 auto;
+  line-height: 2.5;
+}
+.status.visible {
+  display: block;
+}
 
 /*# sourceMappingURL=main.css.map*/
