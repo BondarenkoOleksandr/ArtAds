@@ -10,8 +10,8 @@ services:
     ports:
       - "${PORT}:${WSGI_PORT}"
     volumes:
-      - .\src:/srv/project/src
-      - .\commands:/srv/project/commands
+      - ./src:/srv/project/src
+      - ./commands:/srv/project/commands
       - static_content:/var/www/artads
     env_file:
       - .env
@@ -30,7 +30,7 @@ services:
   nginx:
     image: nginx:1.19
     volumes:
-      - .\nginx:/etc/nginx/conf.d
+      - ./nginx:/etc/nginx/conf.d
       - static_content:/var/www/artads
     ports:
       - 80:80
