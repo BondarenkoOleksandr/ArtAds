@@ -1,4 +1,5 @@
-from django.http import HttpResponseRedirect
+from django.core.mail import send_mail
+from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import render
 from django.urls import reverse
 from django.views.generic import TemplateView
@@ -48,6 +49,28 @@ class PrivacyPageView(TemplateView):
             request=request,
             template_name='privacy.html',
         )
+
+
+class SendEmailView(TemplateView):
+    def post(self, request):
+        data = 'Name: '+request.POST.get('name', '') + '\n' + 'Email: ' + request.POST.get('email', '')
+        if request.POST.get('phone', ''):
+            data += '\n' + 'Phone' + request.POST.get('phone', '')
+
+        if request.POST.get('question', ''):
+            data += '\n' + 'Question: ' + request.POST.get('question', '')
+
+
+
+        send_mail('Заявка с сайта ArtAds!', data, "ArtAds Agency",
+                  ['backend@artads.agency'], fail_silently=False)
+
+        if send_mail:
+            data = {'success': 1}
+        else:
+            data = {'success': 0}
+
+        return JsonResponse(data)
 
 
 def error_404(request, exception):

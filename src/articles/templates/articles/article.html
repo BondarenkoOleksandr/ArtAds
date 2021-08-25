@@ -9,7 +9,7 @@
       <div class="site-width article-back-inner">
         <a href="/" class="article-category">{{article.category.name}}</a>
         <div class="article-back-rating">
-            <span class="article-back-rating-number number">4</span>
+            <span class="article-back-rating-number number">{{current_rating}}</span>
         </div>
         <div class="article-back-info">
             <div class="article-back-info-item article-back-info-like">
@@ -79,7 +79,7 @@
       </div>
     </div>  
   </section>
-  
+  {% if similar_articles.all %}
   <section class="articles">
     <div class="site-width">
       <div class="title-wrapper">
@@ -118,6 +118,7 @@
       </div>
     </div>
 </section>
+{% endif %}
 <section class="comments">
     <div class="site-width">
         <div class="title-wrapper">
@@ -163,7 +164,7 @@
           </div>
             {% endfor %}
         </div>
-        {% if comments %}
+        {% if comments.count > 1 %}
         <div class="comments-all">
           <button class="btn cases-btn btn-all-comments">{% trans 'See more' %}</button>
         </div>
@@ -187,7 +188,6 @@
     </div>
 </section>
 {% endblock %}
-
 {% block footer %}
 <div class="popup popup_func">
   <div class="popup_dialog">
@@ -230,8 +230,8 @@
             {% if user.is_authenticated %}
                 <p>Welcome, You are logged in as {{ user.username }}</p>
             {% else %}
-                <a class="login_btn login_btn_google" href="{% provider_login_url 'google' %}">Google</a>
-                <a class="login_btn login_btn_facebook" href="{% provider_login_url 'facebook' method='oauth2' %}">{% trans 'Продолжить с Facebook' %}</a>
+                <a class="login_btn login_btn_google" href="{% provider_login_url 'google' %}?next={{request.path}}">Google</a>
+                <a class="login_btn login_btn_facebook" href="{% provider_login_url 'facebook' method='oauth2' %}?next={{request.path}}">{% trans 'Продолжить с Facebook' %}</a>
             {% endif %}
         </form>
       </div>
@@ -272,6 +272,6 @@
 {% endblock %}
 {% block scripts %}
 {% if user.is_authenticated %}
-    <script type="text/javascript" src="{% static 'create-comment.js' %}"></script>
+    <script type="text/javascript" src="{% static 'article-actions.js' %}"></script>
 {% endif %}
 {% endblock %}

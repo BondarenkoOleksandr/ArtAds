@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import date, datetime
 
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
@@ -41,8 +41,7 @@ class ArticleDetailView(DetailView):
                                                                                                             'article',
                                                                                                             'parent')
 
-
-        time_after_publish = date.today() - article.publish_date
+        time_after_publish = article.publish_date
 
         ArticleViews.objects.get_or_create(IPAddres=get_client_ip(request), article=article)
         if request.user.is_authenticated:
@@ -116,9 +115,12 @@ class ArticleRatingCreateView(LoginRequiredMixin, CreateView):
         article = Article.objects.get(id=request.POST.get('article_id', None))
         rating = request.POST.get('rating', None)
 
-        current_rating = ArticleRating.objects.filter(article=article).first()
+        current_rating = False
+
         if request.user.is_authenticated:
-            current_rating = current_rating.filter(user=request.user)
+            current_rating = ArticleRating.objects.filter(article=article, user=request.user).first()
+
+        if current_rating:
             current_rating.rating = rating
             current_rating.save()
             data = {'success': True, 'avarage_rating': current_rating.get_rating, 'count': current_rating.get_count}

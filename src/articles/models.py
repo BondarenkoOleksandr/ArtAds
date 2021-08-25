@@ -34,7 +34,7 @@ class Article(models.Model):
     likes = models.ManyToManyField(User, related_name='article_like', editable=False)
 
     def clean(self):
-        if Article.objects.filter(title=self.title):
+        if not self.slug and Article.objects.filter(title=self.title):
             raise ValidationError('Article with this title already exists')
 
     def __str__(self):
@@ -97,4 +97,4 @@ class Comment(models.Model):
     pub_date = models.DateTimeField('date published', auto_now_add=True)
 
     def __str__(self):
-        return self.article.title + ' - ' + self.user.username
+        return self.text[0:15] + ' - ' + self.article.title + ' - ' + self.user.username

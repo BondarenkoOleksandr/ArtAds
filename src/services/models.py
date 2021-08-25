@@ -22,9 +22,8 @@ class ServiceArticle(models.Model):
         return self.title
 
     def clean(self):
-        if ServiceArticle.objects.filter(title=self.title):
+        if not self.slug and ServiceArticle.objects.filter(title=self.title):
             raise ValidationError('Service Article with this title already exists')
-
 
     class Meta:
         verbose_name_plural = 'Service Articles'

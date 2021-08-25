@@ -13,15 +13,9 @@ class CommentAdmin(admin.ModelAdmin):
     list_display = ('article', 'status', 'text', 'parent')
 
 
-class ArticleAdmin(admin.ModelAdmin):
-    search_fields = ['status', 'article__title']
-    ordering = ('status',)
-    list_per_page = 10
-    list_display = ('article', 'status', 'text')
-
-
 class ArticleAdmin(TabbedTranslationAdmin):
-    pass
+    search_fields = ['title']
+    list_per_page = 10
 
 
 admin.site.register(Article, ArticleAdmin)

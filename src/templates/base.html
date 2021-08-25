@@ -19,12 +19,6 @@
 
 <body class="page {% block pagename %}main-page{% endblock %}">
   <!-- HEADER -->
-  {% if user.is_authenticated %}
-
-  {% else %}
-    <a href="{% provider_login_url 'google' %}">Login With Google</a>
-    <a href="{% provider_login_url 'facebook' method='oauth2' %}">Facebook OAuth2</a>
-  {% endif %}
   <header class="header">
     <div class="site-width">
       <div class="header-wrapper">
@@ -52,8 +46,8 @@
                       </div>
                     </div>
                   </li>
-                  <li class="nav-link"><a href="{% url 'cases:list' %}">{% trans 'Кейсы' %}</a></li>
-                  <li class="nav-link"><a href="{% url 'articles:list' %}">{% trans 'Статьи' %}</a></li>
+                  <li class="nav-link"><a href="/{{request.LANGUAGE_CODE}}{% url 'cases:list' %}">{% trans 'Кейсы' %}</a></li>
+                  <li class="nav-link"><a href="/{{request.LANGUAGE_CODE}}{% url 'articles:list' %}">{% trans 'Статьи' %}</a></li>
                   <li class="nav-link"><a href="{% url 'about' %}">{% trans 'О нас' %}</a></li>
                   <li class="nav-link"><a href="{% url 'contacts' %}">{% trans 'Контакты' %}</a></li>
           </ul>
@@ -65,7 +59,7 @@
             {% get_language_info_list for LANGUAGES as languages %}
             <ul class="language-list">
               {% for language in languages %}
-                <li class="language-item"><a href="/{{ language.code}}{{ request.get_full_path|slice:'3:' }}">{{ language.code|upper }}</a></li>
+                <li class="language-item"><a href='/{{ language.code}}{{ request.path|cut:"ru/"|cut:"en/"|cut:"uk/" }}'>{{ language.code|upper }}</a></li>
               {% endfor %}
             </ul>
         </div>
@@ -140,17 +134,20 @@
         </div>
         <div class="footer-request">
           <h3 class="footer-title">{% trans 'ЗАДАЙТЕ ВАШ ВОПРОС' %}</h3>
-          <form action="" class="footer_form">
+          <form action="{% url 'send_email' %}" class="footer_form" method="POST">
+            {% csrf_token %}
             <div class="form-wrapper">
               <div class="footer-form-left">
-                <input class="input" type="text" placeholder="Имя" required>
-                <input class="input" type="email" placeholder="E-mail" required>
+                <input class="input" name="name" type="text" placeholder="Имя" required>
+                <input class="input" name="email" type="email" placeholder="E-mail" required>
               </div>
               <div class="footer-form-right">
-                <textarea class="textarea" name="" id="" cols="30" placeholder="Вопрос" required></textarea>
+                <textarea class="textarea" name="question" id="" cols="30" placeholder="Вопрос" required></textarea>
               </div>
             </div>
+
             <div class="form-footer">
+              <div class="status"></div>
               <button class="btn btn-orange" type="submit">{% trans 'Оставить заявку' %}</button>
             </div>
 
@@ -211,8 +208,9 @@
         <button type="button" class="popup_close"><img src="{% static 'assets/images/close.svg' %}" alt="Close button."></button>
         <h2 class="title">Заголовок (УТП)</h2>
         <div class="popup_form">
-          <form class="form" action="#">
+          <form class="form send_form" action="{% url 'send_email' %}" method="post">
             <p class="popup_descr">Оставляйте заявку прямо сейчас и получайте эксклюзивное предложение!</p>
+            {% csrf_token %}
             <div class="input_row">
               <div class="input-item">
                 <label for="user_name">Имя</label>
@@ -230,6 +228,8 @@
             </div>
             <div class="row-center"><button class="btn btn-top btn-orange" name="submit" type="submit">Оставить заявку</button></div>
 
+            <div class="status"></div>
+
           </form>
         </div>
       </div>
@@ -241,6 +241,8 @@
   <script type="text/javascript" src="{% static 'libs/slick-carousel/slick/slick.min.js' %}"></script>
   <script src="{% static 'vendors~main.js' %}"></script>
   <script src="{% static 'main.js' %}"></script>
+  <script src="{% static 'send_form.js' %}"></script>
+
   {% block scripts %}
   {% endblock %}
 </body>

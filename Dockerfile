@@ -2,6 +2,12 @@ FROM python:3.8
 
 RUN apt update
 
+COPY ./commands ./commands
+RUN chmod u+x ./commands/start_server.sh
+RUN chmod u+x ./commands/start_nginx.sh
+RUN chmod u+x ./commands/start_celery.sh
+RUN chmod u+x ./commands/start_celerybeat.sh
+
 RUN mkdir /srv/project
 WORKDIR /srv/project
 
