@@ -157,7 +157,7 @@ SOCIALACCOUNT_PROVIDERS = {
 
 # Provide a lists of languages which your site supports.
 
-SITE_ID = 1
+SITE_ID = 2
 
 INTERNAL_IPS = [
     # ...
@@ -217,4 +217,3 @@ STATICFILES_DIRS = (
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = 'media/'
-
