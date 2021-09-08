@@ -1,6 +1,7 @@
 {% load static %}
 {% load socialaccount %}
 {% load i18n %}
+{% load custom_tags %}
 <html lang="en">
 
 <head>
@@ -59,10 +60,11 @@
             {% get_language_info_list for LANGUAGES as languages %}
             <ul class="language-list">
               {% for language in languages %}
-                <li class="language-item"><a href='/{{ language.code}}{{ request.path|slice:"2:" }}'>{{ language.code|upper }}</a></li>
+                <li class="language-item"><a href='/{{ language.code}}{{ request.path|clean_link }}'>{{ language.code|upper }}</a></li>
               {% endfor %}
             </ul>
         </div>
+        <div class="scroll-wrapper">
         <div class="scroll-wrapper">
           <button class="btn cases-btn popup_btn mob-none">{% trans 'Оставить заявку' %}</button>
           <div class="burger">
