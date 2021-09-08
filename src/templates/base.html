@@ -59,7 +59,7 @@
             {% get_language_info_list for LANGUAGES as languages %}
             <ul class="language-list">
               {% for language in languages %}
-                <li class="language-item"><a href='/{{ language.code}}{{ request.path|cut:"ru/"|cut:"en/"|cut:"uk/" }}'>{{ language.code|upper }}</a></li>
+                <li class="language-item"><a href='/{{ language.code}}{{ request.path|slice:"2:" }}'>{{ language.code|upper }}</a></li>
               {% endfor %}
             </ul>
         </div>

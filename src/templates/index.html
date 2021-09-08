@@ -22,7 +22,7 @@
             </span>
           {% for service in services_categories %}
             <li class="honey honey-{% if forloop.counter|add:1 == 5 or forloop.counter|add:1 > 5 %}{{ forloop.counter|add:3 }}{% else %}{{ forloop.counter|add:1 }}{% endif %}">
-              <a href="{% url 'services:article' slug=service.article.slug %}" class="honey-link"><p class="honey-text">{{service.name}}</p></a>
+              <a href="{% if service.article %}{% url 'services:article' slug=service.article.slug %}{% endif %}" class="honey-link"><p class="honey-text">{{service.name}}</p></a>
             </li>
           {% endfor %}
             <li class="honey honey-6 honey-services">
@@ -67,9 +67,9 @@
             <p class="honey-text"></p>
           </span>
           {% for service in services_categories %}
-          <li class="honey honey-2">
-            <a href="{% url 'services:article' slug=service.article.slug %}" class="honey-link"><p class="honey-text">{{service.name}}</p></a>
-          </li>
+              <li class="honey honey-2">
+                <a href="{% if service.article %}{% url 'services:article' slug=service.article.slug %}{% endif %}" class="honey-link"><p class="honey-text">{{service.name}}</p></a>
+              </li>
           {% endfor %}
       </ul>
       </div>
@@ -145,16 +145,14 @@
               </div>
               <div class="article-decsription">
                 <p class="article-paragraph article-paragraph--short">
-                  {{article.text_before_quote|cut:'</p>'|cut:'<p>'}}
+                  {{article.text_before_quote|striptags}}
                 </p>
               </div>
-              {% if articles.count > 2 %}
               <a class="article-link" href="{% url 'articles:article' slug=article.get_slug %}">
                 <div class="article-link-text">
                   Read more
                 </div>
               </a>
-              {% endif %}
             </div>
           </div>
         {% endfor %}
