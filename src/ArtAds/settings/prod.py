@@ -1,7 +1,7 @@
 from ArtAds.settings.base import *
 
 
-DEBUG = False
+DEBUG = True
 
 DATABASES = {
     'default': {
@@ -21,7 +21,7 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
 EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '72.167.43.196']
+ALLOWED_HOSTS = ['185.233.116.108', 'art-ads.agency', 'artads.agency', 'www.artads.agency']
 
 MEDIA_ROOT = '/var/www/artads/media'
 STATIC_ROOT = '/var/www/artads/static'
