@@ -33,7 +33,7 @@ SECRET_KEY = 'django-insecure-buj415kjck&jn2j#8wr=1qjj2-d)si1%k64bpry0%r1(sl%xs8
 INSTALLED_APPS = [
     'jazzmin',
 
-    # 'django.contrib.admin',
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
