@@ -62,7 +62,7 @@ msgstr "Публікації"
 
 #: .\templates\about.html:82 .\templates\index.html:106
 msgid "Наши партнеры"
-msgstr "Кейси"
+msgstr "Наші партнери"
 
 #: .\templates\base.html:40 .\templates\base.html:134 .\templates\index.html:30
 msgid "Услуги"
@@ -107,7 +107,7 @@ msgstr "задоволених клієнтів"
 
 #: .\templates\index.html:47
 msgid "на рынке маркетинговых услуг"
-msgstr ""
+msgstr "на ринку маркетингових послуг"
 
 #: .\templates\index.html:53
 msgid "успешных проектов"
@@ -115,7 +115,7 @@ msgstr "вдалих проектів"
 
 #: .\templates\index.html:77
 msgid "Наши кейсы"
-msgstr "Кейси"
+msgstr "Наші кейси"
 
 #: .\templates\index.html:163
 msgid "Read more"

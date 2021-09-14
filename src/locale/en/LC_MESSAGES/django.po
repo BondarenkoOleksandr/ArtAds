@@ -24,7 +24,7 @@ msgstr ""
 
 #: .\articles\templates\articles\article.html:182
 msgid "Написать комментарий..."
-msgstr ""
+msgstr "Comment"
 
 #: .\articles\templates\articles\article.html:183
 msgid "Отправить"
@@ -116,4 +116,4 @@ msgstr "Our cases"
 
 #: .\templates\index.html:163
 msgid "Read more"
-msgstr ""
+msgstr "Read more"

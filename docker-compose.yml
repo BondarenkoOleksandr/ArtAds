@@ -6,17 +6,16 @@ services:
     build: ./
     container_name: artads_container
     restart: always
-    command: ./commands/start_server_${MODE}.sh
+    command: ./commands/start_server.sh
     ports:
       - "${PORT}:${WSGI_PORT}"
     volumes:
+      - /etc/letsencrypt/live/artads.agency/:/etc/letsencrypt/live/artads.agency/
       - ./src:/srv/project/src
       - ./commands:/srv/project/commands
       - static_content:/var/www/artads
     env_file:
       - .env
-    environment:
-      - DJANGO_SETTINGS_MODULE=app.settings.${MODE}
     depends_on:
       - postgres
 
@@ -34,6 +33,7 @@ services:
     volumes:
       - ./nginx:/etc/nginx/conf.d
       - static_content:/var/www/artads
+      - /etc/letsencrypt/:/etc/letsencrypt/
     ports:
       - 80:80
       - 443:443
