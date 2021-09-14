@@ -10,6 +10,7 @@ services:
     ports:
       - "${PORT}:${WSGI_PORT}"
     volumes:
+      - /etc/letsencrypt/live/artads.agency/:/etc/letsencrypt/live/artads.agency/
       - ./src:/srv/project/src
       - ./commands:/srv/project/commands
       - static_content:/var/www/artads
@@ -32,6 +33,7 @@ services:
     volumes:
       - ./nginx:/etc/nginx/conf.d
       - static_content:/var/www/artads
+      - /etc/letsencrypt/:/etc/letsencrypt/
     ports:
       - 80:80
       - 443:443

@@ -63,7 +63,7 @@ msgstr "Статьи"
 #, fuzzy
 #| msgid "Кейсы"
 msgid "Наши партнеры"
-msgstr "Кейсы"
+msgstr "Партнеры"
 
 #: .\templates\base.html:40 .\templates\base.html:134 .\templates\index.html:30
 msgid "Услуги"
@@ -118,7 +118,7 @@ msgstr ""
 #, fuzzy
 #| msgid "Кейсы"
 msgid "Наши кейсы"
-msgstr "Кейсы"
+msgstr "Наши кейсы"
 
 #: .\templates\index.html:163
 #, fuzzy
