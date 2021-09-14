@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'articles',
     'employees',
     'core',
+    'users',
 
     'allauth',
     'allauth.account',
