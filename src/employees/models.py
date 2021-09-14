@@ -1,9 +1,11 @@
-from django.contrib.auth.models import User
+
 from django.db import models
 from PIL import Image
 
 
 # Create your models here.
+from users.models import User
+
 
 class Employee(models.Model):
     user = models.OneToOneField(
