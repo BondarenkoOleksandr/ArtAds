@@ -85,7 +85,7 @@
             </span>
           {% for service in services_categories %}
             <li class="honey honey-{% if forloop.counter|add:1 == 5 or forloop.counter|add:1 > 5 %}{{ forloop.counter|add:3 }} burger-menu-honey-{{ forloop.counter|add:3 }}{% else %}{{ forloop.counter|add:1 }} burger-menu-honey-{{ forloop.counter|add:1 }}{% endif %}">
-              <a href="{% url 'services:article' slug=service.article.slug %}" class="honey-link"><p class="honey-text">{{service.name}}</p></a>
+              <a href="{% if service.article %}{% url 'services:article' slug=service.article.slug %}{% endif %}" class="honey-link"><p class="honey-text">{{service.name}}</p></a>
             </li>
           {% endfor %}
             <li class="honey honey-06 burger-menu-honey-6">
@@ -131,7 +131,7 @@
         <div class="footer-services">
           <h3 class="footer-title">{% trans 'Услуги' %}</h3>
           {% for service in services_categories %}
-            <a href="{% url 'services:article' slug=service.article.slug %}" class="services-link">{{service.name}}</a>
+            <a href="{% if service.article %}{% url 'services:article' slug=service.article.slug %}{% endif %}" class="services-link">{{service.name}}</a>
           {% endfor %}
         </div>
         <div class="footer-request">
@@ -168,7 +168,7 @@
                         <div class="inner-drop-block">
                           <ul class="sub-nav">
                             {% for service in services_categories %}
-                              <li class="nav-link"><a href="{% url 'services:article' slug=service.article.slug %}">{{service.name}}</a></li>
+                              <li class="nav-link"><a href="{% if service.article %}{% url 'services:article' slug=service.article.slug %}{% endif %}">{{service.name}}</a></li>
                             {% endfor %}
                           </ul>
                         </div>

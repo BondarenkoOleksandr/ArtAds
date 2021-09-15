@@ -7,6 +7,8 @@ from django.conf.urls import handler404, handler500, handler403, handler400
 
 from app.views import ContactsPageView, PrivacyPageView, AboutPageView, SendEmailView
 
+from src.ArtAds.settings import base
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('__debug__/', include(debug_toolbar.urls)),
@@ -18,5 +20,7 @@ urlpatterns = [
 urlpatterns += i18n_patterns(
     path('', include('app.urls'))
 )
+
+urlpatterns += static(base.MEDIA_URL, document_root=base.MEDIA_ROOT)
 
 handler404 = 'app.views.error_404'
