@@ -38,7 +38,7 @@
         <h1 class="title title-article">{{article.title}}</h1>
         <div class="article-extended-content">
             <div class="article-extended-author">
-                <div class="article-extended-author-photo" style="background: url({{article.author.employee.image.url}}) center center/cover no-repeat"></div>
+                <div class="article-extended-author-photo" style="background: url({{article.author.user.image.url}}) center center/cover no-repeat"></div>
                 <h3 class="article-extended-author-title">{{article.author.first_name}} {{article.author.last_name}}</h3>
                 <h4 class="article-extended-author-subtitle">{{article.author.position}}</h4>
                 <a href="/" class="author-link author-link-insta">@example</a>
@@ -128,7 +128,7 @@
             {% for comment in comments %}
             <div class="comment">
               <div class="comment-header">
-                  <div class="comment-photo"><img class="comment-photo-pic" src="{% static 'assets/images/author1.png' %}" alt="Author."></div>
+                  <div class="comment-photo"><img class="comment-photo-pic" src="{{comment.user.image.url}}" alt="Author."></div>
                   <div class="comment-info">
                       <div class="comment-name">{{comment.user.first_name}}</div>
                       <div class="comment-date number">{{comment.pub_date}}</div>
@@ -143,7 +143,7 @@
                 {% for subcomment in comment.subcomments.all %}
                     {% if subcomment.status == 1 %}
                     <div class="comment-header comment-subcomment">
-                      <div class="comment-photo"><img class="comment-photo-pic" src="{% static 'assets/images/author1.png' %}" alt="Author."></div>
+                      <div class="comment-photo"><img class="comment-photo-pic" src="{{subcomment.user.image.url}}" alt="Author."></div>
                       <div class="comment-info">
                           <div class="comment-name">{{subcomment.user.first_name}}</div>
                           <div class="comment-date number">{{subcomment.pub_date}}</div>

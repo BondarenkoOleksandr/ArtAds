@@ -159,7 +159,7 @@ SOCIALACCOUNT_PROVIDERS = {
 
 # Provide a lists of languages which your site supports.
 
-SITE_ID = 5
+SITE_ID = 3
 
 INTERNAL_IPS = [
     # ...
