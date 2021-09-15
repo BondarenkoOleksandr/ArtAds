@@ -2,7 +2,7 @@
 from django.db.models.signals import m2m_changed
 
 from core.utils import moderate_user_role
-from src.users.models import User
+from users.models import User
 
 
 def handle_m2m_changed(sender, instance, action, **kwargs):
