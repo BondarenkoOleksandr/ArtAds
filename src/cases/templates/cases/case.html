@@ -12,9 +12,9 @@
         <div class="tab-row tabs">
           <span class="tab-toggle show-all activeClass">ALL</span>
           {% for category in categories %}
-          {% if category.cases.all %}
-            <span class="tab-toggle {{category.name|lower}}" data-tab="{{category.name|lower}}">{{category.name}}</span>
-          {% endif %}
+            {% if category.cases.all %}
+              <span class="tab-toggle {{category.name|lower}}" data-tab="{{category.name|lower}}">{{category.name}}</span>
+            {% endif %}
           {% endfor %}
         </div>
         <div class="cases-row tabs-content">
