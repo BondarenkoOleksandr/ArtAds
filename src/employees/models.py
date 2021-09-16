@@ -30,3 +30,10 @@ class Employee(models.Model):
 class Skill(models.Model):
     text = models.CharField(max_length=150)
     employee = models.ForeignKey(Employee, on_delete=models.CASCADE, related_name='skills')
+
+
+class SocialNetwork(models.Model):
+    link = models.URLField()
+    title = models.CharField(max_length=100, null=True)
+    logo = models.ImageField(upload_to='social_logos/', null=True, blank=True)
+    employee = models.ForeignKey(Employee, on_delete=models.CASCADE, related_name='social_accounts')
