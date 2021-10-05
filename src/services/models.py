@@ -1,5 +1,6 @@
 from django.core.exceptions import ValidationError
 from django.db import models
+from tinymce.models import HTMLField
 
 # Create your models here.
 from django.utils.text import slugify
@@ -16,7 +17,7 @@ class ServiceArticle(models.Model):
     )
 
     image = models.ImageField(default='default-picture.png', upload_to='services/')
-    text = models.TextField()
+    text = HTMLField(null=True)
 
     def __str__(self):
         return self.title
