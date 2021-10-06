@@ -7,10 +7,11 @@ services:
     container_name: artads_container
     restart: always
     command: ./commands/start_server.sh
-    networks:
-      artadsnet:
-        ipv4_address: 172.26.0.2
+    
+ports:
+      - "${PORT}:${WSGI_PORT}"
     volumes:
+      - /etc/letsencrypt/live/artads.agency/:/etc/letsencrypt/live/artads.agency/
       - ./src:/srv/project/src
       - ./commands:/srv/project/commands
       - static_content:/var/www/artads
@@ -25,24 +26,8 @@ services:
       - pg_data:/var/lib/postgresql/data
     env_file:
       - .env
-    networks:
-      artadsnet:
-        ipv4_address: 172.26.0.4
 #    environment:
 #      - DJANGO_SETTINGS_MODULE=ArtAds.settings.${MODE}
-  
-  nginx:
-    image: nginx:1.19
-    volumes:
-      - ./nginx:/etc/nginx/conf.d
-      - static_content:/var/www/artads
-    networks:
-      artadsnet:
-        ipv4_address: 172.26.0.5
-    env_file:
-      - .env
-    depends_on:
-      - backend  
 
 networks:
   artadsnet:

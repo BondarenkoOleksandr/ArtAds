@@ -159,7 +159,8 @@ SOCIALACCOUNT_PROVIDERS = {
 
 # Provide a lists of languages which your site supports.
 
-SITE_ID = 3
+SITE_ID = 5
+SOCIAL_AUTH_LOGIN_ERROR_URL = '/'
 
 INTERNAL_IPS = [
     # ...
