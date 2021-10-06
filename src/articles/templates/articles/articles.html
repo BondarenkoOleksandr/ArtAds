@@ -12,7 +12,7 @@
       <div class="tab-row tabs">
         <span class="tab-toggle show-all activeClass">ALL</span>
         {% for category in categories %}
-          <span class="tab-toggle {{category}}" data-tab="{{category}}">{{category}}</span>
+          <span class="tab-toggle {{category|lower}}" data-tab="{{category|lower}}">{{category}}</span>
         {% endfor %}
     </div>
       <div class="articles-row tabs-content">
