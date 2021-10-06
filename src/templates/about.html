@@ -48,9 +48,7 @@
                     С легкостью для Вас:
                   </p>
                   <ul class="slide-list">
-                    {% for skill in employee.skills.all %}
-                      <li class="slide-list-item">{{skill.text}}</li>
-                    {% endfor %}
+                      <li class="slide-list-item">{{employee.skills.text}}</li>
                   </ul>
                 </div>
 <!--                <button class="btn cases-btn">Показать работы</button>-->

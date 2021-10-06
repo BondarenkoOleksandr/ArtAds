@@ -31,7 +31,7 @@ class Employee(models.Model):
 
 class Skill(models.Model):
     text = models.CharField(max_length=150)
-    employee = models.ForeignKey(Employee, on_delete=models.CASCADE, related_name='skills')
+    employee = models.OneToOneField(Employee, on_delete=models.CASCADE, related_name='skills')
 
 
 class SocialNetwork(models.Model):
