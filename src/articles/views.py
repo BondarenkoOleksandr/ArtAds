@@ -20,12 +20,15 @@ class ArticleListView(ListView):
     template_name = 'articles/articles.html'
 
     def get(self, request):
+        categories = Article.objects.all().distinct('category')
+        categories = [art.category__name for art in categories]
         articles = Article.objects.all().select_related('author', 'category').prefetch_related('likes')
 
         return render(
             request=request,
             template_name='articles/articles.html',
             context={
+                'categories': categories,
                 'articles': articles,
             }
         )

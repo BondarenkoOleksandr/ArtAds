@@ -32,7 +32,7 @@ class Employee(models.Model):
 
 
 class Skill(models.Model):
-    text = HTMLField(null=True)
+    text = HTMLField(null=True, max_length=1000)
     employee = models.OneToOneField(Employee, on_delete=models.CASCADE, related_name='skills')
 
 
