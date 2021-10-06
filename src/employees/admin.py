@@ -10,7 +10,7 @@ class SkillsInline(TranslationTabularInline):
     model = Skill
 
 
-class SocialAccountInline(TranslationTabularInline):
+class SocialAccountInline(admin.TabularInline):
     model = SocialNetwork
 
 
