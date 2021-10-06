@@ -21,7 +21,7 @@ class ArticleListView(ListView):
 
     def get(self, request):
         categories = Article.objects.all().distinct('category')
-        categories = [art.title for art in categories]
+        categories = [art.category for art in categories]
         articles = Article.objects.all().select_related('author', 'category').prefetch_related('likes')
 
         return render(
