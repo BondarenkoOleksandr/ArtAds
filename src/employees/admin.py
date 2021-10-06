@@ -1,19 +1,20 @@
 from django.contrib import admin
 
 # Register your models here.
+from modeltranslation.admin import TabbedTranslationAdmin, TranslationTabularInline
 
 from employees.models import Employee, Skill, SocialNetwork
 
 
-class SkillsInline(admin.TabularInline):
+class SkillsInline(TranslationTabularInline):
     model = Skill
 
 
-class SocialAccountInline(admin.TabularInline):
+class SocialAccountInline(TranslationTabularInline):
     model = SocialNetwork
 
 
-class EmployeeAdmin(admin.ModelAdmin):
+class EmployeeAdmin(TabbedTranslationAdmin):
     inlines = (SkillsInline, SocialAccountInline)
 
 

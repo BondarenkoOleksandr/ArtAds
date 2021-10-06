@@ -13,6 +13,8 @@ class Employee(models.Model):
         on_delete=models.CASCADE,
         related_name="employee"
     )
+    name = models.CharField(max_length=100)
+    surname = models.CharField(max_length=100)
     image = models.ImageField(null=True, default='default.jpg', upload_to='pics/')
     position = models.CharField(max_length=200, null=True)
 
