@@ -4,6 +4,8 @@ from PIL import Image
 
 
 # Create your models here.
+from tinymce.models import HTMLField
+
 from users.models import User
 
 
@@ -30,7 +32,7 @@ class Employee(models.Model):
 
 
 class Skill(models.Model):
-    text = models.CharField(max_length=150)
+    text = HTMLField(null=True)
     employee = models.OneToOneField(Employee, on_delete=models.CASCADE, related_name='skills')
 
 
