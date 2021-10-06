@@ -41,14 +41,14 @@
             {% for employee in employees %}
             <div class="slide">
               <div class="slide-item slide-about">
-                <h3 class="slide-title">{{employee.user.first_name}} {{employee.user.last_name}}</h3>
+                <h3 class="slide-title">{{employee.name}} {{employee.surname}}</h3>
                 <h4 class="slide-subtitle">{{employee.position}}</h4>
                 <div class="slide-description">
                   <p class="slide-paragraph">
                     С легкостью для Вас:
                   </p>
                   <ul class="slide-list">
-                      <li class="slide-list-item">{{employee.skills.text}}</li>
+                      <li class="slide-list-item">{{employee.skills.text|safe}}</li>
                   </ul>
                 </div>
 <!--                <button class="btn cases-btn">Показать работы</button>-->
