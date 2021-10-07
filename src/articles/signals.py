@@ -12,6 +12,5 @@ def save_lesson(sender, instance, created, **kwargs):
     if created:
         translator = Translator()
         value = translator.translate(instance.title)
-        print(value.text)
-        instance.slug = slugify(value)
+        instance.slug = slugify(value.text)
         instance.save()
