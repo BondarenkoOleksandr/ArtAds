@@ -90,7 +90,7 @@
           {% for article in similar_articles %}
             <div class="article">
           <div class="article-picture">
-            <a href="" class="article-category">{{article.category__name}}</a>
+            <a href="" class="article-category">{{article.category__title}}</a>
             <a class="article-picture-link" href="{% url 'articles:article' slug=article.slug %}">
               <img class="article-picture-img" src="/media/{{article.image}}" alt="Article."></a>
           </div>
