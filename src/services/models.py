@@ -35,7 +35,6 @@ class ServiceArticle(models.Model):
 
 class ServiceCategory(models.Model):
     name = models.CharField(max_length=100)
-    in_menu = models.BooleanField(default=True)
     article = models.ForeignKey(
         to='services.ServiceArticle',
         null=True,
