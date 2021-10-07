@@ -17,7 +17,7 @@
     </div>
       <div class="articles-row tabs-content">
         {% for article in articles %}
-          <div class="article filtered-div" id="{{article.category.slug}}" data-tab="{{article.category.slug}}">
+          <div class="article filtered-div" id="{{article.category.title|lower}}" data-tab="{{article.category.title|lower}}">
             <div class="article-picture">
               <a href="{% url 'articles:article' slug=article.get_slug %}" class="article-category">{{article.category|upper}}</a>
               <a class="article-picture-link" href="{% url 'articles:article' slug=article.get_slug %}">
