@@ -40,6 +40,8 @@ class ArticleDetailView(DetailView):
     def get(self, request, slug):
         article = Article.objects.filter(slug=slug).prefetch_related('likes')
         article = article.first()
+        reading_time = (len(article.text_before_quote.split()) + len(article.text_after_quote.split()) + len(
+            article.quote.split())) / 150
         comments = Comment.objects.filter(status=1, parent=None, article__slug=article.slug).select_related('user',
                                                                                                             'article',
                                                                                                             'parent')
@@ -73,6 +75,7 @@ class ArticleDetailView(DetailView):
                 'time_after_publish': time_after_publish,
                 'current_rating': current_rating,
                 'count_of_voices': count_of_voices,
+                'reading_time': reading_time,
             }
         )
 
