@@ -42,6 +42,7 @@ class ArticleDetailView(DetailView):
         article = article.first()
         reading_time = (len(article.text_before_quote.split()) + len(article.text_after_quote.split()) + len(
             article.quote.split())) / 150
+        reading_time = 1 if reading_time < 1 else reading_time
         comments = Comment.objects.filter(status=1, parent=None, article__slug=article.slug).select_related('user',
                                                                                                             'article',
                                                                                                             'parent')
@@ -75,7 +76,7 @@ class ArticleDetailView(DetailView):
                 'time_after_publish': time_after_publish,
                 'current_rating': current_rating,
                 'count_of_voices': count_of_voices,
-                'reading_time': reading_time,
+                'reading_time': round(reading_time),
             }
         )
 
