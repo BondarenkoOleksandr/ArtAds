@@ -3,7 +3,7 @@ from django.contrib import admin
 from modeltranslation.admin import TabbedTranslationAdmin
 
 # Register your models here.
-from articles.models import Article, Comment
+from articles.models import Article, Comment, ArticleCategory
 
 
 class CommentAdmin(admin.ModelAdmin):
@@ -18,5 +18,10 @@ class ArticleAdmin(TabbedTranslationAdmin):
     list_per_page = 10
 
 
+class ArticleCategoryAdmin(TabbedTranslationAdmin):
+    pass
+
+
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(Comment, CommentAdmin)
+admin.site.register(ArticleCategory, ArticleCategoryAdmin)
