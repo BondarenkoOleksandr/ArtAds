@@ -106,3 +106,6 @@ class ArticleCategory(models.Model):
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        verbose_name_plural = 'Article categories'
