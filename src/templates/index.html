@@ -149,20 +149,20 @@
                   {{article.text_before_quote|striptags}}
                 </p>
               </div>
-              {% if articles.count > 3  %}
                 <a class="article-link" href="{% url 'articles:article' slug=article.get_slug %}">
                   <div class="article-link-text">
                     Read more
                   </div>
                 </a>
-              {% endif %}
             </div>
           </div>
         {% endfor %}
       </div>
-      <div class="cases-all mob-none">
-        <button id="read_more" class="btn cases-btn">{% trans 'Read more' %}</button>
-      </div>
+      {% if articles.count > 3  %}
+        <div class="cases-all mob-none">
+          <button id="read_more" class="btn cases-btn">{% trans 'Read more' %}</button>
+        </div>
+      {% endif %}
     </div>
   </section>
 {% endblock %}
