@@ -15,7 +15,7 @@ class Article(models.Model):
     RATING_COUNT = [(i, i) for i in range(1, 6)]
     author = models.ForeignKey(User, related_name='poster', on_delete=models.SET_NULL, null=True)
     category = models.ForeignKey(
-        to='services.ServiceCategory',
+        to='articles.ArticleCategory',
         on_delete=models.SET_NULL,
         null=True,
         related_name='articles'
@@ -99,3 +99,10 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.text[0:15] + ' - ' + self.article.title + ' - ' + self.user.username
+
+
+class ArticleCategory(models.Model):
+    title = models.CharField(max_length=1000)
+
+    def __str__(self):
+        return self.title
