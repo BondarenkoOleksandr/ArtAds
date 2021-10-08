@@ -95,12 +95,41 @@
           {% endfor %}
       </div>
       {% if cases.count > 2 %}
-      <div class="cases-all">
-        <button class="btn cases-btn more_cases">{% trans 'See more' %}</button>
-      </div>
+        <div class="cases-all">
+          <button class="btn cases-btn more_cases">{% trans 'See more' %}</button>
+        </div>
       {% endif %}
     </div>
   </section>
+{% if reviews %}
+<section class="reviews" id="reviews">
+    <div class="site-width">
+      <div class="title-wrapper">
+        <h2 class="title title-center">Отзывы</h2>
+      </div>
+      <div class="slider-wrapper">
+          <div class="slider">
+            {% for review in reviews %}
+              <div class="slide">
+                <div class="slide-item slide-video">
+                  <img src="{{review.image.url}}" alt="Man.">
+                </div>
+                <div class="slide-item slide-text">
+                  <h3 class="slide-title">{{review.name}}</h3>
+                  <h4 class="slide-subtitle">{{review.position}}</h4>
+                  <div class="slide-description">
+                    <p class="slide-paragraph">
+                      {{review.text}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
   <section class="partners">
     <div class="site-width">
       <div class="title-wrapper">

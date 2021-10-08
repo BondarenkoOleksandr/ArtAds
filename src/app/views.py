@@ -5,7 +5,7 @@ from django.urls import reverse
 from django.views.generic import TemplateView
 
 from articles.models import Article
-from cases.models import Case
+from cases.models import Case, Review
 from employees.models import Employee
 
 
@@ -13,12 +13,14 @@ class FirstPageView(TemplateView):
     def get(self, request):
         cases = Case.objects.all().select_related('category')
         articles = Article.objects.all().select_related('category')
+        reviews = Review.objects.all()
         return render(
             request=request,
             template_name='index.html',
             context={
                 'cases': cases,
                 'articles': articles,
+                'reviews': reviews
             }
         )
 
