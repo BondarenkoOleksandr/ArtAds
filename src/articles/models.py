@@ -20,6 +20,7 @@ class Article(models.Model):
         null=True,
         related_name='articles'
     )
+    bg_image = models.ImageField(default='default-picture.png', upload_to='articles/', null=True, verbose_name='Background image:')
     image = models.ImageField(default='default-picture.png', upload_to='articles/', null=True)
     title = models.CharField(max_length=100)
     text_before_quote = HTMLField(null=True)
