@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     'tinymce',
     'translation_manager',
     'modeltranslation',
-    'django_check_seo',
 
     'app',
     'cases',

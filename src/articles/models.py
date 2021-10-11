@@ -111,3 +111,16 @@ class ArticleCategory(models.Model):
 
     class Meta:
         verbose_name_plural = 'Article categories'
+
+
+class SEO(models.Model):
+    article = models.ForeignKey(Article, on_delete=models.CASCADE, null=True)
+    seo_title = models.CharField(max_length=500, null=True, blank=True)
+    seo_description = HTMLField(max_length=500, null=True, blank=True)
+    seo_canonical = models.URLField(null=True, blank=True)
+    seo_robots = models.CharField(max_length=500, null=True, blank=True)
+    seo_schema = HTMLField(null=True, blank=True)
+    seo_og = HTMLField(null=True, blank=True)
+
+    class Meta:
+        verbose_name_plural = "SEO"
