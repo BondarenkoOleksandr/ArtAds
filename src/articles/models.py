@@ -111,7 +111,3 @@ class ArticleCategory(models.Model):
 
     class Meta:
         verbose_name_plural = 'Article categories'
-
-
-class ArticleSEO(SEO):
-    article = models.ForeignKey(SEO, on_delete=models.CASCADE, null=True, blank=True)
