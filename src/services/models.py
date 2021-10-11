@@ -8,7 +8,7 @@ from django.utils.text import slugify
 from seo.models import SEO
 
 
-class ServiceArticle(models.Model):
+class ServiceArticle(SEO):
     title = models.CharField(max_length=100, null=True)
     slug = models.SlugField(
         default='',
@@ -20,7 +20,6 @@ class ServiceArticle(models.Model):
 
     image = models.ImageField(default='default-picture.png', upload_to='services/')
     text = HTMLField(null=True)
-    seo = models.ForeignKey(SEO, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
         return self.title

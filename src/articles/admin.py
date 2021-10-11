@@ -14,14 +14,9 @@ class CommentAdmin(admin.ModelAdmin):
     list_display = ('article', 'status', 'text', 'parent')
 
 
-class SEOInline(admin.TabularInline):
-    model = SEO
-
-
 class ArticleAdmin(TabbedTranslationAdmin):
     search_fields = ['title']
     list_per_page = 10
-    inlines = (SEOInline, )
 
 
 class ArticleCategoryAdmin(TabbedTranslationAdmin):

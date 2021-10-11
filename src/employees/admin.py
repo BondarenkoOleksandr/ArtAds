@@ -7,10 +7,6 @@ from employees.models import Employee, Skill, SocialNetwork
 from seo.models import SEO
 
 
-class SEOInline(admin.TabularInline):
-    model = SEO
-
-
 class SkillsInline(TranslationTabularInline):
     model = Skill
 
@@ -20,7 +16,7 @@ class SocialAccountInline(admin.TabularInline):
 
 
 class EmployeeAdmin(TabbedTranslationAdmin):
-    inlines = (SkillsInline, SocialAccountInline, SEOInline)
+    inlines = (SkillsInline, SocialAccountInline)
 
 
 admin.site.register(Employee, EmployeeAdmin)

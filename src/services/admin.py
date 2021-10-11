@@ -12,12 +12,8 @@ class WorkPointInline(TranslationTabularInline):
     model = WorkPoint
 
 
-class SEOInline(admin.TabularInline):
-    model = SEO
-
-
 class ServiceArticleAdmin(TabbedTranslationAdmin):
-    inlines = (WorkPointInline, SEOInline)
+    inlines = (WorkPointInline, )
 
 
 # class WorkPointAdmin(TabbedTranslationAdmin):
