@@ -42,3 +42,7 @@ class SocialNetwork(models.Model):
     title = models.CharField(max_length=100, null=True)
     logo = models.ImageField(upload_to='social_logos/', null=True, blank=True)
     employee = models.ForeignKey(Employee, on_delete=models.CASCADE, related_name='social_accounts')
+
+
+class EmployeeSEO(SEO):
+    employee = models.ForeignKey(SEO, on_delete=models.CASCADE, null=True, blank=True)

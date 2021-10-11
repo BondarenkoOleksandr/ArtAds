@@ -20,7 +20,7 @@ class ServiceArticle(models.Model):
 
     image = models.ImageField(default='default-picture.png', upload_to='services/')
     text = HTMLField(null=True)
-    
+
 
     def __str__(self):
         return self.title
@@ -77,3 +77,7 @@ class WorkPoint(models.Model):
         verbose_name='What will we do:',
         related_name='workpoints',
     )
+
+
+class ServiceArticleSEO(SEO):
+    service_article = models.ForeignKey(SEO, on_delete=models.CASCADE, null=True, blank=True)

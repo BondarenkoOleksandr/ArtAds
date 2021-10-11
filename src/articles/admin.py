@@ -3,8 +3,7 @@ from django.contrib import admin
 from modeltranslation.admin import TabbedTranslationAdmin
 
 # Register your models here.
-from articles.models import Article, Comment, ArticleCategory
-from seo.models import SEO
+from articles.models import Article, Comment, ArticleCategory, ArticleSEO
 
 
 class CommentAdmin(admin.ModelAdmin):
@@ -14,9 +13,14 @@ class CommentAdmin(admin.ModelAdmin):
     list_display = ('article', 'status', 'text', 'parent')
 
 
+class SEOInline(admin.TabularInline):
+    model = ArticleSEO
+
+
 class ArticleAdmin(TabbedTranslationAdmin):
     search_fields = ['title']
     list_per_page = 10
+    inlines = (SEOInline, )
 
 
 class ArticleCategoryAdmin(TabbedTranslationAdmin):
