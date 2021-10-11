@@ -4,20 +4,15 @@ from modeltranslation.admin import TabbedTranslationAdmin, TranslationTabularInl
 import ArtAds.translation
 
 # Register your models here.
-from seo.models import SEO
-from services.models import ServiceArticle, ServiceCategory, WorkPoint, ServiceArticleSEO
+from services.models import ServiceArticle, ServiceCategory, WorkPoint
 
 
 class WorkPointInline(TranslationTabularInline):
     model = WorkPoint
 
 
-class SEOInline(admin.TabularInline):
-    model = ServiceArticleSEO
-
-
 class ServiceArticleAdmin(TabbedTranslationAdmin):
-    inlines = (WorkPointInline, SEOInline)
+    inlines = (WorkPointInline,)
 
 
 # class WorkPointAdmin(TabbedTranslationAdmin):

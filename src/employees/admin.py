@@ -3,11 +3,7 @@ from django.contrib import admin
 # Register your models here.
 from modeltranslation.admin import TabbedTranslationAdmin, TranslationTabularInline
 
-from employees.models import Employee, Skill, SocialNetwork, EmployeeSEO
-
-
-class SEOInline(admin.TabularInline):
-    model = EmployeeSEO
+from employees.models import Employee, Skill, SocialNetwork
 
 
 class SkillsInline(TranslationTabularInline):
@@ -19,7 +15,7 @@ class SocialAccountInline(admin.TabularInline):
 
 
 class EmployeeAdmin(TabbedTranslationAdmin):
-    inlines = (SkillsInline, SocialAccountInline, SEOInline)
+    inlines = (SkillsInline, SocialAccountInline)
 
 
 admin.site.register(Employee, EmployeeAdmin)
