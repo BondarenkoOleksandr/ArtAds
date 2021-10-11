@@ -5,8 +5,10 @@ from tinymce.models import HTMLField
 # Create your models here.
 from django.utils.text import slugify
 
+from seo.models import SEO
 
-class ServiceArticle(models.Model):
+
+class ServiceArticle(SEO):
     title = models.CharField(max_length=100, null=True)
     slug = models.SlugField(
         default='',
