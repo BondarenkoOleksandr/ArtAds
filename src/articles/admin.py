@@ -13,7 +13,7 @@ class CommentAdmin(admin.ModelAdmin):
     list_display = ('article', 'status', 'text', 'parent')
 
 
-class SEOInlines(admin.TabularInline):
+class SEOInlines(admin.StackedInline):
     model = SEO
 
 
