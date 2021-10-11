@@ -15,6 +15,7 @@ urlpatterns = [
     path('tinymce/', include('tinymce.urls')),
     path('', include('app.urls')),
     path('send/', SendEmailView.as_view(), name='send_email'),
+    path("django-check-seo/", include("django_check_seo.urls")),
 
 ]
 urlpatterns += i18n_patterns(

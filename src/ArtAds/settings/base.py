@@ -44,8 +44,9 @@ INSTALLED_APPS = [
     'django_extensions',
     'debug_toolbar',
     'tinymce',
-    "translation_manager",
+    'translation_manager',
     'modeltranslation',
+    'django_check_seo',
 
     'app',
     'cases',
@@ -225,3 +226,15 @@ MEDIA_URL = 'media/'
 # AUTH_USER_MODEL = 'users.User'
 
 AUTH_USER_MODEL = 'users.User'
+
+
+DJANGO_CHECK_SEO_SETTINGS = {
+    "content_words_number": [300, 600],
+    "internal_links": 1,
+    "external_links": 1,
+    "meta_title_length": [30, 60],
+    "meta_description_length": [50, 160],
+    "keywords_in_first_words": 50,
+    "max_link_depth": 3,
+    "max_url_length": 70,
+}
