@@ -13,4 +13,4 @@ class SEO(models.Model):
     seo_og = HTMLField(null=True, blank=True)
 
     class Meta:
-        verbose_plural_name = 'SEO'
+        verbose_name_plural = "SEO"
