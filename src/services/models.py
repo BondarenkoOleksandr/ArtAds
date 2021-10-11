@@ -5,6 +5,8 @@ from tinymce.models import HTMLField
 # Create your models here.
 from django.utils.text import slugify
 
+from seo.models import SEO
+
 
 class ServiceArticle(models.Model):
     title = models.CharField(max_length=100, null=True)
@@ -18,6 +20,7 @@ class ServiceArticle(models.Model):
 
     image = models.ImageField(default='default-picture.png', upload_to='services/')
     text = HTMLField(null=True)
+    seo = models.ForeignKey(SEO, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
         return self.title

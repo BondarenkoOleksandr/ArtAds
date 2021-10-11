@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'employees',
     'core',
     'users',
+    'seo',
 
     'allauth',
     'allauth.account',

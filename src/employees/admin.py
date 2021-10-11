@@ -4,6 +4,11 @@ from django.contrib import admin
 from modeltranslation.admin import TabbedTranslationAdmin, TranslationTabularInline
 
 from employees.models import Employee, Skill, SocialNetwork
+from seo.models import SEO
+
+
+class SEOInline(admin.TabularInline):
+    model = SEO
 
 
 class SkillsInline(TranslationTabularInline):
@@ -15,7 +20,7 @@ class SocialAccountInline(admin.TabularInline):
 
 
 class EmployeeAdmin(TabbedTranslationAdmin):
-    inlines = (SkillsInline, SocialAccountInline)
+    inlines = (SkillsInline, SocialAccountInline, SEOInline)
 
 
 admin.site.register(Employee, EmployeeAdmin)

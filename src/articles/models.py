@@ -8,6 +8,7 @@ from django.utils.text import slugify
 
 
 # Create your models here.
+from seo.models import SEO
 from users.models import User
 
 
@@ -34,6 +35,7 @@ class Article(models.Model):
     )
     publish_date = models.DateField(auto_now_add=True)
     likes = models.ManyToManyField(User, related_name='article_like', editable=False)
+    seo = models.ForeignKey(SEO, on_delete=models.SET_NULL, null=True)
 
     def clean(self):
         if not self.slug and Article.objects.filter(title=self.title):
