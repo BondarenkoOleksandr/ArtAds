@@ -5,8 +5,6 @@ from tinymce.models import HTMLField
 # Create your models here.
 from django.utils.text import slugify
 
-from seo.models import SEO
-
 
 class ServiceArticle(models.Model):
     title = models.CharField(max_length=100, null=True)
@@ -78,6 +76,3 @@ class WorkPoint(models.Model):
         related_name='workpoints',
     )
 
-
-class ServiceArticleSEO(SEO):
-    service_article = models.ForeignKey(SEO, on_delete=models.CASCADE, null=True, blank=True)
