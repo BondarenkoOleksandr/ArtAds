@@ -5,6 +5,7 @@ from tinymce.models import HTMLField
 
 
 class SEO(models.Model):
+    content_object = models.GenericForeignKey('content_type', 'object_id')
     seo_title = models.CharField(max_length=500, null=True, blank=True)
     seo_description = HTMLField(max_length=500, null=True, blank=True)
     seo_canonical = models.URLField(null=True, blank=True)
