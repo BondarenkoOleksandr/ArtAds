@@ -8,7 +8,7 @@ from django.utils.text import slugify
 from seo.models import SEO
 
 
-class ServiceArticle(SEO):
+class ServiceArticle(models.Model):
     title = models.CharField(max_length=100, null=True)
     slug = models.SlugField(
         default='',
