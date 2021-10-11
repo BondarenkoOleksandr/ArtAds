@@ -10,7 +10,7 @@ from seo.models import SEO
 from users.models import User
 
 
-class Employee(SEO):
+class Employee(models.Model):
     user = models.OneToOneField(
         to=User,
         on_delete=models.CASCADE,

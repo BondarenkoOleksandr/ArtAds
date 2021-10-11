@@ -12,7 +12,7 @@ from seo.models import SEO
 from users.models import User
 
 
-class Article(SEO):
+class Article(models.Model):
     RATING_COUNT = [(i, i) for i in range(1, 6)]
     author = models.ForeignKey(User, related_name='poster', on_delete=models.SET_NULL, null=True)
     category = models.ForeignKey(
