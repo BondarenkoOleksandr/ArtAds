@@ -20,7 +20,7 @@ class SEOEmployeeInline(StackedInline):
 
 
 class EmployeeAdmin(TabbedTranslationAdmin):
-    inlines = (SkillsInline, SocialAccountInline, SocialAccountInline)
+    inlines = (SkillsInline, SocialAccountInline, SEOEmployeeInline)
 
 
 admin.site.register(Employee, EmployeeAdmin)
