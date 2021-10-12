@@ -80,7 +80,7 @@ class WorkPoint(models.Model):
 
 
 class SEOService(models.Model):
-    service_article = models.OneToOneField(ServiceArticle, on_delete=models.CASCADE, null=True)
+    service_article = models.OneToOneField(ServiceArticle, on_delete=models.CASCADE, null=True, related_name='seo')
     seo_title = models.CharField(max_length=500, null=True, blank=True)
     seo_description = models.TextField(null=True, blank=True)
     seo_canonical = models.URLField(null=True, blank=True)

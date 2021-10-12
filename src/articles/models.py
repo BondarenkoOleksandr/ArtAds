@@ -114,7 +114,7 @@ class ArticleCategory(models.Model):
 
 
 class SEOArticle(models.Model):
-    article = models.OneToOneField(Article, on_delete=models.CASCADE, null=True)
+    article = models.OneToOneField(Article, on_delete=models.CASCADE, null=True, related_name='seo')
     seo_title = models.CharField(max_length=500, null=True, blank=True)
     seo_description = models.TextField(null=True, blank=True)
     seo_canonical = models.URLField(null=True, blank=True)

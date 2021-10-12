@@ -49,7 +49,7 @@ class Review(models.Model):
 
 
 class SEOCase(models.Model):
-    case = models.OneToOneField(Case, on_delete=models.CASCADE, null=True)
+    case = models.OneToOneField(Case, on_delete=models.CASCADE, null=True, related_name='seo')
     seo_title = models.CharField(max_length=500, null=True, blank=True)
     seo_description = models.TextField(null=True, blank=True)
     seo_canonical = models.URLField(null=True, blank=True)
