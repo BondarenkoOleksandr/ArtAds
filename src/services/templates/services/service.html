@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block description %}{{article.seo.seo_description}}{% endblock %}
+{% block title %}{{article.seo.seo_title}}{% endblock %}
+{% block canocical %}{{article.seo.seo_canonical}}{% endblock %}
+{% block og %}{{article.seo.seo_og}}{% endblock %}
+{% block schema %}{{article.seo.seo_schema}}{% endblock %}
+{% block robots %}{{article.seo.seo_robots}}{% endblock %}
 {% block pagename %}page-services{% endblock %}
 {% block pagetitle %}Service{% endblock %}
 {% block content %}

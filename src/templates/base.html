@@ -8,8 +8,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="description" content="Помогаем бизнесу расти, увеличивая продажи с помощью комплексного интернет-маркетинга: SEO, PPC, Web дизайн, Web разработка, Copywriting!" />
+  <meta name="description" content="{% block description %}Помогаем бизнесу расти, увеличивая продажи с помощью комплексного интернет-маркетинга: SEO, PPC, Web дизайн, Web разработка, Copywriting!{% endblock %}" />
   <link rel="icon" href="{% static 'assets/images/Favicon_Art_Ads.ico' %}" type="image/x-icon">
+  <link rel="canonical" href="{% block canocical %}https://artads.agenc/{% endblock %}" />
+  {% block og %}{% endblock %}
+  {% block schema %}{% endblock %}
+  <meta name='robots' content='{% block robots %}{% endblock %}' />
   <link rel="stylesheet" type="text/css" href="{% static 'libs/slick-carousel/slick/slick.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'libs/slick-carousel/slick/slick-theme.css' %}">
   <title>{% block title %}Маркетинговое агентство полного цикла Art Ads - дизайн, продвижение, создание сайтов{% endblock %}</title>
