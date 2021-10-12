@@ -1,7 +1,16 @@
 from django.contrib import admin
 
 # Register your models here.
-from cases.models import Case, Category, Review
+from cases.models import Case, Category, Review, SEOCase
+
+
+class SEOCaseInline(admin.StackedInline):
+    model = SEOCase
+
+
+class CaseAdmin(admin.ModelAdmin):
+    inlines = (SEOCaseInline, )
+
 
 admin.site.register(Case)
 admin.site.register(Category)

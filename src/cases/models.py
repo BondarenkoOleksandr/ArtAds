@@ -46,3 +46,16 @@ class Review(models.Model):
 
     def __str__(self):
         return self.name + ' - ' + self.position
+
+
+class SEOCase(models.Model):
+    case = models.OneToOneField(Case, on_delete=models.CASCADE, null=True)
+    seo_title = models.CharField(max_length=500, null=True, blank=True)
+    seo_description = models.TextField(null=True, blank=True)
+    seo_canonical = models.URLField(null=True, blank=True)
+    seo_robots = models.CharField(max_length=500, null=True, blank=True)
+    seo_schema = models.TextField(null=True, blank=True)
+    seo_og = models.TextField(null=True, blank=True)
+
+    class Meta:
+        verbose_name_plural = "SEO"
