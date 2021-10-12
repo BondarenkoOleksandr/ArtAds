@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load i18n %}
-{% block title %}article.seo.seo_title{% endblock %}
+{% block title %}{{article.seo.seo_title}}{% endblock %}
 {% load socialaccount %}
 {% block pagename %}article-page{% endblock %}
 {% block pagetitle %}{{article.title}}{% endblock %}
