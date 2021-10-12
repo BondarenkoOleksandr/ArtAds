@@ -12,6 +12,6 @@ class CaseAdmin(admin.ModelAdmin):
     inlines = (SEOCaseInline, )
 
 
-admin.site.register(Case)
+admin.site.register(Case, CaseAdmin)
 admin.site.register(Category)
 admin.site.register(Review)
