@@ -4,7 +4,7 @@ from django.contrib import admin
 from django.contrib.admin import StackedInline
 from modeltranslation.admin import TabbedTranslationAdmin, TranslationTabularInline, TranslationStackedInline
 
-from employees.models import Employee, Skill, SocialNetwork
+from employees.models import Employee, Skill, SocialNetwork, SEOEmployee
 
 
 class SkillsInline(TranslationStackedInline):
@@ -15,8 +15,12 @@ class SocialAccountInline(StackedInline):
     model = SocialNetwork
 
 
+class SEOEmployeeInline(StackedInline):
+    model = SEOEmployee
+
+
 class EmployeeAdmin(TabbedTranslationAdmin):
-    inlines = (SkillsInline, SocialAccountInline)
+    inlines = (SkillsInline, SocialAccountInline, SEOInline)
 
 
 admin.site.register(Employee, EmployeeAdmin)

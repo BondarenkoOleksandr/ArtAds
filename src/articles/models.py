@@ -113,7 +113,7 @@ class ArticleCategory(models.Model):
         verbose_name_plural = 'Article categories'
 
 
-class SEO(models.Model):
+class SEOArticle(models.Model):
     article = models.OneToOneField(Article, on_delete=models.CASCADE, null=True)
     seo_title = models.CharField(max_length=500, null=True, blank=True)
     seo_description = models.TextField(null=True, blank=True)
