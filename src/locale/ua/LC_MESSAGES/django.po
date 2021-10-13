@@ -44,7 +44,7 @@ msgstr ""
 
 #: .\articles\templates\articles\article.html:238
 msgid "Продолжить с Facebook"
-msgstr ""
+msgstr "Продовжити з Facebook"
 
 #: .\articles\templates\articles\article.html:242
 msgid "Авторизуясь, Вы даете согласие на обработку персональных данных."
@@ -57,11 +57,11 @@ msgstr "Публікації"
 
 #: .\templates\base.html:40 .\templates\base.html:134
 msgid "Услуги"
-msgstr ""
+msgstr "Послуги"
 
 #: .\templates\base.html:53 .\templates\base.html:177
 msgid "Кейсы"
-msgstr ""
+msgstr "Кейси"
 
 #: .\templates\base.html:55 .\templates\base.html:179
 msgid "О нас"

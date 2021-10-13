@@ -161,7 +161,7 @@ msgstr "Наші кейси"
 
 #: .\templates\index.html:107
 msgid "Отзывы"
-msgstr ""
+msgstr "Відгуки"
 
 #: .\templates\index.html:189
 msgid "Read more"

@@ -36,17 +36,17 @@ msgstr "Ім'я"
 
 #: .\articles\templates\articles\article.html:213 .\templates\contacts.html:37
 msgid "Телефон"
-msgstr "Телефон"
+msgstr "Phone"
 
 #: .\articles\templates\articles\article.html:222 .\templates\about.html:25
 #: .\templates\base.html:71 .\templates\base.html:155
 #: .\templates\contacts.html:26 .\templates\index.html:15
 msgid "Оставить заявку"
-msgstr "Залишити заявку"
+msgstr "Send"
 
 #: .\articles\templates\articles\article.html:241
 msgid "Продолжить с Facebook"
-msgstr "Продовжити з Facebook"
+msgstr "Login with Facebook"
 
 #: .\articles\templates\articles\article.html:245
 msgid "Авторизуясь, Вы даете согласие на обработку персональных данных."
