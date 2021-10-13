@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-13 01:17+0300\n"
+"POT-Creation-Date: 2021-10-13 12:37+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,63 +18,64 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\articles\templates\articles\article.html:168 .\templates\index.html:98
+#: .\articles\templates\articles\article.html:176 .\templates\index.html:98
 msgid "See more"
 msgstr ""
 
-#: .\articles\templates\articles\article.html:182
+#: .\articles\templates\articles\article.html:190
 msgid "Написать комментарий..."
 msgstr "Comment"
 
-#: .\articles\templates\articles\article.html:183
+#: .\articles\templates\articles\article.html:191
 msgid "Отправить"
 msgstr "Надіслати"
 
-#: .\articles\templates\articles\article.html:202
+#: .\articles\templates\articles\article.html:209 .\templates\base.html:145
 msgid "Имя"
 msgstr "Ім'я"
 
-#: .\articles\templates\articles\article.html:206 .\templates\contacts.html:35
+#: .\articles\templates\articles\article.html:213 .\templates\contacts.html:37
 msgid "Телефон"
 msgstr "Телефон"
 
-#: .\articles\templates\articles\article.html:215 .\templates\base.html:71
-#: .\templates\base.html:152 .\templates\contacts.html:25
-#: .\templates\index.html:16
+#: .\articles\templates\articles\article.html:222 .\templates\base.html:71
+#: .\templates\base.html:155 .\templates\contacts.html:26
+#: .\templates\index.html:15
 msgid "Оставить заявку"
 msgstr "Залишити заявку"
 
-#: .\articles\templates\articles\article.html:234
+#: .\articles\templates\articles\article.html:241
 msgid "Продолжить с Facebook"
 msgstr "Продовжити з Facebook"
 
-#: .\articles\templates\articles\article.html:238
+#: .\articles\templates\articles\article.html:245
 msgid "Авторизуясь, Вы даете согласие на обработку персональных данных."
 msgstr ""
 
-#: .\articles\templates\articles\articles.html:10 .\templates\base.html:54
-#: .\templates\base.html:178 .\templates\index.html:127
+#: .\articles\templates\articles\articles.html:10 .\templates\base.html:53
+#: .\templates\base.html:181 .\templates\index.html:154
 msgid "Статьи"
 msgstr "Articles"
 
-#: .\templates\about.html:82 .\templates\index.html:106
+#: .\templates\about.html:75 .\templates\index.html:135
 msgid "Наши партнеры"
 msgstr "Our partners"
 
-#: .\templates\base.html:40 .\templates\base.html:134 .\templates\index.html:30
+#: .\templates\base.html:39 .\templates\base.html:134 .\templates\base.html:167
+#: .\templates\index.html:29
 msgid "Услуги"
 msgstr "Services"
 
-#: .\templates\base.html:53 .\templates\base.html:177
+#: .\templates\base.html:52 .\templates\base.html:180
 msgid "Кейсы"
 msgstr "Cases"
 
-#: .\templates\base.html:55 .\templates\base.html:179
+#: .\templates\base.html:54 .\templates\base.html:182
 msgid "О нас"
 msgstr "About"
 
-#: .\templates\base.html:56 .\templates\base.html:122 .\templates\base.html:180
-#: .\templates\contacts.html:11
+#: .\templates\base.html:55 .\templates\base.html:122 .\templates\base.html:183
+#: .\templates\contacts.html:11 .\templates\contacts.html:35
 msgid "Контакты"
 msgstr "Contact"
 
@@ -90,7 +91,7 @@ msgstr ""
 msgid "ЗАДАЙТЕ ВАШ ВОПРОС"
 msgstr ""
 
-#: .\templates\base.html:185
+#: .\templates\base.html:188
 msgid "Политика конфиденциальности"
 msgstr ""
 
@@ -98,22 +99,33 @@ msgstr ""
 msgid "Маркетинговое digital-агентство полного цикла"
 msgstr "Marketing digital-agency full cycle"
 
-#: .\templates\index.html:41
+#: .\templates\index.html:12
+msgid ""
+"Доверьтесь команде профессионалов в области цифровой рекламы, и получите "
+"результат, отвечающий поставленным бизнес-целям и вашему бюджету. Откройте "
+"новые возможности для развития вашего бизнеса прямо сейчас."
+msgstr ""
+
+#: .\templates\index.html:40
 msgid "довольных клиентов"
 msgstr ""
 
-#: .\templates\index.html:47
+#: .\templates\index.html:46
 msgid "на рынке маркетинговых услуг"
 msgstr ""
 
-#: .\templates\index.html:53
+#: .\templates\index.html:52
 msgid "успешных проектов"
 msgstr ""
 
-#: .\templates\index.html:77
+#: .\templates\index.html:76
 msgid "Наши кейсы"
 msgstr "Our cases"
 
-#: .\templates\index.html:163
+#: .\templates\index.html:107
+msgid "Отзывы"
+msgstr ""
+
+#: .\templates\index.html:189
 msgid "Read more"
 msgstr "Read more"
