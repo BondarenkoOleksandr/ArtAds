@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-13 12:56+0300\n"
+"POT-Creation-Date: 2021-10-13 13:02+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,9 +38,9 @@ msgstr "Ім'я"
 msgid "Телефон"
 msgstr "Телефон"
 
-#: .\articles\templates\articles\article.html:222 .\templates\base.html:71
-#: .\templates\base.html:155 .\templates\contacts.html:26
-#: .\templates\index.html:15
+#: .\articles\templates\articles\article.html:222 .\templates\about.html:25
+#: .\templates\base.html:71 .\templates\base.html:155
+#: .\templates\contacts.html:26 .\templates\index.html:15
 msgid "Оставить заявку"
 msgstr "Залишити заявку"
 
@@ -75,6 +75,10 @@ msgid ""
 "Благодаря регулярному обмену опытом с иностранными подразделениями мы "
 "непрерывно развиваемся, открывая новые возможности для профессионального "
 "роста."
+msgstr ""
+
+#: .\templates\about.html:37
+msgid "Наша команда"
 msgstr ""
 
 #: .\templates\about.html:75 .\templates\index.html:135
