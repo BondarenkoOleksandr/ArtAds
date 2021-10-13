@@ -39,7 +39,7 @@ msgstr "Ім'я"
 
 #: .\articles\templates\articles\article.html:206 .\templates\contacts.html:35
 msgid "Телефон"
-msgstr ""
+msgstr "Телефон"
 
 #: .\articles\templates\articles\article.html:215 .\templates\base.html:71
 #: .\templates\base.html:152 .\templates\contacts.html:25
