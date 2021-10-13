@@ -2,7 +2,6 @@
 {% block pagetitle %}Articles{% endblock %}
 {% load static %}
 {% load i18n %}
-{% get_current_language as LANGUAGE_CODE %}
 {% block pagename %}page-artices{% endblock %}
 {% block content %}
 <section class="articles">
@@ -20,7 +19,7 @@
         {% for article in articles %}
           <div class="article filtered-div" id="{{article.category.title|lower}}" data-tab="{{article.category.title|lower}}">
             <div class="article-picture">
-              <a href="{{ LANGUAGE_CODE }}{% url 'articles:article' slug=article.get_slug %}" class="article-category">{{article.category|upper}}</a>
+              <a href="{{request.LANGUAGE_CODE}}/{% url 'articles:article' slug=article.get_slug %}" class="article-category">{{article.category|upper}}</a>
               <a class="article-picture-link" href="{% url 'articles:article' slug=article.get_slug %}">
                 <img class="article-picture-img" src="{{article.image.url}}" alt="Article."></a>
             </div>
@@ -38,7 +37,7 @@
                   {{article.title|striptags}}
                 </p>
               </div>
-              <a class="article-link" href="{{LANGUAGE_CODE}}{% url 'articles:article' slug=article.get_slug %}">
+              <a class="article-link" href="{{request.LANGUAGE_CODE}}/{{LANGUAGE_CODE}}{% url 'articles:article' slug=article.get_slug %}">
                 <div class="article-link-text">
                   Read more
                 </div>
