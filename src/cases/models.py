@@ -18,7 +18,7 @@ class Case(models.Model):
         related_name='cases',
     )
     mob_image = models.ForeignKey(Photo, on_delete=models.SET_NULL, null=True, verbose_name='Phone image: ', related_name='+')
-    full_image = models.ForeignKey(Photo, on_delete=models.SET_NULL, null=True, verbose_name='Big iamge: ', related_name='+')
+    full_image = models.ForeignKey(Photo, on_delete=models.SET_NULL, null=True, verbose_name='Big image: ', related_name='+')
     link = models.URLField(max_length=200, null=True)
 
     def __str__(self):
@@ -41,7 +41,7 @@ class Category(models.Model):
 class Review(models.Model):
     case = models.ForeignKey('Case', on_delete=models.SET_NULL, related_name='reviews', null=True)
     name = models.CharField(max_length=100)
-    # image = models.ImageField(default='default-picture.png', upload_to='reviews/')
+    image = models.ForeignKey(Photo, on_delete=models.SET_NULL, null=True, verbose_name='Photo: ', related_name='+')
     position = models.CharField(max_length=100)
     text = models.TextField(max_length=300)
 
