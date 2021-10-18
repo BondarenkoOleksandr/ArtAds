@@ -96,7 +96,7 @@
           {% for article in similar_articles %}
             <div class="article">
           <div class="article-picture">
-            <a href="" class="article-category">{{article.category__title}}</a>
+            <a href="" class="article-category">{{article.category.title}}</a>
             <a class="article-picture-link" href="{% url 'articles:article' slug=article.slug %}">
               <img class="article-picture-img" src="{{article.image.photo.url}}" alt="{{article.image.alt}}" title="{{article.image.photo.title}}"></a>
           </div>
@@ -106,7 +106,7 @@
                   {{article.publish_date}}
               </div>
               <div class="article-date-author">
-                by {{article.author__first_name}} {{article.author__last_name}}
+                by {{article.author.first_name}} {{article.author.last_name}}
               </div>
             </div>
             <div class="article-decsription">
