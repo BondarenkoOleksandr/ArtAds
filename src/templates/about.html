@@ -48,7 +48,7 @@
                 </div>
 <!--                <button class="btn cases-btn">Показать работы</button>-->
               </div> 
-              <div class="slide-item slide-member" style="background: url({{employee.image.url}}) center center/cover no-repeat"></div>
+              <div class="slide-item slide-member" style="background: url({{employee.image.photo.url}}) center center/cover no-repeat"></div>
             </div>
             {% endfor %}
         </div>
@@ -56,7 +56,7 @@
           {% for employee in employees %}
           <div class="slide-item">
             <div class="slide-item-inner">
-              <div class="slide-member" style="background: url({{employee.image.url}}) center center/cover no-repeat"></div>
+              <div class="slide-member" style="background: url({{employee.image.photo.url}}) center center/cover no-repeat"></div>
               <div class="slide-item-right">
                 <h3 class="slide-title">{{employee.name}} {{employee.surname}}</h3>
                 <h4 class="slide-subtitle">{{employee.position}}</h4>
