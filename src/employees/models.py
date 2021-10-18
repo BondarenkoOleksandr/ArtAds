@@ -18,7 +18,7 @@ class Employee(models.Model):
     )
     name = models.CharField(max_length=100, null=True)
     surname = models.CharField(max_length=100, null=True)
-    image = models.ImageField(null=True, default='default.jpg', upload_to='pics/')
+    # image = models.ImageField(null=True, default='default.jpg', upload_to='pics/')
     position = models.CharField(max_length=200, null=True)
 
     def save(self):
