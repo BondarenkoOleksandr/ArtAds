@@ -27,7 +27,7 @@ class Employee(models.Model):
 
         image = Image.open(self.image.photo)
         image.thumbnail((300, 300), Image.ANTIALIAS)
-        image.save(self.image.path)
+        image.save(self.image.photo.path)
 
     def __str__(self):
         return self.user.username
