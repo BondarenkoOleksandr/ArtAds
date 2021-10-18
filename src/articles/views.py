@@ -63,7 +63,7 @@ class ArticleDetailView(DetailView):
             count_of_voices = 0
 
         similar_articles = Article.objects.exclude(slug=slug).order_by('publish_date').select_related(
-            'category').values('category__title', 'image__photo', 'publish_date', 'author__first_name', 'author__last_name',
+            'category').values('category__title', 'image__photo__url', 'publish_date', 'author__first_name', 'author__last_name',
                                'text_before_quote', 'slug')[:3]
 
         return render(
