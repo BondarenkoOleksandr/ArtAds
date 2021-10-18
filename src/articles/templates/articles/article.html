@@ -98,7 +98,7 @@
           <div class="article-picture">
             <a href="" class="article-category">{{article.category__title}}</a>
             <a class="article-picture-link" href="{% url 'articles:article' slug=article.slug %}">
-              <img class="article-picture-img" src="/media/{{article.image.photo.url}}" alt="Article."></a>
+              <img class="article-picture-img" src="{{article.image.photo.url}}" alt="Article."></a>
           </div>
           <div class="article-footer">
             <div class="article-date">
