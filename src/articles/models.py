@@ -8,6 +8,7 @@ from django.utils.text import slugify
 
 
 # Create your models here.
+from gallery.models import Photo
 from seo.models import SEO
 from users.models import User
 
@@ -21,8 +22,8 @@ class Article(models.Model):
         null=True,
         related_name='articles'
     )
-    # bg_image = models.ImageField(default='default-picture.png', upload_to='articles/', null=True, verbose_name='Background image:')
-    # image = models.ImageField(default='default-picture.png', upload_to='articles/', null=True)
+    bg_image = models.ForeignKey(Photo, on_delete=models.SET_NULL, null=True, verbose_name='Backgorund image: ')
+    image = models.ForeignKey(Photo, on_delete=models.SET_NULL, null=True, verbose_name='Main image: ')
     title = models.CharField(max_length=100)
     text_before_quote = HTMLField(null=True)
     quote = models.TextField()
