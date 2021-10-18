@@ -42,9 +42,11 @@
         </div>
 
 
-      <div class="cases-all">
-        <button class="btn cases-btn more_cases">See more</button>
-      </div>
+      {% if cases.len > 3 %}
+        <div class="cases-all">
+          <button class="btn cases-btn more_cases">See more</button>
+        </div>
+      {% endif %}
     </div>
   </section>
   <section class="reviews">
