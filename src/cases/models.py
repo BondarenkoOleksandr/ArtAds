@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 from core.utils import generate_uuid
+from gallery.models import Photo
 
 app_name = 'cases'
 
@@ -16,8 +17,8 @@ class Case(models.Model):
         on_delete=models.SET_NULL,
         related_name='cases',
     )
-    # mob_image = models.ImageField(default='phone.png', upload_to='cases')
-    # full_image = models.ImageField(default='default-picture.png', upload_to='cases')
+    mob_image = models.ForeignKey(Photo, on_delete=models.SET_NULL, null=True, verbose_name='Phone image: ', related_name='+')
+    full_image = models.ForeignKey(Photo, on_delete=models.SET_NULL, null=True, verbose_name='Big iamge: ', related_name='+')
     link = models.URLField(max_length=200, null=True)
 
     def __str__(self):
