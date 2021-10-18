@@ -22,8 +22,8 @@ class Article(models.Model):
         null=True,
         related_name='articles'
     )
-    bg_image = models.ForeignKey(Photo, on_delete=models.SET_NULL, null=True, verbose_name='Backgorund image: ')
-    image = models.ForeignKey(Photo, on_delete=models.SET_NULL, null=True, verbose_name='Main image: ')
+    bg_image = models.ForeignKey(Photo, on_delete=models.SET_NULL, null=True, verbose_name='Backgorund image: ', related_name='+')
+    image = models.ForeignKey(Photo, on_delete=models.SET_NULL, null=True, verbose_name='Main image: ', related_name='+')
     title = models.CharField(max_length=100)
     text_before_quote = HTMLField(null=True)
     quote = models.TextField()
