@@ -111,7 +111,7 @@
             {% for review in reviews %}
               <div class="slide">
                 <div class="slide-item slide-video">
-                  <img src="{{review.image.url}}" alt="Man.">
+                  <img src="{{review.image.photo.url}}" alt="{{review.image.alt}}" title="{{review.image.title}}">
                 </div>
                 <div class="slide-item slide-text">
                   <h3 class="slide-title">{{review.name}}</h3>
