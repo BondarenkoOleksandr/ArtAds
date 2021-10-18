@@ -25,7 +25,7 @@ class Employee(models.Model):
     def save(self):
         super().save()
 
-        image = Image.open(self.image)
+        image = Image.open(self.image.photo)
         image.thumbnail((300, 300), Image.ANTIALIAS)
         image.save(self.image.path)
 
