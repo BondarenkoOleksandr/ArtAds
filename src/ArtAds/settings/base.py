@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'core',
     'users',
     'seo',
+    'gallery',
 
     'allauth',
     'allauth.account',
