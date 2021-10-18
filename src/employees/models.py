@@ -6,6 +6,7 @@ from PIL import Image
 # Create your models here.
 from tinymce.models import HTMLField
 
+from gallery.models import Photo
 from seo.models import SEO
 from users.models import User
 
@@ -18,7 +19,7 @@ class Employee(models.Model):
     )
     name = models.CharField(max_length=100, null=True)
     surname = models.CharField(max_length=100, null=True)
-    # image = models.ImageField(null=True, default='default.jpg', upload_to='pics/')
+    image = models.ForeignKey(Photo, on_delete=models.SET_NULL, null=True, verbose_name='Photo: ', related_name='+')
     position = models.CharField(max_length=200, null=True)
 
     def save(self):
