@@ -1,10 +1,12 @@
 from django.contrib import admin
 
 # Register your models here.
+from modeltranslation.admin import TabbedTranslationAdmin
+
 from gallery.models import Photo
 
 
-class PhotoAdmin(admin.ModelAdmin):
+class PhotoAdmin(TabbedTranslationAdmin):
     fields = ('image_tag', 'photo', 'alt', 'title', )
     readonly_fields = ('image_tag',)
     list_display = ('image_tag', 'alt', 'title')
