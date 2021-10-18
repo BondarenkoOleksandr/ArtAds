@@ -16,8 +16,8 @@ class Case(models.Model):
         on_delete=models.SET_NULL,
         related_name='cases',
     )
-    mob_image = models.ImageField(default='phone.png', upload_to='cases')
-    full_image = models.ImageField(default='default-picture.png', upload_to='cases')
+    # mob_image = models.ImageField(default='phone.png', upload_to='cases')
+    # full_image = models.ImageField(default='default-picture.png', upload_to='cases')
     link = models.URLField(max_length=200, null=True)
 
     def __str__(self):
