@@ -82,13 +82,13 @@
             <picture class="cases-item-phone">
               <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
               <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
-              <img src="{{case.mob_image.url}}" width="156px" height="338px" alt="Phone.">
+              <img src="{{case.mob_image.photo.url}}" width="156px" height="338px" alt="{{case.mob_image.alt}}" title="{{case.mob_image.title}}">
 
             </picture>
             <picture class="cases-item-img">
               <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
               <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
-              <img src="{{case.full_image.url}}" width="446px" height="445px" alt="Photo.">
+              <img src="{{case.full_image.phone.url}}" width="446px" height="445px" alt="{{case.full_image.alt}}" title="{{case.full_image.title}}">
             </picture>
           </div>
           {% endfor %}
