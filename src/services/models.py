@@ -19,7 +19,7 @@ class ServiceArticle(models.Model):
         unique=True
     )
 
-    # image = models.ForeignKey(Photo, on_delete=models.SET_NULL, null=True, verbose_name='Image: ', related_name='+')
+    image = models.ForeignKey(Photo, on_delete=models.SET_NULL, null=True, verbose_name='Image: ', related_name='+')
     text = HTMLField(null=True)
 
 
