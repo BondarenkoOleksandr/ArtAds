@@ -21,7 +21,7 @@
             <div class="article-picture">
               <a href="/{{request.LANGUAGE_CODE}}{% url 'articles:article' slug=article.get_slug %}" class="article-category">{{article.category|upper}}</a>
               <a class="article-picture-link" href="{% url 'articles:article' slug=article.get_slug %}">
-                <img class="article-picture-img" src="{{article.image.url}}" alt="Article."></a>
+                <img class="article-picture-img" src="{{article.image.photo.url}}" alt="Article."></a>
             </div>
             <div class="article-footer">
               <div class="article-date">
