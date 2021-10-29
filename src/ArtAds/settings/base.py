@@ -33,6 +33,7 @@ SECRET_KEY = 'django-insecure-buj415kjck&jn2j#8wr=1qjj2-d)si1%k64bpry0%r1(sl%xs8
 INSTALLED_APPS = [
     'jazzmin',
 
+    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,7 +43,6 @@ INSTALLED_APPS = [
     'django.contrib.sites',
 
     'translation_manager',
-    'modeltranslation',
     'django_extensions',
     'debug_toolbar',
     'tinymce',
