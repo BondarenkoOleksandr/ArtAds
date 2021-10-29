@@ -1,5 +1,6 @@
 from modeltranslation.translator import translator, TranslationOptions
 from articles.models import Article, ArticleCategory
+from cases.models import Review
 from employees.models import Employee, Skill
 from gallery.models import Photo
 from services.models import ServiceArticle, WorkPoint, ServiceCategory
@@ -37,6 +38,10 @@ class GalleryTranslationOptions(TranslationOptions):
     fields = ('alt', 'title', )
 
 
+class ReviewTranslationOptions(TranslationOptions):
+    fields = ('name', 'position', 'text')
+
+
 translator.register(Article, ArticleTranslationOptions)
 translator.register(WorkPoint, WorkPointTranslationOptions)
 translator.register(ServiceArticle, ServiceArticleTranslationOptions)
@@ -45,3 +50,4 @@ translator.register(Employee, EmployeesTranslationOptions)
 translator.register(Skill, EmployeeSkillsTranslationOptions)
 translator.register(ArticleCategory, ArticleCategoryTranslationOptions)
 translator.register(Photo, GalleryTranslationOptions)
+translator.register(Review, ReviewTranslationOptions)
