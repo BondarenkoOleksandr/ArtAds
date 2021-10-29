@@ -26,4 +26,4 @@ class ReviewAdmin(TabbedTranslationAdmin):
 
 admin.site.register(Case, CaseAdmin)
 admin.site.register(Category)
-admin.site.register(Review)
+admin.site.register(Review, ReviewAdmin)
