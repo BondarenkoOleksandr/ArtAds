@@ -41,11 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
 
+    'translation_manager',
+    'modeltranslation',
     'django_extensions',
     'debug_toolbar',
     'tinymce',
-    'translation_manager',
-    'modeltranslation',
 
     'app',
     'cases',
