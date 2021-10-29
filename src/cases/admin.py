@@ -17,6 +17,8 @@ class ReviewAdmin(admin.ModelAdmin):
     fieldsets = (
         ('General', {'fields': ('case', 'image', 'name', 'position', 'text')}),
         ('UA', {'fields': ('name_uk', 'position_uk', 'text_uk')}),
+        ('RU', {'fields': ('name_ru', 'position_ru', 'text_ru')}),
+        ('EN', {'fields': ('name_en', 'position_en', 'text_en')}),
     )
 
 
