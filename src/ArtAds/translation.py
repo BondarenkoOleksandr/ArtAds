@@ -42,6 +42,7 @@ class ReviewTranslationOptions(TranslationOptions):
     fields = ('name', 'position', 'text', )
 
 
+translator.register(Review, ReviewTranslationOptions)
 translator.register(Article, ArticleTranslationOptions)
 translator.register(WorkPoint, WorkPointTranslationOptions)
 translator.register(ServiceArticle, ServiceArticleTranslationOptions)
@@ -50,4 +51,3 @@ translator.register(Employee, EmployeesTranslationOptions)
 translator.register(Skill, EmployeeSkillsTranslationOptions)
 translator.register(ArticleCategory, ArticleCategoryTranslationOptions)
 translator.register(Photo, GalleryTranslationOptions)
-translator.register(Review, ReviewTranslationOptions)
