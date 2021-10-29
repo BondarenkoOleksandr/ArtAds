@@ -12,6 +12,14 @@ class CaseAdmin(admin.ModelAdmin):
     inlines = (SEOCaseInline, )
 
 
+class ReviewAdmin(admin.ModelAdmin):
+
+    fieldsets = (
+        ('General', {'fields': ('case', 'image', 'name', 'position', 'text')}),
+        ('UA', {'fields': ('name_uk', 'position_uk', 'text_uk')}),
+    )
+
+
 admin.site.register(Case, CaseAdmin)
 admin.site.register(Category)
 admin.site.register(Review)
