@@ -39,7 +39,7 @@ class GalleryTranslationOptions(TranslationOptions):
 
 
 class ReviewTranslationOptions(TranslationOptions):
-    fields = ('name', 'position', 'text')
+    fields = ('name', 'position', 'text', )
 
 
 translator.register(Article, ArticleTranslationOptions)

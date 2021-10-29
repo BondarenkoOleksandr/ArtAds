@@ -1,6 +1,8 @@
 from django.contrib import admin
 
 # Register your models here.
+from modeltranslation.admin import TabbedTranslationAdmin
+
 from cases.models import Case, Category, Review, SEOCase
 
 
@@ -12,7 +14,7 @@ class CaseAdmin(admin.ModelAdmin):
     inlines = (SEOCaseInline, )
 
 
-class ReviewAdmin(admin.ModelAdmin):
+class ReviewAdmin(TabbedTranslationAdmin):
 
     fieldsets = (
         ('General', {'fields': ('case', 'image', 'name', 'position', 'text')}),
