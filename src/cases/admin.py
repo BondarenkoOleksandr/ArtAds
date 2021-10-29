@@ -15,15 +15,15 @@ class CaseAdmin(admin.ModelAdmin):
 
 
 class ReviewAdmin(TabbedTranslationAdmin):
-
-    fieldsets = (
-        ('General', {'fields': ('case', 'image', 'name', 'position', 'text')}),
-        ('UA', {'fields': ('name_uk', 'position_uk', 'text_uk')}),
-        ('RU', {'fields': ('name_ru', 'position_ru', 'text_ru')}),
-        ('EN', {'fields': ('name_en', 'position_en', 'text_en')}),
-    )
+    pass
+    # fieldsets = (
+    #     ('General', {'fields': ('case', 'image', 'name', 'position', 'text')}),
+    #     ('UA', {'fields': ('name_uk', 'position_uk', 'text_uk')}),
+    #     ('RU', {'fields': ('name_ru', 'position_ru', 'text_ru')}),
+    #     ('EN', {'fields': ('name_en', 'position_en', 'text_en')}),
+    # )
 
 
 admin.site.register(Case, CaseAdmin)
 admin.site.register(Category)
-admin.site.register(Review)
+admin.site.register(Review, ReviewAdmin)
