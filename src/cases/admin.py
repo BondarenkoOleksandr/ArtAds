@@ -14,7 +14,7 @@ class CaseAdmin(admin.ModelAdmin):
     inlines = (SEOCaseInline, )
 
 
-class ReviewAdmin(admin.ModelAdmin):
+class ReviewAdmin(TabbedTranslationAdmin):
     fieldsets = (
         ('General', {'fields': ('case', 'image', 'name', 'position', 'text')}),
         ('UA', {'fields': ('name_uk', 'position_uk', 'text_uk')}),
@@ -23,6 +23,6 @@ class ReviewAdmin(admin.ModelAdmin):
     )
 
 
+admin.site.register(Review, ReviewAdmin)
 admin.site.register(Case, CaseAdmin)
 admin.site.register(Category)
-admin.site.register(Review, ReviewAdmin)
