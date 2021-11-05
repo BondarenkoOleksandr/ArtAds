@@ -24,10 +24,6 @@
               <a href="{% if service.article %}{% url 'services:article' slug=service.article.slug %}{% endif %}" class="honey-link"><p class="honey-text">{{service.name}}</p></a>
             </li>
           {% endfor %}
-            <li class="honey honey-6 honey-services">
-              <!-- <div class="button__circle" ></div> -->
-              <p class="honey-text">{% trans 'Услуги' %}</p>
-            </li>
         </ul>
         </div>
       </div>
@@ -65,10 +61,14 @@
             <p class="honey-text"></p>
           </span>
           {% for service in services_categories %}
-              <li class="honey honey-2">
-                <a href="{% if service.article %}{% url 'services:article' slug=service.article.slug %}{% endif %}" class="honey-link"><p class="honey-text">{{service.name}}</p></a>
-              </li>
+            <li class="honey honey-{% if forloop.counter|add:1 == 5 or forloop.counter|add:1 > 5 %}{{ forloop.counter|add:3 }}{% else %}{{ forloop.counter|add:1 }}{% endif %}">
+              <a href="{% if service.article %}{% url 'services:article' slug=service.article.slug %}{% endif %}" class="honey-link"><p class="honey-text">{{service.name}}</p></a>
+            </li>
           {% endfor %}
+          <li class="honey honey-6 honey-services">
+            <!-- <div class="button__circle" ></div> -->
+            <p class="honey-text">{% trans 'Услуги' %}</p>
+          </li>
       </ul>
       </div>
       {% if cases %}
