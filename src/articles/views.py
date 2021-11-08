@@ -10,7 +10,8 @@ from django.urls import reverse_lazy, reverse
 from django.views.generic import DetailView, ListView, CreateView
 
 from articles.forms import CommentCreateForm, ArticleRatingCreateForm
-from articles.models import Article, ArticleViews, Comment, ArticleRating
+from articles.models import Article, ArticleViews, Comment, ArticleRating, ArticleRepostTwitter, ArticleRepostFacebook, \
+    ArticleRepostTelegram
 from core.utils import get_client_ip
 
 
@@ -20,7 +21,8 @@ class ArticleListView(ListView):
     template_name = 'articles/articles.html'
 
     def get(self, request):
-        categories = Article.objects.all().distinct('category')
+        # categories = Article.objects.all().distinct('category')
+        categories = Article.objects.all().distinct()
         categories = [art.category for art in categories]
         articles = Article.objects.all().select_related('author', 'category').prefetch_related('likes')
 
@@ -109,6 +111,36 @@ def article_like(request, slug):
         article.likes.add(request.user)
 
     data = {'number_of_likes': article.number_of_likes()}
+
+    return JsonResponse(data)
+
+
+def article_repost_twitter(request, slug):
+    article = get_object_or_404(Article, slug=slug)
+    if not ArticleRepostTwitter.objects.filter(id=request.user.id).exists():
+        ArticleRepostTwitter.objects.create(article=article, user=request.user)
+
+    data = {'reposts_count': article.twitter_reposts_count()}
+
+    return JsonResponse(data)
+
+
+def article_repost_facebook(request, slug):
+    article = get_object_or_404(Article, slug=slug)
+    if not ArticleRepostFacebook.objects.filter(id=request.user.id).exists():
+        ArticleRepostFacebook.objects.create(article=article, user=request.user)
+
+    data = {'reposts_count': article.facebook_reposts_count()}
+
+    return JsonResponse(data)
+
+
+def article_repost_telegram(request, slug):
+    article = get_object_or_404(Article, slug=slug)
+    if not ArticleRepostTelegram.objects.filter(id=request.user.id).exists():
+        ArticleRepostTelegram.objects.create(article=article, user=request.user)
+
+    data = {'reposts_count': article.telegram_reposts_count()}
 
     return JsonResponse(data)
 

@@ -8,6 +8,7 @@ from django.utils.text import slugify
 
 
 # Create your models here.
+from articles.reposts_base import ArticleRepostBase
 from gallery.models import Photo
 from seo.models import SEO
 from users.models import User
@@ -36,6 +37,24 @@ class Article(models.Model):
     )
     publish_date = models.DateField(auto_now_add=True)
     likes = models.ManyToManyField(User, related_name='article_like', editable=False)
+    twitter = models.ForeignKey(
+        to='articles.ArticleRepostTwitter',
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name='twitter_repost'
+    )
+    facebook = models.ForeignKey(
+        to='articles.ArticleRepostFacebook',
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name='facebook_repost'
+    )
+    telegram = models.ForeignKey(
+        to='articles.ArticleRepostTelegram',
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name='telegram_repost'
+    )
 
     def clean(self):
         if not self.slug and Article.objects.filter(title=self.title):
@@ -46,6 +65,16 @@ class Article(models.Model):
 
     def number_of_likes(self):
         return self.likes.count()
+
+    def twitter_reposts_count(self):
+        return ArticleRepostTwitter.objects.filter(article=self).count()
+
+    def facebook_reposts_count(self):
+        return ArticleRepostFacebook.objects.filter(article=self).count()
+
+    def telegram_reposts_count(self):
+        return ArticleRepostTelegram.objects.filter(article=self).count()
+
 
     @property
     def views_count(self):
@@ -61,6 +90,21 @@ class ArticleViews(models.Model):
 
     def __str__(self):
         return '{0} in {1} post'.format(self.IPAddres, self.article.title)
+
+
+class ArticleRepostTwitter(ArticleRepostBase):
+    class Meta:
+        verbose_name_plural = 'Article Repost Twitter'
+
+
+class ArticleRepostFacebook(ArticleRepostBase):
+    class Meta:
+        verbose_name_plural = 'Article Repost Facebook'
+
+
+class ArticleRepostTelegram(ArticleRepostBase):
+    class Meta:
+        verbose_name_plural = 'Article Repost Telegram'
 
 
 class ArticleRating(models.Model):

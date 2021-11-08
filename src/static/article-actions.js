@@ -81,4 +81,20 @@ $(document).ready(function () {
         })
         .fail(() => document.querySelector('.popup_send_moderation.popup_try_again').style.top= "0px")// сообщение об ошибке при ошибке
     });
+    $(".repost").on('click', function (e) {
+        var csrftoken = getCookie('csrftoken');
+        $.ajax({
+            type: 'POST',
+            async: true,
+            url: $(this).data('url'),
+            data: "csrfmiddlewaretoken="+csrftoken,
+            success: function(data) {
+            const isEmpty = x => !Object.keys(x).length;
+            var len = Object.keys(data).length;
+                $(this).text(data.reposts_count)
+            },
+            dataType: 'json',
+        })
+        .fail(() => document.querySelector('.popup_send_moderation.popup_try_again').style.top= "0px")// сообщение об ошибке при ошибке
+    });
 });
