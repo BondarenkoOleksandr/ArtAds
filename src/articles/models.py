@@ -37,27 +37,6 @@ class Article(models.Model):
     )
     publish_date = models.DateField(auto_now_add=True)
     likes = models.ManyToManyField(User, related_name='article_like', editable=False)
-    twitter = models.ForeignKey(
-        to='articles.ArticleRepostTwitter',
-        on_delete=models.SET_NULL,
-        null=True,
-        related_name='twitter_repost',
-        editable=False
-    )
-    facebook = models.ForeignKey(
-        to='articles.ArticleRepostFacebook',
-        on_delete=models.SET_NULL,
-        null=True,
-        related_name='facebook_repost',
-        editable=False
-    )
-    telegram = models.ForeignKey(
-        to='articles.ArticleRepostTelegram',
-        on_delete=models.SET_NULL,
-        null=True,
-        related_name='telegram_repost',
-        editable=False
-    )
 
     def clean(self):
         if not self.slug and Article.objects.filter(title=self.title):
