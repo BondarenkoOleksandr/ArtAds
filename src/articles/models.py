@@ -41,19 +41,22 @@ class Article(models.Model):
         to='articles.ArticleRepostTwitter',
         on_delete=models.SET_NULL,
         null=True,
-        related_name='twitter_repost'
+        related_name='twitter_repost',
+        editable=False
     )
     facebook = models.ForeignKey(
         to='articles.ArticleRepostFacebook',
         on_delete=models.SET_NULL,
         null=True,
-        related_name='facebook_repost'
+        related_name='facebook_repost',
+        editable=False
     )
     telegram = models.ForeignKey(
         to='articles.ArticleRepostTelegram',
         on_delete=models.SET_NULL,
         null=True,
-        related_name='telegram_repost'
+        related_name='telegram_repost',
+        editable=False
     )
 
     def clean(self):
