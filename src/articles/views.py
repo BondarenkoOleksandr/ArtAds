@@ -21,8 +21,8 @@ class ArticleListView(ListView):
     template_name = 'articles/articles.html'
 
     def get(self, request):
-        # categories = Article.objects.all().distinct('category')
-        categories = Article.objects.all().distinct()
+        categories = Article.objects.all().distinct('category')
+        # categories = Article.objects.all().distinct()
         categories = [art.category for art in categories]
         articles = Article.objects.all().select_related('author', 'category').prefetch_related('likes')
 
