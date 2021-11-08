@@ -86,7 +86,7 @@
               <p class="honey-text"></p>
             </span>
             {% for service in services_categories %}
-              <li class="honey honey-{% if forloop.counter|add:1 == 5 or forloop.counter|add:1 > 5 %}{{ forloop.counter|add:3 }} burger-menu-honey-{{ forloop.counter|add:3 }}{% else %}{{ forloop.counter|add:1 }} burger-menu-honey-{{ forloop.counter|add:1 }}{% endif %}">
+              <li class="honey honey-{{ forloop.counter|add:1 }} burger-menu-honey-{{ forloop.counter|add:1 }}">
                 <a href="{% if service.article %}{% url 'services:article' slug=service.article.slug %}{% endif %}" class="honey-link"><p class="honey-text">{{service.name}}</p></a>
               </li>
             {% endfor %}
@@ -95,16 +95,16 @@
                 <img src="{% static 'assets/images/logo-scroll.svg' %}" alt="Logo.">
               </a>
             </li>
-            <li class="honey honey-010 burger-menu-honey-10">
+            <li class="honey honey-09 burger-menu-honey-9">
               <a href="{% url 'about' %}" class="honey-link"><p class="honey-text">{% trans 'О нас' %}</p></a>
             </li>
-            <li class="honey honey-011 burger-menu-honey-11 honey-orange">
+            <li class="honey honey-013 burger-menu-honey-13 honey-orange">
               <a href="{% url 'contacts' %}" class="honey-link"><p class="honey-text">{% trans 'Контакты' %}</p></a>
             </li>
-            <li class="honey honey-012 burger-menu-honey-12">
+            <li class="honey honey-014 burger-menu-honey-14">
               <a href="/{{request.LANGUAGE_CODE}}{% url 'cases:list' %}" class="honey-link"><p class="honey-text">{% trans 'Кейсы' %}</p></a>
             </li>
-            <li class="honey honey-013 burger-menu-honey-13 honey-orange">
+            <li class="honey honey-015 burger-menu-honey-15 honey-orange">
               <a href="/{{request.LANGUAGE_CODE}}{% url 'articles:list' %}" class="honey-link"><p class="honey-text">{% trans 'Статьи' %}</p></a>
             </li>
         </ul>
