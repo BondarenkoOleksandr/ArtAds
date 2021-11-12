@@ -22,7 +22,7 @@
               {{article.text|safe }}
             </p>
           </div>
-          <button class="btn btn-top btn-orange popup_btn">Оставить заявку</button>
+          <button class="btn btn-top btn-orange popup_btn">{% trans 'Оставить заявку' %}</button>
         </div>
 
       </div>
@@ -33,7 +33,7 @@
  <section class="we-will-do">
      <div class="site-width">
         <div class="title-wrapper">
-            <h2 class="title title-center">Что мы сделаем?</h2>
+            <h2 class="title title-center">{% trans 'Что мы сделаем?' %}</h2>
         </div>
         <div class="we-will-do-row service-slider">
             {% for workpoint in article.workpoints.all %}
