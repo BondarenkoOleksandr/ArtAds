@@ -1,7 +1,7 @@
 from ArtAds.settings.base import *
 
 
-DEBUG = False
+DEBUG = True
 
 DATABASES = {
     'default': {
