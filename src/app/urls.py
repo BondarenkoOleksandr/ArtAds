@@ -3,7 +3,6 @@ from django.urls import path, include
 
 from app.views import FirstPageView, ContactsPageView, AboutPageView, PrivacyPageView
 
-from django.conf.urls import handler404, handler500, handler403, handler400
 
 urlpatterns = [
     path('', FirstPageView.as_view(), name='index'),
@@ -16,4 +15,3 @@ urlpatterns = [
     path('privacy/', PrivacyPageView.as_view(), name='privacy'),
     path('about/', AboutPageView.as_view(), name='about'),
 ]
-

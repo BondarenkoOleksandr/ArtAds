@@ -2,6 +2,9 @@
 {% load socialaccount %}
 {% load i18n %}
 {% load custom_tags %}
+{% url 'about' as about_url %}
+{% url 'contacts' as contacts_url %}
+{% url 'privacy' as privacy_url %}
 <html lang="en">
 
 <head>
@@ -42,17 +45,17 @@
                         <div class="inner-drop-block">
                           <ul class="sub-nav">
                             {% for service in services_categories %}
-                              <li class="nav-link"><a href="{% url 'services:article' slug=service.article.slug %}">{{service.name}}</a></li>
+                              <li class="nav-link"><a href="{% if request.LANGUAGE_CODE != DEFAULT_LANGUAGE %}/{{request.LANGUAGE_CODE}}{% endif %}{% url 'services:article' slug=service.article.slug %}">{{service.name}}</a></li>
                             {% endfor %}
                           </ul>
                         </div>
                       </div>
                     </div>
                   </li>
-                  <li class="nav-link"><a href="/{{request.LANGUAGE_CODE}}{% url 'cases:list' %}">{% trans 'Кейсы' %}</a></li>
-                  <li class="nav-link"><a href="/{{request.LANGUAGE_CODE}}{% url 'articles:list' %}">{% trans 'Статьи' %}</a></li>
-                  <li class="nav-link"><a href="{% url 'about' %}">{% trans 'О нас' %}</a></li>
-                  <li class="nav-link"><a href="{% url 'contacts' %}">{% trans 'Контакты' %}</a></li>
+                  <li class="nav-link"><a href="{% if request.LANGUAGE_CODE != DEFAULT_LANGUAGE %}/{{request.LANGUAGE_CODE}}{% endif %}{% url 'cases:list' %}">{% trans 'Кейсы' %}</a></li>
+                  <li class="nav-link"><a href="{% if request.LANGUAGE_CODE != DEFAULT_LANGUAGE %}/{{request.LANGUAGE_CODE}}{% endif %}{% url 'articles:list' %}">{% trans 'Статьи' %}</a></li>
+                  <li class="nav-link"><a href="{% if request.LANGUAGE_CODE != DEFAULT_LANGUAGE %}/{{request.LANGUAGE_CODE}}{% endif %}{{ about_url|slice:'3:' }}">{% trans 'О нас' %}</a></li>
+                  <li class="nav-link"><a href="{% if request.LANGUAGE_CODE != DEFAULT_LANGUAGE %}/{{request.LANGUAGE_CODE}}{% endif %}{{ contacts_url|slice:'3:' }}">{% trans 'Контакты' %}</a></li>
           </ul>
         </nav>
 
@@ -62,7 +65,7 @@
             {% get_language_info_list for LANGUAGES as languages %}
             <ul class="language-list">
               {% for language in languages %}
-                <li class="language-item"><a href='/{{ language.code}}{{ request.path|clean_link }}'>{{ language.code|upper }}</a></li>
+                <li class="language-item"><a href='{% if language.code != DEFAULT_LANGUAGE %}/{{ language.code}}{% endif %}{{ request.path|clean_link }}'>{{ language.code|upper }}</a></li>
               {% endfor %}
             </ul>
         </div>
@@ -85,7 +88,7 @@
             {% get_language_info_list for LANGUAGES as languages %}
             <ul class="language-list">
               {% for language in languages %}
-                <li class="language-item"><a href='/{{ language.code}}{{ request.path|clean_link }}'>{{ language.code|upper }}</a></li>
+                <li class="language-item"><a href='{% if language.code != DEFAULT_LANGUAGE %}/{{ language.code}}{% endif %}{{ request.path|clean_link }}'>{{ language.code|upper }}</a></li>
               {% endfor %}
             </ul>
         </div>
@@ -96,7 +99,7 @@
             </span>
             {% for service in services_categories %}
               <li class="honey honey-{{ forloop.counter|add:1 }} burger-menu-honey-{{ forloop.counter|add:1 }}">
-                <a href="{% if service.article %}{% url 'services:article' slug=service.article.slug %}{% endif %}" class="honey-link"><p class="honey-text">{{service.name}}</p></a>
+                <a href="{% if request.LANGUAGE_CODE != DEFAULT_LANGUAGE %}/{{ request.LANGUAGE_CODE }}{% endif %}{% if service.article %}{% url 'services:article' slug=service.article.slug %}{% endif %}" class="honey-link"><p class="honey-text">{{service.name}}</p></a>
               </li>
             {% endfor %}
             <li class="honey honey-06 burger-menu-honey-6">
@@ -111,10 +114,10 @@
               <a href="{% url 'contacts' %}" class="honey-link"><p class="honey-text">{% trans 'Контакты' %}</p></a>
             </li>
             <li class="honey honey-014 burger-menu-honey-14">
-              <a href="/{{request.LANGUAGE_CODE}}{% url 'cases:list' %}" class="honey-link"><p class="honey-text">{% trans 'Кейсы' %}</p></a>
+              <a href="{% if request.LANGUAGE_CODE != DEFAULT_LANGUAGE %}/{{ request.LANGUAGE_CODE }}{% endif %}{% url 'cases:list' %}" class="honey-link"><p class="honey-text">{% trans 'Кейсы' %}</p></a>
             </li>
             <li class="honey honey-015 burger-menu-honey-15 honey-orange">
-              <a href="/{{request.LANGUAGE_CODE}}{% url 'articles:list' %}" class="honey-link"><p class="honey-text">{% trans 'Статьи' %}</p></a>
+              <a href="{% if request.LANGUAGE_CODE != DEFAULT_LANGUAGE %}/{{ request.LANGUAGE_CODE }}{% endif %}{% url 'articles:list' %}" class="honey-link"><p class="honey-text">{% trans 'Статьи' %}</p></a>
             </li>
         </ul>
         </div>
@@ -146,15 +149,15 @@
           <a href="tel:+38 068 278 22 00" class="footer-phone number">+38 068 278 22 00</a>
           <a href="mailto:inbox@artads.agency" class="footer-mail">inbox@artads.agency</a>
           <div class="social">
-            <a href="/" class="social-link"><img src="{% static 'assets/images/telegram.svg' %}" alt="Instagram."></a>
+            <a href="/" class="social-link"><img src="{% static 'assets/images/telegram.svg' %}" alt="Telegram."></a>
             <a href="/" class="social-link"><img src="{% static 'assets/images/instagram.svg' %}" alt="Instagram."></a>
-            <a href="/" class="social-link"><img src="{% static 'assets/images/facebook.svg' %}" alt="Instagram."></a>
+            <a href="/" class="social-link"><img src="{% static 'assets/images/facebook.svg' %}" alt="Facebook."></a>
           </div>
         </div>
         <div class="footer-services">
           <h3 class="footer-title">{% trans 'Услуги' %}</h3>
           {% for service in services_categories %}
-            <a href="{% if service.article %}{% url 'services:article' slug=service.article.slug %}{% endif %}" class="services-link">{{service.name}}</a>
+            <a href="{% if request.LANGUAGE_CODE != DEFAULT_LANGUAGE %}/{{request.LANGUAGE_CODE}}{% endif %}{% if service.article %}{% url 'services:article' slug=service.article.slug %}{% endif %}" class="services-link">{{service.name}}</a>
           {% endfor %}
         </div>
         <div class="footer-request">
@@ -191,22 +194,22 @@
                         <div class="inner-drop-block">
                           <ul class="sub-nav">
                             {% for service in services_categories %}
-                              <li class="nav-link"><a href="{% if service.article %}{% url 'services:article' slug=service.article.slug %}{% endif %}">{{service.name}}</a></li>
+                              <li class="nav-link"><a href="{% if request.LANGUAGE_CODE != DEFAULT_LANGUAGE %}/{{request.LANGUAGE_CODE}}{% endif %}{% if service.article %}{% url 'services:article' slug=service.article.slug %}{% endif %}">{{service.name}}</a></li>
                             {% endfor %}
                           </ul>
                         </div>
                       </div>
                     </div>
                   </li>
-                  <li class="nav-link"><a href="{% url 'cases:list' %}">{% trans 'Кейсы' %}</a></li>
-                  <li class="nav-link"><a href="{% url 'articles:list' %}">{% trans 'Статьи' %}</a></li>
-                  <li class="nav-link"><a href="{% url 'about' %}">{% trans 'О нас' %}</a></li>
-                  <li class="nav-link"><a href="{% url 'contacts' %}">{% trans 'Контакты' %}</a></li>
+                  <li class="nav-link"><a href="{% if request.LANGUAGE_CODE != DEFAULT_LANGUAGE %}/{{request.LANGUAGE_CODE}}{% endif %}{% url 'cases:list' %}">{% trans 'Кейсы' %}</a></li>
+                  <li class="nav-link"><a href="{% if request.LANGUAGE_CODE != DEFAULT_LANGUAGE %}/{{request.LANGUAGE_CODE}}{% endif %}{% url 'articles:list' %}">{% trans 'Статьи' %}</a></li>
+                  <li class="nav-link"><a href="{% if request.LANGUAGE_CODE != DEFAULT_LANGUAGE %}/{{request.LANGUAGE_CODE}}{% endif %}{{ about_url|slice:'3:' }}">{% trans 'О нас' %}</a></li>
+                  <li class="nav-link"><a href="{% if request.LANGUAGE_CODE != DEFAULT_LANGUAGE %}/{{request.LANGUAGE_CODE}}{% endif %}{{ contacts_url|slice:'3:' }}">{% trans 'Контакты' %}</a></li>
           </ul>
         </nav>
         <div class="footer-privacy-block">
           <!-- <a href="/" class="privacy-item">Условия пользования</a> -->
-          <a href="{% url 'privacy' %}" class="privacy-item">{% trans 'Политика конфиденциальности' %}</a>
+          <a href="{% if request.LANGUAGE_CODE != DEFAULT_LANGUAGE %}/{{request.LANGUAGE_CODE}}{% endif %}{{ privacy_url|slice:'3:' }}" class="privacy-item">{% trans 'Политика конфиденциальности' %}</a>
         </div>
         <div class="footer-logo desktop-none">
           <a href="/" class="footer-logo-link">

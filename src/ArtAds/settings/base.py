@@ -90,6 +90,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'core.context_processors.add_categories_to_context',
+                'core.context_processors.default_language',
 
             ],
         },
@@ -395,3 +396,4 @@ JAZZMIN_SETTINGS = {
     "changeform_format_overrides": {"auth.user": "collapsible", "auth.group": "vertical_tabs"},
 }
 
+TRANSLATIONS_PROJECT_BASE_DIR = BASE_DIR

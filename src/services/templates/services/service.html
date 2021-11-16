@@ -53,5 +53,19 @@
      </div>
  </section>
     {% include "includes/cases.html" with cases=cases only %}
-    {% include "includes/services.html" with services_categories=services_categories only %}
+    <section class="other-services">
+    <div class="site-width">
+        <div class="title-wrapper">
+            <h2 class="title title-center">You may also like</h2>
+        </div>
+        <div class="we-will-do-row">
+            {% for service in services_categories %}
+            <a href="{% if request.LANGUAGE_CODE != DEFAULT_LANGUAGE %}/{{request.LANGUAGE_CODE}}{% endif %}{% url 'services:article' slug=service.article.slug %}" class="we-will-do-item other-services-item">
+                <h3 class="title-standart">{{service.name}}</h3>
+            </a>
+            {% endfor %}
+        </div>
+
+     </div>
+  </section>
 {% endblock %}

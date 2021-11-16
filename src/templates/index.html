@@ -22,7 +22,7 @@
           </li>
           {% for service in services_categories %}
             <li class="honey honey-{% if forloop.counter|add:1 == 5 or forloop.counter|add:1 > 5 %}{{ forloop.counter|add:3 }}{% else %}{{ forloop.counter|add:1 }}{% endif %}">
-              <a href="{% if service.article %}{% url 'services:article' slug=service.article.slug %}{% endif %}" class="honey-link"><p class="honey-text">{{service.name}}</p></a>
+              <a href="{% if request.LANGUAGE_CODE != DEFAULT_LANGUAGE %}/{{ request.LANGUAGE_CODE }}{% endif %}{% if service.article %}{% url 'services:article' slug=service.article.slug %}{% endif %}" class="honey-link"><p class="honey-text">{{service.name}}</p></a>
             </li>
           {% endfor %}
           <li class="honey honey-6 honey-services">

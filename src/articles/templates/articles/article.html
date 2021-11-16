@@ -97,7 +97,7 @@
             <div class="article">
           <div class="article-picture">
             <a href="" class="article-category">{{article.category.title}}</a>
-            <a class="article-picture-link" href="{% url 'articles:article' slug=article.slug %}">
+            <a class="article-picture-link" href="{% if request.LANGUAGE_CODE != DEFAULT_LANGUAGE %}/{{ request.LANGUAGE_CODE }}{% endif %}{% url 'articles:article' slug=article.slug %}">
               <img class="article-picture-img" src="{{article.image.photo.url}}" alt="{{article.image.alt}}" title="{{article.image.photo.title}}"></a>
           </div>
           <div class="article-footer">
@@ -114,7 +114,7 @@
                   {{article.title|striptags}}
               </p>
             </div>
-            <a class="article-link" href="{% url 'articles:article' slug=article.slug %}">
+            <a class="article-link" href="{% if request.LANGUAGE_CODE != DEFAULT_LANGUAGE %}/{{ request.LANGUAGE_CODE }}{% endif %}{% url 'articles:article' slug=article.slug %}">
               <div class="article-link-text">
                 {% trans 'Read more' %}
               </div>

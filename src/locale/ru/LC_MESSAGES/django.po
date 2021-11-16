@@ -1,0 +1,129 @@
+#: .\articles\templates\articles\article.html:119 .\templates\index.html:194
+msgid "Read more"
+msgstr ""
+
+#: .\articles\templates\articles\article.html:176 .\templates\index.html:103
+msgid "See more"
+msgstr ""
+
+#: .\articles\templates\articles\article.html:190
+msgid " ..."
+msgstr ""
+
+#: .\articles\templates\articles\article.html:191
+msgid ""
+msgstr ""
+
+#: .\articles\templates\articles\article.html:209 .\templates\base.html:166
+msgid ""
+msgstr ""
+
+#: .\articles\templates\articles\article.html:213 .\templates\contacts.html:37
+msgid ""
+msgstr ""
+
+#: .\articles\templates\articles\article.html:222
+#: .\services\templates\services\service.html:26 .\templates\about.html:25
+#: .\templates\base.html:71 .\templates\base.html:176
+#: .\templates\contacts.html:26 .\templates\index.html:15
+msgid " "
+msgstr ""
+
+#: .\articles\templates\articles\article.html:241
+msgid "  Facebook"
+msgstr ""
+
+#: .\articles\templates\articles\article.html:245
+msgid ",       ."
+msgstr ""
+
+#: .\articles\templates\articles\articles.html:10 .\templates\base.html:53
+#: .\templates\base.html:117 .\templates\base.html:202
+#: .\templates\index.html:159
+msgid ""
+msgstr ""
+
+#: .\services\templates\services\service.html:37
+msgid "  ?"
+msgstr ""
+
+#: .\templates\about.html:15 .\templates\base.html:54 .\templates\base.html:108
+#: .\templates\base.html:203
+msgid " "
+msgstr ""
+
+#: .\templates\about.html:18
+msgid ""
+"  digital-  ,    -   .\n"
+"    -  ,           . \n"
+"\n"
+"   ,  ,        -.                      .\n"
+"         ,      ."
+msgstr ""
+
+#: .\templates\about.html:37
+msgid " "
+msgstr ""
+
+#: .\templates\about.html:75 .\templates\index.html:140
+msgid " "
+msgstr ""
+
+#: .\templates\base.html:39 .\templates\base.html:155 .\templates\base.html:188
+#: .\templates\index.html:30 .\templates\index.html:75
+msgid ""
+msgstr ""
+
+#: .\templates\base.html:52 .\templates\base.html:114 .\templates\base.html:201
+msgid ""
+msgstr ""
+
+#: .\templates\base.html:55 .\templates\base.html:111 .\templates\base.html:143
+#: .\templates\base.html:204 .\templates\contacts.html:11
+#: .\templates\contacts.html:35
+msgid ""
+msgstr ""
+
+#: .\templates\base.html:144
+msgid ", "
+msgstr ""
+
+#: .\templates\base.html:145
+msgid " "
+msgstr ""
+
+#: .\templates\base.html:161
+msgid "  "
+msgstr ""
+
+#: .\templates\base.html:209
+msgid " "
+msgstr ""
+
+#: .\templates\index.html:9
+msgid " digital-  "
+msgstr ""
+
+#: .\templates\index.html:12
+msgid "      ,   ,   -   .         ."
+msgstr ""
+
+#: .\templates\index.html:41
+msgid " "
+msgstr ""
+
+#: .\templates\index.html:47
+msgid "   "
+msgstr ""
+
+#: .\templates\index.html:53
+msgid " "
+msgstr ""
+
+#: .\templates\index.html:81
+msgid " "
+msgstr ""
+
+#: .\templates\index.html:112
+msgid ""
+msgstr ""

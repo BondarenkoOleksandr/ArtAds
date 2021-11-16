@@ -19,7 +19,7 @@
         {% for article in articles %}
           <div class="article filtered-div" id="{{article.category.title|lower}}" data-tab="{{article.category.title|lower}}">
             <div class="article-picture">
-              <a href="/{{request.LANGUAGE_CODE}}{% url 'articles:article' slug=article.get_slug %}" class="article-category">{{article.category|upper}}</a>
+              <a href="{% if request.LANGUAGE_CODE != DEFAULT_LANGUAGE %}/{{ request.LANGUAGE_CODE }}{% endif %}{% url 'articles:article' slug=article.get_slug %}" class="article-category">{{article.category|upper}}</a>
               <a class="article-picture-link" href="{% url 'articles:article' slug=article.get_slug %}">
                 <img class="article-picture-img" src="{{article.image.photo.url}}" alt="{{article.image.alt}}" title="{{article.image.photo.title}}"></a>
             </div>
@@ -37,7 +37,7 @@
                   {{article.title|striptags}}
                 </p>
               </div>
-              <a class="article-link" href="/{{request.LANGUAGE_CODE}}{{LANGUAGE_CODE}}{% url 'articles:article' slug=article.get_slug %}">
+              <a class="article-link" href="{% if request.LANGUAGE_CODE != DEFAULT_LANGUAGE %}/{{ request.LANGUAGE_CODE }}{% endif %}{% url 'articles:article' slug=article.get_slug %}">
                 <div class="article-link-text">Read more
                 </div>
               </a>

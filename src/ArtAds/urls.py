@@ -3,9 +3,8 @@ from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-from django.conf.urls import handler404, handler500, handler403, handler400
 
-from app.views import ContactsPageView, PrivacyPageView, AboutPageView, SendEmailView
+from app.views import SendEmailView
 
 from ArtAds.settings import base
 
