@@ -180,7 +180,7 @@
                   {{article.text_before_quote|striptags}}
                 </p>
               </div>
-                <a class="article-link" href="{% url 'articles:article' slug=article.get_slug %}">
+                <a class="article-link" href="{% if request.LANGUAGE_CODE != DEFAULT_LANGUAGE %}/{{ request.LANGUAGE_CODE }}{% endif %}{% url 'articles:article' slug=article.get_slug %}">
                   <div class="article-link-text">
                     {% trans 'Read more' %}
                   </div>
