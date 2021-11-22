@@ -138,7 +138,7 @@ msgstr "Question"
 
 #: .\templates\base.html:212
 msgid "Политика конфиденциальности"
-msgstr "Politics"
+msgstr "Privacy policy"
 
 #: .\templates\index.html:9
 msgid "Маркетинговое digital-агентство полного цикла"
