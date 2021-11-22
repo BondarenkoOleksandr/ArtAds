@@ -1,0 +1,185 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-22 15:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
+"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
+"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
+"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+
+#: .\articles\templates\articles\article.html:119 .\templates\index.html:185
+#: .\templates\index.html:194
+msgid "Read more"
+msgstr "Читати більше"
+
+#: .\articles\templates\articles\article.html:176 .\templates\index.html:103
+msgid "See more"
+msgstr "Завантажити більше"
+
+#: .\articles\templates\articles\article.html:190
+msgid "Написать комментарий..."
+msgstr "Написати коментар"
+
+#: .\articles\templates\articles\article.html:191
+msgid "Отправить"
+msgstr "Надіслати"
+
+#: .\articles\templates\articles\article.html:209 .\templates\base.html:169
+msgid "Имя"
+msgstr "Ім'я"
+
+#: .\articles\templates\articles\article.html:213 .\templates\contacts.html:37
+msgid "Телефон"
+msgstr "Телефон"
+
+#: .\articles\templates\articles\article.html:222
+#: .\services\templates\services\service.html:26 .\templates\about.html:25
+#: .\templates\base.html:74 .\templates\base.html:179
+#: .\templates\contacts.html:26 .\templates\index.html:15
+msgid "Оставить заявку"
+msgstr "Залишити заявку"
+
+#: .\articles\templates\articles\article.html:241
+msgid "Продолжить с Facebook"
+msgstr "Продовжити з Facebook"
+
+#: .\articles\templates\articles\article.html:245
+msgid "Авторизуясь, Вы даете согласие на обработку персональных данных."
+msgstr "Авторизуючись, Ви надаєте згоду на обробку персональних даних"
+
+#: .\articles\templates\articles\articles.html:10 .\templates\base.html:56
+#: .\templates\base.html:120 .\templates\base.html:205
+#: .\templates\index.html:159
+msgid "Статьи"
+msgstr "Статті"
+
+#: .\services\templates\services\service.html:37
+msgid "Что мы сделаем?"
+msgstr "Що ми зробимо?"
+
+#: .\templates\about.html:15 .\templates\base.html:57 .\templates\base.html:111
+#: .\templates\base.html:206
+msgid "О нас"
+msgstr "Про нас"
+
+#: .\templates\about.html:18
+msgid ""
+"Мы — digital-агентство полного цикла, предоставляющее услуги комплексного "
+"интернет-маркетинга для вашего бизнеса.\n"
+"Являясь диверсифицированным подразделением со штаб-квартирой в Израиле, мы "
+"работаем по международным стандартам с упором на качество и результат. \n"
+"\n"
+"Наша команда — грамотные, высококвалифицированные специалисты, настоящие "
+"профи в области цифровой рекламы и веб-разработки. Большой опыт работы на "
+"международных рынках с крупными корпорациями позволяет нам ставить высокие "
+"цели и эффективно их достигать путем кропотливой тщательной работы.\n"
+"Благодаря регулярному обмену опытом с иностранными подразделениями мы "
+"непрерывно развиваемся, открывая новые возможности для профессионального "
+"роста."
+msgstr ""
+"Вітаємо на сайті діджитал агенції повного циклу ArtAds. Надаючи послуги по "
+"комплексномуінтернет-маркетингу для вашого бізнесу, ми розробляємо ефективні "
+"стратегіїпросування в інтернеті з урахуваннім ваших ресурсів та цілей.Як "
+"диверсифікований підрозділ зі штаб-квартирою в Ізраїлі,ми працюємо за "
+"міжнародними стандартами,зосереждуючи особливу увагу на якості і результаті."
+"Наша команда — грамотні, висококваліфіковані фахівці,справжні профі в сфері "
+"цифрової реклами та веб-розробки.Чималий досвід роботи на міжнародних ринках "
+"з великими корпораціямидозволяє нам ставити високі цілі і ефективно їх "
+"досягати шляхом кропіткої ретельної роботи.Завдяки регулярному обміну "
+"досвідом з іноземними підрозділами ми безперервно розвиваємося,відкриваючи "
+"нові можливості для професійного зростання."
+
+#: .\templates\about.html:37
+msgid "Наша команда"
+msgstr "Наша команда"
+
+#: .\templates\about.html:75 .\templates\index.html:140
+msgid "Наши партнеры"
+msgstr "Наші партнери"
+
+#: .\templates\base.html:42 .\templates\base.html:158 .\templates\base.html:191
+#: .\templates\index.html:30 .\templates\index.html:75
+msgid "Услуги"
+msgstr "Послуги"
+
+#: .\templates\base.html:55 .\templates\base.html:117 .\templates\base.html:204
+msgid "Кейсы"
+msgstr "Кейси"
+
+#: .\templates\base.html:58 .\templates\base.html:114 .\templates\base.html:146
+#: .\templates\base.html:207 .\templates\contacts.html:11
+#: .\templates\contacts.html:35
+msgid "Контакты"
+msgstr "Контакти"
+
+#: .\templates\base.html:147
+msgid "Одесса, Украина"
+msgstr "Одеса, Україна"
+
+#: .\templates\base.html:148
+msgid "Французский бульвар"
+msgstr "Французський бульвар"
+
+#: .\templates\base.html:164
+msgid "ЗАДАЙТЕ ВАШ ВОПРОС"
+msgstr "Задайте Ваше питання"
+
+#: .\templates\base.html:173
+msgid "Вопрос"
+msgstr "Питання"
+
+#: .\templates\base.html:212
+msgid "Политика конфиденциальности"
+msgstr "Політика конфіденційності"
+
+#: .\templates\index.html:9
+msgid "Маркетинговое digital-агентство полного цикла"
+msgstr "Маркетингове digital-агентство повного циклу"
+
+#: .\templates\index.html:12
+msgid ""
+"Доверьтесь команде профессионалов в области цифровой рекламы, и получите "
+"результат, отвечающий поставленным бизнес-целям и вашему бюджету. Откройте "
+"новые возможности для развития вашего бизнеса прямо сейчас."
+msgstr ""
+"Довіртеся команді професіоналів у галузі цифрової реклами, отримайте "
+"результат, що відповідає поставленим бізнес-цілям та вашому бюджету. "
+"Відкрийте нові можливості для розвитку вашого бізнесу зараз."
+
+#: .\templates\index.html:41
+msgid "довольных клиентов"
+msgstr "задоволених клієнтів"
+
+#: .\templates\index.html:45
+msgid "лет"
+msgstr ""
+
+#: .\templates\index.html:47
+msgid "на рынке маркетинговых услуг"
+msgstr "на ринку маркетингових послуг"
+
+#: .\templates\index.html:53
+msgid "успешных проектов"
+msgstr "вдалих проектів"
+
+#: .\templates\index.html:81
+msgid "Наши кейсы"
+msgstr "Наші кейси"
+
+#: .\templates\index.html:112
+msgid "Отзывы"
+msgstr "Відгуки"

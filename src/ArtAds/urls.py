@@ -17,7 +17,8 @@ urlpatterns = [
 
 ]
 urlpatterns += i18n_patterns(
-    path('', include('app.urls'))
+    path('', include('app.urls')),
+    prefix_default_language=False
 )
 
 urlpatterns += static(base.MEDIA_URL, document_root=base.MEDIA_ROOT)

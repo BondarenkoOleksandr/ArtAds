@@ -22,7 +22,7 @@
           </li>
           {% for service in services_categories %}
             <li class="honey honey-{% if forloop.counter|add:1 == 5 or forloop.counter|add:1 > 5 %}{{ forloop.counter|add:3 }}{% else %}{{ forloop.counter|add:1 }}{% endif %}">
-              <a href="{% if request.LANGUAGE_CODE != DEFAULT_LANGUAGE %}/{{ request.LANGUAGE_CODE }}{% endif %}{% if service.article %}{% url 'services:article' slug=service.article.slug %}{% endif %}" class="honey-link"><p class="honey-text">{{service.name}}</p></a>
+              <a href="{% if service.article %}{% url 'services:article' slug=service.article.slug %}{% endif %}" class="honey-link"><p class="honey-text">{{service.name}}</p></a>
             </li>
           {% endfor %}
           <li class="honey honey-6 honey-services">
@@ -42,7 +42,7 @@
               </p>
             </div>
             <div class="top-block-advantages-item">
-              <p class="number-block">10<span class="number-block-sub"> лет</span></p>
+              <p class="number-block">10<span class="number-block-sub"> {% trans 'лет' %}</span></p>
               <p class="top-block-advantages-descr">
                 {% trans 'на рынке маркетинговых услуг' %}
               </p>
@@ -182,7 +182,7 @@
               </div>
                 <a class="article-link" href="{% url 'articles:article' slug=article.get_slug %}">
                   <div class="article-link-text">
-                    Read more
+                    {% trans 'Read more' %}
                   </div>
                 </a>
             </div>
