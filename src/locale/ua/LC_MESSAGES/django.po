@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-22 15:15+0200\n"
+"POT-Creation-Date: 2021-11-22 16:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .\articles\templates\articles\article.html:119 .\templates\index.html:185
+#: .\articles\templates\articles\article.html:119
+#: .\articles\templates\articles\articles.html:41
+#: .\articles\templates\articles\articles.html:48 .\templates\index.html:185
 #: .\templates\index.html:194
 msgid "Read more"
 msgstr ""
@@ -61,6 +63,10 @@ msgstr ""
 #: .\templates\base.html:120 .\templates\base.html:205
 #: .\templates\index.html:159
 msgid "Статьи"
+msgstr ""
+
+#: .\articles\templates\articles\articles.html:13
+msgid "ALL"
 msgstr ""
 
 #: .\services\templates\services\service.html:37

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-22 15:15+0200\n"
+"POT-Creation-Date: 2021-11-22 16:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\articles\templates\articles\article.html:119 .\templates\index.html:185
+#: .\articles\templates\articles\article.html:119
+#: .\articles\templates\articles\articles.html:41
+#: .\articles\templates\articles\articles.html:48 .\templates\index.html:185
 #: .\templates\index.html:194
 msgid "Read more"
 msgstr "Read more"
@@ -64,6 +66,10 @@ msgstr "By logging in, you consent to the processing of personal data."
 msgid "Статьи"
 msgstr "Articles"
 
+#: .\articles\templates\articles\articles.html:13
+msgid "ALL"
+msgstr "ALL"
+
 #: .\services\templates\services\service.html:37
 msgid "Что мы сделаем?"
 msgstr "What we do?"
@@ -88,14 +94,17 @@ msgid ""
 "непрерывно развиваемся, открывая новые возможности для профессионального "
 "роста."
 msgstr ""
-"We are a full-service digital marketing agency that provides a wide range of marketing services for your business."
-"We manage all the aspects of your company’s presence on the internet. We tell people about your brand, making them interested in your products and services."
-"We have different departments that focus on the same idea — an integrated online promotion for your company. We help your business to grow,"
-"effectively beating the competition on the market."
-"We know how to increase your visibility in search results, help to engage with your"
-"existing customers and reach new ones. Working with us, you will be taken through the complete"
-"journey of development, implementing and tracking a marketing plan that meets all your needs and expectations."
-"Art. Ads agency is what you really need to get a shout-out."
+"We are a full-service digital marketing agency that provides a wide range of "
+"marketing services for your business.We manage all the aspects of your "
+"company’s presence on the internet. We tell people about your brand, making "
+"them interested in your products and services.We have different departments "
+"that focus on the same idea — an integrated online promotion for your "
+"company. We help your business to grow,effectively beating the competition "
+"on the market.We know how to increase your visibility in search results, "
+"help to engage with yourexisting customers and reach new ones. Working with "
+"us, you will be taken through the completejourney of development, "
+"implementing and tracking a marketing plan that meets all your needs and "
+"expectations.Art. Ads agency is what you really need to get a shout-out."
 
 #: .\templates\about.html:37
 msgid "Наша команда"
@@ -150,7 +159,9 @@ msgid ""
 "результат, отвечающий поставленным бизнес-целям и вашему бюджету. Откройте "
 "новые возможности для развития вашего бизнеса прямо сейчас."
 msgstr ""
-"Trust our team of digital marketing professionals and reach your strategic and financial business goals! Open up new opportunities for bringing your business to the next level right now!"
+"Trust our team of digital marketing professionals and reach your strategic "
+"and financial business goals! Open up new opportunities for bringing your "
+"business to the next level right now!"
 
 #: .\templates\index.html:41
 msgid "довольных клиентов"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-22 15:15+0200\n"
+"POT-Creation-Date: 2021-11-22 16:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,9 @@ msgstr ""
 "100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
 "(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: .\articles\templates\articles\article.html:119 .\templates\index.html:185
+#: .\articles\templates\articles\article.html:119
+#: .\articles\templates\articles\articles.html:41
+#: .\articles\templates\articles\articles.html:48 .\templates\index.html:185
 #: .\templates\index.html:194
 msgid "Read more"
 msgstr "Читати більше"
@@ -66,6 +68,10 @@ msgstr "Авторизуючись, Ви надаєте згоду на обро
 #: .\templates\index.html:159
 msgid "Статьи"
 msgstr "Статті"
+
+#: .\articles\templates\articles\articles.html:13
+msgid "ALL"
+msgstr "Всі"
 
 #: .\services\templates\services\service.html:37
 msgid "Что мы сделаем?"

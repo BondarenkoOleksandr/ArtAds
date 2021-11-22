@@ -10,7 +10,7 @@
         <h2 class="title title-center">{% trans 'Статьи' %}</h2>
       </div>
       <div class="tab-row tabs">
-        <span class="tab-toggle show-all activeClass">ALL</span>
+        <span class="tab-toggle show-all activeClass">{% trans 'ALL' %}</span>
         {% for category in categories %}
           <span class="tab-toggle {{category|lower}}" data-tab="{{category|lower}}">{{category}}</span>
         {% endfor %}
@@ -38,15 +38,14 @@
                 </p>
               </div>
               <a class="article-link" href="{% if request.LANGUAGE_CODE != DEFAULT_LANGUAGE %}/{{ request.LANGUAGE_CODE }}{% endif %}{% url 'articles:article' slug=article.get_slug %}">
-                <div class="article-link-text">Read more
-                </div>
+                <div class="article-link-text">{% trans 'Read more' %}</div>
               </a>
             </div>
           </div>
         {% endfor %}
       </div>
       <div class="cases-all">
-        <button id="read_more" class="btn cases-btn">Read more</button>
+        <button id="read_more" class="btn cases-btn">{% trans 'Read more' %}</button>
       </div>
     </div>
   </section>
