@@ -46,7 +46,7 @@
             <div class="article-extended-author">
                 <div class="article-extended-author-photo" style="background: url('{{article.author.image.url}}') center center/cover no-repeat"></div>
                 <h3 class="article-extended-author-title">{{article.author.first_name}} {{article.author.last_name}}</h3>
-                <h4 class="article-extended-author-subtitle">{{article.author.position}}</h4>
+                <h4 class="article-extended-author-subtitle">{{article.author.employee.position}}</h4>
                 {% for account in article.author.employee.social_accounts.all %}
                     <a href="{{account.link}}" class="author-link author-link-insta" style="background: no-repeat 0 url('{{account.logo.url}}');">{{account.title}}</a>
                 {% endfor %}
