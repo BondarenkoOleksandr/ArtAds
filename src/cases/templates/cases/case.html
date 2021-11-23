@@ -29,13 +29,13 @@
               <picture class="cases-item-phone">
                 <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
                 <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
-                <img src="{{case.mob_image.photo.url}}" width="156px" height="338px" alt="{{case.mob_image.alt}}" title="{{case.mob_image.title}}">
+                <img src="{{case.mob_image.photo.url}}" alt="{{case.mob_image.alt}}" title="{{case.mob_image.title}}">
 
               </picture>
               <picture class="cases-item-img">
                 <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
                 <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
-                <img src="{{case.full_image.photo.url}}" width="446px" height="445px" alt="{{case.full_image.alt}}" title="{{case.full_image.title}}">
+                <img src="{{case.full_image.photo.url}}" alt="{{case.full_image.alt}}" title="{{case.full_image.title}}">
               </picture>
             </div>
           {% endfor %}
@@ -58,7 +58,7 @@
           <div class="slider">
             {% for review in reviews %}
             <div class="slide">
-              <div class="slide-item slide-video" style="background: url({{review.image.url}}) center center/cover no-repeat">
+              <div class="slide-item slide-video" style="background: url({{review.image.photo.url}}) center center/cover no-repeat">
 
               </div>
               <div class="slide-item slide-text">
