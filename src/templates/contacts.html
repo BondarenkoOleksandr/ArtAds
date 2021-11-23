@@ -18,11 +18,11 @@
                 <form action="{% url 'send_email' %}" class="form-contact" method="post">
                     {% csrf_token %}
                     <label for="name">Имя</label>
-                    <input name="name" type="text" placeholder="Введите имя" required>
+                    <input id="name" name="name" type="text" placeholder="Введите имя" required>
                     <label for="email">E-mail</label>
-                    <input name="email" type="email" placeholder="Введите e-mail" required>
-                    <label for="">Сообщение</label>
-                    <textarea name="" id="" cols="30" rows="6" placeholder="Введите сообщение"></textarea>
+                    <input id="email" name="email" type="email" placeholder="Введите e-mail" required>
+                    <label for="message">Сообщение</label>
+                    <textarea name="message" id="message" cols="30" rows="6" placeholder="Введите сообщение"></textarea>
                     <button class="btn btn-top btn-orange">{% trans 'Оставить заявку' %}</button>
                     <div class="status"></div>
                 </form>
