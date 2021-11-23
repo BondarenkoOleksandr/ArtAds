@@ -160,7 +160,7 @@
       </div>
       <div class="articles-row article-slider">
         {% for article in articles %}
-          <div class="article filtered-div" id="{{article.category|lower|slugify}}" data-web="{{article.category|lower|slugify}}">
+          <div class="article filtered-div" data-web="{{article.category|lower|slugify}}">
             <div class="article-picture">
               <a href="/" class="article-category">{{article.category|upper}}</a>
               <a class="article-picture-link" href="/">
