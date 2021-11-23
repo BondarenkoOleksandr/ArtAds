@@ -19,8 +19,9 @@
         <div class="request">
           <h1 class="title request-title">{{article.title}}</h1>
           <div class="request-description">
-            <p class="request-paragraph">
-              {{article.text|safe}}</p>
+            <div class="request-paragraph">
+              {{article.text|safe}}
+            </div>
           </div>
           <button class="btn btn-top btn-orange popup_btn">{% trans 'Оставить заявку' %}</button>
         </div>
