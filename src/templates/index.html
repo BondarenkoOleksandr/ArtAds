@@ -62,9 +62,9 @@
     <div class="site-width">
       <div class="honeycomb-wrap desktop-none">
         <ul class="honeycomb">
-          <span class="honey honey-1 mob-none">
+          <li class="honey honey-1 mob-none">
             <p class="honey-text"></p>
-          </span>
+          </li>
           {% for service in services_categories %}
             <li class="honey honey-{% if forloop.counter|add:1 == 5 or forloop.counter|add:1 > 5 %}{{ forloop.counter|add:3 }}{% else %}{{ forloop.counter|add:1 }}{% endif %}">
               <a href="/{{ request.LANGUAGE_CODE }}{% if service.article %}{% url 'services:article' slug=service.article.slug %}{% endif %}" class="honey-link"><p class="honey-text">{{service.name}}</p></a>
