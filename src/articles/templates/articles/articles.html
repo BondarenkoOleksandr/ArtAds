@@ -17,7 +17,7 @@
     </div>
       <div class="articles-row tabs-content">
         {% for article in articles %}
-          <div class="article filtered-div" id="{{article.category.title|lower|slugify}}" data-tab="{{article.category.title|lower|slugify}}">
+          <div class="article filtered-div" data-tab="{{article.category.title|lower|slugify}}">
             <div class="article-picture">
               <a href="{% if request.LANGUAGE_CODE != DEFAULT_LANGUAGE %}/{{ request.LANGUAGE_CODE }}{% endif %}{% url 'articles:article' slug=article.get_slug %}" class="article-category">{{article.category|upper}}</a>
               <a class="article-picture-link" href="{% url 'articles:article' slug=article.get_slug %}">
