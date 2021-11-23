@@ -11,7 +11,7 @@
 {% block pagename %}article-page{% endblock %}
 {% block pagetitle %}{{article.title}}{% endblock %}
 {% block content %}
-  <section class="article-back" style="background: no-repeat 50%/cover url({{article.bg_image.photo.url}});">
+  <div class="article-back" style="background: no-repeat 50%/cover url({{article.bg_image.photo.url}});">
       <div class="site-width article-back-inner">
         <a href="/" class="article-category">{{article.category.title}}</a>
         <div class="article-back-rating">
@@ -29,7 +29,7 @@
              </div>
         </div>
       </div>
-  </section>
+  </div>
   <section class="articles-wrapper">
     <div class="site-width">
       <div class="article-extended">
