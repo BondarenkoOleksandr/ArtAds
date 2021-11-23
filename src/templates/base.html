@@ -93,9 +93,9 @@
         </div>
         <div class="honeycomb-wrap burger-menu-honeycomb-wrap">
           <ul class="honeycomb burger-menu-honeycomb">
-            <span class="honey honey-01 burger-menu-honey-1 mob-none">
+            <li class="honey honey-01 burger-menu-honey-1 mob-none">
               <p class="honey-text"></p>
-            </span>
+            </li>
             {% for service in services_categories %}
               <li class="honey honey-{{ forloop.counter|add:1 }} burger-menu-honey-{{ forloop.counter|add:1 }}">
                 <a href="{% if service.article %}{% url 'services:article' slug=service.article.slug %}{% endif %}" class="honey-link"><p class="honey-text">{{service.name}}</p></a>
