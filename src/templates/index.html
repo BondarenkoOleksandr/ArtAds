@@ -87,13 +87,13 @@
             <picture class="cases-item-phone">
               <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
               <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
-              <img src="{{case.mob_image.photo.url}}" width="156px" height="338px" alt="{{case.mob_image.alt}}" title="{{case.mob_image.title}}">
+              <img src="{{case.mob_image.photo.url}}" alt="{{case.mob_image.alt}}" title="{{case.mob_image.title}}">
 
             </picture>
             <picture class="cases-item-img">
               <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
               <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
-              <img src="{{case.full_image.photo.url}}" width="446px" height="445px" alt="{{case.full_image.alt}}" title="{{case.full_image.title}}">
+              <img src="{{case.full_image.photo.url}}" alt="{{case.full_image.alt}}" title="{{case.full_image.title}}">
             </picture>
           </div>
           {% endfor %}
@@ -160,7 +160,7 @@
       </div>
       <div class="articles-row article-slider">
         {% for article in articles %}
-          <div class="article filtered-div" id="{{article.category|lower}}" data-web="{{article.category|lower}}">
+          <div class="article filtered-div" id="{{article.category|lower|slugify}}" data-web="{{article.category|lower|slugify}}">
             <div class="article-picture">
               <a href="/" class="article-category">{{article.category|upper}}</a>
               <a class="article-picture-link" href="/">
