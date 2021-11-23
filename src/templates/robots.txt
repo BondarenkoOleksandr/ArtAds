@@ -1,0 +1,12 @@
+User-agent: *
+Disallow: *?*
+Allow: *.ttf*
+Allow: *.woff2*
+Allow: *.jpg*
+Allow: *.gif*
+Allow: *.png*
+Allow: *.css*
+Allow: *.js*
+
+Host: https://artads.agency/
+Sitemap: https://artads.agency/sitemap.xml
