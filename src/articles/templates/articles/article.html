@@ -72,13 +72,13 @@
                         <div class="social-item-inner social-item-like-inner number">{{article.number_of_likes}}</div>
                     </div>
                     <div class="social-item social-item-twitter {% if not user.is_authenticated %}popup_btn_login{% endif %}">
-                        <div class="social-item-inner social-item-twitter-inner number"><a href="https://twitter.com/intent/tweet?text={{article.title}}&url={{ request.build_absolute_uri }}" data-url="{% url 'articles:twitter' slug=article.slug %}" class="repost" target="_blank">{{article.twitter_reposts_count}}</a></div>
+                        <div class="social-item-inner social-item-twitter-inner number"><a href="https://twitter.com/intent/tweet?text={{article.title|slugify}}&url={{ request.build_absolute_uri }}" data-url="{% url 'articles:twitter' slug=article.slug %}" class="repost" target="_blank">{{article.twitter_reposts_count}}</a></div>
                     </div>
                     <div class="social-item social-item-facebook {% if not user.is_authenticated %}popup_btn_login{% endif %}">
                         <div class="social-item-inner social-item-facebook-inner number"><a href="https://www.facebook.com/sharer/sharer.php?{{ request.build_absolute_uri }}" data-url="{% url 'articles:facebook' slug=article.slug %}" class="repost" target="_blank">{{article.facebook_reposts_count}}</a></div>
                     </div>
                     <div class="social-item social-item-telegram {% if not user.is_authenticated %}popup_btn_login{% endif %}">
-                        <div class="social-item-inner social-item-telegram-inner number"><a href="https://t.me/share/url?url={{ request.build_absolute_uri }}&text={{article.title}}" data-url="{% url 'articles:telegram' slug=article.slug %}" class="repost" target="_blank">{{article.telegram_reposts_count}}</a></div>
+                        <div class="social-item-inner social-item-telegram-inner number"><a href="https://t.me/share/url?url={{ request.build_absolute_uri }}&text={{article.title|slugify}}" data-url="{% url 'articles:telegram' slug=article.slug %}" class="repost" target="_blank">{{article.telegram_reposts_count}}</a></div>
                     </div>
                 </div>
             </div>
