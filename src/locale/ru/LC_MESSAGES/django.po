@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-22 16:27+0200\n"
+"POT-Creation-Date: 2021-11-23 16:32+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,7 +39,7 @@ msgstr "Написать комментарий..."
 msgid "Отправить"
 msgstr "Отправить"
 
-#: .\articles\templates\articles\article.html:209 .\templates\base.html:169
+#: .\articles\templates\articles\article.html:209 .\templates\base.html:181
 msgid "Имя"
 msgstr "Имя"
 
@@ -49,7 +49,7 @@ msgstr "Телефон"
 
 #: .\articles\templates\articles\article.html:222
 #: .\services\templates\services\service.html:26 .\templates\about.html:25
-#: .\templates\base.html:74 .\templates\base.html:179
+#: .\templates\base.html:86 .\templates\base.html:191
 #: .\templates\contacts.html:26 .\templates\index.html:15
 msgid "Оставить заявку"
 msgstr "Оставить заявку"
@@ -62,8 +62,8 @@ msgstr "Продолжить с Facebook"
 msgid "Авторизуясь, Вы даете согласие на обработку персональных данных."
 msgstr "Авторизуясь, Вы даете согласие на обработку персональных данных."
 
-#: .\articles\templates\articles\articles.html:10 .\templates\base.html:56
-#: .\templates\base.html:120 .\templates\base.html:205
+#: .\articles\templates\articles\articles.html:10 .\templates\base.html:69
+#: .\templates\base.html:132 .\templates\base.html:218
 #: .\templates\index.html:159
 msgid "Статьи"
 msgstr "Статьи"
@@ -76,8 +76,8 @@ msgstr "Все"
 msgid "Что мы сделаем?"
 msgstr "Что мы сделаем?"
 
-#: .\templates\about.html:15 .\templates\base.html:57 .\templates\base.html:111
-#: .\templates\base.html:206
+#: .\templates\about.html:15 .\templates\base.html:70 .\templates\base.html:123
+#: .\templates\base.html:219
 msgid "О нас"
 msgstr "О нас"
 
@@ -117,38 +117,42 @@ msgstr "Наша команда"
 msgid "Наши партнеры"
 msgstr "Наши партнеры"
 
-#: .\templates\base.html:42 .\templates\base.html:158 .\templates\base.html:191
+#: .\templates\base.html:55 .\templates\base.html:170 .\templates\base.html:204
 #: .\templates\index.html:30 .\templates\index.html:75
 msgid "Услуги"
 msgstr "Услуги"
 
-#: .\templates\base.html:55 .\templates\base.html:117 .\templates\base.html:204
+#: .\templates\base.html:68 .\templates\base.html:129 .\templates\base.html:217
 msgid "Кейсы"
 msgstr "Кейсы"
 
-#: .\templates\base.html:58 .\templates\base.html:114 .\templates\base.html:146
-#: .\templates\base.html:207 .\templates\contacts.html:11
+#: .\templates\base.html:71 .\templates\base.html:126 .\templates\base.html:158
+#: .\templates\base.html:220 .\templates\contacts.html:11
 #: .\templates\contacts.html:35
 msgid "Контакты"
 msgstr "Контакты"
 
-#: .\templates\base.html:147
+#: .\templates\base.html:159
 msgid "Одесса, Украина"
 msgstr "Одесса, Украина"
 
-#: .\templates\base.html:148
+#: .\templates\base.html:160
 msgid "Французский бульвар"
 msgstr "Французский бульвар"
 
-#: .\templates\base.html:164
+#: .\templates\base.html:176
 msgid "ЗАДАЙТЕ ВАШ ВОПРОС"
 msgstr "ЗАДАЙТЕ ВАШ ВОПРОС"
 
-#: .\templates\base.html:173
+#: .\templates\base.html:185
 msgid "Вопрос"
 msgstr "Вопрос"
 
-#: .\templates\base.html:212
+#: .\templates\base.html:198
+msgid "Навигация и информация"
+msgstr "Навигация и информация"
+
+#: .\templates\base.html:225
 msgid "Политика конфиденциальности"
 msgstr "Политика конфиденциальности"
 
