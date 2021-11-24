@@ -44,7 +44,7 @@
         <h1 class="title title-article">{{article.title}}</h1>
         <div class="article-extended-content">
             <div class="article-extended-author">
-                <div class="article-extended-author-photo" style="background: url('{{article.author.image.photo.url}}') center center/cover no-repeat"></div>
+                <div class="article-extended-author-photo" style="background: url('{{article.author.employee.image.photo.url}}') center center/cover no-repeat"></div>
                 <h3 class="article-extended-author-title">{{article.author.first_name}} {{article.author.last_name}}</h3>
                 <h4 class="article-extended-author-subtitle">{{article.author.employee.position}}</h4>
                 {% for account in article.author.employee.social_accounts.all %}
