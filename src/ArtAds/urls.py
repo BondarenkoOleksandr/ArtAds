@@ -26,3 +26,4 @@ urlpatterns += i18n_patterns(
 urlpatterns += static(base.MEDIA_URL, document_root=base.MEDIA_ROOT)
 
 handler404 = 'app.views.error_404'
+handler500 = 'app.views.error_500'

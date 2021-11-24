@@ -36,6 +36,7 @@ class ContactsPageView(TemplateView):
 class AboutPageView(TemplateView):
     def get(self, request):
         employees = Employee.objects.all().select_related('user')
+
         return render(
             request=request,
             template_name='about.html',
@@ -76,5 +77,9 @@ class SendEmailView(TemplateView):
 
 
 def error_404(request, exception):
-    context = {}
-    return render(request, 'errors/404.html', context)
+    return render(request, 'errors/404.html', status=404)
+
+
+def error_500(request, *args, **argv):
+    return render(request, 'errors/404.html', status=500)
+
