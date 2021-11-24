@@ -26,6 +26,8 @@ class Case(models.Model):
     link = models.URLField(max_length=200, null=True)
     text = HTMLField(null=True)
 
+    def __str__(self):
+        return self.title
 
     class Meta:
         verbose_name_plural = "Cases"
