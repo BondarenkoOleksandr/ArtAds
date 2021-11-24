@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-23 16:32+0200\n"
+"POT-Creation-Date: 2021-11-24 16:31+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,6 +37,7 @@ msgid "Отправить"
 msgstr ""
 
 #: .\articles\templates\articles\article.html:209 .\templates\base.html:181
+#: .\templates\contacts.html:20 .\templates\contacts.html:21
 msgid "Имя"
 msgstr ""
 
@@ -117,11 +118,11 @@ msgstr ""
 msgid "Контакты"
 msgstr ""
 
-#: .\templates\base.html:159
+#: .\templates\base.html:159 .\templates\contacts.html:51
 msgid "Одесса, Украина"
 msgstr ""
 
-#: .\templates\base.html:160
+#: .\templates\base.html:160 .\templates\contacts.html:52
 msgid "Французский бульвар"
 msgstr ""
 
@@ -139,6 +140,26 @@ msgstr ""
 
 #: .\templates\base.html:225
 msgid "Политика конфиденциальности"
+msgstr ""
+
+#: .\templates\contacts.html:16
+msgid "Остались вопросы? Оставьте заявку и наши менеджеры с Вами свяжутся!"
+msgstr ""
+
+#: .\templates\contacts.html:24 .\templates\contacts.html:25
+msgid "Введите сообщение"
+msgstr ""
+
+#: .\templates\contacts.html:49
+msgid "Адрес"
+msgstr ""
+
+#: .\templates\contacts.html:56
+msgid "Рабочие часы"
+msgstr ""
+
+#: .\templates\contacts.html:58
+msgid "ПН - ПТ"
 msgstr ""
 
 #: .\templates\index.html:9

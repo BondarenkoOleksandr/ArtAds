@@ -13,16 +13,16 @@
         <div class="contacts-top">
             <div class="request form-wrapper">
                 <p class="any-questions">
-                    Остались вопросы? Оставьте заявку и наши менеджеры с Вами свяжутся!
+                    {% blocktrans %}Остались вопросы? Оставьте заявку и наши менеджеры с Вами свяжутся!{% endblocktrans %}
                 </p>
                 <form action="{% url 'send_email' %}" class="form-contact" method="post">
                     {% csrf_token %}
-                    <label for="name">Имя</label>
-                    <input id="name" name="name" type="text" placeholder="Введите имя" required>
+                    <label for="name">{% trans 'Имя' %}</label>
+                    <input id="name" name="name" type="text" placeholder="{% trans 'Имя' %}" required>
                     <label for="email">E-mail</label>
                     <input id="email" name="email" type="email" placeholder="Введите e-mail" required>
-                    <label for="message">Сообщение</label>
-                    <textarea name="message" id="message" cols="30" rows="6" placeholder="Введите сообщение"></textarea>
+                    <label for="message">{% trans 'Введите сообщение' %}</label>
+                    <textarea name="message" id="message" cols="30" rows="6" placeholder="{% trans 'Введите сообщение' %}"></textarea>
                     <button class="btn btn-top btn-orange">{% trans 'Оставить заявку' %}</button>
                     <div class="status"></div>
                 </form>
@@ -46,16 +46,16 @@
                 </p>
             </div>
             <div class="contacts-footer-item">
-                <p class="contacts-footer-title">Адрес </p>
+                <p class="contacts-footer-title">{% trans 'Адрес' %}</p>
                 <p class="contacts-footer-info">
-                    Одесса, Украина<br>
-                    Французский бульвар, 60Д
+                    {% trans 'Одесса, Украина' %}<br>
+                    {% trans 'Французский бульвар' %}
                 </p>
             </div>
             <div class="contacts-footer-item">
-                <p class="contacts-footer-title">Рабочие часы</p>
+                <p class="contacts-footer-title">{% trans 'Рабочие часы' %}</p>
                 <p class="contacts-footer-info">
-                    ПН - ПТ <br>
+                    {% trans 'ПН - ПТ' %}<br>
                     <span class="number">10:00 - 18:00</span>
                 </p>
             </div>
