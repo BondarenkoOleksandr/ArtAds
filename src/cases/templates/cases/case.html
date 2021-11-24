@@ -36,11 +36,11 @@
                 <div class="hover-block">
                 <h2 class="hover-block-title">{{case.title}}</h2>
                 <p class="hover-block-text">
-                  {{case.text}}
+                  {{case.text|safe}}
                 </p>
-                <a class="btn btn-top btn-orange popup_btn" href="">
-                  Просмотреть
-                </a>
+                <button class="btn btn-top btn-orange popup_btn">
+                  Оставить заявку
+                </button>
               </div>
                 <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
                 <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
