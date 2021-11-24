@@ -1,6 +1,8 @@
 from django.db import models
 
 # Create your models here.
+from tinymce.models import HTMLField
+
 from core.utils import generate_uuid
 from gallery.models import Photo
 
@@ -8,7 +10,7 @@ app_name = 'cases'
 
 
 class Case(models.Model):
-    uuid = models.UUIDField(default=generate_uuid, db_index=True, unique=True)
+    uuid = models.UUIDField(default=generate_uuid, db_index=True, unique=True, editable=False)
     title = models.CharField(max_length=450, null=True)
     category = models.ForeignKey(
         to='cases.Category',
@@ -17,9 +19,12 @@ class Case(models.Model):
         on_delete=models.SET_NULL,
         related_name='cases',
     )
-    mob_image = models.ForeignKey(Photo, on_delete=models.SET_NULL, null=True, verbose_name='Phone image: ', related_name='+')
-    full_image = models.ForeignKey(Photo, on_delete=models.SET_NULL, null=True, verbose_name='Big image: ', related_name='+')
+    mob_image = models.ForeignKey(Photo, on_delete=models.SET_NULL, null=True, verbose_name='Phone image: ',
+                                  related_name='+')
+    full_image = models.ForeignKey(Photo, on_delete=models.SET_NULL, null=True, verbose_name='Big image: ',
+                                   related_name='+')
     link = models.URLField(max_length=200, null=True)
+    text = HTMLField(null=True)
 
     def __str__(self):
         return self.title

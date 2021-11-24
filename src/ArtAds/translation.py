@@ -1,6 +1,6 @@
 from modeltranslation.translator import translator, TranslationOptions
 from articles.models import Article, ArticleCategory, SEOArticle
-from cases.models import Review
+from cases.models import Review, Case
 from employees.models import Employee, Skill, SEOEmployee
 from gallery.models import Photo
 from services.models import ServiceArticle, WorkPoint, ServiceCategory, SEOService
@@ -54,6 +54,10 @@ class SEOEmployeeTranslationOptions(TranslationOptions):
     fields = ('seo_title', 'seo_description', 'seo_canonical', 'seo_robots', 'seo_schema', 'seo_og')
 
 
+class CaseTranslationOptions(TranslationOptions):
+    fields = ('title', 'text')
+
+
 translator.register(Article, ArticleTranslationOptions)
 translator.register(WorkPoint, WorkPointTranslationOptions)
 translator.register(ServiceArticle, ServiceArticleTranslationOptions)
@@ -61,6 +65,7 @@ translator.register(ServiceCategory, ServiceTranslationOptions)
 translator.register(Employee, EmployeesTranslationOptions)
 translator.register(Skill, EmployeeSkillsTranslationOptions)
 translator.register(ArticleCategory, ArticleCategoryTranslationOptions)
+translator.register(Case, CaseTranslationOptions)
 translator.register(Photo, GalleryTranslationOptions)
 translator.register(Review, ReviewTranslationOptions)
 translator.register(SEOArticle, SEOArticleTranslationOptions)
