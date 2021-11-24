@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-24 16:31+0200\n"
+"POT-Creation-Date: 2021-11-24 16:41+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -47,6 +47,7 @@ msgid "Телефон"
 msgstr "Phone"
 
 #: .\articles\templates\articles\article.html:222
+#: .\cases\templates\cases\case.html:42
 #: .\services\templates\services\service.html:26 .\templates\about.html:25
 #: .\templates\base.html:86 .\templates\base.html:191
 #: .\templates\contacts.html:26 .\templates\index.html:15
@@ -156,7 +157,8 @@ msgstr "Privacy policy"
 
 #: .\templates\contacts.html:16
 msgid "Остались вопросы? Оставьте заявку и наши менеджеры с Вами свяжутся!"
-msgstr "Still have questions? Leave a request and our managers will contact you!"
+msgstr ""
+"Still have questions? Leave a request and our managers will contact you!"
 
 #: .\templates\contacts.html:24 .\templates\contacts.html:25
 msgid "Введите сообщение"
