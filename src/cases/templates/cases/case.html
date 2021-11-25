@@ -8,16 +8,16 @@
 {% block schema %}{% endblock %}
 {% block robots %}{% endblock %}
 {% block pagename%}page-cases{% endblock %}
-{% block pagetitle %}Cases{% endblock %}
+{% block pagetitle %}{% trans 'Кейсы' %}{% endblock %}
 {% block content %}
  <section class="cases">
     <div class="site-width">
       <div class="title-wrapper">
-        <h2 class="title title-center">Кейсы</h2>
+        <h2 class="title title-center">{% trans 'Кейсы' %}</h2>
       </div>
 
         <div class="tab-row tabs">
-          <span class="tab-toggle show-all activeClass">ALL</span>
+          <span class="tab-toggle show-all activeClass">{% trans 'ALL' %}</span>
           {% for category in categories %}
             {% if category.cases.all %}
               <span class="tab-toggle {{category.name|lower}}" data-tab="{{category.name|lower|slugify}}">{{category.name}}</span>

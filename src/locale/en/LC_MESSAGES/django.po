@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-25 15:09+0200\n"
+"POT-Creation-Date: 2021-11-25 15:25+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,14 +37,14 @@ msgstr "Write a comment..."
 msgid "Отправить"
 msgstr "Send"
 
-#: .\articles\templates\articles\article.html:209 .\templates\base.html:181
-#: .\templates\base.html:258 .\templates\base.html:259
+#: .\articles\templates\articles\article.html:209 .\templates\base.html:184
+#: .\templates\base.html:261 .\templates\base.html:262
 #: .\templates\contacts.html:20 .\templates\contacts.html:21
 msgid "Имя"
 msgstr "Name"
 
-#: .\articles\templates\articles\article.html:213 .\templates\base.html:262
-#: .\templates\base.html:263 .\templates\contacts.html:37
+#: .\articles\templates\articles\article.html:213 .\templates\base.html:265
+#: .\templates\base.html:266 .\templates\contacts.html:37
 msgid "Телефон"
 msgstr "Phone"
 
@@ -52,7 +52,7 @@ msgstr "Phone"
 #: .\cases\templates\cases\case.html:44
 #: .\services\templates\services\service.html:26
 #: .\services\templates\services\service.html:51 .\templates\about.html:25
-#: .\templates\base.html:95 .\templates\base.html:191 .\templates\base.html:271
+#: .\templates\base.html:98 .\templates\base.html:194 .\templates\base.html:274
 #: .\templates\contacts.html:26 .\templates\index.html:15
 #: .\templates\index.html:101
 msgid "Оставить заявку"
@@ -66,15 +66,21 @@ msgstr "Sign in with Facebook"
 msgid "Авторизуясь, Вы даете согласие на обработку персональных данных."
 msgstr "By logging in, you consent to the processing of personal data."
 
-#: .\articles\templates\articles\articles.html:10 .\templates\base.html:69
-#: .\templates\base.html:132 .\templates\base.html:219
+#: .\articles\templates\articles\articles.html:10 .\templates\base.html:72
+#: .\templates\base.html:135 .\templates\base.html:222
 #: .\templates\index.html:169
 msgid "Статьи"
 msgstr "Articles"
 
 #: .\articles\templates\articles\articles.html:13
+#: .\cases\templates\cases\case.html:20
 msgid "ALL"
 msgstr "ALL"
+
+#: .\cases\templates\cases\case.html:11 .\cases\templates\cases\case.html:16
+#: .\templates\base.html:71 .\templates\base.html:132 .\templates\base.html:221
+msgid "Кейсы"
+msgstr "Cases"
 
 #: .\services\templates\services\service.html:37
 msgid "Что мы сделаем?"
@@ -84,8 +90,8 @@ msgstr "What we do?"
 msgid "You may also like"
 msgstr "You may also like"
 
-#: .\templates\about.html:15 .\templates\base.html:70 .\templates\base.html:123
-#: .\templates\base.html:220
+#: .\templates\about.html:15 .\templates\base.html:73 .\templates\base.html:126
+#: .\templates\base.html:223
 msgid "О нас"
 msgstr "About us"
 
@@ -124,50 +130,46 @@ msgstr "Our team"
 msgid "Наши партнеры"
 msgstr "Our partners"
 
-#: .\templates\base.html:55 .\templates\base.html:170 .\templates\base.html:205
+#: .\templates\base.html:58 .\templates\base.html:173 .\templates\base.html:208
 #: .\templates\index.html:30 .\templates\index.html:75
 msgid "Услуги"
 msgstr "Services"
 
-#: .\templates\base.html:68 .\templates\base.html:129 .\templates\base.html:218
-msgid "Кейсы"
-msgstr "Cases"
-
-#: .\templates\base.html:71 .\templates\base.html:126 .\templates\base.html:158
-#: .\templates\base.html:221 .\templates\contacts.html:11
+#: .\templates\base.html:74 .\templates\base.html:129 .\templates\base.html:161
+#: .\templates\base.html:224 .\templates\contacts.html:11
 #: .\templates\contacts.html:35
 msgid "Контакты"
 msgstr "Contacts"
 
-#: .\templates\base.html:159 .\templates\contacts.html:51
+#: .\templates\base.html:162 .\templates\contacts.html:51
 msgid "Одесса, Украина"
 msgstr "Odesa, Ukraine"
 
-#: .\templates\base.html:160 .\templates\contacts.html:52
+#: .\templates\base.html:163 .\templates\contacts.html:52
 msgid "Французский бульвар"
 msgstr "French Boulevard"
 
-#: .\templates\base.html:176
+#: .\templates\base.html:179
 msgid "ЗАДАЙТЕ ВАШ ВОПРОС"
 msgstr "ASK YOUR QUESTION"
 
-#: .\templates\base.html:185
+#: .\templates\base.html:188
 msgid "Вопрос"
 msgstr "Question"
 
-#: .\templates\base.html:198
+#: .\templates\base.html:201
 msgid "Навигация и информация"
 msgstr "Navigation and information"
 
-#: .\templates\base.html:226
+#: .\templates\base.html:229
 msgid "Политика конфиденциальности"
 msgstr "Privacy policy"
 
-#: .\templates\base.html:251
+#: .\templates\base.html:254
 msgid "ЗАКАЗАТЬ БЕСПЛАТНУЮ КОНСУЛЬТАЦИЮ"
 msgstr "Order a free consultation"
 
-#: .\templates\base.html:254
+#: .\templates\base.html:257
 msgid "Оставьте заявку и мы перезвоним Вам в течение 15 минут"
 msgstr "Leave the application and we will call you back in 15 minutes"
 
