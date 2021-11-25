@@ -214,8 +214,8 @@
                       </div>
                     </div>
                   </li>
-                  <li class="nav-link"><a href="{% url 'cases:list' %}">{% trans 'Кейсы' %}</a></li>
-                  <li class="nav-link"><a href="{% url 'articles:list' %}">{% trans 'Статьи' %}</a></li>
+                  <li class="nav-link"><a href="{% if request.LANGUAGE_CODE != DEFAULT_LANGUAGE %}/{{ request.LANGUAGE_CODE }}{% endif %}{% url 'cases:list' %}">{% trans 'Кейсы' %}</a></li>
+                  <li class="nav-link"><a href="{% if request.LANGUAGE_CODE != DEFAULT_LANGUAGE %}/{{ request.LANGUAGE_CODE }}{% endif %}{% url 'articles:list' %}">{% trans 'Статьи' %}</a></li>
                   <li class="nav-link"><a href="{% url 'about' %}">{% trans 'О нас' %}</a></li>
                   <li class="nav-link"><a href="{% url 'contacts' %}">{% trans 'Контакты' %}</a></li>
           </ul>
