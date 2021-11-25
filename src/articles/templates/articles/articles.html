@@ -34,7 +34,7 @@
               </div>
               <div class="article-decsription">
                 <p class="article-paragraph article-paragraph--short">
-                  {{article.title|striptags}}
+                  <a href="{% if request.LANGUAGE_CODE != DEFAULT_LANGUAGE %}/{{ request.LANGUAGE_CODE }}{% endif %}{% url 'articles:article' slug=article.get_slug %}">{{article.title|striptags}}</a>
                 </p>
               </div>
               <a class="article-link" href="{% if request.LANGUAGE_CODE != DEFAULT_LANGUAGE %}/{{ request.LANGUAGE_CODE }}{% endif %}{% url 'articles:article' slug=article.get_slug %}">
