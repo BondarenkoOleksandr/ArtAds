@@ -207,7 +207,7 @@
                         <div class="inner-drop-block">
                           <ul class="sub-nav">
                             {% for service in services_categories %}
-                              <li class="nav-link"><a href="{% if service.article %}{% url 'services:article' slug=service.article.slug %}{% endif %}">{{service.name}}</a></li>
+                              <li class="nav-link"><a href="{% if language.code != DEFAULT_LANGUAGE %}/{{ language.code}}{% endif %}{% if service.article %}{% url 'services:article' slug=service.article.slug %}{% endif %}">{{service.name}}</a></li>
                             {% endfor %}
                           </ul>
                         </div>
