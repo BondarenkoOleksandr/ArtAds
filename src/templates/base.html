@@ -82,6 +82,15 @@
               {% endfor %}
             </ul>
         </div>
+         <div class="language">
+            {% get_available_languages as LANGUAGES %}
+            {% get_language_info_list for LANGUAGES as languages %}
+            <ul class="language-list">
+              {% for language in languages %}
+                <li class="language-item"><a href='{% if language.code != DEFAULT_LANGUAGE %}/{{ language.code}}{% endif %}{{ request.path|clean_link }}'>{{ language.code|upper }}</a></li>
+              {% endfor %}
+            </ul>
+        </div>
         <div class="scroll-wrapper">
           <button class="btn cases-btn popup_btn mob-none">{% trans 'Оставить заявку' %}</button>
           <div class="burger">
@@ -95,15 +104,6 @@
     </div>
     <div class="burger-menu-back">
        <div class="burger-menu">
-         <div class="language">
-            {% get_available_languages as LANGUAGES %}
-            {% get_language_info_list for LANGUAGES as languages %}
-            <ul class="language-list">
-              {% for language in languages %}
-                <li class="language-item"><a href='{% if language.code != DEFAULT_LANGUAGE %}/{{ language.code}}{% endif %}{{ request.path|clean_link }}'>{{ language.code|upper }}</a></li>
-              {% endfor %}
-            </ul>
-        </div>
         <div class="honeycomb-wrap burger-menu-honeycomb-wrap">
           <ul class="honeycomb burger-menu-honeycomb">
             <li class="honey honey-01 burger-menu-honey-1 mob-none">
