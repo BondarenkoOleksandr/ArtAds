@@ -91,6 +91,16 @@
 
             </picture>
             <picture class="cases-item-img">
+              <div class="hover-block">
+                <h2 class="hover-block-title">{{case.title}}</h2>
+                <p class="hover-block-text">
+                  {{case.text|safe}}
+                </p>
+                <p class="hover-block-text"></p>
+                <button class="btn btn-top btn-orange popup_btn">
+                  {% trans 'Оставить заявку' %}
+                </button>
+              </div>
               <!-- <source srcset="large.jpg" media="(max-width: 800px)" />
               <source srcset="medium.jpg" media="(max-width: 500px)" /> -->
               <img src="{{case.full_image.photo.url}}" alt="{{case.full_image.alt}}" title="{{case.full_image.title}}">

@@ -247,27 +247,27 @@
     <div class="popup_dialog">
       <div class="popup_content text-center">
         <button type="button" class="popup_close"><img src="{% static 'assets/images/close.svg' %}" alt="Close button."></button>
-        <h2 class="title">Заголовок (УТП)</h2>
+        <h2 class="title">{% trans 'ЗАКАЗАТЬ БЕСПЛАТНУЮ КОНСУЛЬТАЦИЮ' %}</h2>
         <div class="popup_form">
           <form class="form send_form" action="{% url 'send_email' %}" method="post">
-            <p class="popup_descr">Оставляйте заявку прямо сейчас и получайте эксклюзивное предложение!</p>
+            <p class="popup_descr">{% blocktrans %}Оставьте заявку и мы перезвоним Вам в течение 15 минут{% endblocktrans %}</p>
             {% csrf_token %}
             <div class="input_row">
               <div class="input-item">
-                <label for="user_name">Имя</label>
-                <input class="form-control form_input" name="user_name" id="user_name" required type="text" placeholder="Введите имя">
+                <label for="user_name">{% trans 'Имя' %}</label>
+                <input class="form-control form_input" name="user_name" id="user_name" required type="text" placeholder="{% trans 'Имя' %}">
               </div>
               <div class="input-item">
-                <label for="user_phone">Телефон</label>
-                <input class="form-control form_input mask-phone" name="user_phone" id="user_phone" required type="tel" placeholder="Введите телефон">
+                <label for="user_phone">{% trans 'Телефон' %}</label>
+                <input class="form-control form_input mask-phone" name="user_phone" id="user_phone" required type="tel" placeholder="{% trans 'Телефон' %}">
               </div>
               <div class="input-item">
                 <label for="user_email">E-mail</label>
-                <input class="form-control form_input" name="user_email" id="user_email" required type="email" placeholder="Введите e-mail">
+                <input class="form-control form_input" name="user_email" id="user_email" required type="email" placeholder="E-mail">
               </div>
 
             </div>
-            <div class="row-center"><button class="btn btn-top btn-orange" name="submit" type="submit">Оставить заявку</button></div>
+            <div class="row-center"><button class="btn btn-top btn-orange" name="submit" type="submit">{% trans 'Оставить заявку' %}</button></div>
 
             <div class="status"></div>
 
