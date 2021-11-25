@@ -5,8 +5,8 @@
 {% block title %}{% if article.seo.seo_title %}{{article.seo.seo_title}}{% endif %}{% endblock %}
 {% block canocical %}{% if article.seo.seo_canonical %}{{article.seo.seo_canonical}}{% endif %}{% endblock %}
 {% block og %}{% if article.seo.seo_og %}{{article.seo.seo_og}}{% endif %}{% endblock %}
-{% block schema %}{{article.seo.seo_schema}}{% endblock %}
-{% block robots %}{{article.seo.seo_robots}}{% endblock %}
+{% block schema %}{% if article.seo.seo_schema %}{{article.seo.seo_schema}}{% endif %}{% endblock %}
+{% block robots %}{% if article.seo.seo_robots %}{{article.seo.seo_robots}}{% endif %}{% endblock %}
 {% block pagename %}page-services{% endblock %}
 {% block pagetitle %}Service{% endblock %}
 {% block content %}
