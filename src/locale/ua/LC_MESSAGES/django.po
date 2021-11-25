@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-25 11:07+0200\n"
+"POT-Creation-Date: 2021-11-25 15:09+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,12 +19,12 @@ msgstr ""
 
 #: .\articles\templates\articles\article.html:119
 #: .\articles\templates\articles\articles.html:41
-#: .\articles\templates\articles\articles.html:48 .\templates\index.html:185
-#: .\templates\index.html:194
+#: .\articles\templates\articles\articles.html:48 .\templates\index.html:195
+#: .\templates\index.html:204
 msgid "Read more"
 msgstr ""
 
-#: .\articles\templates\articles\article.html:176 .\templates\index.html:103
+#: .\articles\templates\articles\article.html:176 .\templates\index.html:113
 msgid "See more"
 msgstr ""
 
@@ -37,21 +37,23 @@ msgid "Отправить"
 msgstr ""
 
 #: .\articles\templates\articles\article.html:209 .\templates\base.html:181
-#: .\templates\base.html:257 .\templates\base.html:258
+#: .\templates\base.html:258 .\templates\base.html:259
 #: .\templates\contacts.html:20 .\templates\contacts.html:21
 msgid "Имя"
 msgstr ""
 
-#: .\articles\templates\articles\article.html:213 .\templates\base.html:261
-#: .\templates\base.html:262 .\templates\contacts.html:37
+#: .\articles\templates\articles\article.html:213 .\templates\base.html:262
+#: .\templates\base.html:263 .\templates\contacts.html:37
 msgid "Телефон"
 msgstr ""
 
 #: .\articles\templates\articles\article.html:222
 #: .\cases\templates\cases\case.html:44
-#: .\services\templates\services\service.html:26 .\templates\about.html:25
-#: .\templates\base.html:86 .\templates\base.html:191 .\templates\base.html:270
+#: .\services\templates\services\service.html:26
+#: .\services\templates\services\service.html:51 .\templates\about.html:25
+#: .\templates\base.html:95 .\templates\base.html:191 .\templates\base.html:271
 #: .\templates\contacts.html:26 .\templates\index.html:15
+#: .\templates\index.html:101
 msgid "Оставить заявку"
 msgstr ""
 
@@ -64,8 +66,8 @@ msgid "Авторизуясь, Вы даете согласие на обраб�
 msgstr ""
 
 #: .\articles\templates\articles\articles.html:10 .\templates\base.html:69
-#: .\templates\base.html:132 .\templates\base.html:218
-#: .\templates\index.html:159
+#: .\templates\base.html:132 .\templates\base.html:219
+#: .\templates\index.html:169
 msgid "Статьи"
 msgstr ""
 
@@ -77,8 +79,12 @@ msgstr ""
 msgid "Что мы сделаем?"
 msgstr ""
 
+#: .\services\templates\services\service.html:59
+msgid "You may also like"
+msgstr ""
+
 #: .\templates\about.html:15 .\templates\base.html:70 .\templates\base.html:123
-#: .\templates\base.html:219
+#: .\templates\base.html:220
 msgid "О нас"
 msgstr ""
 
@@ -102,21 +108,21 @@ msgstr ""
 msgid "Наша команда"
 msgstr ""
 
-#: .\templates\about.html:75 .\templates\index.html:140
+#: .\templates\about.html:75 .\templates\index.html:150
 msgid "Наши партнеры"
 msgstr ""
 
-#: .\templates\base.html:55 .\templates\base.html:170 .\templates\base.html:204
+#: .\templates\base.html:55 .\templates\base.html:170 .\templates\base.html:205
 #: .\templates\index.html:30 .\templates\index.html:75
 msgid "Услуги"
 msgstr ""
 
-#: .\templates\base.html:68 .\templates\base.html:129 .\templates\base.html:217
+#: .\templates\base.html:68 .\templates\base.html:129 .\templates\base.html:218
 msgid "Кейсы"
 msgstr ""
 
 #: .\templates\base.html:71 .\templates\base.html:126 .\templates\base.html:158
-#: .\templates\base.html:220 .\templates\contacts.html:11
+#: .\templates\base.html:221 .\templates\contacts.html:11
 #: .\templates\contacts.html:35
 msgid "Контакты"
 msgstr ""
@@ -141,15 +147,15 @@ msgstr ""
 msgid "Навигация и информация"
 msgstr ""
 
-#: .\templates\base.html:225
+#: .\templates\base.html:226
 msgid "Политика конфиденциальности"
 msgstr ""
 
-#: .\templates\base.html:250
+#: .\templates\base.html:251
 msgid "ЗАКАЗАТЬ БЕСПЛАТНУЮ КОНСУЛЬТАЦИЮ"
 msgstr ""
 
-#: .\templates\base.html:253
+#: .\templates\base.html:254
 msgid "Оставьте заявку и мы перезвоним Вам в течение 15 минут"
 msgstr ""
 
@@ -204,6 +210,6 @@ msgstr ""
 msgid "Наши кейсы"
 msgstr ""
 
-#: .\templates\index.html:112
+#: .\templates\index.html:122
 msgid "Отзывы"
 msgstr ""
