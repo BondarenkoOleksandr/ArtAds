@@ -110,7 +110,7 @@
               <p class="honey-text"></p>
             </li>
             {% for service in services_categories %}
-              <li class="honey honey-{{ forloop.counter|add:1 }} burger-menu-honey-{{ forloop.counter|add:1 }}">
+              <li class="honey honey-{% if forloop.counter|add:1 == 5 or forloop.counter|add:1 > 5 %}{{ forloop.counter|add:3 }}{% else %}{{ forloop.counter|add:1 }}{% endif %} burger-menu-honey-{{ forloop.counter|add:1 }}">
                 <a href="{% if service.article %}{% url 'services:article' slug=service.article.slug %}{% endif %}" class="honey-link"><p class="honey-text">{{service.name}}</p></a>
               </li>
             {% endfor %}
@@ -119,7 +119,7 @@
                 <img src="{% static 'assets/images/logo-scroll.svg' %}" alt="Logo.">
               </a>
             </li>
-            <li class="honey honey-09 burger-menu-honey-9">
+            <li class="honey honey-09 burger-menu-honey-09">
               <a href="{% url 'about' %}" class="honey-link"><p class="honey-text">{% trans 'О нас' %}</p></a>
             </li>
             <li class="honey honey-013 burger-menu-honey-13 honey-orange">
