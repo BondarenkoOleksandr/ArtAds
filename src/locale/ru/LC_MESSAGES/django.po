@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-24 16:41+0200\n"
+"POT-Creation-Date: 2021-11-25 11:07+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,18 +40,20 @@ msgid "Отправить"
 msgstr "Отправить"
 
 #: .\articles\templates\articles\article.html:209 .\templates\base.html:181
+#: .\templates\base.html:257 .\templates\base.html:258
 #: .\templates\contacts.html:20 .\templates\contacts.html:21
 msgid "Имя"
 msgstr "Имя"
 
-#: .\articles\templates\articles\article.html:213 .\templates\contacts.html:37
+#: .\articles\templates\articles\article.html:213 .\templates\base.html:261
+#: .\templates\base.html:262 .\templates\contacts.html:37
 msgid "Телефон"
 msgstr "Телефон"
 
 #: .\articles\templates\articles\article.html:222
-#: .\cases\templates\cases\case.html:42
+#: .\cases\templates\cases\case.html:44
 #: .\services\templates\services\service.html:26 .\templates\about.html:25
-#: .\templates\base.html:86 .\templates\base.html:191
+#: .\templates\base.html:86 .\templates\base.html:191 .\templates\base.html:270
 #: .\templates\contacts.html:26 .\templates\index.html:15
 msgid "Оставить заявку"
 msgstr "Оставить заявку"
@@ -157,6 +159,14 @@ msgstr "Навигация и информация"
 #: .\templates\base.html:225
 msgid "Политика конфиденциальности"
 msgstr "Политика конфиденциальности"
+
+#: .\templates\base.html:250
+msgid "ЗАКАЗАТЬ БЕСПЛАТНУЮ КОНСУЛЬТАЦИЮ"
+msgstr "ЗАКАЗАТЬ БЕСПЛАТНУЮ КОНСУЛЬТАЦИЮ"
+
+#: .\templates\base.html:253
+msgid "Оставьте заявку и мы перезвоним Вам в течение 15 минут"
+msgstr "Оставьте заявку и мы перезвоним Вам в течение 15 минут"
 
 #: .\templates\contacts.html:16
 msgid "Остались вопросы? Оставьте заявку и наши менеджеры с Вами свяжутся!"
