@@ -6,6 +6,8 @@
 {% url 'contacts' as contacts_url %}
 {% url 'privacy' as privacy_url %}
 {% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_language_info_list for LANGUAGES as languages %}
 <!DOCTYPE html>
 <html lang="{{LANGUAGE_CODE}}">
 <head>
@@ -77,8 +79,6 @@
 
         </div>
         <div class="language">
-            {% get_available_languages as LANGUAGES %}
-            {% get_language_info_list for LANGUAGES as languages %}
             <ul class="language-list">
               {% for language in languages %}
                 <li class="language-item"><a href='{% if language.code != DEFAULT_LANGUAGE %}/{{ language.code}}{% endif %}{{ request.path|clean_link }}'>{{ language.code|upper }}</a></li>
