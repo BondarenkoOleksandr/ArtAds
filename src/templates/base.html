@@ -201,19 +201,20 @@
         </div>
         <nav class="nav">
           <ul class="nav-list">
-                  <li class="nav-link sub-link"><a href="">{% trans 'Услуги' %}</a>
-                    <div class="padding-block">
-                      <div class="drop-down">
-                        <div class="inner-drop-block">
-                          <ul class="sub-nav">
-                            {% for service in services_categories %}
-                              <li class="nav-link"><a href="{% if request.LANGUAGE_CODE != DEFAULT_LANGUAGE %}/{{ request.LANGUAGE_CODE }}{% endif %}{% if service.article %}{% url 'services:article' slug=service.article.slug %}{% endif %}">{{service.name}}</a></li>
-                            {% endfor %}
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
+<!--                  <li class="nav-link sub-link">-->
+<!--                    <a>{% trans 'Услуги' %}</a>-->
+<!--                    <div class="padding-block">-->
+<!--                      <div class="drop-down">-->
+<!--                        <div class="inner-drop-block">-->
+<!--                          <ul class="sub-nav">-->
+<!--                            {% for service in services_categories %}-->
+<!--                              <li class="nav-link"><a href="{% if request.LANGUAGE_CODE != DEFAULT_LANGUAGE %}/{{ request.LANGUAGE_CODE }}{% endif %}{% if service.article %}{% url 'services:article' slug=service.article.slug %}{% endif %}">{{service.name}}</a></li>-->
+<!--                            {% endfor %}-->
+<!--                          </ul>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                  </li>-->
                   <li class="nav-link"><a href="{% if request.LANGUAGE_CODE != DEFAULT_LANGUAGE %}/{{ request.LANGUAGE_CODE }}{% endif %}{% url 'cases:list' %}">{% trans 'Кейсы' %}</a></li>
                   <li class="nav-link"><a href="{% if request.LANGUAGE_CODE != DEFAULT_LANGUAGE %}/{{ request.LANGUAGE_CODE }}{% endif %}{% url 'articles:list' %}">{% trans 'Статьи' %}</a></li>
                   <li class="nav-link"><a href="{% url 'about' %}">{% trans 'О нас' %}</a></li>
