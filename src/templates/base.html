@@ -169,7 +169,7 @@
         <div class="footer-services">
           <h3 class="footer-title">{% trans 'Услуги' %}</h3>
           {% for service in services_categories %}
-            <a href="{% if service.article %}{% url 'services:article' slug=service.article.slug %}{% endif %}" class="services-link">{{service.name}}</a>
+            <a href="{% if LANGUAGE_CODE != DEFAULT_LANGUAGE %}/{{ language.code}}{% endif %}{% if service.article %}{% url 'services:article' slug=service.article.slug %}{% endif %}" class="services-link">{{service.name}}</a>
           {% endfor %}
         </div>
         <div class="footer-request">
@@ -207,7 +207,7 @@
                         <div class="inner-drop-block">
                           <ul class="sub-nav">
                             {% for service in services_categories %}
-                              <li class="nav-link"><a href="{% if language.code != DEFAULT_LANGUAGE %}/{{ language.code}}{% endif %}{% if service.article %}{% url 'services:article' slug=service.article.slug %}{% endif %}">{{service.name}}</a></li>
+                              <li class="nav-link"><a href="{% if LANGUAGE_CODE != DEFAULT_LANGUAGE %}/{{ language.code}}{% endif %}{% if service.article %}{% url 'services:article' slug=service.article.slug %}{% endif %}">{{service.name}}</a></li>
                             {% endfor %}
                           </ul>
                         </div>
