@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 {% block pagename %}page-about{% endblock %}
 {% block pagetitle %}About{% endblock %}
 {% block title %}{% trans 'О нас' %} | ART ADS{% endblock %}
-{% load i18n %}
 {% block content %}
   <section class="block-100vh">
     <div class="block-100vh-media" style="background: url({% static 'assets/images/about.jpg' %})">
