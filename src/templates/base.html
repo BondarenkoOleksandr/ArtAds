@@ -254,7 +254,8 @@
       </div>
 
   </footer>
-  {% block footer %}  <div class="popup popup_func">
+  {% block footer %}
+  <div class="popup popup_func">
   <div class="popup popup_send_moderation popup_cookies">
   <div class="popup_dialog">
     <div class="popup_content">
@@ -264,8 +265,7 @@
     </div>
   </div>
 </div>
-  {% endblock %}
-        <div class="popup_dialog">
+    <div class="popup_dialog">
       <div class="popup_content text-center">
         <button type="button" class="popup_close"><img src="{% static 'assets/images/close.svg' %}" alt="Close button."></button>
         <h2 class="title">{% trans 'ЗАКАЗАТЬ БЕСПЛАТНУЮ КОНСУЛЬТАЦИЮ' %}</h2>
@@ -294,6 +294,7 @@
       </div>
     </div>
   </div>
+  {% endblock %}
   <!-- <script src="app.js"></script> -->
   <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
   <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
