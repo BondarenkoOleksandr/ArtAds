@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-26 20:40+0200\n"
+"POT-Creation-Date: 2021-11-26 20:43+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -173,11 +173,7 @@ msgstr ""
 "SEO, PPC, Web design, Web development, Copywriting!"
 
 #: .\templates\base.html:28
-#, fuzzy
-#| msgid "Маркетинговое digital-агентство полного цикла"
-msgid ""
-"Маркетинговое агентство полного цикла Art Ads - дизайн, продвижение, "
-"создание сайтов"
+msgid "Main page title"
 msgstr "ArtAds Digital Marketing agency - design, SEO, PPC, Web"
 
 #: .\templates\base.html:49
@@ -288,3 +284,10 @@ msgstr "highly qualified specialists"
 #: .\templates\index.html:122
 msgid "Отзывы"
 msgstr "Reviews"
+
+#, fuzzy
+#~| msgid "Маркетинговое digital-агентство полного цикла"
+#~ msgid ""
+#~ "Маркетинговое агентство полного цикла Art Ads - дизайн, продвижение, "
+#~ "создание сайтов"
+#~ msgstr "ArtAds Digital Marketing agency - design, SEO, PPC, Web"
