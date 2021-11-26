@@ -22,7 +22,7 @@
   <link rel="canonical" href="{% block canocical %}{{ request.get_full_path }}{% endblock %}" />
   {% block og %}{% endblock %}
   {% block schema %}{% endblock %}
-  <meta name='robots' content='{% block robots %}{% endblock %}' />
+  <meta name='robots' content='{% block robots %}INDEX, FOLLOW, MAX-IMAGE-PREVIEW:-1{% endblock %}' />
   <link rel="stylesheet" type="text/css" href="{% static 'libs/slick-carousel/slick/slick.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'libs/slick-carousel/slick/slick-theme.css' %}">
   <title>{% block title %}{% trans 'Маркетинговое digital-агентство полного цикла' %}{% trans 'Маркетинговое агентство полного цикла Art Ads - дизайн, продвижение, создание сайтов' %}{% endblock %}</title>
