@@ -113,7 +113,7 @@
               <p class="honey-text"></p>
             </li>
             {% for service in services_categories %}
-              <li class="honey honey-0{% if forloop.counter|add:1 == 6 or forloop.counter|add:1 > 6 %}{{ forloop.counter|add:2 }}{% else %}{{ forloop.counter|add:1 }}{% endif %} burger-menu-honey-{% if forloop.counter|add:1 == 6 or forloop.counter|add:1 > 6 %}{{ forloop.counter|add:2 }}{% else %}{{ forloop.counter|add:1 }}{% endif %}">
+              <li class="honey honey-0{% if forloop.counter|add:1 == 6 or forloop.counter|add:1 > 6 %}{{ forloop.counter|add:2 }}{% else %}{{ forloop.counter|add:1 }}{% endif %} burger-menu-honey-{% if forloop.counter|add:1 == 6 or forloop.counter|add:1 > 6 %}{{ forloop.counter|add:2 }}{% else %}{{ forloop.counter|add:1 }}{% endif %} honey-orange">
                 <a href="{% if service.article %}{% url 'services:article' slug=service.article.slug %}{% endif %}" class="honey-link"><p class="honey-text">{{service.name}}</p></a>
               </li>
             {% endfor %}
@@ -122,7 +122,7 @@
                 <img src="{% static 'assets/images/logo-scroll.svg' %}" alt="Logo.">
               </a>
             </li>
-            <li class="honey honey-016 burger-menu-honey-9">
+            <li class="honey honey-016 burger-menu-honey-9 honey-orange">
               <a href="{% url 'about' %}" class="honey-link"><p class="honey-text">{% trans 'О нас' %}</p></a>
             </li>
             <span class="honey honey-010 burger-menu-honey-10 mob-none">
