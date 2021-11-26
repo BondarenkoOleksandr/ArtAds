@@ -235,7 +235,8 @@
     </div>
   </div>
 </div>
- <div class="popup_dialog">
+ <div class="popup popup_func">
+  <div class="popup_dialog">
       <div class="popup_content text-center">
         <button type="button" class="popup_close"><img src="{% static 'assets/images/close.svg' %}" alt="Close button."></button>
         <h2 class="title">{% trans 'ЗАКАЗАТЬ БЕСПЛАТНУЮ КОНСУЛЬТАЦИЮ' %}</h2>
@@ -263,7 +264,7 @@
         </div>
       </div>
     </div>
-  </div>
+</div>
 {% endblock %}
 {% block scripts %}
 {% if user.is_authenticated %}
