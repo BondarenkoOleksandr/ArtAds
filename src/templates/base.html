@@ -14,7 +14,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="description" content="{% block description %}Помогаем бизнесу расти, увеличивая продажи с помощью комплексного интернет-маркетинга: SEO, PPC, Web дизайн, Web разработка, Copywriting!{% endblock %}" />
+  <meta name="description" content="{% block description %}{% trans 'Помогаем бизнесу расти, увеличивая продажи с помощью комплексного интернет-маркетинга: SEO, PPC, Web дизайн, Web разработка, Copywriting!' %}{% endblock %}" />
   {% for language in languages %}
     <link rel="alternate" href="https://{{ request.get_host }}{% if language.code != DEFAULT_LANGUAGE %}/{{ language.code}}{% endif %}{{ request.path|clean_link }}" hreflang="{{ language.code }}" />
   {% endfor %}
