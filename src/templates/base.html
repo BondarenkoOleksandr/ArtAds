@@ -114,8 +114,7 @@
               <p class="honey-text"></p>
             </li>
             {% for service in services_categories %}
-            {% cycle 2 5 7 as x %}
-              <li class="honey honey-0{% if forloop.counter|add:1 == 6 or forloop.counter|add:1 > 6 %}{{ forloop.counter|add:2 }}{% else %}{{ forloop.counter|add:1 }}{% endif %} burger-menu-honey-{% if forloop.counter|add:1 == 6 or forloop.counter|add:1 > 6 %}{{ forloop.counter|add:2 }}{% else %}{{ forloop.counter|add:1 }}{% endif %} {% if forloop.counter == x %}honey-orange{% endif %}">
+              <li class="honey honey-0{% if forloop.counter|add:1 == 6 or forloop.counter|add:1 > 6 %}{{ forloop.counter|add:2 }}{% else %}{{ forloop.counter|add:1 }}{% endif %} burger-menu-honey-{% if forloop.counter|add:1 == 6 or forloop.counter|add:1 > 6 %}{{ forloop.counter|add:2 }}{% else %}{{ forloop.counter|add:1 }}{% endif %} {% if forloop.counter|stringformat:'i' in '257' %}honey-orange{% endif %}">
                 <a href="{% if service.article %}{% url 'services:article' slug=service.article.slug %}{% endif %}" class="honey-link"><p class="honey-text">{{service.name}}</p></a>
               </li>
             {% endfor %}
