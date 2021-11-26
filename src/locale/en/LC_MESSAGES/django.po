@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-26 13:36+0200\n"
+"POT-Creation-Date: 2021-11-26 20:40+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,8 +19,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: .\articles\templates\articles\article.html:119
-#: .\articles\templates\articles\articles.html:41
-#: .\articles\templates\articles\articles.html:48 .\templates\index.html:195
+#: .\articles\templates\articles\articles.html:42
+#: .\articles\templates\articles\articles.html:49 .\templates\index.html:195
 #: .\templates\index.html:204
 msgid "Read more"
 msgstr "Read more"
@@ -37,74 +37,75 @@ msgstr "Write a comment..."
 msgid "Отправить"
 msgstr "Send"
 
-#: .\articles\templates\articles\article.html:203 .\templates\base.html:271
-msgid "ЗАКАЗАТЬ БЕСПЛАТНУЮ КОНСУЛЬТАЦИЮ"
-msgstr "Order a free consultation"
-
-#: .\articles\templates\articles\article.html:206 .\templates\base.html:274
-msgid "Оставьте заявку и мы перезвоним Вам в течение 15 минут"
-msgstr "Leave the application and we will call you back in 15 minutes"
-
-#: .\articles\templates\articles\article.html:210
-#: .\articles\templates\articles\article.html:211 .\templates\base.html:195
-#: .\templates\base.html:278 .\templates\base.html:279
-#: .\templates\contacts.html:20 .\templates\contacts.html:21
-msgid "Имя"
-msgstr "Name"
-
-#: .\articles\templates\articles\article.html:214
-#: .\articles\templates\articles\article.html:215 .\templates\base.html:282
-#: .\templates\base.html:283 .\templates\contacts.html:37
-msgid "Телефон"
-msgstr "Phone"
-
-#: .\articles\templates\articles\article.html:223
-#: .\cases\templates\cases\case.html:44
-#: .\services\templates\services\service.html:26
-#: .\services\templates\services\service.html:51 .\templates\about.html:25
-#: .\templates\base.html:99 .\templates\base.html:205 .\templates\base.html:290
-#: .\templates\contacts.html:26 .\templates\includes\cases.html:25
-#: .\templates\index.html:15 .\templates\index.html:101
-msgid "Оставить заявку"
-msgstr "Leave request"
-
-#: .\articles\templates\articles\article.html:237
+#: .\articles\templates\articles\article.html:203
 msgid "Вход"
 msgstr "Login"
 
-#: .\articles\templates\articles\article.html:244
+#: .\articles\templates\articles\article.html:210
 msgid "Продолжить с Facebook"
 msgstr "Sign in with Facebook"
 
-#: .\articles\templates\articles\article.html:248
+#: .\articles\templates\articles\article.html:214
 msgid "Авторизуясь, Вы даете согласие на обработку персональных данных."
 msgstr "By logging in, you consent to the processing of personal data."
 
-#: .\articles\templates\articles\article.html:256
+#: .\articles\templates\articles\article.html:222
 msgid "Спасибо! Ваш комментарий отправлен на модерацию."
 msgstr "Thank you! Your comment has been sent for moderation."
 
-#: .\articles\templates\articles\article.html:257
+#: .\articles\templates\articles\article.html:223
 #, fuzzy
 #| msgid "Продолжить с Facebook"
 msgid "Продолжить"
 msgstr "Sign in with Facebook"
 
-#: .\articles\templates\articles\article.html:266
+#: .\articles\templates\articles\article.html:232
 msgid "Что-то пошло не так. Попробуйте снова!"
 msgstr "Something went wrong. Try again!"
 
-#: .\articles\templates\articles\article.html:267
+#: .\articles\templates\articles\article.html:233
 msgid "Попробовать снова"
 msgstr "Try again"
 
-#: .\articles\templates\articles\articles.html:10 .\templates\base.html:75
+#: .\articles\templates\articles\article.html:242 .\templates\base.html:271
+msgid "ЗАКАЗАТЬ БЕСПЛАТНУЮ КОНСУЛЬТАЦИЮ"
+msgstr "Order a free consultation"
+
+#: .\articles\templates\articles\article.html:245 .\templates\base.html:274
+msgid "Оставьте заявку и мы перезвоним Вам в течение 15 минут"
+msgstr "Leave the application and we will call you back in 15 minutes"
+
+#: .\articles\templates\articles\article.html:249
+#: .\articles\templates\articles\article.html:250 .\templates\base.html:195
+#: .\templates\base.html:278 .\templates\base.html:279
+#: .\templates\contacts.html:21 .\templates\contacts.html:22
+msgid "Имя"
+msgstr "Name"
+
+#: .\articles\templates\articles\article.html:253
+#: .\articles\templates\articles\article.html:254 .\templates\base.html:282
+#: .\templates\base.html:283 .\templates\contacts.html:38
+msgid "Телефон"
+msgstr "Phone"
+
+#: .\articles\templates\articles\article.html:261
+#: .\cases\templates\cases\case.html:44
+#: .\services\templates\services\service.html:26
+#: .\services\templates\services\service.html:51 .\templates\about.html:26
+#: .\templates\base.html:99 .\templates\base.html:205 .\templates\base.html:290
+#: .\templates\contacts.html:27 .\templates\includes\cases.html:25
+#: .\templates\index.html:15 .\templates\index.html:101
+msgid "Оставить заявку"
+msgstr "Leave request"
+
+#: .\articles\templates\articles\articles.html:6
+#: .\articles\templates\articles\articles.html:11 .\templates\base.html:75
 #: .\templates\base.html:145 .\templates\base.html:232
 #: .\templates\index.html:169
 msgid "Статьи"
 msgstr "Articles"
 
-#: .\articles\templates\articles\articles.html:13
+#: .\articles\templates\articles\articles.html:14
 #: .\cases\templates\cases\case.html:20
 msgid "ALL"
 msgstr "ALL"
@@ -123,12 +124,12 @@ msgstr "What we do?"
 msgid "You may also like"
 msgstr "You may also like"
 
-#: .\templates\about.html:15 .\templates\base.html:76 .\templates\base.html:127
-#: .\templates\base.html:233
+#: .\templates\about.html:6 .\templates\about.html:16 .\templates\base.html:76
+#: .\templates\base.html:127 .\templates\base.html:233
 msgid "О нас"
 msgstr "About us"
 
-#: .\templates\about.html:18
+#: .\templates\about.html:19
 msgid ""
 "Мы — digital-агентство полного цикла, предоставляющее услуги комплексного "
 "интернет-маркетинга для вашего бизнеса.\n"
@@ -155,11 +156,11 @@ msgstr ""
 "implementing and tracking a marketing plan that meets all your needs and "
 "expectations.Art. Ads agency is what you really need to get a shout-out."
 
-#: .\templates\about.html:37
+#: .\templates\about.html:38
 msgid "Наша команда"
 msgstr "Our team"
 
-#: .\templates\about.html:75 .\templates\index.html:150
+#: .\templates\about.html:76 .\templates\index.html:150
 msgid "Наши партнеры"
 msgstr "Our partners"
 
@@ -170,10 +171,6 @@ msgid ""
 msgstr ""
 "We help business grow, increasing sales using integrated Internet marketing:"
 "SEO, PPC, Web design, Web development, Copywriting!"
-
-#: .\templates\base.html:28 .\templates\index.html:9
-msgid "Маркетинговое digital-агентство полного цикла"
-msgstr "A full-service digital marketing agency"
 
 #: .\templates\base.html:28
 #, fuzzy
@@ -193,8 +190,8 @@ msgid "Услуги"
 msgstr "Services"
 
 #: .\templates\base.html:77 .\templates\base.html:139 .\templates\base.html:172
-#: .\templates\base.html:234 .\templates\contacts.html:11
-#: .\templates\contacts.html:35
+#: .\templates\base.html:234 .\templates\contacts.html:6
+#: .\templates\contacts.html:12 .\templates\contacts.html:36
 msgid "Контакты"
 msgstr "Contacts"
 
@@ -202,11 +199,11 @@ msgstr "Contacts"
 msgid "Навигация и информация"
 msgstr "Navigation and information"
 
-#: .\templates\base.html:173 .\templates\contacts.html:51
+#: .\templates\base.html:173 .\templates\contacts.html:52
 msgid "Одесса, Украина"
 msgstr "Odesa, Ukraine"
 
-#: .\templates\base.html:174 .\templates\contacts.html:52
+#: .\templates\base.html:174 .\templates\contacts.html:53
 msgid "Французский бульвар"
 msgstr "French Boulevard"
 
@@ -222,41 +219,45 @@ msgstr "ASK YOUR QUESTION"
 msgid "Вопрос"
 msgstr "Question"
 
-#: .\templates\base.html:239
+#: .\templates\base.html:239 .\templates\privacy.html:4
 msgid "Политика конфиденциальности"
 msgstr "Privacy policy"
 
-#: .\templates\base.html:261
+#: .\templates\base.html:262
 msgid ""
 "Мы используем cookies. Цели - маркетинг и анализ трафика. Узнать подробнее "
 "можно"
 msgstr ""
 "We use cookies. Purpose - marketing and traffic analysis. Learn morecan"
 
-#: .\templates\contacts.html:16
+#: .\templates\contacts.html:17
 msgid "Остались вопросы? Оставьте заявку и наши менеджеры с Вами свяжутся!"
 msgstr ""
 "Still have questions? Leave a request and our managers will contact you!"
 
-#: .\templates\contacts.html:24 .\templates\contacts.html:25
+#: .\templates\contacts.html:25 .\templates\contacts.html:26
 msgid "Введите сообщение"
 msgstr "Enter your message"
 
-#: .\templates\contacts.html:49
+#: .\templates\contacts.html:50
 msgid "Адрес"
 msgstr "Address"
 
-#: .\templates\contacts.html:56
+#: .\templates\contacts.html:57
 msgid "Рабочие часы"
 msgstr "Working hours"
 
-#: .\templates\contacts.html:58
+#: .\templates\contacts.html:59
 msgid "ПН - ПТ"
 msgstr "Mon - Fri"
 
 #: .\templates\includes\cases.html:6 .\templates\index.html:81
 msgid "Наши кейсы"
 msgstr "Our cases"
+
+#: .\templates\index.html:9
+msgid "Маркетинговое digital-агентство полного цикла"
+msgstr "A full-service digital marketing agency"
 
 #: .\templates\index.html:12
 msgid ""
