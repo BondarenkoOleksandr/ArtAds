@@ -172,8 +172,8 @@
         {% for article in articles %}
           <div class="article filtered-div" data-web="{{article.category|lower|slugify}}">
             <div class="article-picture">
-              <a href="/" class="article-category">{{article.category|upper}}</a>
-              <a class="article-picture-link" href="/">
+              <a href="{% if request.LANGUAGE_CODE != DEFAULT_LANGUAGE %}/{{ request.LANGUAGE_CODE }}{% endif %}{% url 'articles:article' slug=article.get_slug %}" class="article-category">{{article.category|upper}}</a>
+              <a class="article-picture-link" href="{% if request.LANGUAGE_CODE != DEFAULT_LANGUAGE %}/{{ request.LANGUAGE_CODE }}{% endif %}{% url 'articles:article' slug=article.get_slug %}">
                 <img class="article-picture-img" src="{{article.image.photo.url}}" alt="{{article.image.alt}}" title="{{article.image.title}}"></a>
             </div>
             <div class="article-footer">
@@ -187,7 +187,7 @@
               </div>
               <div class="article-decsription">
                 <p class="article-paragraph article-paragraph--short">
-                  {{article.text_before_quote|striptags}}
+                  <a href="{% if request.LANGUAGE_CODE != DEFAULT_LANGUAGE %}/{{ request.LANGUAGE_CODE }}{% endif %}{% url 'articles:article' slug=article.get_slug %}">{{article.title|striptags}}</a>
                 </p>
               </div>
                 <a class="article-link" href="{% if request.LANGUAGE_CODE != DEFAULT_LANGUAGE %}/{{ request.LANGUAGE_CODE }}{% endif %}{% url 'articles:article' slug=article.get_slug %}">
