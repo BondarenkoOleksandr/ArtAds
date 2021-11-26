@@ -196,42 +196,45 @@
 </section>
 {% endblock %}
 {% block footer %}
-<div class="popup popup_func">
-  <div class="popup_dialog">
-    <div class="popup_content text-center">
-      <button type="button" class="popup_close"><img src="{% static 'assets/images/close.svg' %}" alt="Close button."></button>
-      <h2 class="title">Заголовок (УТП)</h2>
-      <div class="popup_form">
-        <form class="form" action="#">
-          <p class="popup_descr">Оставляйте заявку прямо сейчас и получайте эксклюзивное предложение!</p>
-          <div class="input_row">
-            <div class="input-item">
-              <label for="user_name">{% trans 'Имя' %}</label>
-              <input class="form-control form_input" name="user_name" required type="text" placeholder="Введите имя">
-            </div>
-            <div class="input-item">
-              <label for="user_phone">{% trans 'Телефон' %}</label>
-              <input class="form-control form_input mask-phone" name="user_phone" required type="tel" placeholder="Введите телефон">
-            </div>
-            <div class="input-item">
-              <label for="user_email">E-mail</label>
-              <input class="form-control form_input" name="user_email" required type="email" placeholder="Введите e-mail">
-            </div>
+ <div class="popup popup_func">
+    <div class="popup_dialog">
+      <div class="popup_content text-center">
+        <button type="button" class="popup_close"><img src="{% static 'assets/images/close.svg' %}" alt="Close button."></button>
+        <h2 class="title">{% trans 'ЗАКАЗАТЬ БЕСПЛАТНУЮ КОНСУЛЬТАЦИЮ' %}</h2>
+        <div class="popup_form">
+          <form class="form send_form" action="{% url 'send_email' %}" method="post">
+            <p class="popup_descr">{% blocktrans %}Оставьте заявку и мы перезвоним Вам в течение 15 минут{% endblocktrans %}</p>
+            {% csrf_token %}
+            <div class="input_row">
+              <div class="input-item">
+                <label for="user_name">{% trans 'Имя' %}</label>
+                <input class="form-control form_input" name="user_name" id="user_name" required type="text" placeholder="{% trans 'Имя' %}">
+              </div>
+              <div class="input-item">
+                <label for="user_phone">{% trans 'Телефон' %}</label>
+                <input class="form-control form_input mask-phone" name="user_phone" id="user_phone" required type="tel" placeholder="{% trans 'Телефон' %}">
+              </div>
+              <div class="input-item">
+                <label for="user_email">E-mail</label>
+                <input class="form-control form_input" name="user_email" id="user_email" required type="email" placeholder="E-mail">
+              </div>
 
-          </div>
-          <div class="row-center"><button class="btn btn-top btn-orange" name="submit" type="submit">{% trans 'Оставить заявку' %}</button></div>
+            </div>
+            <div class="row-center"><button class="btn btn-top btn-orange" name="submit" type="submit">{% trans 'Оставить заявку' %}</button></div>
 
-        </form>
+            <div class="status"></div>
+
+          </form>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
 <div class="popup popup_login">
   <div class="popup_dialog">
     <div class="popup_content text-center">
       <button type="button" class="popup_close"><img src="{% static 'assets/images/close.svg' %}" alt="Close button."></button>
-      <h2 class="title">Вход</h2>
+      <h2 class="title">{% trans 'Вход' %}</h2>
       <div class="popup_form">
         <form class="form" action="#">
             {% if user.is_authenticated %}
@@ -250,8 +253,8 @@
 <div class="popup popup_send_moderation">
   <div class="popup_dialog">
     <div class="popup_content">
-      <p class="popup_login_descr">Спасибо! Ваш комментарий отправлен на модерацию.</p>
-      <button type="button" class="popup_close btn btn-orange">Продолжить</button>
+      <p class="popup_login_descr">{% trans 'Спасибо! Ваш комментарий отправлен на модерацию.' %}</p>
+      <button type="button" class="popup_close btn btn-orange">{% trans 'Продолжить' %}</button>
 
     </div>
   </div>
@@ -260,18 +263,8 @@
 <div class="popup popup_send_moderation popup_try_again">
   <div class="popup_dialog">
     <div class="popup_content">
-      <p class="popup_login_descr">Что-то пошло не так. Попробуйте снова!</p>
-      <button type="button" class="popup_close btn btn-orange">Попробовать снова</button>
-
-    </div>
-  </div>
-</div>
-
-<div class="popup popup_send_moderation popup_cookies">
-  <div class="popup_dialog">
-    <div class="popup_content">
-      <p class="popup_login_descr">Мы используем cookies. Цели - маркетинг и анализ трафика. Узнать подробнее можно <a href="" class="cookies_link">тут</a>.</p>
-      <button type="button" class="popup_close btn btn-orange">Согласен</button>
+      <p class="popup_login_descr">{% trans 'Что-то пошло не так. Попробуйте снова!' %}</p>
+      <button type="button" class="popup_close btn btn-orange">{% trans 'Попробовать снова' %}</button>
 
     </div>
   </div>

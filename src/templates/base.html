@@ -25,7 +25,7 @@
   <meta name='robots' content='{% block robots %}{% endblock %}' />
   <link rel="stylesheet" type="text/css" href="{% static 'libs/slick-carousel/slick/slick.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'libs/slick-carousel/slick/slick-theme.css' %}">
-  <title>{% block title %}Маркетинговое агентство полного цикла Art Ads - дизайн, продвижение, создание сайтов{% endblock %}</title>
+  <title>{% block title %}{% trans 'Маркетинговое digital-агентство полного цикла' %}{% trans 'Маркетинговое агентство полного цикла Art Ads - дизайн, продвижение, создание сайтов' %}{% endblock %}</title>
   <link href="{% static 'main.css' %}" rel="stylesheet">
    <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -254,11 +254,18 @@
       </div>
 
   </footer>
-  {% block footer %}
-  {% endblock %}
+  {% block footer %}  <div class="popup popup_func">
+  <div class="popup popup_send_moderation popup_cookies">
+  <div class="popup_dialog">
+    <div class="popup_content">
+      <p class="popup_login_descr">{% trans 'Мы используем cookies. Цели - маркетинг и анализ трафика. Узнать подробнее можно' %}<a href="" class="cookies_link">тут</a>.</p>
+      <button type="button" class="popup_close btn btn-orange">Согласен</button>
 
-  <div class="popup popup_func">
-    <div class="popup_dialog">
+    </div>
+  </div>
+</div>
+  {% endblock %}
+        <div class="popup_dialog">
       <div class="popup_content text-center">
         <button type="button" class="popup_close"><img src="{% static 'assets/images/close.svg' %}" alt="Close button."></button>
         <h2 class="title">{% trans 'ЗАКАЗАТЬ БЕСПЛАТНУЮ КОНСУЛЬТАЦИЮ' %}</h2>
@@ -279,12 +286,9 @@
                 <label for="user_email">E-mail</label>
                 <input class="form-control form_input" name="user_email" id="user_email" required type="email" placeholder="E-mail">
               </div>
-
             </div>
             <div class="row-center"><button class="btn btn-top btn-orange" name="submit" type="submit">{% trans 'Оставить заявку' %}</button></div>
-
             <div class="status"></div>
-
           </form>
         </div>
       </div>
