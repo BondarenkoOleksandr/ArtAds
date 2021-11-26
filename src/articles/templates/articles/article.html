@@ -238,7 +238,7 @@
                 <p>Welcome, You are logged in as {{ user.username }}</p>
             {% else %}
                 <a class="login_btn login_btn_google" href="{% provider_login_url 'google' %}?next={{request.path}}">Google</a>
-                <a class="login_btn login_btn_facebook" href="{% provider_login_url 'facebook' method='oauth2' %}?next={{request.path}}">{% trans 'Продолжить с Facebook' %}</a>
+<!--                <a class="login_btn login_btn_facebook" href="{% provider_login_url 'facebook' method='oauth2' %}?next={{request.path}}">{% trans 'Продолжить с Facebook' %}</a>-->
             {% endif %}
         </form>
       </div>
