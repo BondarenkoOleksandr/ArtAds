@@ -160,7 +160,7 @@ msgstr "French Boulevard"
 
 #: .\templates\base.html:174
 msgid "Д"
-msgstr ""
+msgstr "D"
 
 #: .\templates\base.html:190
 msgid "ЗАДАЙТЕ ВАШ ВОПРОС"
