@@ -114,7 +114,7 @@
               <p class="honey-text"></p>
             </li>
             {% for service in services_categories %}
-              <li class="honey honey-0{% if forloop.counter|add:1 == 6 or forloop.counter|add:1 > 6 %}{{ forloop.counter|add:2 }}{% else %}{{ forloop.counter|add:1 }}{% endif %} burger-menu-honey-{% if forloop.counter|add:1 == 6 or forloop.counter|add:1 > 6 %}{{ forloop.counter|add:2 }}{% else %}{{ forloop.counter|add:1 }}{% endif %}">
+              <li class="honey honey-0{% if forloop.counter|add:1 == 6 or forloop.counter|add:1 > 6 %}{{ forloop.counter|add:2 }}{% else %}{{ forloop.counter|add:1 }}{% endif %} burger-menu-honey-{% if forloop.counter|add:1 == 6 or forloop.counter|add:1 > 6 %}{{ forloop.counter|add:2 }}{% else %}{{ forloop.counter|add:1 }}{% endif %} {% if forloop.counter in '257'|make_list %}honey-orange{% endif %}">
                 <a href="{% if service.article %}{% url 'services:article' slug=service.article.slug %}{% endif %}" class="honey-link"><p class="honey-text">{{service.name}}</p></a>
               </li>
             {% endfor %}
