@@ -19,7 +19,7 @@
     <link rel="alternate" href="https://{{ request.get_host }}{% if language.code != DEFAULT_LANGUAGE %}/{{ language.code}}{% endif %}{{ request.path|clean_link }}" hreflang="{{ language.code }}" />
   {% endfor %}
   <link rel="icon" href="{% static 'assets/images/Favicon_Art_Ads.ico' %}" type="image/x-icon">
-  <link rel="canonical" href="{% block canocical %}https://artads.agency/{% endblock %}" />
+  <link rel="canonical" href="{% block canocical %}{{ request.get_full_path }}{% endblock %}" />
   {% block og %}{% endblock %}
   {% block schema %}{% endblock %}
   <meta name='robots' content='{% block robots %}{% endblock %}' />
@@ -46,6 +46,7 @@
 
   <!-- HEADER -->
   <header class="header">
+    <h1 style="position: absolute; left:-1000px; width:1px; height:1px; overflow:hidden;">{% trans 'Основное меню навигации сайта' %}</h1>
     <div class="site-width">
       <div class="header-wrapper">
         <div class="header-inner">
@@ -63,7 +64,7 @@
                         <div class="inner-drop-block">
                           <ul class="sub-nav">
                             {% for service in services_categories %}
-                              <li class="nav-link"><a href="{% url 'services:article' slug=service.article.slug %}">{{service.name}}</a></li>
+                              <li class="nav-link"><a href="{% if request.LANGUAGE_CODE != DEFAULT_LANGUAGE %}/{{ request.LANGUAGE_CODE }}{% endif %}{% url 'services:article' slug=service.article.slug %}">{{service.name}}</a></li>
                             {% endfor %}
                           </ul>
                         </div>
@@ -153,10 +154,11 @@
   {% block content %}
   {% endblock %}
 <footer class="footer">
+  <h2 style="position: absolute; left:-1000px; width:1px; height:1px; overflow:hidden;">{% trans 'Навигация и информация' %}</h2>
     <div class="site-width">
       <section class="footer-top">
         <div class="footer-logo mob-none">
-          <a href="/" class="footer-logo-link">
+          <a href="{% url 'index' %}" class="footer-logo-link">
             <img src="{% static 'assets/images/logo-scroll.svg' %}" alt="Logo.">
           </a>
           <div class="facebook-partners">
@@ -169,7 +171,7 @@
         <div class="footer-contacts">
           <h3 class="footer-title">{% trans 'Контакты' %}</h3>
           <p class="footer-adress">{% trans 'Одесса, Украина' %}<br>
-            {% trans 'Французский бульвар' %}, <span class="number">60</span>Д</p>
+            {% trans 'Французский бульвар' %}, <span class="number">60</span>{% trans 'Д' %}</p>
           <a href="tel:+380682782200" class="footer-phone number">+38 068 278 22 00</a>
           <a href="mailto:inbox@artads.agency" class="footer-mail">inbox@artads.agency</a>
           <div class="social">
@@ -207,7 +209,6 @@
         </div>
       </section>
       <section class="footer-bottom">
-        <h2 style="position: absolute; left:-1000px; width:1px; height:1px; overflow:hidden;">{% trans 'Навигация и информация' %}</h2>
         <div class="footer-years">
           <p>&copy; ART ADS <span class="number">2011-2021</span></p>
         </div>
