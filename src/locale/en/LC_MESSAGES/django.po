@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-26 13:23+0200\n"
+"POT-Creation-Date: 2021-11-26 13:36+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -63,8 +63,8 @@ msgstr "Phone"
 #: .\services\templates\services\service.html:26
 #: .\services\templates\services\service.html:51 .\templates\about.html:25
 #: .\templates\base.html:99 .\templates\base.html:205 .\templates\base.html:290
-#: .\templates\contacts.html:26 .\templates\index.html:15
-#: .\templates\index.html:101
+#: .\templates\contacts.html:26 .\templates\includes\cases.html:25
+#: .\templates\index.html:15 .\templates\index.html:101
 msgid "Оставить заявку"
 msgstr "Leave request"
 
@@ -167,7 +167,8 @@ msgstr "Our partners"
 msgid ""
 "Помогаем бизнесу расти, увеличивая продажи с помощью комплексного интернет-"
 "маркетинга: SEO, PPC, Web дизайн, Web разработка, Copywriting!"
-msgstr "We help business grow, increasing sales using integrated Internet marketing:"
+msgstr ""
+"We help business grow, increasing sales using integrated Internet marketing:"
 "SEO, PPC, Web design, Web development, Copywriting!"
 
 #: .\templates\base.html:28 .\templates\index.html:9
@@ -253,6 +254,10 @@ msgstr "Working hours"
 msgid "ПН - ПТ"
 msgstr "Mon - Fri"
 
+#: .\templates\includes\cases.html:6 .\templates\index.html:81
+msgid "Наши кейсы"
+msgstr "Our cases"
+
 #: .\templates\index.html:12
 msgid ""
 "Доверьтесь команде профессионалов в области цифровой рекламы, и получите "
@@ -278,10 +283,6 @@ msgstr "of digital martketing experience"
 #: .\templates\index.html:53
 msgid "успешных проектов"
 msgstr "highly qualified specialists"
-
-#: .\templates\index.html:81
-msgid "Наши кейсы"
-msgstr "Our cases"
 
 #: .\templates\index.html:122
 msgid "Отзывы"
