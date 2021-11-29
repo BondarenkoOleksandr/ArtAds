@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-26 20:43+0200\n"
+"POT-Creation-Date: 2021-11-29 10:40+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,8 +19,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: .\articles\templates\articles\article.html:119
-#: .\articles\templates\articles\articles.html:42
-#: .\articles\templates\articles\articles.html:49 .\templates\index.html:195
+#: .\articles\templates\articles\articles.html:43
+#: .\articles\templates\articles\articles.html:50 .\templates\index.html:195
 #: .\templates\index.html:204
 msgid "Read more"
 msgstr "Read more"
@@ -78,34 +78,40 @@ msgstr "Leave the application and we will call you back in 15 minutes"
 #: .\articles\templates\articles\article.html:249
 #: .\articles\templates\articles\article.html:250 .\templates\base.html:195
 #: .\templates\base.html:278 .\templates\base.html:279
-#: .\templates\contacts.html:21 .\templates\contacts.html:22
+#: .\templates\contacts.html:22 .\templates\contacts.html:23
 msgid "Имя"
 msgstr "Name"
 
 #: .\articles\templates\articles\article.html:253
 #: .\articles\templates\articles\article.html:254 .\templates\base.html:282
-#: .\templates\base.html:283 .\templates\contacts.html:38
+#: .\templates\base.html:283 .\templates\contacts.html:39
 msgid "Телефон"
 msgstr "Phone"
 
 #: .\articles\templates\articles\article.html:261
 #: .\cases\templates\cases\case.html:44
 #: .\services\templates\services\service.html:26
-#: .\services\templates\services\service.html:51 .\templates\about.html:26
+#: .\services\templates\services\service.html:51 .\templates\about.html:27
 #: .\templates\base.html:99 .\templates\base.html:205 .\templates\base.html:290
-#: .\templates\contacts.html:27 .\templates\includes\cases.html:25
+#: .\templates\contacts.html:28 .\templates\includes\cases.html:25
 #: .\templates\index.html:15 .\templates\index.html:101
 msgid "Оставить заявку"
 msgstr "Leave request"
 
 #: .\articles\templates\articles\articles.html:6
-#: .\articles\templates\articles\articles.html:11 .\templates\base.html:75
+#: .\articles\templates\articles\articles.html:12 .\templates\base.html:75
 #: .\templates\base.html:145 .\templates\base.html:232
 #: .\templates\index.html:169
 msgid "Статьи"
 msgstr "Articles"
 
-#: .\articles\templates\articles\articles.html:14
+#: .\articles\templates\articles\articles.html:7
+msgid ""
+"Читайте экспертные статьи по SEO, SMM, Web и Digital Маркетингу в блоге ART "
+"ADS"
+msgstr "Read expert articles on SEO, SMM, Web and Digital Marketing in ART ADS Blog"
+
+#: .\articles\templates\articles\articles.html:15
 #: .\cases\templates\cases\case.html:20
 msgid "ALL"
 msgstr "ALL"
@@ -124,12 +130,18 @@ msgstr "What we do?"
 msgid "You may also like"
 msgstr "You may also like"
 
-#: .\templates\about.html:6 .\templates\about.html:16 .\templates\base.html:76
+#: .\templates\about.html:6 .\templates\about.html:17 .\templates\base.html:76
 #: .\templates\base.html:127 .\templates\base.html:233
 msgid "О нас"
 msgstr "About us"
 
-#: .\templates\about.html:19
+#: .\templates\about.html:7
+msgid ""
+"История компании ART ADS | Все наши крутые сотрудники и их биографии читайте "
+"тут!"
+msgstr "History or The ART ADS Agency | All our cool staff and their bios read here!"
+
+#: .\templates\about.html:20
 msgid ""
 "Мы — digital-агентство полного цикла, предоставляющее услуги комплексного "
 "интернет-маркетинга для вашего бизнеса.\n"
@@ -156,11 +168,11 @@ msgstr ""
 "implementing and tracking a marketing plan that meets all your needs and "
 "expectations.Art. Ads agency is what you really need to get a shout-out."
 
-#: .\templates\about.html:38
+#: .\templates\about.html:39
 msgid "Наша команда"
 msgstr "Our team"
 
-#: .\templates\about.html:76 .\templates\index.html:150
+#: .\templates\about.html:77 .\templates\index.html:150
 msgid "Наши партнеры"
 msgstr "Our partners"
 
@@ -187,7 +199,7 @@ msgstr "Services"
 
 #: .\templates\base.html:77 .\templates\base.html:139 .\templates\base.html:172
 #: .\templates\base.html:234 .\templates\contacts.html:6
-#: .\templates\contacts.html:12 .\templates\contacts.html:36
+#: .\templates\contacts.html:13 .\templates\contacts.html:37
 msgid "Контакты"
 msgstr "Contacts"
 
@@ -195,11 +207,11 @@ msgstr "Contacts"
 msgid "Навигация и информация"
 msgstr "Navigation and information"
 
-#: .\templates\base.html:173 .\templates\contacts.html:52
+#: .\templates\base.html:173 .\templates\contacts.html:53
 msgid "Одесса, Украина"
 msgstr "Odesa, Ukraine"
 
-#: .\templates\base.html:174 .\templates\contacts.html:53
+#: .\templates\base.html:174 .\templates\contacts.html:54
 msgid "Французский бульвар"
 msgstr "French Boulevard"
 
@@ -226,24 +238,29 @@ msgid ""
 msgstr ""
 "We use cookies. Purpose - marketing and traffic analysis. Learn morecan"
 
-#: .\templates\contacts.html:17
+#: .\templates\contacts.html:7
+msgid ""
+"Контакты, адреса и местоположение компании ART ADS | 📞+38 (068) 278-22-00"
+msgstr "Contacts, Addresses and location of Art ADS | 📞 + 38 (068) 278-22-00"
+
+#: .\templates\contacts.html:18
 msgid "Остались вопросы? Оставьте заявку и наши менеджеры с Вами свяжутся!"
 msgstr ""
 "Still have questions? Leave a request and our managers will contact you!"
 
-#: .\templates\contacts.html:25 .\templates\contacts.html:26
+#: .\templates\contacts.html:26 .\templates\contacts.html:27
 msgid "Введите сообщение"
 msgstr "Enter your message"
 
-#: .\templates\contacts.html:50
+#: .\templates\contacts.html:51
 msgid "Адрес"
 msgstr "Address"
 
-#: .\templates\contacts.html:57
+#: .\templates\contacts.html:58
 msgid "Рабочие часы"
 msgstr "Working hours"
 
-#: .\templates\contacts.html:59
+#: .\templates\contacts.html:60
 msgid "ПН - ПТ"
 msgstr "Mon - Fri"
 
