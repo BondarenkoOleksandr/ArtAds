@@ -240,7 +240,8 @@ msgstr "Політика конфіденційності"
 msgid ""
 "We use cookies. Objectives - marketing and traffic analysis. Learn more"
 "can"
-msgstr ""
+msgstr "Ми використовуємо файли cookie. Цілі - маркетинг і аналіз трафіку. Вчи більше"
+"може"
 
 #: .\templates\contacts.html:7
 msgid ""
