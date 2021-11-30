@@ -19,7 +19,7 @@
     <link rel="alternate" href="https://{{ request.get_host }}{% if language.code != DEFAULT_LANGUAGE %}/{{ language.code}}{% endif %}{{ request.path|clean_link }}" hreflang="{{ language.code }}" />
   {% endfor %}
   <link rel="icon" href="{% static 'assets/images/Favicon_Art_Ads.ico' %}" type="image/x-icon">
-  <link rel="canonical" href="{% block canocical %}{{ request.get_full_path }}{% endblock %}" />
+  <link rel="canonical" href="{% block canocical %}https://{{ request.get_host }}{% url 'index' %}{% endblock %}" />
   {% block og %}{% endblock %}
   {% block schema %}{% endblock %}
   <meta name='robots' content='{% block robots %}INDEX, FOLLOW, MAX-IMAGE-PREVIEW:-1{% endblock %}' />
