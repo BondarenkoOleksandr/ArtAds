@@ -400,3 +400,13 @@ JAZZMIN_SETTINGS = {
 }
 
 TRANSLATIONS_PROJECT_BASE_DIR = BASE_DIR
+
+
+# Caching
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': os.path.join(BASE_DIR, 'cache'),
+    }
+}

@@ -292,7 +292,7 @@ msgstr "years"
 
 #: .\templates\index.html:47
 msgid "на рынке маркетинговых услуг"
-msgstr "of digital martketing experience"
+msgstr "of digital marketing experience"
 
 #: .\templates\index.html:53
 msgid "успешных проектов"
